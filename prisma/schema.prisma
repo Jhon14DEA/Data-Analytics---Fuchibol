@@ -1,0 +1,118 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Match {
+  id          String       @id @default(cuid())
+  externalId  String       @unique
+  homeTeam    String
+  awayTeam    String
+  competition String
+  status      MatchStatus
+  minute      Int?
+  homeScore   Int          @default(0)
+  awayScore   Int          @default(0)
+  kickoffAt   DateTime?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  odds        OddsQuote[]
+  snapshots   MatchSnapshot[]
+  analyses    AnalysisPick[]
+  alerts      Alert[]
+}
+
+model MatchSnapshot {
+  id                 String   @id @default(cuid())
+  matchId            String
+  minute             Int?
+  possessionHome     Int
+  possessionAway     Int
+  shotsHome          Int
+  shotsAway          Int
+  shotsOnTargetHome  Int
+  shotsOnTargetAway  Int
+  xgHome             Decimal  @db.Decimal(5, 2)
+  xgAway             Decimal  @db.Decimal(5, 2)
+  cornersHome        Int
+  cornersAway        Int
+  yellowCardsHome    Int
+  yellowCardsAway    Int
+  redCardsHome       Int
+  redCardsAway       Int
+  foulsHome          Int
+  foulsAway          Int
+  dangerousHome      Int?
+  dangerousAway      Int?
+  capturedAt         DateTime @default(now())
+  match              Match    @relation(fields: [matchId], references: [id], onDelete: Cascade)
+}
+
+model OddsQuote {
+  id        String   @id @default(cuid())
+  matchId   String
+  bookmaker String
+  market    String
+  selection String
+  price     Decimal  @db.Decimal(8, 3)
+  minute    Int?
+  quotedAt  DateTime @default(now())
+  match     Match    @relation(fields: [matchId], references: [id], onDelete: Cascade)
+}
+
+model AnalysisPick {
+  id            String      @id @default(cuid())
+  matchId       String
+  market        String
+  selection     String
+  availableOdd  Decimal?    @db.Decimal(8, 3)
+  confidence    Int
+  classification PickClass
+  reasons       String[]
+  risks         String[]
+  invalidators  String[]
+  createdAt     DateTime    @default(now())
+  match         Match       @relation(fields: [matchId], references: [id], onDelete: Cascade)
+}
+
+model Alert {
+  id        String    @id @default(cuid())
+  matchId   String
+  type      AlertType
+  severity  Int
+  title     String
+  message   String
+  minute    Int?
+  createdAt DateTime  @default(now())
+  match     Match     @relation(fields: [matchId], references: [id], onDelete: Cascade)
+}
+
+enum MatchStatus {
+  LIVE
+  UPCOMING
+  FINISHED
+}
+
+enum PickClass {
+  STRONG_SUPPORT
+  WATCH
+  HIGH_RISK
+  DISCARD
+}
+
+enum AlertType {
+  GOAL
+  RED_CARD
+  INJURY
+  PENALTY
+  VAR
+  SUBSTITUTION
+  SHOTS_SPIKE
+  XG_SPIKE
+  DOMINANCE
+  ODDS_MOVEMENT
+}
