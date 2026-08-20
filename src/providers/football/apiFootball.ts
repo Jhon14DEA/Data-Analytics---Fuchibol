@@ -11,6 +11,7 @@ import type {
   FootballDebugStatus
 } from "@/types/domain";
 import type { FootballProvider } from "./types";
+import { cachedRequest, CACHE_TTL, fetchJsonWithResilience } from "@/lib/performance";
 
 const API_BASE_URL = "https://v3.football.api-sports.io";
 const PRIORITY_LEAGUES = [2, 3, 848, 39, 140, 135, 78, 61, 13, 11, 242];
@@ -116,15 +117,23 @@ export class ApiFootballProvider implements FootballProvider {
   async listMatches(): Promise<MatchSummary[]> {
     this.ensureConfigured();
 
-    const date = formatDate(new Date());
-    const [daily, live] = await Promise.all([
-      this.request<ApiFixture[]>("/fixtures", { date, timezone: "America/Bogota" }),
-      this.request<ApiFixture[]>("/fixtures", { live: PRIORITY_LEAGUES.join("-"), timezone: "America/Bogota" })
-    ]);
+    return cachedRequest(
+      `api-football:list:${formatDate(new Date())}`,
+      "fixtures+livescore",
+      async () => {
+        const date = formatDate(new Date());
+        const [daily, live] = await Promise.all([
+          this.request<ApiFixture[]>("/fixtures", { date, timezone: "America/Bogota" }),
+          this.request<ApiFixture[]>("/fixtures", { live: PRIORITY_LEAGUES.join("-"), timezone: "America/Bogota" })
+        ]);
 
-    return dedupeFixtures([...(daily ?? []), ...(live ?? [])])
-      .filter((fixture) => PRIORITY_LEAGUES.includes(fixture.league.id))
-      .map(mapFixtureSummary);
+        return dedupeFixtures([...(daily ?? []), ...(live ?? [])])
+          .filter((fixture) => PRIORITY_LEAGUES.includes(fixture.league.id))
+          .map(mapFixtureSummary);
+      },
+      CACHE_TTL.fixtures,
+      "API-Football"
+    );
   }
 
   async getMatch(matchId: string): Promise<MatchDetail | null> {
@@ -257,15 +266,19 @@ export class ApiFootballProvider implements FootballProvider {
     const url = new URL(`${API_BASE_URL}${path}`);
     Object.entries(params).forEach(([key, value]) => url.searchParams.set(key, value));
 
-    const response = await fetch(url, {
-      headers: { "x-apisports-key": this.apiKey ?? "" },
-      next: { revalidate: 0 }
-    });
-
+    const key = `api-football:${path}:${[...Object.entries(params)].sort(([a], [b]) => a.localeCompare(b)).map(([key, value]) => `${key}=${value}`).join("&")}`;
+    const result = await cachedRequest(
+      key,
+      `api-football:${path}`,
+      () => fetchJsonWithResilience<ApiEnvelope<T>>(url, { headers: { "x-apisports-key": this.apiKey ?? "" } }, `api-football:${path}`, "API-Football"),
+      path.includes("odds") ? CACHE_TTL.live : path.includes("statistics") || path.includes("events") ? CACHE_TTL.stats : CACHE_TTL.fixtures,
+      "API-Football"
+    );
+    const response = result.response;
     const statusCode = response.status;
     const remainingRequests = parseHeaderNumber(response.headers, "x-ratelimit-requests-remaining");
     const usedRequests = parseHeaderNumber(response.headers, "x-ratelimit-requests-used");
-    const payload = (await response.json()) as ApiEnvelope<T>;
+    const payload = result.payload;
     const apiMessage = extractMessage(payload);
 
     if (!response.ok) {

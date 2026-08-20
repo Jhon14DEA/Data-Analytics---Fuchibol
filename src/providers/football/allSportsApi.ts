@@ -12,6 +12,7 @@ import type {
   TeamStats
 } from "@/types/domain";
 import type { FootballProvider } from "./types";
+import { cachedRequest, CACHE_TTL, fetchJsonWithResilience } from "@/lib/performance";
 
 const API_BASE_URL = "https://apiv2.allsportsapi.com/football/";
 const PRIORITY_LEAGUE_TERMS = [
@@ -144,21 +145,30 @@ export class AllSportsApiProvider implements FootballProvider {
   async listMatches(): Promise<MatchSummary[]> {
     this.ensureConfigured();
 
-    const today = formatDate(new Date());
-    const [fixtures, livescore] = await Promise.all([
-      this.request<AllSportsMatch[]>("Fixtures", { from: today, to: today, timezone: "America/Bogota" }),
-      this.request<AllSportsMatch[]>("Livescore", { timezone: "America/Bogota" })
-    ]);
+    return cachedRequest(
+      `allsports:list:${formatDate(new Date())}`,
+      "fixtures+livescore",
+      async () => {
+        const today = formatDate(new Date());
+        const [fixtures, livescore] = await Promise.all([
+          this.request<AllSportsMatch[]>("Fixtures", { from: today, to: today, timezone: "America/Bogota" }),
+          this.request<AllSportsMatch[]>("Livescore", { timezone: "America/Bogota" })
+        ]);
 
-    const matches = dedupeMatches([...(fixtures ?? []), ...(livescore ?? [])]).map(mapMatchSummary);
-    const priority = matches.filter((match) => isPriorityLeague(match.competition));
-    return priority.length ? priority : matches;
+        const matches = dedupeMatches([...(fixtures ?? []), ...(livescore ?? [])]).map(mapMatchSummary);
+        const priority = matches.filter((match) => isPriorityLeague(match.competition));
+        return priority.length ? priority : matches;
+      },
+      CACHE_TTL.fixtures,
+      "AllSportsApi"
+    );
   }
 
   async searchMatches(query: string): Promise<MatchSummary[]> {
-    const matches = await this.listMatches();
     const normalized = normalize(query).replace(/\s+vs\s+|\s+v\s+/g, " ");
     const terms = normalized.split(/\s+/).filter(Boolean);
+
+    const matches = await this.listMatches();
 
     if (!terms.length) {
       return matches;
@@ -378,8 +388,16 @@ export class AllSportsApiProvider implements FootballProvider {
     url.searchParams.set("APIkey", this.apiKey ?? "");
     Object.entries(params).forEach(([key, value]) => url.searchParams.set(key, value));
 
-    const response = await fetch(url, { next: { revalidate: 0 } });
-    const payload = (await response.json()) as AllSportsEnvelope<T>;
+    const key = `allsports:${met}:${[...Object.entries(params)].sort(([a], [b]) => a.localeCompare(b)).map(([key, value]) => `${key}=${value}`).join("&")}`;
+    const result = await cachedRequest(
+      key,
+      `allsports:${met.toLowerCase()}`,
+      () => fetchJsonWithResilience<AllSportsEnvelope<T>>(url, {}, `allsports:${met.toLowerCase()}`, "AllSportsApi"),
+      met === "Livescore" || met === "OddsLive" ? CACHE_TTL.live : met === "Odds" ? CACHE_TTL.live : CACHE_TTL.fixtures,
+      "AllSportsApi"
+    );
+    const response = result.response;
+    const payload = result.payload;
     const message = extractMessage(payload);
     const statusCode = response.status;
     const remainingRequests = parseHeaderNumber(response.headers, "x-ratelimit-remaining");

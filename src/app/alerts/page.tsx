@@ -1,5 +1,6 @@
 import { Bell } from "lucide-react";
 import { MainNav } from "@/components/MainNav";
+import { calculateLiveActivityScore, LIVE_ACTIVITY_THRESHOLD } from "@/lib/alertEngine";
 import { footballProvider, getMatchAnalysisContext } from "@/providers";
 import { analyzeMatchContext } from "@/services/analysis/matchAnalyzer";
 import type { MatchAnalysisResult } from "@/types/domain";
@@ -37,8 +38,16 @@ export default async function AlertsPage() {
                   </h2>
                   <p className="text-sm text-zinc-400">{analysis.match.competition}</p>
                 </div>
-                <p className="text-xl font-black text-white">{liveLabel(analysis.liveState)}</p>
+                <div className="text-right">
+                  <p className="text-xl font-black text-white">{liveLabel(analysis.liveState)}</p>
+                  <p className="text-xs font-bold uppercase text-zinc-400">
+                    Actividad estadistica {calculateLiveActivityScore(analysis.match).toFixed(1)}/10
+                  </p>
+                </div>
               </div>
+              <p className="mt-3 text-xs text-zinc-400">
+                Solo se generan alertas predictivas con actividad igual o superior a {LIVE_ACTIVITY_THRESHOLD}/10.
+              </p>
             </article>
           ))
         ) : (

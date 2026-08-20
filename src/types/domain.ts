@@ -95,6 +95,7 @@ export type AnalysisPick = {
 export type MatchAlert = {
   type: string;
   severity: number;
+  activityScore?: number;
   title: string;
   message: string;
   minute: number | null;

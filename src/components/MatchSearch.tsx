@@ -5,6 +5,8 @@ import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { MatchSummary } from "@/types/domain";
 
+const searchCache = new Map<string, MatchSummary[]>();
+
 export function MatchSearch() {
   const router = useRouter();
   const [query, setQuery] = useState("");
@@ -19,6 +21,12 @@ export function MatchSearch() {
 
     const controller = new AbortController();
     const timer = window.setTimeout(async () => {
+      const cacheKey = query.trim().toLowerCase();
+      const cached = searchCache.get(cacheKey);
+      if (cached) {
+        setMatches(cached);
+        return;
+      }
       setLoading(true);
       try {
         const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`, {
@@ -26,6 +34,7 @@ export function MatchSearch() {
           signal: controller.signal
         });
         const payload = (await response.json()) as { matches: MatchSummary[] };
+        searchCache.set(cacheKey, payload.matches);
         setMatches(payload.matches);
       } catch {
         if (!controller.signal.aborted) {

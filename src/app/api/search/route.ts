@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { searchFootballMatches } from "@/providers";
+import { measureProcess } from "@/lib/performance";
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +12,6 @@ export async function GET(request: Request) {
     return NextResponse.json({ matches: [] });
   }
 
-  const matches = await searchFootballMatches(query);
-  return NextResponse.json({ matches: matches.slice(0, 20) });
+  const matches = await measureProcess("search", () => searchFootballMatches(query));
+  return NextResponse.json({ matches: matches.slice(0, 20) }, { headers: { "Cache-Control": "private, max-age=30" } });
 }

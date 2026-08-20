@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { AllSportsApiError } from "@/providers/football/allSportsApi";
 import { ApiFootballError } from "@/providers/football/apiFootball";
 import { allSportsApiProvider, apiFootballProvider, demoFootballProvider, footballProvider, providerStatus } from "@/providers";
+import { measureProcess } from "@/lib/performance";
 
 export const dynamic = "force-dynamic";
 
@@ -20,7 +21,7 @@ export async function GET() {
   }
 
   try {
-    const matches = await footballProvider.listMatches();
+    const matches = await measureProcess("fixtures+livescore", () => footballProvider.listMatches(), providerStatus);
 
     return NextResponse.json({
       apiState: "REAL",
@@ -32,7 +33,7 @@ export async function GET() {
       lastUpdatedAt: new Date().toISOString(),
       liveRefreshSeconds: Number(process.env.LIVE_REFRESH_SECONDS) || 60,
       matches
-    });
+    }, { headers: { "Cache-Control": "private, max-age=15, stale-while-revalidate=30" } });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Error desconocido";
     const statusCode = error instanceof ApiFootballError || error instanceof AllSportsApiError ? error.statusCode : null;

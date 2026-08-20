@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, BellRing, CalendarClock, TrendingUp, Users } from "lucide-react";
 import { ConfidenceBadge } from "@/components/ConfidenceBadge";
 import { CurrentRecommendationPanel } from "@/components/CurrentRecommendationPanel";
-import { StatRow } from "@/components/StatRow";
+import { LiveStatsPanel } from "@/components/LiveStatsPanel";
 import { StatusPill } from "@/components/StatusPill";
 import { analyzeMatch } from "@/lib/analysisEngine";
 import { detectAlerts } from "@/lib/alertEngine";
@@ -72,18 +72,8 @@ export default async function MatchPage({ params }: PageProps) {
         <div className="space-y-5">
           <section className="rounded-lg border border-white/10 bg-white/[0.045] p-4">
             <SectionTitle icon={<TrendingUp className="h-4 w-4" />} title="Estadisticas en vivo" />
-            <div className="mt-4 space-y-4">
-              <StatRow label="Posesion" home={match.stats.home.possession} away={match.stats.away.possession} suffix="%" />
-              <StatRow label="Remates" home={match.stats.home.shots} away={match.stats.away.shots} />
-              <StatRow label="Al arco" home={match.stats.home.shotsOnTarget} away={match.stats.away.shotsOnTarget} />
-              <StatRow label="xG" home={match.stats.home.xg} away={match.stats.away.xg} />
-              <StatRow label="Corners" home={match.stats.home.corners} away={match.stats.away.corners} />
-              <StatRow label="Tarjetas amarillas" home={match.stats.home.yellowCards} away={match.stats.away.yellowCards} />
-              <StatRow label="Rojas" home={match.stats.home.redCards} away={match.stats.away.redCards} />
-              <StatRow label="Faltas" home={match.stats.home.fouls} away={match.stats.away.fouls} />
-              {match.stats.home.dangerousAttacks !== undefined && match.stats.away.dangerousAttacks !== undefined ? (
-                <StatRow label="Ataques peligrosos" home={match.stats.home.dangerousAttacks} away={match.stats.away.dangerousAttacks} />
-              ) : null}
+            <div className="mt-4">
+              <LiveStatsPanel matchId={match.id} initialStats={match.stats} live={match.status === "LIVE"} />
             </div>
           </section>
 

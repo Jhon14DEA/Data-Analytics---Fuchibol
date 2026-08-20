@@ -5,6 +5,7 @@ import { Activity, Bell, Database, RefreshCw, ShieldCheck } from "lucide-react";
 import { MainNav } from "@/components/MainNav";
 import { MatchCard } from "@/components/MatchCard";
 import { MatchSearch } from "@/components/MatchSearch";
+import { NotificationSettings } from "@/components/NotificationSettings";
 import type { MatchStatus, MatchSummary, ProviderState } from "@/types/domain";
 
 type MatchesResponse = {
@@ -67,6 +68,7 @@ export function DashboardClient({ initialData }: { initialData: MatchesResponse 
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:items-end">
+          <NotificationSettings />
           <button
             type="button"
             onClick={refresh}
