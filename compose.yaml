@@ -1,6 +1,43 @@
 name: fut-analytics
 
 services:
+  app:
+    image: fut-analytics:local
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_DEMO_MODE: ${NEXT_PUBLIC_DEMO_MODE:-true}
+    restart: unless-stopped
+    init: true
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:?Configure POSTGRES_USER in .env}:${POSTGRES_PASSWORD:?Configure POSTGRES_PASSWORD in .env}@postgres:5432/${POSTGRES_DB:?Configure POSTGRES_DB in .env}?schema=public
+    ports:
+      - "${APP_BIND_ADDRESS:-127.0.0.1}:${APP_PORT:-3000}:3000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://127.0.0.1:3000/_not-found',r=>process.exit([200,404].includes(r.statusCode)?0:1)).on('error',()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  migrate:
+    image: fut-analytics:local
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_DEMO_MODE: ${NEXT_PUBLIC_DEMO_MODE:-true}
+    restart: "no"
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:?Configure POSTGRES_USER in .env}:${POSTGRES_PASSWORD:?Configure POSTGRES_PASSWORD in .env}@postgres:5432/${POSTGRES_DB:?Configure POSTGRES_DB in .env}?schema=public
+    command: ["node", "node_modules/prisma/build/index.js", "migrate", "deploy"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+
   postgres:
     image: postgres:16-alpine
     container_name: fut-postgres
