@@ -1,0 +1,3381 @@
+{
+  "before": "2026-10-15T20:16:46.682Z",
+  "profiles": [
+    {
+      "requested": "Manchester City",
+      "identity": {
+        "id": "cmv84vvwu00lqc76wqd7uz8mh",
+        "externalId": "England:man city",
+        "name": "Man City",
+        "provider": "FOOTBALL_DATA",
+        "country": "England"
+      },
+      "queryCount": 3,
+      "elapsedMs": 35,
+      "profile": {
+        "teamId": "cmv84vvwu00lqc76wqd7uz8mh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 5,
+        "venue": "ALL",
+        "competitionId": null,
+        "sampleSize": 5,
+        "coverage": {
+          "ft": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-04-22T19:00:00.000Z",
+        "newestFixtureDate": "2025-05-25T15:00:00.000Z",
+        "fixtureIds": [
+          "cmv84wiio0r27c76wodtqqu73",
+          "cmv84whyz0qf5c76wiumi8q6b",
+          "cmv84wh140pbyc76wgtz72gij",
+          "cmv84wgd60omgc76w0lp8y3k4",
+          "cmv84wfst0nzec76wrmwpvl64"
+        ],
+        "features": {
+          "matches": 5,
+          "wins": 4,
+          "draws": 1,
+          "losses": 0,
+          "goalsFor": 8,
+          "goalsAgainst": 2,
+          "avgGoalsFor": 1.6,
+          "avgGoalsAgainst": 0.4,
+          "scoredRate": 0.8,
+          "concededRate": 0.4,
+          "cleanSheetRate": 0.6,
+          "bttsRate": 0.4,
+          "over05FtRate": 0.8,
+          "over15FtRate": 0.6,
+          "over25FtRate": 0.4,
+          "over05HtRate": 0.8,
+          "over15HtRate": 0.4,
+          "avgShots": 16.2,
+          "avgShotsOnTarget": 4.6,
+          "avgCorners": 7.6,
+          "avgYellowCards": 0.8,
+          "avgRedCards": 0.2,
+          "avgFouls": 7.2,
+          "scoringStreak": 2,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Manchester City",
+      "identity": {
+        "id": "cmv84vvwu00lqc76wqd7uz8mh",
+        "externalId": "England:man city",
+        "name": "Man City",
+        "provider": "FOOTBALL_DATA",
+        "country": "England"
+      },
+      "queryCount": 3,
+      "elapsedMs": 15,
+      "profile": {
+        "teamId": "cmv84vvwu00lqc76wqd7uz8mh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 10,
+        "venue": "ALL",
+        "competitionId": null,
+        "sampleSize": 10,
+        "coverage": {
+          "ft": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-03-15T15:00:00.000Z",
+        "newestFixtureDate": "2025-05-25T15:00:00.000Z",
+        "fixtureIds": [
+          "cmv84wiio0r27c76wodtqqu73",
+          "cmv84whyz0qf5c76wiumi8q6b",
+          "cmv84wh140pbyc76wgtz72gij",
+          "cmv84wgd60omgc76w0lp8y3k4",
+          "cmv84wfst0nzec76wrmwpvl64",
+          "cmv84wf6r0nccc76wpksksxzg",
+          "cmv84wekl0mmzc76wj09hj5k5",
+          "cmv84wegp0midc76w9ozqyg18",
+          "cmv84wdk80ljnc76wch2bg3el",
+          "cmv84wd0i0kxqc76w3lgn81a9"
+        ],
+        "features": {
+          "matches": 10,
+          "wins": 7,
+          "draws": 3,
+          "losses": 0,
+          "goalsFor": 19,
+          "goalsAgainst": 6,
+          "avgGoalsFor": 1.9,
+          "avgGoalsAgainst": 0.6,
+          "scoredRate": 0.8,
+          "concededRate": 0.4,
+          "cleanSheetRate": 0.6,
+          "bttsRate": 0.4,
+          "over05FtRate": 0.8,
+          "over15FtRate": 0.7,
+          "over25FtRate": 0.4,
+          "over05HtRate": 0.7,
+          "over15HtRate": 0.5,
+          "avgShots": 15.2,
+          "avgShotsOnTarget": 5.2,
+          "avgCorners": 5.6,
+          "avgYellowCards": 1.1,
+          "avgRedCards": 0.1,
+          "avgFouls": 8.2,
+          "scoringStreak": 2,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Manchester City",
+      "identity": {
+        "id": "cmv84vvwu00lqc76wqd7uz8mh",
+        "externalId": "England:man city",
+        "name": "Man City",
+        "provider": "FOOTBALL_DATA",
+        "country": "England"
+      },
+      "queryCount": 3,
+      "elapsedMs": 15,
+      "profile": {
+        "teamId": "cmv84vvwu00lqc76wqd7uz8mh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 20,
+        "venue": "ALL",
+        "competitionId": null,
+        "sampleSize": 20,
+        "coverage": {
+          "ft": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2024-12-29T14:30:00.000Z",
+        "newestFixtureDate": "2025-05-25T15:00:00.000Z",
+        "fixtureIds": [
+          "cmv84wiio0r27c76wodtqqu73",
+          "cmv84whyz0qf5c76wiumi8q6b",
+          "cmv84wh140pbyc76wgtz72gij",
+          "cmv84wgd60omgc76w0lp8y3k4",
+          "cmv84wfst0nzec76wrmwpvl64",
+          "cmv84wf6r0nccc76wpksksxzg",
+          "cmv84wekl0mmzc76wj09hj5k5",
+          "cmv84wegp0midc76w9ozqyg18",
+          "cmv84wdk80ljnc76wch2bg3el",
+          "cmv84wd0i0kxqc76w3lgn81a9",
+          "cmv84wcba0k3uc76w56z56pg8",
+          "cmv84wc2w0jtuc76wcwiyafr8",
+          "cmv84wbnh0jccc76wav0dqmpp",
+          "cmv84warq0iapc76wy2cknnmi",
+          "cmv84waa70hqbc76w2jc3vbiu",
+          "cmv84w9ia0grac76waqm0b3mm",
+          "cmv84w93s0g8jc76wd9riix9b",
+          "cmv84w84j0eyqc76w4qni038w",
+          "cmv84w7jp0ed1c76wxib1uzut",
+          "cmv84w6r10de0c76wcenihhrw"
+        ],
+        "features": {
+          "matches": 20,
+          "wins": 13,
+          "draws": 4,
+          "losses": 3,
+          "goalsFor": 42,
+          "goalsAgainst": 18,
+          "avgGoalsFor": 2.1,
+          "avgGoalsAgainst": 0.9,
+          "scoredRate": 0.8,
+          "concededRate": 0.5,
+          "cleanSheetRate": 0.5,
+          "bttsRate": 0.4,
+          "over05FtRate": 0.9,
+          "over15FtRate": 0.75,
+          "over25FtRate": 0.5,
+          "over05HtRate": 0.75,
+          "over15HtRate": 0.5,
+          "avgShots": 14.45,
+          "avgShotsOnTarget": 5.55,
+          "avgCorners": 5.1,
+          "avgYellowCards": 1,
+          "avgRedCards": 0.05,
+          "avgFouls": 7.5,
+          "scoringStreak": 2,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Manchester City",
+      "identity": {
+        "id": "cmv84vvwu00lqc76wqd7uz8mh",
+        "externalId": "England:man city",
+        "name": "Man City",
+        "provider": "FOOTBALL_DATA",
+        "country": "England"
+      },
+      "queryCount": 3,
+      "elapsedMs": 9,
+      "profile": {
+        "teamId": "cmv84vvwu00lqc76wqd7uz8mh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 5,
+        "venue": "HOME",
+        "competitionId": null,
+        "sampleSize": 5,
+        "coverage": {
+          "ft": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-04-02T18:45:00.000Z",
+        "newestFixtureDate": "2025-05-20T19:00:00.000Z",
+        "fixtureIds": [
+          "cmv84whyz0qf5c76wiumi8q6b",
+          "cmv84wgd60omgc76w0lp8y3k4",
+          "cmv84wfst0nzec76wrmwpvl64",
+          "cmv84wekl0mmzc76wj09hj5k5",
+          "cmv84wdk80ljnc76wch2bg3el"
+        ],
+        "features": {
+          "matches": 5,
+          "wins": 5,
+          "draws": 0,
+          "losses": 0,
+          "goalsFor": 13,
+          "goalsAgainst": 4,
+          "avgGoalsFor": 2.6,
+          "avgGoalsAgainst": 0.8,
+          "scoredRate": 1,
+          "concededRate": 0.6,
+          "cleanSheetRate": 0.4,
+          "bttsRate": 0.6,
+          "over05FtRate": 1,
+          "over15FtRate": 0.8,
+          "over25FtRate": 0.6,
+          "over05HtRate": 1,
+          "over15HtRate": 0.8,
+          "avgShots": 14.8,
+          "avgShotsOnTarget": 5.4,
+          "avgCorners": 4.6,
+          "avgYellowCards": 1.4,
+          "avgRedCards": 0.2,
+          "avgFouls": 8.8,
+          "scoringStreak": 5,
+          "concedingStreak": 1
+        },
+        "streakCensored": {
+          "scoring": true,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Manchester City",
+      "identity": {
+        "id": "cmv84vvwu00lqc76wqd7uz8mh",
+        "externalId": "England:man city",
+        "name": "Man City",
+        "provider": "FOOTBALL_DATA",
+        "country": "England"
+      },
+      "queryCount": 3,
+      "elapsedMs": 8,
+      "profile": {
+        "teamId": "cmv84vvwu00lqc76wqd7uz8mh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 10,
+        "venue": "HOME",
+        "competitionId": null,
+        "sampleSize": 10,
+        "coverage": {
+          "ft": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-01-04T15:00:00.000Z",
+        "newestFixtureDate": "2025-05-20T19:00:00.000Z",
+        "fixtureIds": [
+          "cmv84whyz0qf5c76wiumi8q6b",
+          "cmv84wgd60omgc76w0lp8y3k4",
+          "cmv84wfst0nzec76wrmwpvl64",
+          "cmv84wekl0mmzc76wj09hj5k5",
+          "cmv84wdk80ljnc76wch2bg3el",
+          "cmv84wd0i0kxqc76w3lgn81a9",
+          "cmv84wbnh0jccc76wav0dqmpp",
+          "cmv84warq0iapc76wy2cknnmi",
+          "cmv84w9ia0grac76waqm0b3mm",
+          "cmv84w7jp0ed1c76wxib1uzut"
+        ],
+        "features": {
+          "matches": 10,
+          "wins": 8,
+          "draws": 1,
+          "losses": 1,
+          "goalsFor": 26,
+          "goalsAgainst": 10,
+          "avgGoalsFor": 2.6,
+          "avgGoalsAgainst": 1,
+          "scoredRate": 0.9,
+          "concededRate": 0.7,
+          "cleanSheetRate": 0.3,
+          "bttsRate": 0.6,
+          "over05FtRate": 1,
+          "over15FtRate": 0.9,
+          "over25FtRate": 0.7,
+          "over05HtRate": 1,
+          "over15HtRate": 0.9,
+          "avgShots": 13.7,
+          "avgShotsOnTarget": 5.5,
+          "avgCorners": 5,
+          "avgYellowCards": 1.4,
+          "avgRedCards": 0.1,
+          "avgFouls": 7.6,
+          "scoringStreak": 6,
+          "concedingStreak": 1
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Manchester City",
+      "identity": {
+        "id": "cmv84vvwu00lqc76wqd7uz8mh",
+        "externalId": "England:man city",
+        "name": "Man City",
+        "provider": "FOOTBALL_DATA",
+        "country": "England"
+      },
+      "queryCount": 3,
+      "elapsedMs": 19,
+      "profile": {
+        "teamId": "cmv84vvwu00lqc76wqd7uz8mh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 20,
+        "venue": "HOME",
+        "competitionId": null,
+        "sampleSize": 20,
+        "coverage": {
+          "ft": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2024-05-19T15:00:00.000Z",
+        "newestFixtureDate": "2025-05-20T19:00:00.000Z",
+        "fixtureIds": [
+          "cmv84whyz0qf5c76wiumi8q6b",
+          "cmv84wgd60omgc76w0lp8y3k4",
+          "cmv84wfst0nzec76wrmwpvl64",
+          "cmv84wekl0mmzc76wj09hj5k5",
+          "cmv84wdk80ljnc76wch2bg3el",
+          "cmv84wd0i0kxqc76w3lgn81a9",
+          "cmv84wbnh0jccc76wav0dqmpp",
+          "cmv84warq0iapc76wy2cknnmi",
+          "cmv84w9ia0grac76waqm0b3mm",
+          "cmv84w7jp0ed1c76wxib1uzut",
+          "cmv84w65f0cn6c76ws8vvoyl8",
+          "cmv84w5c00blgc76w448y5kl8",
+          "cmv84w3y509yvc76wn9xzhfrc",
+          "cmv84w2vq08p2c76wfnosttmj",
+          "cmv84w0n3062mc76wfy17c14a",
+          "cmv84vzmz04vic76wlv32sxjz",
+          "cmv84vyne03o9c76wi9d4irft",
+          "cmv84vxl602juc76ww9geaxd5",
+          "cmv84vwbk011yc76wmsbjbdsx",
+          "cmv8gnh7a6j54c7lkp1upce2x"
+        ],
+        "features": {
+          "matches": 20,
+          "wins": 14,
+          "draws": 3,
+          "losses": 3,
+          "goalsFor": 46,
+          "goalsAgainst": 24,
+          "avgGoalsFor": 2.3,
+          "avgGoalsAgainst": 1.2,
+          "scoredRate": 0.9,
+          "concededRate": 0.75,
+          "cleanSheetRate": 0.25,
+          "bttsRate": 0.65,
+          "over05FtRate": 1,
+          "over15FtRate": 0.9,
+          "over25FtRate": 0.75,
+          "over05HtRate": 1,
+          "over15HtRate": 0.85,
+          "avgShots": 17.3,
+          "avgShotsOnTarget": 6.25,
+          "avgCorners": 7.2,
+          "avgYellowCards": 1.65,
+          "avgRedCards": 0.05,
+          "avgFouls": 7.4,
+          "scoringStreak": 6,
+          "concedingStreak": 1
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Manchester City",
+      "identity": {
+        "id": "cmv84vvwu00lqc76wqd7uz8mh",
+        "externalId": "England:man city",
+        "name": "Man City",
+        "provider": "FOOTBALL_DATA",
+        "country": "England"
+      },
+      "queryCount": 3,
+      "elapsedMs": 8,
+      "profile": {
+        "teamId": "cmv84vvwu00lqc76wqd7uz8mh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 5,
+        "venue": "AWAY",
+        "competitionId": null,
+        "sampleSize": 5,
+        "coverage": {
+          "ft": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-03-08T12:30:00.000Z",
+        "newestFixtureDate": "2025-05-25T15:00:00.000Z",
+        "fixtureIds": [
+          "cmv84wiio0r27c76wodtqqu73",
+          "cmv84wh140pbyc76wgtz72gij",
+          "cmv84wf6r0nccc76wpksksxzg",
+          "cmv84wegp0midc76w9ozqyg18",
+          "cmv84wcba0k3uc76w56z56pg8"
+        ],
+        "features": {
+          "matches": 5,
+          "wins": 2,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 4,
+          "goalsAgainst": 1,
+          "avgGoalsFor": 0.8,
+          "avgGoalsAgainst": 0.2,
+          "scoredRate": 0.4,
+          "concededRate": 0.2,
+          "cleanSheetRate": 0.8,
+          "bttsRate": 0,
+          "over05FtRate": 0.6,
+          "over15FtRate": 0.4,
+          "over25FtRate": 0,
+          "over05HtRate": 0.2,
+          "over15HtRate": 0,
+          "avgShots": 16.2,
+          "avgShotsOnTarget": 5,
+          "avgCorners": 6.2,
+          "avgYellowCards": 0.8,
+          "avgRedCards": 0,
+          "avgFouls": 7,
+          "scoringStreak": 1,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Manchester City",
+      "identity": {
+        "id": "cmv84vvwu00lqc76wqd7uz8mh",
+        "externalId": "England:man city",
+        "name": "Man City",
+        "provider": "FOOTBALL_DATA",
+        "country": "England"
+      },
+      "queryCount": 3,
+      "elapsedMs": 7,
+      "profile": {
+        "teamId": "cmv84vvwu00lqc76wqd7uz8mh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 10,
+        "venue": "AWAY",
+        "competitionId": null,
+        "sampleSize": 10,
+        "coverage": {
+          "ft": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2024-12-29T14:30:00.000Z",
+        "newestFixtureDate": "2025-05-25T15:00:00.000Z",
+        "fixtureIds": [
+          "cmv84wiio0r27c76wodtqqu73",
+          "cmv84wh140pbyc76wgtz72gij",
+          "cmv84wf6r0nccc76wpksksxzg",
+          "cmv84wegp0midc76w9ozqyg18",
+          "cmv84wcba0k3uc76w56z56pg8",
+          "cmv84wc2w0jtuc76wcwiyafr8",
+          "cmv84waa70hqbc76w2jc3vbiu",
+          "cmv84w93s0g8jc76wd9riix9b",
+          "cmv84w84j0eyqc76w4qni038w",
+          "cmv84w6r10de0c76wcenihhrw"
+        ],
+        "features": {
+          "matches": 10,
+          "wins": 5,
+          "draws": 3,
+          "losses": 2,
+          "goalsFor": 16,
+          "goalsAgainst": 8,
+          "avgGoalsFor": 1.6,
+          "avgGoalsAgainst": 0.8,
+          "scoredRate": 0.7,
+          "concededRate": 0.3,
+          "cleanSheetRate": 0.7,
+          "bttsRate": 0.2,
+          "over05FtRate": 0.8,
+          "over15FtRate": 0.6,
+          "over25FtRate": 0.3,
+          "over05HtRate": 0.5,
+          "over15HtRate": 0.1,
+          "avgShots": 15.2,
+          "avgShotsOnTarget": 5.6,
+          "avgCorners": 5.2,
+          "avgYellowCards": 0.6,
+          "avgRedCards": 0,
+          "avgFouls": 7.4,
+          "scoringStreak": 1,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Manchester City",
+      "identity": {
+        "id": "cmv84vvwu00lqc76wqd7uz8mh",
+        "externalId": "England:man city",
+        "name": "Man City",
+        "provider": "FOOTBALL_DATA",
+        "country": "England"
+      },
+      "queryCount": 3,
+      "elapsedMs": 15,
+      "profile": {
+        "teamId": "cmv84vvwu00lqc76wqd7uz8mh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 20,
+        "venue": "AWAY",
+        "competitionId": null,
+        "sampleSize": 20,
+        "coverage": {
+          "ft": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2024-05-14T19:00:00.000Z",
+        "newestFixtureDate": "2025-05-25T15:00:00.000Z",
+        "fixtureIds": [
+          "cmv84wiio0r27c76wodtqqu73",
+          "cmv84wh140pbyc76wgtz72gij",
+          "cmv84wf6r0nccc76wpksksxzg",
+          "cmv84wegp0midc76w9ozqyg18",
+          "cmv84wcba0k3uc76w56z56pg8",
+          "cmv84wc2w0jtuc76wcwiyafr8",
+          "cmv84waa70hqbc76w2jc3vbiu",
+          "cmv84w93s0g8jc76wd9riix9b",
+          "cmv84w84j0eyqc76w4qni038w",
+          "cmv84w6r10de0c76wcenihhrw",
+          "cmv84w5kh0bw8c76wkmp1xu0d",
+          "cmv84w4il0amvc76wm3elv7zv",
+          "cmv84w3p709o3c76w2g4464k6",
+          "cmv84w25u07sqc76w5f6mvsr7",
+          "cmv84w1dz06yyc76w7ajpo5qt",
+          "cmv84w0el05ruc76wzcniotep",
+          "cmv84vyrd03r3c76waoq15l2v",
+          "cmv84vx2f01yac76w5snl5tjm",
+          "cmv84vvwz00lsc76wo3n2we76",
+          "cmv8gngs26ioic7lkepb8pd29"
+        ],
+        "features": {
+          "matches": 20,
+          "wins": 9,
+          "draws": 5,
+          "losses": 6,
+          "goalsFor": 31,
+          "goalsAgainst": 21,
+          "avgGoalsFor": 1.55,
+          "avgGoalsAgainst": 1.05,
+          "scoredRate": 0.8,
+          "concededRate": 0.55,
+          "cleanSheetRate": 0.45,
+          "bttsRate": 0.45,
+          "over05FtRate": 0.9,
+          "over15FtRate": 0.8,
+          "over25FtRate": 0.45,
+          "over05HtRate": 0.7,
+          "over15HtRate": 0.2,
+          "avgShots": 14.85,
+          "avgShotsOnTarget": 5.45,
+          "avgCorners": 6.2,
+          "avgYellowCards": 1.35,
+          "avgRedCards": 0.05,
+          "avgFouls": 7.65,
+          "scoringStreak": 1,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Real Madrid",
+      "identity": {
+        "id": "cmv8h182a0066c7j4lh5622bh",
+        "externalId": "Spain:real madrid",
+        "name": "Real Madrid",
+        "provider": "FOOTBALL_DATA",
+        "country": "Spain"
+      },
+      "queryCount": 3,
+      "elapsedMs": 12,
+      "profile": {
+        "teamId": "cmv8h182a0066c7j4lh5622bh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 5,
+        "venue": "ALL",
+        "competitionId": null,
+        "sampleSize": 5,
+        "coverage": {
+          "ft": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-05-04T12:00:00.000Z",
+        "newestFixtureDate": "2025-05-24T14:15:00.000Z",
+        "fixtureIds": [
+          "cmv9wi63d4f77c7fgkcdaf15k",
+          "cmv9wi5qp4er2c7fg95gdt3tk",
+          "cmv9wi59c4e6bc7fgh7nr0y5t",
+          "cmv9wi4ut4dnqc7fg1z03l2vd",
+          "cmv9wi4b34cw2c7fga2ssagtb"
+        ],
+        "features": {
+          "matches": 5,
+          "wins": 4,
+          "draws": 0,
+          "losses": 1,
+          "goalsFor": 12,
+          "goalsAgainst": 7,
+          "avgGoalsFor": 2.4,
+          "avgGoalsAgainst": 1.4,
+          "scoredRate": 1,
+          "concededRate": 0.6,
+          "cleanSheetRate": 0.4,
+          "bttsRate": 0.6,
+          "over05FtRate": 1,
+          "over15FtRate": 1,
+          "over25FtRate": 0.6,
+          "over05HtRate": 0.8,
+          "over15HtRate": 0.4,
+          "avgShots": 19.4,
+          "avgShotsOnTarget": 7.6,
+          "avgCorners": 10,
+          "avgYellowCards": 1.2,
+          "avgRedCards": 0,
+          "avgFouls": 8,
+          "scoringStreak": 5,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": true,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Real Madrid",
+      "identity": {
+        "id": "cmv8h182a0066c7j4lh5622bh",
+        "externalId": "Spain:real madrid",
+        "name": "Real Madrid",
+        "provider": "FOOTBALL_DATA",
+        "country": "Spain"
+      },
+      "queryCount": 3,
+      "elapsedMs": 12,
+      "profile": {
+        "teamId": "cmv8h182a0066c7j4lh5622bh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 10,
+        "venue": "ALL",
+        "competitionId": null,
+        "sampleSize": 10,
+        "coverage": {
+          "ft": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-03-29T20:00:00.000Z",
+        "newestFixtureDate": "2025-05-24T14:15:00.000Z",
+        "fixtureIds": [
+          "cmv9wi63d4f77c7fgkcdaf15k",
+          "cmv9wi5qp4er2c7fg95gdt3tk",
+          "cmv9wi59c4e6bc7fgh7nr0y5t",
+          "cmv9wi4ut4dnqc7fg1z03l2vd",
+          "cmv9wi4b34cw2c7fga2ssagtb",
+          "cmv9wi3qw4c4ec7fgz2qj488x",
+          "cmv9wi3gr4bqkc7fg1v1dsykf",
+          "cmv9wi2wr4aywc7fg4az06ddf",
+          "cmv9wi2894a2hc7fg9p8hg7w2",
+          "cmv9wi1rw49hqc7fgn6asd4c0"
+        ],
+        "features": {
+          "matches": 10,
+          "wins": 8,
+          "draws": 0,
+          "losses": 2,
+          "goalsFor": 19,
+          "goalsAgainst": 11,
+          "avgGoalsFor": 1.9,
+          "avgGoalsAgainst": 1.1,
+          "scoredRate": 1,
+          "concededRate": 0.5,
+          "cleanSheetRate": 0.5,
+          "bttsRate": 0.5,
+          "over05FtRate": 1,
+          "over15FtRate": 0.7,
+          "over25FtRate": 0.5,
+          "over05HtRate": 0.8,
+          "over15HtRate": 0.3,
+          "avgShots": 18.9,
+          "avgShotsOnTarget": 7.5,
+          "avgCorners": 8.9,
+          "avgYellowCards": 1.3,
+          "avgRedCards": 0.1,
+          "avgFouls": 8.5,
+          "scoringStreak": 10,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": true,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Real Madrid",
+      "identity": {
+        "id": "cmv8h182a0066c7j4lh5622bh",
+        "externalId": "Spain:real madrid",
+        "name": "Real Madrid",
+        "provider": "FOOTBALL_DATA",
+        "country": "Spain"
+      },
+      "queryCount": 3,
+      "elapsedMs": 13,
+      "profile": {
+        "teamId": "cmv8h182a0066c7j4lh5622bh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 20,
+        "venue": "ALL",
+        "competitionId": null,
+        "sampleSize": 20,
+        "coverage": {
+          "ft": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-01-03T20:00:00.000Z",
+        "newestFixtureDate": "2025-05-24T14:15:00.000Z",
+        "fixtureIds": [
+          "cmv9wi63d4f77c7fgkcdaf15k",
+          "cmv9wi5qp4er2c7fg95gdt3tk",
+          "cmv9wi59c4e6bc7fgh7nr0y5t",
+          "cmv9wi4ut4dnqc7fg1z03l2vd",
+          "cmv9wi4b34cw2c7fga2ssagtb",
+          "cmv9wi3qw4c4ec7fgz2qj488x",
+          "cmv9wi3gr4bqkc7fg1v1dsykf",
+          "cmv9wi2wr4aywc7fg4az06ddf",
+          "cmv9wi2894a2hc7fg9p8hg7w2",
+          "cmv9wi1rw49hqc7fgn6asd4c0",
+          "cmv9wi18u48qwc7fgorw9ac6i",
+          "cmv9wi0td486wc7fg21dkivn8",
+          "cmv9wi0bt47hwc7fgwrzowp8k",
+          "cmv9whzx14709c7fgd5v4l4wy",
+          "cmv9whz5m4619c7fg1oq4qre0",
+          "cmv9whypl45g6c7fgkfirhveo",
+          "cmv9why5844p8c7fgnr4khnpc",
+          "cmv9whxki43yac7fgsomdhhe3",
+          "cmv9whx1i43clc7fg2vape6z3",
+          "cmv9whw1w4286c7fg84to3igi"
+        ],
+        "features": {
+          "matches": 20,
+          "wins": 14,
+          "draws": 2,
+          "losses": 4,
+          "goalsFor": 37,
+          "goalsAgainst": 20,
+          "avgGoalsFor": 1.85,
+          "avgGoalsAgainst": 1,
+          "scoredRate": 0.95,
+          "concededRate": 0.65,
+          "cleanSheetRate": 0.35,
+          "bttsRate": 0.6,
+          "over05FtRate": 1,
+          "over15FtRate": 0.8,
+          "over25FtRate": 0.55,
+          "over05HtRate": 0.85,
+          "over15HtRate": 0.35,
+          "avgShots": 18.15,
+          "avgShotsOnTarget": 6.8,
+          "avgCorners": 7.3,
+          "avgYellowCards": 1.45,
+          "avgRedCards": 0.15,
+          "avgFouls": 8.45,
+          "scoringStreak": 16,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Real Madrid",
+      "identity": {
+        "id": "cmv8h182a0066c7j4lh5622bh",
+        "externalId": "Spain:real madrid",
+        "name": "Real Madrid",
+        "provider": "FOOTBALL_DATA",
+        "country": "Spain"
+      },
+      "queryCount": 3,
+      "elapsedMs": 7,
+      "profile": {
+        "teamId": "cmv8h182a0066c7j4lh5622bh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 5,
+        "venue": "HOME",
+        "competitionId": null,
+        "sampleSize": 5,
+        "coverage": {
+          "ft": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-04-05T14:15:00.000Z",
+        "newestFixtureDate": "2025-05-24T14:15:00.000Z",
+        "fixtureIds": [
+          "cmv9wi63d4f77c7fgkcdaf15k",
+          "cmv9wi59c4e6bc7fgh7nr0y5t",
+          "cmv9wi4b34cw2c7fga2ssagtb",
+          "cmv9wi3gr4bqkc7fg1v1dsykf",
+          "cmv9wi2894a2hc7fg9p8hg7w2"
+        ],
+        "features": {
+          "matches": 5,
+          "wins": 4,
+          "draws": 0,
+          "losses": 1,
+          "goalsFor": 9,
+          "goalsAgainst": 5,
+          "avgGoalsFor": 1.8,
+          "avgGoalsAgainst": 1,
+          "scoredRate": 1,
+          "concededRate": 0.6,
+          "cleanSheetRate": 0.4,
+          "bttsRate": 0.6,
+          "over05FtRate": 1,
+          "over15FtRate": 0.8,
+          "over25FtRate": 0.6,
+          "over05HtRate": 0.8,
+          "over15HtRate": 0.2,
+          "avgShots": 23,
+          "avgShotsOnTarget": 8.6,
+          "avgCorners": 12.8,
+          "avgYellowCards": 0.6,
+          "avgRedCards": 0,
+          "avgFouls": 6.6,
+          "scoringStreak": 5,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": true,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Real Madrid",
+      "identity": {
+        "id": "cmv8h182a0066c7j4lh5622bh",
+        "externalId": "Spain:real madrid",
+        "name": "Real Madrid",
+        "provider": "FOOTBALL_DATA",
+        "country": "Spain"
+      },
+      "queryCount": 3,
+      "elapsedMs": 8,
+      "profile": {
+        "teamId": "cmv8h182a0066c7j4lh5622bh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 10,
+        "venue": "HOME",
+        "competitionId": null,
+        "sampleSize": 10,
+        "coverage": {
+          "ft": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-01-19T15:15:00.000Z",
+        "newestFixtureDate": "2025-05-24T14:15:00.000Z",
+        "fixtureIds": [
+          "cmv9wi63d4f77c7fgkcdaf15k",
+          "cmv9wi59c4e6bc7fgh7nr0y5t",
+          "cmv9wi4b34cw2c7fga2ssagtb",
+          "cmv9wi3gr4bqkc7fg1v1dsykf",
+          "cmv9wi2894a2hc7fg9p8hg7w2",
+          "cmv9wi1rw49hqc7fgn6asd4c0",
+          "cmv9wi0td486wc7fg21dkivn8",
+          "cmv9whzx14709c7fgd5v4l4wy",
+          "cmv9whypl45g6c7fgkfirhveo",
+          "cmv9whx1i43clc7fg2vape6z3"
+        ],
+        "features": {
+          "matches": 10,
+          "wins": 8,
+          "draws": 1,
+          "losses": 1,
+          "goalsFor": 21,
+          "goalsAgainst": 10,
+          "avgGoalsFor": 2.1,
+          "avgGoalsAgainst": 1,
+          "scoredRate": 1,
+          "concededRate": 0.7,
+          "cleanSheetRate": 0.3,
+          "bttsRate": 0.7,
+          "over05FtRate": 1,
+          "over15FtRate": 0.9,
+          "over25FtRate": 0.6,
+          "over05HtRate": 0.9,
+          "over15HtRate": 0.4,
+          "avgShots": 22,
+          "avgShotsOnTarget": 8.5,
+          "avgCorners": 10.1,
+          "avgYellowCards": 0.8,
+          "avgRedCards": 0,
+          "avgFouls": 8,
+          "scoringStreak": 10,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": true,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Real Madrid",
+      "identity": {
+        "id": "cmv8h182a0066c7j4lh5622bh",
+        "externalId": "Spain:real madrid",
+        "name": "Real Madrid",
+        "provider": "FOOTBALL_DATA",
+        "country": "Spain"
+      },
+      "queryCount": 3,
+      "elapsedMs": 21,
+      "profile": {
+        "teamId": "cmv8h182a0066c7j4lh5622bh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 20,
+        "venue": "HOME",
+        "competitionId": null,
+        "sampleSize": 20,
+        "coverage": {
+          "ft": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2024-05-25T19:00:00.000Z",
+        "newestFixtureDate": "2025-05-24T14:15:00.000Z",
+        "fixtureIds": [
+          "cmv9wi63d4f77c7fgkcdaf15k",
+          "cmv9wi59c4e6bc7fgh7nr0y5t",
+          "cmv9wi4b34cw2c7fga2ssagtb",
+          "cmv9wi3gr4bqkc7fg1v1dsykf",
+          "cmv9wi2894a2hc7fg9p8hg7w2",
+          "cmv9wi1rw49hqc7fgn6asd4c0",
+          "cmv9wi0td486wc7fg21dkivn8",
+          "cmv9whzx14709c7fgd5v4l4wy",
+          "cmv9whypl45g6c7fgkfirhveo",
+          "cmv9whx1i43clc7fg2vape6z3",
+          "cmv9whvpj41xec7fg9mj3d9oe",
+          "cmv9whtji3zejc7fg1qdesheu",
+          "cmv9whs093xlzc7fg7upj0682",
+          "cmv9whr2r3whoc7fgaxdsed1d",
+          "cmv9whptb3v2cc7fgo0he6bbh",
+          "cmv9whoip3thrc7fgxr4ddg4w",
+          "cmv9whnz63sw7c7fgpnfgr6oh",
+          "cmv9whmud3rjkc7fg4umkpa1d",
+          "cmv9whli43pwac7fgp6kobnj7",
+          "cmv9whiu33oehc7fgg7xcu5a9"
+        ],
+        "features": {
+          "matches": 20,
+          "wins": 16,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 45,
+          "goalsAgainst": 19,
+          "avgGoalsFor": 2.25,
+          "avgGoalsAgainst": 0.95,
+          "scoredRate": 0.9,
+          "concededRate": 0.55,
+          "cleanSheetRate": 0.45,
+          "bttsRate": 0.5,
+          "over05FtRate": 0.95,
+          "over15FtRate": 0.9,
+          "over25FtRate": 0.6,
+          "over05HtRate": 0.7,
+          "over15HtRate": 0.4,
+          "avgShots": 18.9,
+          "avgShotsOnTarget": 7.55,
+          "avgCorners": 8.2,
+          "avgYellowCards": 1.3,
+          "avgRedCards": 0,
+          "avgFouls": 8.15,
+          "scoringStreak": 13,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Real Madrid",
+      "identity": {
+        "id": "cmv8h182a0066c7j4lh5622bh",
+        "externalId": "Spain:real madrid",
+        "name": "Real Madrid",
+        "provider": "FOOTBALL_DATA",
+        "country": "Spain"
+      },
+      "queryCount": 3,
+      "elapsedMs": 7,
+      "profile": {
+        "teamId": "cmv8h182a0066c7j4lh5622bh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 5,
+        "venue": "AWAY",
+        "competitionId": null,
+        "sampleSize": 5,
+        "coverage": {
+          "ft": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-03-15T17:30:00.000Z",
+        "newestFixtureDate": "2025-05-18T17:00:00.000Z",
+        "fixtureIds": [
+          "cmv9wi5qp4er2c7fg95gdt3tk",
+          "cmv9wi4ut4dnqc7fg1z03l2vd",
+          "cmv9wi3qw4c4ec7fgz2qj488x",
+          "cmv9wi2wr4aywc7fg4az06ddf",
+          "cmv9wi18u48qwc7fgorw9ac6i"
+        ],
+        "features": {
+          "matches": 5,
+          "wins": 4,
+          "draws": 0,
+          "losses": 1,
+          "goalsFor": 9,
+          "goalsAgainst": 5,
+          "avgGoalsFor": 1.8,
+          "avgGoalsAgainst": 1,
+          "scoredRate": 1,
+          "concededRate": 0.4,
+          "cleanSheetRate": 0.6,
+          "bttsRate": 0.4,
+          "over05FtRate": 1,
+          "over15FtRate": 0.6,
+          "over25FtRate": 0.4,
+          "over05HtRate": 0.8,
+          "over15HtRate": 0.4,
+          "avgShots": 11.8,
+          "avgShotsOnTarget": 5.4,
+          "avgCorners": 4.2,
+          "avgYellowCards": 2,
+          "avgRedCards": 0.2,
+          "avgFouls": 9.2,
+          "scoringStreak": 5,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": true,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Real Madrid",
+      "identity": {
+        "id": "cmv8h182a0066c7j4lh5622bh",
+        "externalId": "Spain:real madrid",
+        "name": "Real Madrid",
+        "provider": "FOOTBALL_DATA",
+        "country": "Spain"
+      },
+      "queryCount": 3,
+      "elapsedMs": 8,
+      "profile": {
+        "teamId": "cmv8h182a0066c7j4lh5622bh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 10,
+        "venue": "AWAY",
+        "competitionId": null,
+        "sampleSize": 10,
+        "coverage": {
+          "ft": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-01-03T20:00:00.000Z",
+        "newestFixtureDate": "2025-05-18T17:00:00.000Z",
+        "fixtureIds": [
+          "cmv9wi5qp4er2c7fg95gdt3tk",
+          "cmv9wi4ut4dnqc7fg1z03l2vd",
+          "cmv9wi3qw4c4ec7fgz2qj488x",
+          "cmv9wi2wr4aywc7fg4az06ddf",
+          "cmv9wi18u48qwc7fgorw9ac6i",
+          "cmv9wi0bt47hwc7fgwrzowp8k",
+          "cmv9whz5m4619c7fg1oq4qre0",
+          "cmv9why5844p8c7fgnr4khnpc",
+          "cmv9whxki43yac7fgsomdhhe3",
+          "cmv9whw1w4286c7fg84to3igi"
+        ],
+        "features": {
+          "matches": 10,
+          "wins": 6,
+          "draws": 1,
+          "losses": 3,
+          "goalsFor": 16,
+          "goalsAgainst": 10,
+          "avgGoalsFor": 1.6,
+          "avgGoalsAgainst": 1,
+          "scoredRate": 0.9,
+          "concededRate": 0.6,
+          "cleanSheetRate": 0.4,
+          "bttsRate": 0.5,
+          "over05FtRate": 1,
+          "over15FtRate": 0.7,
+          "over25FtRate": 0.5,
+          "over05HtRate": 0.8,
+          "over15HtRate": 0.3,
+          "avgShots": 14.3,
+          "avgShotsOnTarget": 5.1,
+          "avgCorners": 4.5,
+          "avgYellowCards": 2.1,
+          "avgRedCards": 0.3,
+          "avgFouls": 8.9,
+          "scoringStreak": 7,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Real Madrid",
+      "identity": {
+        "id": "cmv8h182a0066c7j4lh5622bh",
+        "externalId": "Spain:real madrid",
+        "name": "Real Madrid",
+        "provider": "FOOTBALL_DATA",
+        "country": "Spain"
+      },
+      "queryCount": 3,
+      "elapsedMs": 20,
+      "profile": {
+        "teamId": "cmv8h182a0066c7j4lh5622bh",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 20,
+        "venue": "AWAY",
+        "competitionId": null,
+        "sampleSize": 20,
+        "coverage": {
+          "ft": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2024-05-19T17:00:00.000Z",
+        "newestFixtureDate": "2025-05-18T17:00:00.000Z",
+        "fixtureIds": [
+          "cmv9wi5qp4er2c7fg95gdt3tk",
+          "cmv9wi4ut4dnqc7fg1z03l2vd",
+          "cmv9wi3qw4c4ec7fgz2qj488x",
+          "cmv9wi2wr4aywc7fg4az06ddf",
+          "cmv9wi18u48qwc7fgorw9ac6i",
+          "cmv9wi0bt47hwc7fgwrzowp8k",
+          "cmv9whz5m4619c7fg1oq4qre0",
+          "cmv9why5844p8c7fgnr4khnpc",
+          "cmv9whxki43yac7fgsomdhhe3",
+          "cmv9whw1w4286c7fg84to3igi",
+          "cmv9whuv840voc7fgm5tj0ibr",
+          "cmv9whu8t4058c7fge0xecsoc",
+          "cmv9whtvf3zs0c7fgn5fvgcno",
+          "cmv9wht343yt3c7fgutf21oen",
+          "cmv9whqgd3vqlc7fgpim5g9hv",
+          "cmv9whpau3ujhc7fg0pselkh4",
+          "cmv9whn5s3rx1c7fgxi2tu6ak",
+          "cmv9whm7r3qsmc7fgksf5awhq",
+          "cmv9whkx63p81c7fgrou9788h",
+          "cmv9whi973np5c7fg0m08lj6j"
+        ],
+        "features": {
+          "matches": 20,
+          "wins": 10,
+          "draws": 6,
+          "losses": 4,
+          "goalsFor": 37,
+          "goalsAgainst": 23,
+          "avgGoalsFor": 1.85,
+          "avgGoalsAgainst": 1.15,
+          "scoredRate": 0.95,
+          "concededRate": 0.65,
+          "cleanSheetRate": 0.35,
+          "bttsRate": 0.6,
+          "over05FtRate": 1,
+          "over15FtRate": 0.85,
+          "over25FtRate": 0.55,
+          "over05HtRate": 0.75,
+          "over15HtRate": 0.25,
+          "avgShots": 14,
+          "avgShotsOnTarget": 5.5,
+          "avgCorners": 4.3,
+          "avgYellowCards": 1.75,
+          "avgRedCards": 0.2,
+          "avgFouls": 9.4,
+          "scoringStreak": 7,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Inter",
+      "identity": {
+        "id": "cmv8h8yp6005vc78sdb74d1w4",
+        "externalId": "Italy:inter",
+        "name": "Inter",
+        "provider": "FOOTBALL_DATA",
+        "country": "Italy"
+      },
+      "queryCount": 3,
+      "elapsedMs": 10,
+      "profile": {
+        "teamId": "cmv8h8yp6005vc78sdb74d1w4",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 5,
+        "venue": "ALL",
+        "competitionId": null,
+        "sampleSize": 5,
+        "coverage": {
+          "ft": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-04-27T13:00:00.000Z",
+        "newestFixtureDate": "2025-05-23T18:45:00.000Z",
+        "fixtureIds": [
+          "cmv9wnd9y3tq3c75ojljvxa8w",
+          "cmv9wnd3s3tj6c75ojra0ssty",
+          "cmv9wncdn3sric75ogimoup98",
+          "cmv9wnbhw3rzpc75onfpouo9f",
+          "cmv9wnaki3r81c75o08auwofj"
+        ],
+        "features": {
+          "matches": 5,
+          "wins": 3,
+          "draws": 1,
+          "losses": 1,
+          "goalsFor": 7,
+          "goalsAgainst": 3,
+          "avgGoalsFor": 1.4,
+          "avgGoalsAgainst": 0.6,
+          "scoredRate": 0.8,
+          "concededRate": 0.4,
+          "cleanSheetRate": 0.6,
+          "bttsRate": 0.2,
+          "over05FtRate": 1,
+          "over15FtRate": 0.6,
+          "over25FtRate": 0.2,
+          "over05HtRate": 1,
+          "over15HtRate": 0,
+          "avgShots": 11.8,
+          "avgShotsOnTarget": 4.2,
+          "avgCorners": 4,
+          "avgYellowCards": 1.8,
+          "avgRedCards": 0,
+          "avgFouls": 9.2,
+          "scoringStreak": 4,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Inter",
+      "identity": {
+        "id": "cmv8h8yp6005vc78sdb74d1w4",
+        "externalId": "Italy:inter",
+        "name": "Inter",
+        "provider": "FOOTBALL_DATA",
+        "country": "Italy"
+      },
+      "queryCount": 3,
+      "elapsedMs": 11,
+      "profile": {
+        "teamId": "cmv8h8yp6005vc78sdb74d1w4",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 10,
+        "venue": "ALL",
+        "competitionId": null,
+        "sampleSize": 10,
+        "coverage": {
+          "ft": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-03-16T19:45:00.000Z",
+        "newestFixtureDate": "2025-05-23T18:45:00.000Z",
+        "fixtureIds": [
+          "cmv9wnd9y3tq3c75ojljvxa8w",
+          "cmv9wnd3s3tj6c75ojra0ssty",
+          "cmv9wncdn3sric75ogimoup98",
+          "cmv9wnbhw3rzpc75onfpouo9f",
+          "cmv9wnaki3r81c75o08auwofj",
+          "cmv9wn9wy3qplc75ocpg64j5a",
+          "cmv9wn96l3pxxc75on5idy0go",
+          "cmv9wn8i63pavc75oqwuzw65f",
+          "cmv9wn82t3owwc75ozh23vg3s",
+          "cmv9wn7nl3ogkc75o3xljiwu3"
+        ],
+        "features": {
+          "matches": 10,
+          "wins": 6,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 16,
+          "goalsAgainst": 8,
+          "avgGoalsFor": 1.6,
+          "avgGoalsAgainst": 0.8,
+          "scoredRate": 0.8,
+          "concededRate": 0.6,
+          "cleanSheetRate": 0.4,
+          "bttsRate": 0.4,
+          "over05FtRate": 1,
+          "over15FtRate": 0.7,
+          "over25FtRate": 0.4,
+          "over05HtRate": 0.8,
+          "over15HtRate": 0.3,
+          "avgShots": 12.7,
+          "avgShotsOnTarget": 3.8,
+          "avgCorners": 4.3,
+          "avgYellowCards": 2,
+          "avgRedCards": 0.1,
+          "avgFouls": 10.2,
+          "scoringStreak": 4,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Inter",
+      "identity": {
+        "id": "cmv8h8yp6005vc78sdb74d1w4",
+        "externalId": "Italy:inter",
+        "name": "Inter",
+        "provider": "FOOTBALL_DATA",
+        "country": "Italy"
+      },
+      "queryCount": 3,
+      "elapsedMs": 11,
+      "profile": {
+        "teamId": "cmv8h8yp6005vc78sdb74d1w4",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 20,
+        "venue": "ALL",
+        "competitionId": null,
+        "sampleSize": 20,
+        "coverage": {
+          "ft": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-01-15T19:45:00.000Z",
+        "newestFixtureDate": "2025-05-23T18:45:00.000Z",
+        "fixtureIds": [
+          "cmv9wnd9y3tq3c75ojljvxa8w",
+          "cmv9wnd3s3tj6c75ojra0ssty",
+          "cmv9wncdn3sric75ogimoup98",
+          "cmv9wnbhw3rzpc75onfpouo9f",
+          "cmv9wnaki3r81c75o08auwofj",
+          "cmv9wn9wy3qplc75ocpg64j5a",
+          "cmv9wn96l3pxxc75on5idy0go",
+          "cmv9wn8i63pavc75oqwuzw65f",
+          "cmv9wn82t3owwc75ozh23vg3s",
+          "cmv9wn7nl3ogkc75o3xljiwu3",
+          "cmv9wn6ps3nf2c75o12h33zu0",
+          "cmv9wn5xn3ml2c75o2t2u4g1y",
+          "cmv9wn5dc3lykc75oay83xea4",
+          "cmv9wn4v43ljfc75oqh6mybnq",
+          "cmv9wn47c3kwtc75obhi250e8",
+          "cmv9wn3if3k5vc75ozi9ex854",
+          "cmv9wn3a13jxsc75oh66lhrut",
+          "cmv9wn2dm3j45c75odjgv7f2k",
+          "cmv9wn1rx3iilc75oztyfql6m",
+          "cmv9wn13h3hu7c75oddhsuo7c"
+        ],
+        "features": {
+          "matches": 20,
+          "wins": 11,
+          "draws": 5,
+          "losses": 4,
+          "goalsFor": 33,
+          "goalsAgainst": 20,
+          "avgGoalsFor": 1.65,
+          "avgGoalsAgainst": 1,
+          "scoredRate": 0.8,
+          "concededRate": 0.7,
+          "cleanSheetRate": 0.3,
+          "bttsRate": 0.5,
+          "over05FtRate": 1,
+          "over15FtRate": 0.75,
+          "over25FtRate": 0.5,
+          "over05HtRate": 0.7,
+          "over15HtRate": 0.35,
+          "avgShots": 14.3,
+          "avgShotsOnTarget": 4.45,
+          "avgCorners": 5.35,
+          "avgYellowCards": 1.45,
+          "avgRedCards": 0.05,
+          "avgFouls": 10.95,
+          "scoringStreak": 4,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Inter",
+      "identity": {
+        "id": "cmv8h8yp6005vc78sdb74d1w4",
+        "externalId": "Italy:inter",
+        "name": "Inter",
+        "provider": "FOOTBALL_DATA",
+        "country": "Italy"
+      },
+      "queryCount": 3,
+      "elapsedMs": 13,
+      "profile": {
+        "teamId": "cmv8h8yp6005vc78sdb74d1w4",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 5,
+        "venue": "HOME",
+        "competitionId": null,
+        "sampleSize": 5,
+        "coverage": {
+          "ft": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-03-30T16:00:00.000Z",
+        "newestFixtureDate": "2025-05-18T18:45:00.000Z",
+        "fixtureIds": [
+          "cmv9wnd3s3tj6c75ojra0ssty",
+          "cmv9wnbhw3rzpc75onfpouo9f",
+          "cmv9wnaki3r81c75o08auwofj",
+          "cmv9wn96l3pxxc75on5idy0go",
+          "cmv9wn82t3owwc75ozh23vg3s"
+        ],
+        "features": {
+          "matches": 5,
+          "wins": 3,
+          "draws": 1,
+          "losses": 1,
+          "goalsFor": 8,
+          "goalsAgainst": 5,
+          "avgGoalsFor": 1.6,
+          "avgGoalsAgainst": 1,
+          "scoredRate": 0.8,
+          "concededRate": 0.8,
+          "cleanSheetRate": 0.2,
+          "bttsRate": 0.6,
+          "over05FtRate": 1,
+          "over15FtRate": 0.6,
+          "over25FtRate": 0.6,
+          "over05HtRate": 1,
+          "over15HtRate": 0.4,
+          "avgShots": 12.4,
+          "avgShotsOnTarget": 2.8,
+          "avgCorners": 4,
+          "avgYellowCards": 1,
+          "avgRedCards": 0,
+          "avgFouls": 9,
+          "scoringStreak": 2,
+          "concedingStreak": 1
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Inter",
+      "identity": {
+        "id": "cmv8h8yp6005vc78sdb74d1w4",
+        "externalId": "Italy:inter",
+        "name": "Inter",
+        "provider": "FOOTBALL_DATA",
+        "country": "Italy"
+      },
+      "queryCount": 3,
+      "elapsedMs": 8,
+      "profile": {
+        "teamId": "cmv8h8yp6005vc78sdb74d1w4",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 10,
+        "venue": "HOME",
+        "competitionId": null,
+        "sampleSize": 10,
+        "coverage": {
+          "ft": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-01-15T19:45:00.000Z",
+        "newestFixtureDate": "2025-05-18T18:45:00.000Z",
+        "fixtureIds": [
+          "cmv9wnd3s3tj6c75ojra0ssty",
+          "cmv9wnbhw3rzpc75onfpouo9f",
+          "cmv9wnaki3r81c75o08auwofj",
+          "cmv9wn96l3pxxc75on5idy0go",
+          "cmv9wn82t3owwc75ozh23vg3s",
+          "cmv9wn6ps3nf2c75o12h33zu0",
+          "cmv9wn5dc3lykc75oay83xea4",
+          "cmv9wn47c3kwtc75obhi250e8",
+          "cmv9wn1rx3iilc75oztyfql6m",
+          "cmv9wn13h3hu7c75oddhsuo7c"
+        ],
+        "features": {
+          "matches": 10,
+          "wins": 7,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 19,
+          "goalsAgainst": 11,
+          "avgGoalsFor": 1.9,
+          "avgGoalsAgainst": 1.1,
+          "scoredRate": 0.9,
+          "concededRate": 0.8,
+          "cleanSheetRate": 0.2,
+          "bttsRate": 0.7,
+          "over05FtRate": 1,
+          "over15FtRate": 0.7,
+          "over25FtRate": 0.7,
+          "over05HtRate": 0.8,
+          "over15HtRate": 0.5,
+          "avgShots": 16.2,
+          "avgShotsOnTarget": 4.9,
+          "avgCorners": 5.7,
+          "avgYellowCards": 0.9,
+          "avgRedCards": 0,
+          "avgFouls": 10.6,
+          "scoringStreak": 2,
+          "concedingStreak": 1
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Inter",
+      "identity": {
+        "id": "cmv8h8yp6005vc78sdb74d1w4",
+        "externalId": "Italy:inter",
+        "name": "Inter",
+        "provider": "FOOTBALL_DATA",
+        "country": "Italy"
+      },
+      "queryCount": 3,
+      "elapsedMs": 15,
+      "profile": {
+        "teamId": "cmv8h8yp6005vc78sdb74d1w4",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 20,
+        "venue": "HOME",
+        "competitionId": null,
+        "sampleSize": 20,
+        "coverage": {
+          "ft": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2024-05-19T16:00:00.000Z",
+        "newestFixtureDate": "2025-05-18T18:45:00.000Z",
+        "fixtureIds": [
+          "cmv9wnd3s3tj6c75ojra0ssty",
+          "cmv9wnbhw3rzpc75onfpouo9f",
+          "cmv9wnaki3r81c75o08auwofj",
+          "cmv9wn96l3pxxc75on5idy0go",
+          "cmv9wn82t3owwc75ozh23vg3s",
+          "cmv9wn6ps3nf2c75o12h33zu0",
+          "cmv9wn5dc3lykc75oay83xea4",
+          "cmv9wn47c3kwtc75obhi250e8",
+          "cmv9wn1rx3iilc75oztyfql6m",
+          "cmv9wn13h3hu7c75oddhsuo7c",
+          "cmv9wmyxm3fldc75oe6tw6jhv",
+          "cmv9wmwnw3dg4c75o59zgo6jn",
+          "cmv9wmv803by8c75o5sztoidh",
+          "cmv9wmu743az7c75o5913va2a",
+          "cmv9wmsj739mkc75ot3h2lkr5",
+          "cmv9wmqq437wlc75o9f0ps9ss",
+          "cmv9wmph136pcc75okp95kusp",
+          "cmv9wmnd434olc75oj9wsxyvl",
+          "cmv9wmmti3431c75ogpe1ettz",
+          "cmv9wmjkz3287c75obo7vp8v5"
+        ],
+        "features": {
+          "matches": 20,
+          "wins": 13,
+          "draws": 5,
+          "losses": 2,
+          "goalsFor": 41,
+          "goalsAgainst": 22,
+          "avgGoalsFor": 2.05,
+          "avgGoalsAgainst": 1.1,
+          "scoredRate": 0.95,
+          "concededRate": 0.7,
+          "cleanSheetRate": 0.3,
+          "bttsRate": 0.65,
+          "over05FtRate": 1,
+          "over15FtRate": 0.8,
+          "over25FtRate": 0.6,
+          "over05HtRate": 0.8,
+          "over15HtRate": 0.5,
+          "avgShots": 16.65,
+          "avgShotsOnTarget": 5.35,
+          "avgCorners": 7.05,
+          "avgYellowCards": 1.15,
+          "avgRedCards": 0,
+          "avgFouls": 10.55,
+          "scoringStreak": 2,
+          "concedingStreak": 1
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Inter",
+      "identity": {
+        "id": "cmv8h8yp6005vc78sdb74d1w4",
+        "externalId": "Italy:inter",
+        "name": "Inter",
+        "provider": "FOOTBALL_DATA",
+        "country": "Italy"
+      },
+      "queryCount": 3,
+      "elapsedMs": 8,
+      "profile": {
+        "teamId": "cmv8h8yp6005vc78sdb74d1w4",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 5,
+        "venue": "AWAY",
+        "competitionId": null,
+        "sampleSize": 5,
+        "coverage": {
+          "ft": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 5,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-03-16T19:45:00.000Z",
+        "newestFixtureDate": "2025-05-23T18:45:00.000Z",
+        "fixtureIds": [
+          "cmv9wnd9y3tq3c75ojljvxa8w",
+          "cmv9wncdn3sric75ogimoup98",
+          "cmv9wn9wy3qplc75ocpg64j5a",
+          "cmv9wn8i63pavc75oqwuzw65f",
+          "cmv9wn7nl3ogkc75o3xljiwu3"
+        ],
+        "features": {
+          "matches": 5,
+          "wins": 3,
+          "draws": 1,
+          "losses": 1,
+          "goalsFor": 8,
+          "goalsAgainst": 3,
+          "avgGoalsFor": 1.6,
+          "avgGoalsAgainst": 0.6,
+          "scoredRate": 0.8,
+          "concededRate": 0.4,
+          "cleanSheetRate": 0.6,
+          "bttsRate": 0.2,
+          "over05FtRate": 1,
+          "over15FtRate": 0.8,
+          "over25FtRate": 0.2,
+          "over05HtRate": 0.6,
+          "over15HtRate": 0.2,
+          "avgShots": 13,
+          "avgShotsOnTarget": 4.8,
+          "avgCorners": 4.6,
+          "avgYellowCards": 3,
+          "avgRedCards": 0.2,
+          "avgFouls": 11.4,
+          "scoringStreak": 2,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Inter",
+      "identity": {
+        "id": "cmv8h8yp6005vc78sdb74d1w4",
+        "externalId": "Italy:inter",
+        "name": "Inter",
+        "provider": "FOOTBALL_DATA",
+        "country": "Italy"
+      },
+      "queryCount": 3,
+      "elapsedMs": 7,
+      "profile": {
+        "teamId": "cmv8h8yp6005vc78sdb74d1w4",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 10,
+        "venue": "AWAY",
+        "competitionId": null,
+        "sampleSize": 10,
+        "coverage": {
+          "ft": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 10,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2025-01-26T17:00:00.000Z",
+        "newestFixtureDate": "2025-05-23T18:45:00.000Z",
+        "fixtureIds": [
+          "cmv9wnd9y3tq3c75ojljvxa8w",
+          "cmv9wncdn3sric75ogimoup98",
+          "cmv9wn9wy3qplc75ocpg64j5a",
+          "cmv9wn8i63pavc75oqwuzw65f",
+          "cmv9wn7nl3ogkc75o3xljiwu3",
+          "cmv9wn5xn3ml2c75o2t2u4g1y",
+          "cmv9wn4v43ljfc75oqh6mybnq",
+          "cmv9wn3if3k5vc75ozi9ex854",
+          "cmv9wn3a13jxsc75oh66lhrut",
+          "cmv9wn2dm3j45c75odjgv7f2k"
+        ],
+        "features": {
+          "matches": 10,
+          "wins": 4,
+          "draws": 3,
+          "losses": 3,
+          "goalsFor": 14,
+          "goalsAgainst": 9,
+          "avgGoalsFor": 1.4,
+          "avgGoalsAgainst": 0.9,
+          "scoredRate": 0.7,
+          "concededRate": 0.6,
+          "cleanSheetRate": 0.4,
+          "bttsRate": 0.3,
+          "over05FtRate": 1,
+          "over15FtRate": 0.8,
+          "over25FtRate": 0.3,
+          "over05HtRate": 0.6,
+          "over15HtRate": 0.2,
+          "avgShots": 12.4,
+          "avgShotsOnTarget": 4,
+          "avgCorners": 5,
+          "avgYellowCards": 2,
+          "avgRedCards": 0.1,
+          "avgFouls": 11.3,
+          "scoringStreak": 2,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    },
+    {
+      "requested": "Inter",
+      "identity": {
+        "id": "cmv8h8yp6005vc78sdb74d1w4",
+        "externalId": "Italy:inter",
+        "name": "Inter",
+        "provider": "FOOTBALL_DATA",
+        "country": "Italy"
+      },
+      "queryCount": 3,
+      "elapsedMs": 11,
+      "profile": {
+        "teamId": "cmv8h8yp6005vc78sdb74d1w4",
+        "before": "2026-10-15T20:16:46.682Z",
+        "window": 20,
+        "venue": "AWAY",
+        "competitionId": null,
+        "sampleSize": 20,
+        "coverage": {
+          "ft": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "ht": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsFor": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "goalsAgainst": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shots": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "shotsOnTarget": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "corners": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "yellowCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "redCards": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          },
+          "fouls": {
+            "available": 20,
+            "missing": 0,
+            "ratio": 1
+          }
+        },
+        "oldestFixtureDate": "2024-05-26T18:45:00.000Z",
+        "newestFixtureDate": "2025-05-23T18:45:00.000Z",
+        "fixtureIds": [
+          "cmv9wnd9y3tq3c75ojljvxa8w",
+          "cmv9wncdn3sric75ogimoup98",
+          "cmv9wn9wy3qplc75ocpg64j5a",
+          "cmv9wn8i63pavc75oqwuzw65f",
+          "cmv9wn7nl3ogkc75o3xljiwu3",
+          "cmv9wn5xn3ml2c75o2t2u4g1y",
+          "cmv9wn4v43ljfc75oqh6mybnq",
+          "cmv9wn3if3k5vc75ozi9ex854",
+          "cmv9wn3a13jxsc75oh66lhrut",
+          "cmv9wn2dm3j45c75odjgv7f2k",
+          "cmv9wn0pp3he1c75o2bb4mwt8",
+          "cmv9wmz4v3ftgc75o4foqkquu",
+          "cmv9wmy643eufc75o44jtsgw1",
+          "cmv9wmvan3c0xc75oy6cp0t3k",
+          "cmv9wmt213a2qc75ohze31c8j",
+          "cmv9wmrtf38ybc75obsnsevkm",
+          "cmv9wmpr036xkc75on45wcj7y",
+          "cmv9wmonf35vpc75o24lckxx5",
+          "cmv9wmltz336pc75ooajqrgy7",
+          "cmv9wmk3y32tbc75ok28ixy1a"
+        ],
+        "features": {
+          "matches": 20,
+          "wins": 11,
+          "draws": 6,
+          "losses": 3,
+          "goalsFor": 41,
+          "goalsAgainst": 16,
+          "avgGoalsFor": 2.05,
+          "avgGoalsAgainst": 0.8,
+          "scoredRate": 0.85,
+          "concededRate": 0.5,
+          "cleanSheetRate": 0.5,
+          "bttsRate": 0.35,
+          "over05FtRate": 1,
+          "over15FtRate": 0.8,
+          "over25FtRate": 0.5,
+          "over05HtRate": 0.6,
+          "over15HtRate": 0.35,
+          "avgShots": 13.6,
+          "avgShotsOnTarget": 5.25,
+          "avgCorners": 4.55,
+          "avgYellowCards": 1.75,
+          "avgRedCards": 0.05,
+          "avgFouls": 11.05,
+          "scoringStreak": 2,
+          "concedingStreak": 0
+        },
+        "streakCensored": {
+          "scoring": false,
+          "conceding": false
+        },
+        "availabilityPolicy": "OBSERVED_BEFORE_CUTOFF",
+        "minimumCoverage": 1
+      }
+    }
+  ],
+  "protectedBefore": {
+    "LiveSnapshot": {
+      "count": 4353,
+      "hash": "06a5c559b85b9d7721c842bb150a4b72246ae4ba20f0bb06e2e336394bc3b64f"
+    },
+    "LiveMarketSnapshot": {
+      "count": 17,
+      "hash": "fe4b3f672e7d09e70e7d6e4b50713833f861d1d35e4a3d808f4998e40ab00fc4"
+    },
+    "HybridScout": {
+      "count": 47,
+      "hash": "e38a59d99f84204495aec5e28d8820e67dc793fc29ad546b74095b0226697572"
+    },
+    "ApiFootballBudget": {
+      "count": 3,
+      "hash": "0564933215bd99bff683dcfa5564884f99f30a3d2a3255407a0f1daa2f9156ab"
+    }
+  },
+  "protectedAfter": {
+    "LiveSnapshot": {
+      "count": 4353,
+      "hash": "06a5c559b85b9d7721c842bb150a4b72246ae4ba20f0bb06e2e336394bc3b64f"
+    },
+    "LiveMarketSnapshot": {
+      "count": 17,
+      "hash": "fe4b3f672e7d09e70e7d6e4b50713833f861d1d35e4a3d808f4998e40ab00fc4"
+    },
+    "HybridScout": {
+      "count": 47,
+      "hash": "e38a59d99f84204495aec5e28d8820e67dc793fc29ad546b74095b0226697572"
+    },
+    "ApiFootballBudget": {
+      "count": 3,
+      "hash": "0564933215bd99bff683dcfa5564884f99f30a3d2a3255407a0f1daa2f9156ab"
+    }
+  },
+  "protectedUnchanged": true,
+  "plan": [
+    {
+      "QUERY PLAN": [
+        {
+          "Plan": {
+            "Node Type": "Limit",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 10.8,
+            "Total Cost": 213.95,
+            "Plan Rows": 20,
+            "Plan Width": 34,
+            "Actual Startup Time": 0.896,
+            "Actual Total Time": 0.899,
+            "Actual Rows": 20,
+            "Actual Loops": 1,
+            "Plans": [
+              {
+                "Node Type": "Incremental Sort",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 10.8,
+                "Total Cost": 7689.79,
+                "Plan Rows": 756,
+                "Plan Width": 34,
+                "Actual Startup Time": 0.895,
+                "Actual Total Time": 0.896,
+                "Actual Rows": 20,
+                "Actual Loops": 1,
+                "Sort Key": [
+                  "kickoff DESC",
+                  "id"
+                ],
+                "Presorted Key": [
+                  "kickoff"
+                ],
+                "Full-sort Groups": {
+                  "Group Count": 1,
+                  "Sort Methods Used": [
+                    "quicksort"
+                  ],
+                  "Sort Space Memory": {
+                    "Average Sort Space Used": 26,
+                    "Peak Sort Space Used": 26
+                  }
+                },
+                "Plans": [
+                  {
+                    "Node Type": "Index Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Scan Direction": "Backward",
+                    "Index Name": "Fixture_kickoff_idx",
+                    "Relation Name": "Fixture",
+                    "Alias": "Fixture",
+                    "Startup Cost": 0.29,
+                    "Total Cost": 7656.72,
+                    "Plan Rows": 756,
+                    "Plan Width": 34,
+                    "Actual Startup Time": 0.385,
+                    "Actual Total Time": 0.866,
+                    "Actual Rows": 21,
+                    "Actual Loops": 1,
+                    "Index Cond": "(kickoff < '2026-10-15 20:16:46.682+00'::timestamp with time zone)",
+                    "Rows Removed by Index Recheck": 0,
+                    "Filter": "((\"createdAt\" < '2026-10-15 20:16:46.682+00'::timestamp with time zone) AND (\"updatedAt\" < '2026-10-15 20:16:46.682+00'::timestamp with time zone) AND (status = 'FINISHED'::\"FixtureStatus\") AND ((\"homeTeamId\" = 'cmv84vvwu00lqc76wqd7uz8mh'::text) OR (\"awayTeamId\" = 'cmv84vvwu00lqc76wqd7uz8mh'::text)) AND ((\"kickoffPrecision\" = 'EXACT'::text) OR ((\"kickoffPrecision\" = 'DATE'::text) AND (kickoff < '2026-10-15 00:00:00+00'::timestamp with time zone))))",
+                    "Rows Removed by Filter": 1428
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning Time": 1.125,
+          "Triggers": [],
+          "Execution Time": 1.003
+        }
+      ]
+    }
+  ]
+}

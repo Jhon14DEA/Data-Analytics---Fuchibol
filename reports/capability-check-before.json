@@ -1,0 +1,29 @@
+{
+  "fixture": {
+    "count": 503
+  },
+  "teamPeriodStats": {
+    "count": 0
+  },
+  "historicalMarketOutcome": {
+    "count": 0
+  },
+  "historicalIngestionState": {
+    "count": 0,
+    "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "liveSnapshot": {
+    "count": 4353
+  },
+  "liveMarketSnapshot": {
+    "count": 17,
+    "hash": "54b085e1ade5c99bb663a242015985307132b94845fe5b3baaa340242d0f10e5"
+  },
+  "hybridScout": {
+    "count": 47
+  },
+  "apiFootballBudget": {
+    "count": 3,
+    "hash": "dc4372b6bdc127fc75ff902b7eb62a5789b1e085e4c37b290389e34dbc4ae885"
+  }
+}

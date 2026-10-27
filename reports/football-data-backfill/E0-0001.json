@@ -1,0 +1,275 @@
+{
+  "status": "FAILED",
+  "season": "0001",
+  "error": "CSV_SOT_EXCEEDS_SHOTS",
+  "safeToContinue": true,
+  "checksum": "e2a73bae006d9724b5343d3735a61f11d258955477e3d87b68346d017edaf46b",
+  "csvRows": 380,
+  "elapsedMs": 31,
+  "fixtures": 0,
+  "teams": 0,
+  "teamMatchStats": 0,
+  "referee": 0,
+  "dateOnly": 0,
+  "periodStats": 0,
+  "outcomes": 0,
+  "odds": 0,
+  "nullCoverage": {
+    "goals": {
+      "available": 0,
+      "missing": 0
+    },
+    "shots": {
+      "available": 0,
+      "missing": 0
+    },
+    "shotsOnTarget": {
+      "available": 0,
+      "missing": 0
+    },
+    "corners": {
+      "available": 0,
+      "missing": 0
+    },
+    "fouls": {
+      "available": 0,
+      "missing": 0
+    },
+    "yellowCards": {
+      "available": 0,
+      "missing": 0
+    },
+    "redCards": {
+      "available": 0,
+      "missing": 0
+    },
+    "xg": {
+      "available": 0,
+      "missing": 0
+    },
+    "possession": {
+      "available": 0,
+      "missing": 0
+    }
+  },
+  "csvCoverage": {
+    "Div": {
+      "present": 380,
+      "missing": 0
+    },
+    "Date": {
+      "present": 380,
+      "missing": 0
+    },
+    "HomeTeam": {
+      "present": 380,
+      "missing": 0
+    },
+    "AwayTeam": {
+      "present": 380,
+      "missing": 0
+    },
+    "FTHG": {
+      "present": 380,
+      "missing": 0
+    },
+    "FTAG": {
+      "present": 380,
+      "missing": 0
+    },
+    "FTR": {
+      "present": 380,
+      "missing": 0
+    },
+    "HTHG": {
+      "present": 380,
+      "missing": 0
+    },
+    "HTAG": {
+      "present": 380,
+      "missing": 0
+    },
+    "HTR": {
+      "present": 380,
+      "missing": 0
+    },
+    "Attendance": {
+      "present": 380,
+      "missing": 0
+    },
+    "Referee": {
+      "present": 380,
+      "missing": 0
+    },
+    "HS": {
+      "present": 380,
+      "missing": 0
+    },
+    "AS": {
+      "present": 380,
+      "missing": 0
+    },
+    "HST": {
+      "present": 380,
+      "missing": 0
+    },
+    "AST": {
+      "present": 380,
+      "missing": 0
+    },
+    "HHW": {
+      "present": 380,
+      "missing": 0
+    },
+    "AHW": {
+      "present": 380,
+      "missing": 0
+    },
+    "HC": {
+      "present": 380,
+      "missing": 0
+    },
+    "AC": {
+      "present": 380,
+      "missing": 0
+    },
+    "HF": {
+      "present": 380,
+      "missing": 0
+    },
+    "AF": {
+      "present": 380,
+      "missing": 0
+    },
+    "HO": {
+      "present": 380,
+      "missing": 0
+    },
+    "AO": {
+      "present": 380,
+      "missing": 0
+    },
+    "HY": {
+      "present": 380,
+      "missing": 0
+    },
+    "AY": {
+      "present": 380,
+      "missing": 0
+    },
+    "HR": {
+      "present": 380,
+      "missing": 0
+    },
+    "AR": {
+      "present": 380,
+      "missing": 0
+    },
+    "HBP": {
+      "present": 380,
+      "missing": 0
+    },
+    "ABP": {
+      "present": 380,
+      "missing": 0
+    },
+    "GBH": {
+      "present": 380,
+      "missing": 0
+    },
+    "GBD": {
+      "present": 380,
+      "missing": 0
+    },
+    "GBA": {
+      "present": 380,
+      "missing": 0
+    },
+    "IWH": {
+      "present": 380,
+      "missing": 0
+    },
+    "IWD": {
+      "present": 380,
+      "missing": 0
+    },
+    "IWA": {
+      "present": 380,
+      "missing": 0
+    },
+    "LBH": {
+      "present": 325,
+      "missing": 55
+    },
+    "LBD": {
+      "present": 325,
+      "missing": 55
+    },
+    "LBA": {
+      "present": 325,
+      "missing": 55
+    },
+    "SBH": {
+      "present": 380,
+      "missing": 0
+    },
+    "SBD": {
+      "present": 380,
+      "missing": 0
+    },
+    "SBA": {
+      "present": 380,
+      "missing": 0
+    },
+    "WHH": {
+      "present": 380,
+      "missing": 0
+    },
+    "WHD": {
+      "present": 380,
+      "missing": 0
+    },
+    "WHA": {
+      "present": 380,
+      "missing": 0
+    }
+  },
+  "anomalies": [
+    {
+      "type": "SOT_EXCEEDS_SHOTS",
+      "date": "14/10/00",
+      "home": "Coventry",
+      "away": "Tottenham",
+      "side": "H",
+      "shots": "0",
+      "sot": "5"
+    },
+    {
+      "type": "SOT_EXCEEDS_SHOTS",
+      "date": "14/10/00",
+      "home": "Coventry",
+      "away": "Tottenham",
+      "side": "A",
+      "shots": "4",
+      "sot": "5"
+    },
+    {
+      "type": "SOT_EXCEEDS_SHOTS",
+      "date": "13/04/01",
+      "home": "Bradford",
+      "away": "Charlton",
+      "side": "H",
+      "shots": "4",
+      "sot": "8"
+    },
+    {
+      "type": "SOT_EXCEEDS_SHOTS",
+      "date": "13/04/01",
+      "home": "Bradford",
+      "away": "Charlton",
+      "side": "A",
+      "shots": "3",
+      "sot": "8"
+    }
+  ]
+}

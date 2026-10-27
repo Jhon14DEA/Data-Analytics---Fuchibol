@@ -1,0 +1,299 @@
+TAP version 13
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt50b0004c7vgxlxb2x9t"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt50b0004c7vgxlxb2x9t","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:49.153Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv6qt50b0004c7vgxlxb2x9t"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv6qt50b0004c7vgxlxb2x9t"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt50b0004c7vgxlxb2x9t","count":1,"at":"2026-10-13T13:54:49.288Z"}
+# Subtest: real DB hook: unknown AllSports stays pending; 1H cert produces linked hybrid snapshot
+ok 1 - real DB hook: unknown AllSports stays pending; 1H cert produces linked hybrid snapshot
+  ---
+  duration_ms: 2301.0528
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt56d000cc7vgd1dwk129"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt56d000cc7vgd1dwk129","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:49.351Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv6qt56d000cc7vgd1dwk129"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv6qt56d000cc7vgd1dwk129"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt56d000cc7vgd1dwk129","count":1,"at":"2026-10-13T13:54:49.425Z"}
+# {"event":"HYBRID_PERIOD_CACHE_HIT","matchId":"cmv6qt56d000cc7vgd1dwk129"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt56d000cc7vgd1dwk129","count":1,"at":"2026-10-13T13:54:49.467Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt56d000cc7vgd1dwk129","reason":"DUPLICATE","count":1,"at":"2026-10-13T13:54:49.523Z"}
+# Subtest: next AllSports snapshot within TTL and restarted batch use durable cache with zero requests
+ok 2 - next AllSports snapshot within TTL and restarted batch use durable cache with zero requests
+  ---
+  duration_ms: 226.442
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt5cn000mc7vgceqrsqab"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt5cn000mc7vgceqrsqab","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:49.574Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv6qt5cn000mc7vgceqrsqab"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv6qt5cn000mc7vgceqrsqab"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt5cn000mc7vgceqrsqab","count":1,"at":"2026-10-13T13:54:49.635Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt5cn000mc7vgceqrsqab","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:49.658Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":2}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":2,"automaticUsed":2}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":78,"reserve":20}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt5cn000mc7vgceqrsqab","count":1,"at":"2026-10-13T13:54:49.731Z"}
+# Subtest: expired TTL cannot capture; elapsed cooldown permits exactly one new validation
+ok 3 - expired TTL cannot capture; elapsed cooldown permits exactly one new validation
+  ---
+  duration_ms: 198.8818
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt5i0000vc7vgvr0qpuan"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt5i0000vc7vgvr0qpuan","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:49.767Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv6qt5i0000vc7vgvr0qpuan"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv6qt5i0000vc7vgvr0qpuan"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt5i0000vc7vgvr0qpuan","count":1,"at":"2026-10-13T13:54:49.824Z"}
+# {"event":"DATASET_HT_RESOLVED","fixtureId":"cmv6qt5i0000vc7vgvr0qpuan","count":1,"at":"2026-10-13T13:54:49.850Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt5i0000vc7vgvr0qpuan","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:49.876Z"}
+# Subtest: HT from existing listing invalidates persisted certificate and resolves without API
+ok 4 - HT from existing listing invalidates persisted certificate and resolves without API
+  ---
+  duration_ms: 141.2088
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt5ly0013c7vgxtx2e9a1"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt5ly0013c7vgxtx2e9a1","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:49.906Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv6qt5ly0013c7vgxtx2e9a1"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv6qt5ly0013c7vgxtx2e9a1"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt5ly0013c7vgxtx2e9a1","count":1,"at":"2026-10-13T13:54:49.957Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"OUTCOME","sessionRequests":2}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"OUTCOME","used":2,"automaticUsed":2}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":78,"reserve":20}
+# {"event":"DATASET_HT_RESOLVED","fixtureId":"cmv6qt5ly0013c7vgxtx2e9a1","count":1,"at":"2026-10-13T13:54:49.997Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"OUTCOME","sessionRequests":3}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"OUTCOME","used":3,"automaticUsed":3}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":77,"reserve":20}
+# {"event":"DATASET_FT_RESOLVED","fixtureId":"cmv6qt5ly0013c7vgxtx2e9a1","count":1,"at":"2026-10-13T13:54:50.051Z"}
+# Subtest: missing HT and FT use one minimal request each; FT never supplies an absent HT score
+ok 5 - missing HT and FT use one minimal request each; FT never supplies an absent HT score
+  ---
+  duration_ms: 191.1241
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt5r7001bc7vgws4r80n4"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt5r7001bc7vgws4r80n4","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:50.095Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_AMBIGUOUS","matchId":"cmv6qt5r7001bc7vgws4r80n4"}
+# Subtest: ambiguous API fixtures never create mapping or snapshot
+ok 6 - ambiguous API fixtures never create mapping or snapshot
+  ---
+  duration_ms: 56.3361
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt5sr001ic7vghndqyifp"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt5sr001ic7vghndqyifp","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:50.153Z"}
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt5td001pc7vgmxyho5xn"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt5td001pc7vgmxyho5xn","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:50.173Z"}
+# {"event":"HYBRID_MATCH_AMBIGUOUS","matchId":"cmv6qt5sr001ic7vghndqyifp"}
+# {"event":"HYBRID_MATCH_AMBIGUOUS","matchId":"cmv6qt5td001pc7vgmxyho5xn"}
+# Subtest: ambiguous local scouts spend zero requests
+ok 7 - ambiguous local scouts spend zero requests
+  ---
+  duration_ms: 59.7785
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt5uf001wc7vg9glvrpoc"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt5uf001wc7vg9glvrpoc","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:50.213Z"}
+# Subtest: maximum validations is persistent; an expired certificate cannot exceed four attempts
+ok 8 - maximum validations is persistent; an expired certificate cannot exceed four attempts
+  ---
+  duration_ms: 39.8292
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt5vj0023c7vgctnf98gj"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt5vj0023c7vgctnf98gj","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:50.252Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv6qt5vj0023c7vgctnf98gj"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv6qt5vj0023c7vgctnf98gj"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt5vj0023c7vgctnf98gj","count":1,"at":"2026-10-13T13:54:50.303Z"}
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"2026-10-13:OUTCOME"}
+# {"event":"API_HYBRID_REQUEST_FAILED","purpose":"HT","matchId":"cmv6qt5vj0023c7vgctnf98gj"}
+# Subtest: outcome budget denial preserves its one future attempt
+ok 9 - outcome budget denial preserves its one future attempt
+  ---
+  duration_ms: 109.4141
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt5ym002bc7vgxqqfk1be"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt5ym002bc7vgxqqfk1be","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:50.362Z"}
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt5z4002ic7vgphw6uelq"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt5z4002ic7vgphw6uelq","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:50.382Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv6qt5z4002ic7vgphw6uelq"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv6qt5z4002ic7vgphw6uelq"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt5z4002ic7vgphw6uelq","count":1,"at":"2026-10-13T13:54:50.436Z"}
+# Subtest: ten durable admissions limit new fixtures and higher coverage wins the last slot
+ok 10 - ten durable admissions limit new fixtures and higher coverage wins the last slot
+  ---
+  duration_ms: 112.5721
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt61u002qc7vg5j91imk3"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt61u002qc7vg5j91imk3","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:50.479Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv6qt61u002qc7vg5j91imk3"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv6qt61u002qc7vg5j91imk3"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt61u002qc7vg5j91imk3","count":1,"at":"2026-10-13T13:54:50.528Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt61u002qc7vg5j91imk3","reason":"HYBRID_EVIDENCE_INVALIDATED","count":1,"at":"2026-10-13T13:54:50.543Z"}
+# Subtest: stale in-memory hybrid evidence is rejected after persisted invalidation
+ok 11 - stale in-memory hybrid evidence is rejected after persisted invalidation
+  ---
+  duration_ms: 95.1714
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt64d002yc7vgd1ivr839"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt64d002yc7vgd1ivr839","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:50.569Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv6qt64d002yc7vgd1ivr839"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv6qt64d002yc7vgd1ivr839"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt64d002yc7vgd1ivr839","count":1,"at":"2026-10-13T13:54:50.615Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"OUTCOME","sessionRequests":2}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"OUTCOME","used":2,"automaticUsed":2}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":78,"reserve":20}
+# {"event":"DATASET_FT_RESOLVED","fixtureId":"cmv6qt64d002yc7vgd1ivr839","count":1,"at":"2026-10-13T13:54:50.649Z"}
+# Subtest: API FT with no explicit halftime score resolves only FT, never fabricates HT
+ok 12 - API FT with no explicit halftime score resolves only FT, never fabricates HT
+  ---
+  duration_ms: 113.103
+  type: 'test'
+  ...
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"2026-10-13:VALIDATION"}
+# {"event":"HYBRID_API_REQUEST","purpose":"OUTCOME","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"OUTCOME","used":61,"automaticUsed":61}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":19,"reserve":20}
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"2026-10-13:OUTCOME"}
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt6880036c7vg556mv4up"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt6880036c7vg556mv4up","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:50.709Z"}
+# {"event":"API_HYBRID_REQUEST_FAILED","purpose":"VALIDATION","matchId":"cmv6qt6880036c7vg556mv4up"}
+# Subtest: budget exhaustion and protected reserve persist in PostgreSQL and block before HTTP
+ok 13 - budget exhaustion and protected reserve persist in PostgreSQL and block before HTTP
+  ---
+  duration_ms: 75.4465
+  type: 'test'
+  ...
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"2026-10-13:VALIDATION"}
+# Subtest: remote quota can only tighten usage; missing headers never become zero
+ok 14 - remote quota can only tighten usage; missing headers never become zero
+  ---
+  duration_ms: 75.6713
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt6bo003dc7vgthogzj6c"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt6bo003dc7vgthogzj6c","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:50.833Z"}
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv6qt6c7003kc7vg83iamnon"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt6c7003kc7vg83iamnon","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T13:54:50.851Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv6qt6bo003dc7vgthogzj6c"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv6qt6bo003dc7vgthogzj6c"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt6bo003dc7vgthogzj6c","count":1,"at":"2026-10-13T13:54:50.895Z"}
+# {"event":"HYBRID_MATCH_NOT_FOUND","matchId":"cmv6qt6c7003kc7vg83iamnon"}
+# Subtest: fixture B does not borrow fixture A certificate or outcomes
+ok 15 - fixture B does not borrow fixture A certificate or outcomes
+  ---
+  duration_ms: 117.5022
+  type: 'test'
+  ...
+# Subtest: hybrid client uses only /fixtures, counts cache misses and never retries failed HTTP
+ok 16 - hybrid client uses only /fixtures, counts cache misses and never retries failed HTTP
+  ---
+  duration_ms: 7.5804
+  type: 'test'
+  ...
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2091-01-02","purpose":"VALIDATION","used":60,"automaticUsed":60}
+# {"event":"API_BUDGET_REMAINING","day":"2091-01-02","remaining":20,"reserve":20}
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"2091-01-02:VALIDATION"}
+# Subtest: concurrent workers and a new Prisma client cannot reset the persisted reservation
+ok 17 - concurrent workers and a new Prisma client cannot reset the persisted reservation
+  ---
+  duration_ms: 2084.3584
+  type: 'test'
+  ...
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":2}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":2,"automaticUsed":2}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":78,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":3}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":3,"automaticUsed":3}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":77,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":4}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":4,"automaticUsed":4}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":76,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":5}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":5,"automaticUsed":5}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":75,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":6}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":6,"automaticUsed":6}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":74,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":7}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":7,"automaticUsed":7}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":73,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":8}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":8,"automaticUsed":8}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":72,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":9}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":9,"automaticUsed":9}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":71,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"OUTCOME","sessionRequests":10}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"OUTCOME","used":10,"automaticUsed":10}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":70,"reserve":20}
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"activation-session:test-c53018d5-46fc-453e-94ed-189f16e292b0"}
+# Subtest: session cap includes outcomes, survives another day, and denial consumes no daily budget
+ok 18 - session cap includes outcomes, survives another day, and denial consumes no daily budget
+  ---
+  duration_ms: 107.934
+  type: 'test'
+  ...
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":10}
+# {"event":"API_BUDGET_USED","day":"2093-01-01","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2093-01-01","remaining":79,"reserve":20}
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"activation-session:test-08955d72-ef50-4f77-a7be-58b608bd94cd"}
+# Subtest: concurrent workers share last session slot and reconnection cannot reset it
+ok 19 - concurrent workers share last session slot and reconnection cannot reset it
+  ---
+  duration_ms: 4123.5924
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 11250.2949

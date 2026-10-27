@@ -2,7 +2,7 @@ import { demoFootballProvider } from "@/providers/football/demoProvider";
 import { demoOddsProvider } from "@/providers/odds/demoProvider";
 import { ApiFootballProvider } from "@/providers/football/apiFootball";
 import { AllSportsApiError, AllSportsApiProvider } from "@/providers/football/allSportsApi";
-import type { FootballDebugStatus, MatchAnalysisContext } from "@/types/domain";
+import type { FootballDebugStatus, MatchAnalysisContext, MatchSearchResult } from "@/types/domain";
 
 const allSportsApiProvider = new AllSportsApiProvider();
 const apiFootballProvider = new ApiFootballProvider();
@@ -84,13 +84,29 @@ export const footballProvider = {
     }
 
     return null;
+  },
+  invalidateMatchCache(matchId: string) {
+    if (matchId.startsWith("allsports-")) {
+      return allSportsApiProvider.invalidateMatchCache(matchId);
+    }
+    return 0;
+  },
+  invalidateListCache() {
+    if (allSportsApiProvider.isConfigured()) {
+      return allSportsApiProvider.invalidateListCache();
+    }
+    return 0;
   }
 };
 
-export async function searchFootballMatches(query: string) {
+export async function searchFootballMatches(query: string, date?: string) {
+  return (await searchFootballMatchesDetailed(query, date)).matches;
+}
+
+export async function searchFootballMatchesDetailed(query: string, date?: string): Promise<MatchSearchResult> {
   if (allSportsApiProvider.isConfigured()) {
     try {
-      return await allSportsApiProvider.searchMatches(query);
+      return await allSportsApiProvider.searchMatchesDetailed(query, date);
     } catch (error) {
       if (!apiFootballProvider.isConfigured()) {
         throw error;
@@ -102,10 +118,24 @@ export async function searchFootballMatches(query: string) {
   const matches = await footballProvider.listMatches();
   const normalized = query.trim().toLowerCase().replace(/\s+vs\s+|\s+v\s+/g, " ");
   const terms = normalized.split(/\s+/).filter(Boolean);
-  return matches.filter((match) => {
+  const filtered = matches.filter((match) => {
     const haystack = `${match.homeTeam} ${match.awayTeam} ${match.competition}`.toLowerCase();
     return terms.every((term) => haystack.includes(term));
   });
+  return {
+    matches: filtered,
+    diagnostics: {
+      term: query,
+      provider: apiFootballProvider.isConfigured() ? "API-Football" : "DEMO",
+      searchedRanges: date ? [date] : ["dashboard/cache"],
+      apiResults: matches.length,
+      filteredOut: Math.max(0, matches.length - filtered.length),
+      filterReasons: filtered.length ? ["coincidencia en datos cargados"] : ["sin coincidencias en datos cargados"],
+      cacheHits: matches.length,
+      cacheMisses: 0,
+      endpoints: apiFootballProvider.isConfigured() ? ["/fixtures"] : ["DEMO"]
+    }
+  };
 }
 
 export async function getMatchAnalysisContext(matchId: string): Promise<MatchAnalysisContext | null> {
@@ -123,6 +153,7 @@ export async function getMatchAnalysisContext(matchId: string): Promise<MatchAna
     recentHome: [],
     recentAway: [],
     h2h: [],
+    dataFreshness: null,
     provider: match.source === "api-football" ? "API-Football" : "DEMO",
     generatedAt: new Date().toISOString()
   };

@@ -1,0 +1,121 @@
+{
+    "marketType":  "OVER_0_5",
+    "marketPeriod":  "FIRST_HALF",
+    "todaySnapshots":  0,
+    "todayTimezone":  "UTC",
+    "fixturesObserved":  0,
+    "resolvedHt":  0,
+    "unresolvedHt":  0,
+    "resolvedFt":  0,
+    "unresolvedFt":  0,
+    "featureCoverage":  {
+                            "SOT":  {
+                                        "availableCount":  0,
+                                        "missingCount":  0,
+                                        "coveragePercent":  null
+                                    },
+                            "xG":  {
+                                       "availableCount":  0,
+                                       "missingCount":  0,
+                                       "coveragePercent":  null
+                                   },
+                            "bigChances":  {
+                                               "availableCount":  0,
+                                               "missingCount":  0,
+                                               "coveragePercent":  null
+                                           },
+                            "shotsInsideBox":  {
+                                                   "availableCount":  0,
+                                                   "missingCount":  0,
+                                                   "coveragePercent":  null
+                                               },
+                            "corners":  {
+                                            "availableCount":  0,
+                                            "missingCount":  0,
+                                            "coveragePercent":  null
+                                        },
+                            "dangerousAttacks":  {
+                                                     "availableCount":  0,
+                                                     "missingCount":  0,
+                                                     "coveragePercent":  null
+                                                 },
+                            "odds":  {
+                                         "availableCount":  0,
+                                         "missingCount":  0,
+                                         "coveragePercent":  null
+                                     },
+                            "last5":  {
+                                          "availableCount":  0,
+                                          "missingCount":  0,
+                                          "coveragePercent":  null
+                                      },
+                            "last10":  {
+                                           "availableCount":  0,
+                                           "missingCount":  0,
+                                           "coveragePercent":  null
+                                       },
+                            "last15":  {
+                                           "availableCount":  0,
+                                           "missingCount":  0,
+                                           "coveragePercent":  null
+                                       }
+                        },
+    "minuteBuckets":  {
+                          "1-10":  0,
+                          "11-15":  0,
+                          "16-20":  0,
+                          "21-25":  0,
+                          "26-30":  0,
+                          "31-35":  0,
+                          "36-40":  0,
+                          "41-45+":  0
+                      },
+    "lastSnapshot":  null,
+    "lastHtResolved":  null,
+    "lastFtResolved":  null,
+    "health":  {
+                   "status":  "EMPTY",
+                   "reasons":  [
+                                   "NO_SNAPSHOTS"
+                               ]
+               },
+    "diagnostics":  {
+                        "scope":  "PROCESS_SINCE_START",
+                        "startedAt":  "2026-10-06T02:55:14.665Z",
+                        "captured":  0,
+                        "qualityRejected":  0,
+                        "skippedTransitions":  {
+                                                   "INVALID_PERIOD":  1
+                                               },
+                        "note":  "Deduplicated skip transitions, not polling attempts. Resets on restart; not shared across workers."
+                    },
+    "monitoringPolicy":  {
+                             "scope":  "ALL_MATCHING_FILTERS_NOT_LIMIT",
+                             "lastWindowAvailability":  "100% temporal coverage and at least one non-null window metric",
+                             "windowCoverageLocation":  "snapshots[].dataQualityDetails.windows[{size,coverage}]",
+                             "rejectionMinimumTransitions":  20,
+                             "keyFeatures":  [
+                                                 "SOT",
+                                                 "corners"
+                                             ],
+                             "warningCoverageBelowPercent":  50,
+                             "warningUnresolvedHtAbovePercent":  50,
+                             "note":  "Unresolved HT includes ongoing matches; health is informational only. Rejection diagnostics are process-local."
+                         },
+    "totalSnapshots":  0,
+    "resolvedSnapshots":  0,
+    "unresolvedSnapshots":  0,
+    "positives":  0,
+    "negatives":  0,
+    "positiveRate":  null,
+    "averageMinute":  null,
+    "averageTotalSot":  null,
+    "averageTotalXg":  null,
+    "averageBigChances":  null,
+    "averageOdds":  null,
+    "averageCoveragePercent":  null,
+    "finalResolvedSnapshots":  0,
+    "snapshots":  [
+
+                  ]
+}

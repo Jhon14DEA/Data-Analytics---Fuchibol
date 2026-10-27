@@ -14,7 +14,7 @@ export default async function DashboardPage() {
       providerStatus: "DEMO",
       message: "AllSportsApi y API-Football no configuradas. Se muestran datos DEMO hasta agregar una clave.",
       lastUpdatedAt: new Date().toISOString(),
-      liveRefreshSeconds: Number(process.env.LIVE_REFRESH_SECONDS) || 60,
+      liveRefreshSeconds: Number(process.env.LIVE_REFRESH_SECONDS) || 120,
       matches
     };
 
@@ -31,7 +31,7 @@ export default async function DashboardPage() {
         ? "🟢 API REAL conectada: AllSportsApi. Mostrando fixtures reales del dia actual."
         : "🟢 API REAL conectada: API-Football. Mostrando fixtures reales del dia actual.",
       lastUpdatedAt: new Date().toISOString(),
-      liveRefreshSeconds: Number(process.env.LIVE_REFRESH_SECONDS) || 60,
+      liveRefreshSeconds: Number(process.env.LIVE_REFRESH_SECONDS) || 120,
       matches
     };
 
@@ -51,7 +51,7 @@ export default async function DashboardPage() {
       providerStatus,
       message: `ERROR FOOTBALL API: ${message}`,
       lastUpdatedAt: new Date().toISOString(),
-      liveRefreshSeconds: Number(process.env.LIVE_REFRESH_SECONDS) || 60,
+      liveRefreshSeconds: Number(process.env.LIVE_REFRESH_SECONDS) || 120,
       matches: []
     };
 

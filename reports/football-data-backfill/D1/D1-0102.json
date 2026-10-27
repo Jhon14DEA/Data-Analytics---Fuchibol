@@ -1,0 +1,254 @@
+{
+  "status": "COMPLETE",
+  "season": "0102",
+  "skipped": false,
+  "csvRows": 306,
+  "checksum": "e83bfa3500b5ae6eaa604a439f5d28c60043b9cf158c4d5ec960a7355e0dfabe",
+  "insertedThisRun": 306,
+  "updatedThisRun": 0,
+  "teamsInserted": 3,
+  "teamsReused": 15,
+  "fixtures": 306,
+  "teams": 18,
+  "teamMatchStats": 612,
+  "referee": 306,
+  "dateOnly": 306,
+  "periodStats": 1224,
+  "outcomes": 2448,
+  "odds": 4161,
+  "nullCoverage": {
+    "goals": {
+      "available": 612,
+      "missing": 0
+    },
+    "shots": {
+      "available": 612,
+      "missing": 0
+    },
+    "shotsOnTarget": {
+      "available": 612,
+      "missing": 0
+    },
+    "corners": {
+      "available": 612,
+      "missing": 0
+    },
+    "fouls": {
+      "available": 612,
+      "missing": 0
+    },
+    "yellowCards": {
+      "available": 612,
+      "missing": 0
+    },
+    "redCards": {
+      "available": 612,
+      "missing": 0
+    },
+    "xg": {
+      "available": 0,
+      "missing": 612
+    },
+    "possession": {
+      "available": 0,
+      "missing": 612
+    }
+  },
+  "duplicates": 0,
+  "anomalies": {},
+  "csvCoverage": {
+    "Div": {
+      "present": 306,
+      "missing": 0
+    },
+    "Date": {
+      "present": 306,
+      "missing": 0
+    },
+    "HomeTeam": {
+      "present": 306,
+      "missing": 0
+    },
+    "AwayTeam": {
+      "present": 306,
+      "missing": 0
+    },
+    "FTHG": {
+      "present": 306,
+      "missing": 0
+    },
+    "FTAG": {
+      "present": 306,
+      "missing": 0
+    },
+    "FTR": {
+      "present": 306,
+      "missing": 0
+    },
+    "HTHG": {
+      "present": 306,
+      "missing": 0
+    },
+    "HTAG": {
+      "present": 306,
+      "missing": 0
+    },
+    "HTR": {
+      "present": 306,
+      "missing": 0
+    },
+    "Attendance": {
+      "present": 306,
+      "missing": 0
+    },
+    "Referee": {
+      "present": 306,
+      "missing": 0
+    },
+    "HS": {
+      "present": 306,
+      "missing": 0
+    },
+    "AS": {
+      "present": 306,
+      "missing": 0
+    },
+    "HST": {
+      "present": 306,
+      "missing": 0
+    },
+    "AST": {
+      "present": 306,
+      "missing": 0
+    },
+    "HHW": {
+      "present": 306,
+      "missing": 0
+    },
+    "AHW": {
+      "present": 306,
+      "missing": 0
+    },
+    "HC": {
+      "present": 306,
+      "missing": 0
+    },
+    "AC": {
+      "present": 306,
+      "missing": 0
+    },
+    "HF": {
+      "present": 306,
+      "missing": 0
+    },
+    "AF": {
+      "present": 306,
+      "missing": 0
+    },
+    "HO": {
+      "present": 306,
+      "missing": 0
+    },
+    "AO": {
+      "present": 306,
+      "missing": 0
+    },
+    "HY": {
+      "present": 306,
+      "missing": 0
+    },
+    "AY": {
+      "present": 306,
+      "missing": 0
+    },
+    "HR": {
+      "present": 306,
+      "missing": 0
+    },
+    "AR": {
+      "present": 306,
+      "missing": 0
+    },
+    "HBP": {
+      "present": 306,
+      "missing": 0
+    },
+    "ABP": {
+      "present": 306,
+      "missing": 0
+    },
+    "GBH": {
+      "present": 233,
+      "missing": 73
+    },
+    "GBD": {
+      "present": 233,
+      "missing": 73
+    },
+    "GBA": {
+      "present": 233,
+      "missing": 73
+    },
+    "IWH": {
+      "present": 306,
+      "missing": 0
+    },
+    "IWD": {
+      "present": 306,
+      "missing": 0
+    },
+    "IWA": {
+      "present": 306,
+      "missing": 0
+    },
+    "LBH": {
+      "present": 298,
+      "missing": 8
+    },
+    "LBD": {
+      "present": 298,
+      "missing": 8
+    },
+    "LBA": {
+      "present": 298,
+      "missing": 8
+    },
+    "SBH": {
+      "present": 257,
+      "missing": 49
+    },
+    "SBD": {
+      "present": 257,
+      "missing": 49
+    },
+    "SBA": {
+      "present": 257,
+      "missing": 49
+    },
+    "SYH": {
+      "present": 292,
+      "missing": 14
+    },
+    "SYD": {
+      "present": 292,
+      "missing": 14
+    },
+    "SYA": {
+      "present": 292,
+      "missing": 14
+    },
+    "WHH": {
+      "present": 293,
+      "missing": 13
+    },
+    "WHD": {
+      "present": 293,
+      "missing": 13
+    },
+    "WHA": {
+      "present": 293,
+      "missing": 13
+    }
+  },
+  "elapsedMs": 19435
+}

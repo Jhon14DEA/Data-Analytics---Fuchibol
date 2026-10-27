@@ -8,18 +8,18 @@ datasource db {
 }
 
 model Match {
-  id          String       @id @default(cuid())
-  externalId  String       @unique
+  id          String          @id @default(cuid())
+  externalId  String          @unique
   homeTeam    String
   awayTeam    String
   competition String
   status      MatchStatus
   minute      Int?
-  homeScore   Int          @default(0)
-  awayScore   Int          @default(0)
+  homeScore   Int             @default(0)
+  awayScore   Int             @default(0)
   kickoffAt   DateTime?
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
   odds        OddsQuote[]
   snapshots   MatchSnapshot[]
   analyses    AnalysisPick[]
@@ -27,29 +27,29 @@ model Match {
 }
 
 model MatchSnapshot {
-  id                 String   @id @default(cuid())
-  matchId            String
-  minute             Int?
-  possessionHome     Int
-  possessionAway     Int
-  shotsHome          Int
-  shotsAway          Int
-  shotsOnTargetHome  Int
-  shotsOnTargetAway  Int
-  xgHome             Decimal  @db.Decimal(5, 2)
-  xgAway             Decimal  @db.Decimal(5, 2)
-  cornersHome        Int
-  cornersAway        Int
-  yellowCardsHome    Int
-  yellowCardsAway    Int
-  redCardsHome       Int
-  redCardsAway       Int
-  foulsHome          Int
-  foulsAway          Int
-  dangerousHome      Int?
-  dangerousAway      Int?
-  capturedAt         DateTime @default(now())
-  match              Match    @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  id                String   @id @default(cuid())
+  matchId           String
+  minute            Int?
+  possessionHome    Int
+  possessionAway    Int
+  shotsHome         Int
+  shotsAway         Int
+  shotsOnTargetHome Int
+  shotsOnTargetAway Int
+  xgHome            Decimal  @db.Decimal(5, 2)
+  xgAway            Decimal  @db.Decimal(5, 2)
+  cornersHome       Int
+  cornersAway       Int
+  yellowCardsHome   Int
+  yellowCardsAway   Int
+  redCardsHome      Int
+  redCardsAway      Int
+  foulsHome         Int
+  foulsAway         Int
+  dangerousHome     Int?
+  dangerousAway     Int?
+  capturedAt        DateTime @default(now())
+  match             Match    @relation(fields: [matchId], references: [id], onDelete: Cascade)
 
   @@index([matchId, capturedAt])
 }
@@ -69,33 +69,33 @@ model OddsQuote {
 }
 
 model AnalysisPick {
-  id            String      @id @default(cuid())
-  matchId       String
-  market        String
-  selection     String
-  availableOdd  Decimal?    @db.Decimal(8, 3)
-  confidence    Int
+  id             String    @id @default(cuid())
+  matchId        String
+  market         String
+  selection      String
+  availableOdd   Decimal?  @db.Decimal(8, 3)
+  confidence     Int
   classification PickClass
-  reasons       String[]
-  risks         String[]
-  invalidators  String[]
-  createdAt     DateTime    @default(now())
-  match         Match       @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  reasons        String[]
+  risks          String[]
+  invalidators   String[]
+  createdAt      DateTime  @default(now())
+  match          Match     @relation(fields: [matchId], references: [id], onDelete: Cascade)
 
   @@index([matchId, createdAt])
 }
 
 model Alert {
-  id        String    @id @default(cuid())
-  matchId   String
-  fingerprint String  @unique
-  type      AlertType
-  severity  Int
-  title     String
-  message   String
-  minute    Int?
-  createdAt DateTime  @default(now())
-  match     Match     @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  id          String    @id @default(cuid())
+  matchId     String
+  fingerprint String    @unique
+  type        AlertType
+  severity    Int
+  title       String
+  message     String
+  minute      Int?
+  createdAt   DateTime  @default(now())
+  match       Match     @relation(fields: [matchId], references: [id], onDelete: Cascade)
 
   @@index([matchId, createdAt])
 }
@@ -109,10 +109,584 @@ model NotificationSubscription {
   updatedAt DateTime @updatedAt
 }
 
+model League {
+  id         String    @id @default(cuid())
+  provider   String
+  externalId String
+  name       String
+  country    String?
+  season     Int?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  fixtures   Fixture[]
+  classification CompetitionClass @default(UNKNOWN)
+  classificationSource String?
+  classificationEvidence Json?
+  seasons Season[]
+  historicalIngestions HistoricalIngestionState[]
+
+  @@unique([provider, externalId])
+  @@index([name])
+}
+
+model Team {
+  id           String             @id @default(cuid())
+  provider     String
+  externalId   String
+  name         String
+  country      String?
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+  homeFixtures Fixture[]          @relation("HomeTeamFixtures")
+  awayFixtures Fixture[]          @relation("AwayTeamFixtures")
+  teamStats    TeamMatchStats[]
+  playerStats  PlayerMatchStats[]
+  lineups      Lineup[]
+  events       MatchEvent[]
+  players      Player[]
+  periodStats TeamPeriodStats[]
+
+  @@unique([provider, externalId])
+  @@index([name])
+}
+
+model Player {
+  id         String             @id @default(cuid())
+  provider   String
+  externalId String
+  name       String
+  teamId     String?
+  position   String?
+  createdAt  DateTime           @default(now())
+  updatedAt  DateTime           @updatedAt
+  team       Team?              @relation(fields: [teamId], references: [id], onDelete: SetNull)
+  matchStats PlayerMatchStats[]
+  lineups    Lineup[]
+
+  @@unique([provider, externalId])
+  @@index([name])
+  @@index([teamId])
+}
+
+model Fixture {
+  kickoffPrecision  String @default("EXACT")
+  historicalKickoffAt DateTime?
+  referee           String?
+  historicalOdds    HistoricalOddsQuote[]
+  id                String             @id @default(cuid())
+  provider          String
+  externalId        String
+  leagueId          String
+  homeTeamId        String
+  awayTeamId        String
+  kickoff           DateTime
+  status            FixtureStatus
+  minute            Int?
+  homeScore         Int                @default(0)
+  awayScore         Int                @default(0)
+  season            Int?
+  round             String?
+  venue             String?
+  staleReason       String?
+  providerUpdatedAt DateTime?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  league            League             @relation(fields: [leagueId], references: [id], onDelete: Restrict)
+  homeTeam          Team               @relation("HomeTeamFixtures", fields: [homeTeamId], references: [id], onDelete: Restrict)
+  awayTeam          Team               @relation("AwayTeamFixtures", fields: [awayTeamId], references: [id], onDelete: Restrict)
+  teamStats         TeamMatchStats[]
+  playerStats       PlayerMatchStats[]
+  lineups           Lineup[]
+  events            MatchEvent[]
+  liveSnapshots     LiveSnapshot[]
+  marketSnapshots   LiveMarketSnapshot[]
+  oddsSnapshots     OddsSnapshot[]
+  hybridScout       HybridScout?
+  seasonId          String?
+  historicalSeason Season? @relation(fields: [seasonId], references: [id], onDelete: Restrict)
+  periodStats       TeamPeriodStats[]
+  historicalOutcomes HistoricalMarketOutcome[]
+
+  @@index([leagueId, seasonId, kickoff])
+
+  @@unique([provider, externalId])
+  @@index([externalId])
+  @@index([kickoff])
+  @@index([status])
+  @@index([homeTeamId])
+  @@index([awayTeamId])
+  @@index([provider, kickoff])
+}
+
+model TeamMatchStats {
+  id               String   @id @default(cuid())
+  fixtureId        String
+  teamId           String
+  isHome           Boolean
+  goals            Int?
+  shots            Int?
+  shotsOffTarget   Int?
+  shotsOnTarget    Int?
+  xg               Decimal? @db.Decimal(6, 2)
+  possession       Int?
+  corners          Int?
+  yellowCards      Int?
+  redCards         Int?
+  fouls            Int?
+  attacks          Int?
+  dangerousAttacks Int?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  fixture          Fixture  @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
+  team             Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+
+  @@unique([fixtureId, teamId])
+  @@index([teamId, fixtureId])
+  @@index([fixtureId, isHome])
+}
+
+model PlayerMatchStats {
+  id             String   @id @default(cuid())
+  fixtureId      String
+  playerId       String
+  teamId         String
+  starter        Boolean?
+  minutes        Int?
+  goals          Int?
+  assists        Int?
+  shots          Int?
+  shotsOnTarget  Int?
+  xg             Decimal? @db.Decimal(6, 2)
+  xa             Decimal? @db.Decimal(6, 2)
+  keyPasses      Int?
+  foulsCommitted Int?
+  foulsReceived  Int?
+  yellowCards    Int?
+  redCards       Int?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  fixture        Fixture  @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
+  player         Player   @relation(fields: [playerId], references: [id], onDelete: Cascade)
+  team           Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+
+  @@unique([fixtureId, playerId])
+  @@index([playerId, fixtureId])
+  @@index([teamId, fixtureId])
+}
+
+model Lineup {
+  id        String   @id @default(cuid())
+  fixtureId String
+  teamId    String
+  playerId  String
+  isHome    Boolean
+  starter   Boolean
+  position  String?
+  number    Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  fixture   Fixture  @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
+  team      Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  player    Player   @relation(fields: [playerId], references: [id], onDelete: Cascade)
+
+  @@unique([fixtureId, playerId, teamId])
+  @@index([fixtureId])
+  @@index([teamId])
+}
+
+model MatchEvent {
+  id              String   @id @default(cuid())
+  fixtureId       String
+  teamId          String?
+  providerEventId String?
+  eventType       String
+  minute          Int?
+  playerName      String?
+  detail          String?
+  sourceHash      String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  fixture         Fixture  @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
+  team            Team?    @relation(fields: [teamId], references: [id], onDelete: SetNull)
+
+  @@unique([fixtureId, sourceHash])
+  @@index([fixtureId])
+  @@index([eventType])
+  @@index([teamId])
+}
+
+model LiveSnapshot {
+  id                   String   @id @default(cuid())
+  fixtureId            String
+  timestamp            DateTime @default(now())
+  minute               Int?
+  homeScore            Int
+  awayScore            Int
+  homeShots            Int?
+  awayShots            Int?
+  homeShotsOffTarget   Int?
+  awayShotsOffTarget   Int?
+  homeShotsOnTarget    Int?
+  awayShotsOnTarget    Int?
+  homeBigChances       Int?
+  awayBigChances       Int?
+  homeShotsInsideBox   Int?
+  awayShotsInsideBox   Int?
+  homeXg               Decimal? @db.Decimal(6, 2)
+  awayXg               Decimal? @db.Decimal(6, 2)
+  homeCorners          Int?
+  awayCorners          Int?
+  homeYellowCards      Int?
+  awayYellowCards      Int?
+  homeRedCards         Int?
+  awayRedCards         Int?
+  homePossession       Int?
+  awayPossession       Int?
+  homeAttacks          Int?
+  awayAttacks          Int?
+  homeDangerousAttacks Int?
+  awayDangerousAttacks Int?
+  sourceHash           String
+  createdAt            DateTime @default(now())
+  fixture              Fixture  @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
+  marketSnapshots      LiveMarketSnapshot[]
+
+  @@unique([fixtureId, sourceHash])
+  @@index([fixtureId, timestamp])
+}
+
+// Point-in-time market features attached to the existing LIVE ingestion.
+// Local durable queue and one-to-one provider mapping. No scheduler owns this table.
+model HybridScout {
+  matchId              String   @id
+  allSportsFixtureId   String   @unique
+  apiFootballFixtureId String?  @unique
+  identity             Json
+  observation          Json
+  observedAt           DateTime
+  liveSnapshotId       String?
+  live                 Boolean
+  priority             Int
+  phase                String   @default("PENDING_PERIOD_CONFIRMATION")
+  invalidated          Boolean  @default(false)
+  certificate          Json?
+  validationCount      Int      @default(0)
+  nextValidationAt     DateTime?
+  htAttemptedAt        DateTime?
+  ftAttemptedAt        DateTime?
+  updatedAt            DateTime @updatedAt
+  match                Fixture  @relation(fields: [matchId], references: [id], onDelete: Cascade)
+
+  @@index([phase, priority])
+}
+
+model ApiFootballBudget {
+  day              String @id
+  used             Int    @default(0)
+  automaticUsed    Int    @default(0)
+  validationUsed   Int    @default(0)
+  remoteLimit      Int    @default(100)
+}
+
+model HybridApiCache {
+  key         String    @id
+  payload     Json?
+  fetchedAt   DateTime?
+  lockedUntil DateTime?
+}
+
+model LiveMarketSnapshot {
+  id                         String   @id @default(cuid())
+  matchId                    String
+  providerFixtureId          String
+  periodProvider             String?
+  statsProvider              String?
+  oddsProvider               String?
+  liveSnapshotId             String
+  capturedAt                 DateTime
+  sourceHash                 String
+  minute                     Int
+  stoppageTime               Int?
+  elapsedStoppageTime        Int?
+  marketType                 String   @default("OVER_0_5")
+  marketPeriod               String   @default("FIRST_HALF")
+  homeScore                  Int
+  awayScore                  Int
+  goalsNeeded                Int
+  minutesRemainingMarket     Float?
+  homeShots                  Int?
+  awayShots                  Int?
+  totalShots                 Int?
+  homeSot                    Int?
+  awaySot                    Int?
+  totalSot                   Int?
+  homeXg                     Float?
+  awayXg                     Float?
+  totalXg                    Float?
+  homeBigChances              Int?
+  awayBigChances              Int?
+  totalBigChances             Int?
+  homeShotsInsideBox          Int?
+  awayShotsInsideBox          Int?
+  totalShotsInsideBox         Int?
+  homeCorners                Int?
+  awayCorners                Int?
+  totalCorners               Int?
+  homeDangerousAttacks        Int?
+  awayDangerousAttacks        Int?
+  totalDangerousAttacks       Int?
+  sotLast5                   Int?
+  sotLast10                  Int?
+  sotLast15                  Int?
+  xgLast5                    Float?
+  xgLast10                   Float?
+  xgLast15                   Float?
+  bigChancesLast5             Int?
+  bigChancesLast10            Int?
+  bigChancesLast15            Int?
+  cornersLast5                Int?
+  cornersLast10               Int?
+  cornersLast15               Int?
+  homeRedCards               Int?
+  awayRedCards               Int?
+  homeOver05FirstHalfRate     Float?
+  awayOver05FirstHalfRate     Float?
+  homeAvgGoalsFirstHalf       Float?
+  awayAvgGoalsFirstHalf       Float?
+  homeZeroZeroHtRate          Float?
+  awayZeroZeroHtRate          Float?
+  marketOdds                 Float?
+  oddsBookmaker              String?
+  oddsQuotedAt               DateTime?
+  dataQuality                Float
+  coveragePercent            Float
+  dataQualityDetails         Json
+  goalBeforeHt               Boolean?
+  goalBeforeFt               Boolean?
+  finalHomeScore             Int?
+  finalAwayScore             Int?
+  htResolvedAt               DateTime?
+  ftResolvedAt               DateTime?
+  resultResolvedAt           DateTime?
+  match                      Fixture @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  liveSnapshot               LiveSnapshot @relation(fields: [liveSnapshotId], references: [id], onDelete: Cascade)
+
+  @@unique([matchId, marketType, marketPeriod, sourceHash])
+  @@index([matchId, capturedAt])
+  @@index([liveSnapshotId])
+  @@index([providerFixtureId])
+  @@index([marketType, marketPeriod, goalBeforeHt, minute])
+  @@index([marketType, marketPeriod, dataQuality, capturedAt])
+}
+
+model Bookmaker {
+  historicalOdds HistoricalOddsQuote[]
+  id        String         @id @default(cuid())
+  name      String         @unique
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  odds      OddsSnapshot[]
+}
+
+model HistoricalOddsQuote {
+  id String @id @default(cuid())
+  fixtureId String
+  bookmakerId String
+  provider String
+  sourceColumn String
+  market String
+  selection String
+  line Decimal? @db.Decimal(6, 2)
+  price Decimal @db.Decimal(8, 3)
+  phase String
+  quotedAt DateTime?
+  receivedAt DateTime
+  fixture Fixture @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
+  bookmaker Bookmaker @relation(fields: [bookmakerId], references: [id], onDelete: Restrict)
+
+  @@unique([fixtureId, provider, sourceColumn])
+  @@index([fixtureId, market])
+}
+
+model OddsSnapshot {
+  id          String    @id @default(cuid())
+  fixtureId   String
+  bookmakerId String
+  market      String
+  selection   String
+  line        Decimal?  @db.Decimal(6, 2)
+  odds        Decimal   @db.Decimal(8, 3)
+  minute      Int?
+  timestamp   DateTime  @default(now())
+  createdAt   DateTime  @default(now())
+  fixture     Fixture   @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
+  bookmaker   Bookmaker @relation(fields: [bookmakerId], references: [id], onDelete: Cascade)
+  receivedAt  DateTime?
+  marketPeriod HistoricalPeriod?
+  provider    String?
+  sourceHash  String? @unique
+
+  @@unique([fixtureId, bookmakerId, market, selection, line, odds, minute])
+  @@index([fixtureId, market, bookmakerId, timestamp])
+  @@index([fixtureId, timestamp])
+}
+
+enum CompetitionClass {
+  MEN_SENIOR
+  WOMEN
+  YOUTH
+  RESERVE
+  UNKNOWN
+}
+
+enum HistoricalPeriod {
+  FIRST_HALF
+  SECOND_HALF
+  FULL_TIME
+  MIN_0_15
+  MIN_16_30
+  MIN_31_45_PLUS
+  MIN_46_60
+  MIN_61_75
+  MIN_76_90_PLUS
+}
+
+enum HistoricalOutcomeStatus {
+  WIN
+  LOSS
+  PUSH
+  VOID
+  UNKNOWN
+}
+
+enum HistoricalIngestionStatus {
+  READY
+  RUNNING
+  SUCCEEDED
+  FAILED
+}
+
+enum ProviderEntityKind {
+  COMPETITION
+  TEAM
+  FIXTURE
+}
+
+model Season {
+  id String @id @default(cuid())
+  leagueId String
+  key String
+  label String
+  providerSeasonId String?
+  startsAt DateTime?
+  endsAt DateTime?
+  receivedAt DateTime
+  league League @relation(fields: [leagueId], references: [id], onDelete: Restrict)
+  fixtures Fixture[]
+  ingestions HistoricalIngestionState[]
+  @@unique([leagueId, key])
+}
+
+model TeamPeriodStats {
+  id String @id @default(cuid())
+  fixtureId String
+  teamId String
+  provider String
+  period HistoricalPeriod
+  goals Int?
+  shots Int?
+  shotsOnTarget Int?
+  xg Decimal? @db.Decimal(10,4)
+  corners Int?
+  yellowCards Int?
+  redCards Int?
+  fouls Int?
+  possession Float?
+  dangerousAttacks Int?
+  receivedAt DateTime
+  source String
+  fixture Fixture @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
+  team Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  @@unique([fixtureId, teamId, provider, period])
+  @@index([teamId, period, fixtureId])
+}
+
+model HistoricalMarketOutcome {
+  id String @id @default(cuid())
+  fixtureId String
+  provider String
+  marketKey String
+  market String
+  period HistoricalPeriod
+  selection String
+  side String
+  line Decimal? @db.Decimal(6,2)
+  rules String
+  status HistoricalOutcomeStatus
+  observedValue Float?
+  receivedAt DateTime
+  resolvedAt DateTime?
+  fixture Fixture @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
+  @@unique([fixtureId, provider, marketKey])
+  @@index([market, period, status])
+}
+
+model ProviderEntityMapping {
+  id String @id @default(cuid())
+  kind ProviderEntityKind
+  leftProvider String
+  leftExternalId String
+  rightProvider String
+  rightExternalId String
+  method String
+  evidence Json
+  createdAt DateTime @default(now())
+  @@unique([kind, leftProvider, leftExternalId, rightProvider])
+  @@unique([kind, rightProvider, rightExternalId, leftProvider])
+}
+
+model HistoricalIngestionState {
+  backfillMetadata Json?
+  id String @id @default(cuid())
+  provider String
+  leagueId String
+  seasonId String
+  rangeFrom DateTime
+  rangeTo DateTime
+  cursor String?
+  lastBatchKey String?
+  lastRunAt DateTime?
+  lastSuccessAt DateTime?
+  lastError String?
+  fixturesFound Int @default(0)
+  fixturesInserted Int @default(0)
+  fixturesUpdated Int @default(0)
+  fixturesRejected Int @default(0)
+  status HistoricalIngestionStatus @default(READY)
+  retryCount Int @default(0)
+  leaseToken String?
+  leaseUntil DateTime?
+  updatedAt DateTime @updatedAt
+  league League @relation(fields: [leagueId], references: [id], onDelete: Restrict)
+  season Season @relation(fields: [seasonId], references: [id], onDelete: Restrict)
+  @@unique([provider, leagueId, seasonId])
+}
+
 enum MatchStatus {
   LIVE
   UPCOMING
   FINISHED
+}
+
+enum FixtureStatus {
+  UPCOMING
+  LIVE
+  HALFTIME
+  FINISHED
+  POSTPONED
+  CANCELLED
+  ABANDONED
+  STALE_PROVIDER_DATA
 }
 
 enum PickClass {

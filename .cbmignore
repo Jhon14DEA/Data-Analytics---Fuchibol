@@ -1,0 +1,22 @@
+# Codebase-memory index exclusions only; does not affect FUT runtime or Git.
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.p12
+secrets/
+backups/
+dumps/
+*.sql
+*.dump
+*.backup
+node_modules/
+.next/
+dist/
+build/
+coverage/
+logs/
+*.log
+reports/
+.codex/

@@ -1,0 +1,94 @@
+[
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\analysis\\matchAnalyzer.ts",
+        "Hash":  "CCABED1B238C9E83A8534B09D558A0F3F852553DB819865DF28E4FE269B854F6"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\analysis\\liveGoalRadar.ts",
+        "Hash":  "11EE3F86AFBCFD5B37CEDFC52B231B2C049E49E16AFE0C6E797A325DFE6F7249"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\lib\\opportunityRadar.ts",
+        "Hash":  "1B4331B7D8E6837E516C3FE2AD5E501D29DCBC057117DB508B0236195496EEAD"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\app\\api\\debug\\live-goal-radar\\route.ts",
+        "Hash":  "EB43D30E916B30014D348CF868E6478106BABB45EFA29AEC8DEFA617ABA34A8B"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\providers\\football\\allSportsApi.ts",
+        "Hash":  "ABF1CD938742C2CBFA2A0E270B25C22E96E00E06188E3CB7A43C24F1AD8D65B6"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\providers\\football\\apiFootball.ts",
+        "Hash":  "B6F9A297856E1F4931C19F42168193BB6D63EF272C2C88887ECACCC7CF82BE95"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\providers\\index.ts",
+        "Hash":  "AA74D620E1EFCC96891D0DE08ACA4A8248FE53CF07D240CC9548E841BA770C29"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\prisma\\schema.prisma",
+        "Hash":  "E7810F4A599A30FF9F79E986794C50518F5D250869977F7A0829789C3DC53BA7"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\lib\\radarReviewNow.ts",
+        "Hash":  "CC40E6F08226E4156E135F91072DD1FD05B1D2077071BC0BA329FCF4F7A2A972"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\features.ts",
+        "Hash":  "188DE917CF21BCAAFD018AFE8785742A01D3C06FA35B02B2F49AD7A4DE5F3CBF"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\liveMarketSnapshots.ts",
+        "Hash":  "66926B0D0E2092B658D436591E04E6B719952549ACD7D35C2AB34C2A61733CCE"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\monitoring.ts",
+        "Hash":  "A8B48CC582DCADD1E4F23A5C230344FC95A0DC9719FD03CF220693AF0447F98D"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\observation.ts",
+        "Hash":  "15ED2C3045CBFA1EC17625299133DAAD37F62A0A99BD0424D985C682F68B5BC4"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\periodEvidence.ts",
+        "Hash":  "9DE0B8606E791F06AF36764DB224F4E179A106CC52E51A27FCB957EDA05AFCBE"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\telemetry.ts",
+        "Hash":  "D3EFABBF48764743ECCE0D5845BF6C30E72433166E09731EF28F07F2BC06397F"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\hybrid\\activation.ts",
+        "Hash":  "EB28D79CCDD069CC86ED86B8D91057FB08C386083E342EA5486F9CA2F6AC57E8"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\hybrid\\budget.ts",
+        "Hash":  "5871D9E1380D9AED4B5F78184B27259EF0C52668E2D958A2A29CC2BB7EB4A66B"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\hybrid\\policy.ts",
+        "Hash":  "07ACC0203D70451228DD3A37EAA9E45FDCA385857A424C1C9ABCAB80B6BEB657"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\hybrid\\processor.ts",
+        "Hash":  "EBCF9EB3EEE134284C2334E2C597754714D883FB1535D73873431A52CAED1DF8"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\hybrid\\scout.ts",
+        "Hash":  "D0B5D723A998A88F1DCE25E8B78176543C36F49722B7201441D6617AFE71610D"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\hybrid\\simulation.ts",
+        "Hash":  "1941586ED4EFF6FDEA33D601BF376034029B478B78C49B8A9C1D1D4E0E6AD072"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\hybrid\\status.ts",
+        "Hash":  "50702B851F6B382ADC4EC55D9415B9AEBA45CBF68DFA79E8012141FDAF5B45E9"
+    },
+    {
+        "Path":  "C:\\Users\\jlabc\\Documents\\PP\\FUT\\src\\services\\training\\hybrid\\trigger.ts",
+        "Hash":  "2819D73251B5FF0B31260BD9FD606574245BFB63FE067952B6729ED6D4A3264D"
+    }
+]

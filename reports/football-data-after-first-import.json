@@ -1,0 +1,34 @@
+{
+  "fixture": {
+    "count": 380,
+    "hash": "6734d0e542be5d3aa4039b4f788118fba02bc0fb650583e4babab08c8176897f"
+  },
+  "team": {
+    "count": 20,
+    "hash": "2911fa1a416018694e2a94b74efbeacc25cc2622a3c164ade203d9679b7d03fd"
+  },
+  "teamMatchStats": {
+    "count": 760,
+    "hash": "371928a9119b1c1ea15acbcab843a54673e681aafca4c407190f65a986de40eb"
+  },
+  "teamPeriodStats": {
+    "count": 1520,
+    "hash": "57afdbdf69c17b828856c73710b366c154e8a67810270182ddd8e122ad8f0190"
+  },
+  "historicalMarketOutcome": {
+    "count": 3040,
+    "hash": "88c683f20894652671d995e3e7be15aa74a634fd167d83025ef637e81c94aed9"
+  },
+  "historicalOddsQuote": {
+    "count": 20606,
+    "hash": "6aadc6e0031d6834f7f878281fdbddbc285fe55154f5742179ff9e69e52ee5ba"
+  },
+  "historicalIngestionState": {
+    "count": 1,
+    "hash": "eeda681976d78c86df1719dec24ae143e8f1cea0d36d2808097d9e32d827f993"
+  },
+  "providerEntityMapping": {
+    "count": 0,
+    "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  }
+}

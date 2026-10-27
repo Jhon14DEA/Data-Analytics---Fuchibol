@@ -1,0 +1,238 @@
+{
+  "status": "COMPLETE",
+  "season": "0405",
+  "skipped": false,
+  "csvRows": 380,
+  "checksum": "517d2e41b374a4172e7215fe37ba6bf95226b88ee66e0b9b5c1f40880ae23ae9",
+  "insertedThisRun": 380,
+  "updatedThisRun": 0,
+  "teamsInserted": 3,
+  "teamsReused": 17,
+  "fixtures": 380,
+  "teams": 20,
+  "teamMatchStats": 760,
+  "referee": 0,
+  "dateOnly": 380,
+  "periodStats": 1520,
+  "outcomes": 3040,
+  "odds": 8713,
+  "nullCoverage": {
+    "goals": {
+      "available": 760,
+      "missing": 0
+    },
+    "shots": {
+      "available": 0,
+      "missing": 760
+    },
+    "shotsOnTarget": {
+      "available": 0,
+      "missing": 760
+    },
+    "corners": {
+      "available": 0,
+      "missing": 760
+    },
+    "fouls": {
+      "available": 0,
+      "missing": 760
+    },
+    "yellowCards": {
+      "available": 0,
+      "missing": 760
+    },
+    "redCards": {
+      "available": 0,
+      "missing": 760
+    },
+    "xg": {
+      "available": 0,
+      "missing": 760
+    },
+    "possession": {
+      "available": 0,
+      "missing": 760
+    }
+  },
+  "duplicates": 0,
+  "anomalies": {},
+  "csvCoverage": {
+    "Div": {
+      "present": 380,
+      "missing": 0
+    },
+    "Date": {
+      "present": 380,
+      "missing": 0
+    },
+    "HomeTeam": {
+      "present": 380,
+      "missing": 0
+    },
+    "AwayTeam": {
+      "present": 380,
+      "missing": 0
+    },
+    "FTHG": {
+      "present": 380,
+      "missing": 0
+    },
+    "FTAG": {
+      "present": 380,
+      "missing": 0
+    },
+    "FTR": {
+      "present": 380,
+      "missing": 0
+    },
+    "HTHG": {
+      "present": 380,
+      "missing": 0
+    },
+    "HTAG": {
+      "present": 380,
+      "missing": 0
+    },
+    "HTR": {
+      "present": 380,
+      "missing": 0
+    },
+    "B365H": {
+      "present": 380,
+      "missing": 0
+    },
+    "B365D": {
+      "present": 380,
+      "missing": 0
+    },
+    "B365A": {
+      "present": 380,
+      "missing": 0
+    },
+    "BWH": {
+      "present": 380,
+      "missing": 0
+    },
+    "BWD": {
+      "present": 380,
+      "missing": 0
+    },
+    "BWA": {
+      "present": 380,
+      "missing": 0
+    },
+    "GBH": {
+      "present": 380,
+      "missing": 0
+    },
+    "GBD": {
+      "present": 380,
+      "missing": 0
+    },
+    "GBA": {
+      "present": 380,
+      "missing": 0
+    },
+    "IWH": {
+      "present": 380,
+      "missing": 0
+    },
+    "IWD": {
+      "present": 380,
+      "missing": 0
+    },
+    "IWA": {
+      "present": 380,
+      "missing": 0
+    },
+    "LBH": {
+      "present": 380,
+      "missing": 0
+    },
+    "LBD": {
+      "present": 380,
+      "missing": 0
+    },
+    "LBA": {
+      "present": 380,
+      "missing": 0
+    },
+    "SBH": {
+      "present": 380,
+      "missing": 0
+    },
+    "SBD": {
+      "present": 380,
+      "missing": 0
+    },
+    "SBA": {
+      "present": 380,
+      "missing": 0
+    },
+    "WHH": {
+      "present": 379,
+      "missing": 1
+    },
+    "WHD": {
+      "present": 379,
+      "missing": 1
+    },
+    "WHA": {
+      "present": 379,
+      "missing": 1
+    },
+    "GB>2.5": {
+      "present": 370,
+      "missing": 10
+    },
+    "GB<2.5": {
+      "present": 370,
+      "missing": 10
+    },
+    "B365>2.5": {
+      "present": 368,
+      "missing": 12
+    },
+    "B365<2.5": {
+      "present": 368,
+      "missing": 12
+    },
+    "GBAHH": {
+      "present": 366,
+      "missing": 14
+    },
+    "GBAHA": {
+      "present": 366,
+      "missing": 14
+    },
+    "GBAH": {
+      "present": 366,
+      "missing": 14
+    },
+    "LBAHH": {
+      "present": 341,
+      "missing": 39
+    },
+    "LBAHA": {
+      "present": 341,
+      "missing": 39
+    },
+    "LBAH": {
+      "present": 341,
+      "missing": 39
+    },
+    "B365AHH": {
+      "present": 379,
+      "missing": 1
+    },
+    "B365AHA": {
+      "present": 379,
+      "missing": 1
+    },
+    "B365AH": {
+      "present": 379,
+      "missing": 1
+    }
+  },
+  "elapsedMs": 30813
+}

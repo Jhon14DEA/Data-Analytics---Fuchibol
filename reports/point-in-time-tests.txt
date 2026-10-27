@@ -1,0 +1,1108 @@
+TAP version 13
+# Subtest: 1H minute 19 SOT 6 is OUTSIDE_TIME_WINDOW
+ok 1 - 1H minute 19 SOT 6 is OUTSIDE_TIME_WINDOW
+  ---
+  duration_ms: 1.2694
+  type: 'test'
+  ...
+# Subtest: 1H minute 25 SOT 4 with missing critical data is HYBRID_ELIGIBLE
+ok 2 - 1H minute 25 SOT 4 with missing critical data is HYBRID_ELIGIBLE
+  ---
+  duration_ms: 0.1332
+  type: 'test'
+  ...
+# Subtest: 1H complete critical data is HYBRID_NOT_NEEDED, including observed zero
+ok 3 - 1H complete critical data is HYBRID_NOT_NEEDED, including observed zero
+  ---
+  duration_ms: 0.1496
+  type: 'test'
+  ...
+# Subtest: FT minute 50 SOT 4 with missing critical data is HYBRID_ELIGIBLE
+ok 4 - FT minute 50 SOT 4 with missing critical data is HYBRID_ELIGIBLE
+  ---
+  duration_ms: 0.2001
+  type: 'test'
+  ...
+# Subtest: FT minute 76 is OUTSIDE_TIME_WINDOW
+ok 5 - FT minute 76 is OUTSIDE_TIME_WINDOW
+  ---
+  duration_ms: 0.1332
+  type: 'test'
+  ...
+# Subtest: SOT 3 is INSUFFICIENT_SOT
+ok 6 - SOT 3 is INSUFFICIENT_SOT
+  ---
+  duration_ms: 0.1302
+  type: 'test'
+  ...
+# Subtest: SOT null, undefined, N/D and non-finite values stay missing and insufficient
+ok 7 - SOT null, undefined, N/D and non-finite values stay missing and insufficient
+  ---
+  duration_ms: 0.3196
+  type: 'test'
+  ...
+# Subtest: both inclusive time boundaries and adjacent exclusions are respected
+ok 8 - both inclusive time boundaries and adjacent exclusions are respected
+  ---
+  duration_ms: 0.3116
+  type: 'test'
+  ...
+# Subtest: each missing critical statistic individually makes enrichment eligible
+ok 9 - each missing critical statistic individually makes enrichment eligible
+  ---
+  duration_ms: 0.4139
+  type: 'test'
+  ...
+# Subtest: recent coverage uses existing recentDataStatus and distinguishes observed inactivity from missing
+ok 10 - recent coverage uses existing recentDataStatus and distinguishes observed inactivity from missing
+  ---
+  duration_ms: 0.4337
+  type: 'test'
+  ...
+# Subtest: non-live, unknown or non-zero score, and unsupported market remain REVIEW_ONLY
+ok 11 - non-live, unknown or non-zero score, and unsupported market remain REVIEW_ONLY
+  ---
+  duration_ms: 0.229
+  type: 'test'
+  ...
+# Subtest: all competitions retains the source fixtures and filtering selects the exact competition
+ok 12 - all competitions retains the source fixtures and filtering selects the exact competition
+  ---
+  duration_ms: 0.8296
+  type: 'test'
+  ...
+# Subtest: competition options are unique, alphabetical and only from current LIVE fixtures
+ok 13 - competition options are unique, alphabetical and only from current LIVE fixtures
+  ---
+  duration_ms: 9.1312
+  type: 'test'
+  ...
+# Subtest: eligible-only filters markets and competitions together without mutating input
+ok 14 - eligible-only filters markets and competitions together without mutating input
+  ---
+  duration_ms: 0.4625
+  type: 'test'
+  ...
+# Subtest: competition controls retain a disappeared selection and emit only local state changes
+ok 15 - competition controls retain a disappeared selection and emit only local state changes
+  ---
+  duration_ms: 8.2124
+  type: 'test'
+  ...
+# Subtest: mounted monitor projection synchronizes REVISAR AHORA and the complete lower radar
+ok 16 - mounted monitor projection synchronizes REVISAR AHORA and the complete lower radar
+  ---
+  duration_ms: 7.7218
+  type: 'test'
+  ...
+# Subtest: denied permission produces no notification and does not consume the dedup key
+ok 17 - denied permission produces no notification and does not consume the dedup key
+  ---
+  duration_ms: 0.2248
+  type: 'test'
+  ...
+# Subtest: default permission never notifies or requests permission automatically
+ok 18 - default permission never notifies or requests permission automatically
+  ---
+  duration_ms: 0.1369
+  type: 'test'
+  ...
+# Subtest: a new eligible fixture notifies once across repeated payloads
+ok 19 - a new eligible fixture notifies once across repeated payloads
+  ---
+  duration_ms: 0.423
+  type: 'test'
+  ...
+# Subtest: ineligible fixture never generates a review notification
+ok 20 - ineligible fixture never generates a review notification
+  ---
+  duration_ms: 0.1514
+  type: 'test'
+  ...
+# Subtest: dedup policy survives eligibility exit and re-entry during the same mount
+ok 21 - dedup policy survives eligibility exit and re-entry during the same mount
+  ---
+  duration_ms: 0.1872
+  type: 'test'
+  ...
+# Subtest: same fixture later eligible for FT gets its own single notification
+ok 22 - same fixture later eligible for FT gets its own single notification
+  ---
+  duration_ms: 0.182
+  type: 'test'
+  ...
+# Subtest: granting permission notifies current eligible fixtures; notification content is review-only
+ok 23 - granting permission notifies current eligible fixtures; notification content is review-only
+  ---
+  duration_ms: 0.16
+  type: 'test'
+  ...
+# Subtest: notification construction errors cannot interrupt radar and do not mark delivery
+ok 24 - notification construction errors cannot interrupt radar and do not mark delivery
+  ---
+  duration_ms: 0.145
+  type: 'test'
+  ...
+# Subtest: explicit permission helper asks only for default, never denied/granted/unsupported
+ok 25 - explicit permission helper asks only for default, never denied/granted/unsupported
+  ---
+  duration_ms: 0.2219
+  type: 'test'
+  ...
+# Subtest: native notification click focuses this radar and scrolls without navigation or HTTP
+ok 26 - native notification click focuses this radar and scrolls without navigation or HTTP
+  ---
+  duration_ms: 0.3502
+  type: 'test'
+  ...
+# Subtest: hybrid badges show the state without changing ALERT, ENTRY, BET_SCORE or source nulls
+ok 27 - hybrid badges show the state without changing ALERT, ENTRY, BET_SCORE or source nulls
+  ---
+  duration_ms: 3.6626
+  type: 'test'
+  ...
+# Subtest: classification, filtering, notification delivery and render add no HTTP, timers, budget or queue dependencies
+ok 28 - classification, filtering, notification delivery and render add no HTTP, timers, budget or queue dependencies
+  ---
+  duration_ms: 1.1846
+  type: 'test'
+  ...
+# Subtest: 3 SOT is excluded
+ok 29 - 3 SOT is excluded
+  ---
+  duration_ms: 1.2793
+  type: 'test'
+  ...
+# Subtest: 4 SOT is included without any minute, xG or quality gate
+ok 30 - 4 SOT is included without any minute, xG or quality gate
+  ---
+  duration_ms: 0.1535
+  type: 'test'
+  ...
+# Subtest: N/D, null, undefined and invalid SOT are excluded without coercion
+ok 31 - N/D, null, undefined and invalid SOT are excluded without coercion
+  ---
+  duration_ms: 0.3255
+  type: 'test'
+  ...
+# Subtest: only confirmed LIVE 0-0 candidates are shown
+ok 32 - only confirmed LIVE 0-0 candidates are shown
+  ---
+  duration_ms: 0.2075
+  type: 'test'
+  ...
+# Subtest: 1H and FT deduplicate by fixture ID and preserve both original markets
+ok 33 - 1H and FT deduplicate by fixture ID and preserve both original markets
+  ---
+  duration_ms: 0.8214
+  type: 'test'
+  ...
+# Subtest: different fixtures do not merge even with identical team labels
+ok 34 - different fixtures do not merge even with identical team labels
+  ---
+  duration_ms: 0.1615
+  type: 'test'
+  ...
+# Subtest: sorts first by combined SOT descending
+ok 35 - sorts first by combined SOT descending
+  ---
+  duration_ms: 0.2149
+  type: 'test'
+  ...
+# Subtest: SOT tie uses Recent Live descending
+ok 36 - SOT tie uses Recent Live descending
+  ---
+  duration_ms: 0.1305
+  type: 'test'
+  ...
+# Subtest: Recent Live tie uses minute descending and missing minute last
+ok 37 - Recent Live tie uses minute descending and missing minute last
+  ---
+  duration_ms: 0.3237
+  type: 'test'
+  ...
+# Subtest: visual labels have the requested 4, 6 and 8 boundaries
+ok 38 - visual labels have the requested 4, 6 and 8 boundaries
+  ---
+  duration_ms: 0.4666
+  type: 'test'
+  ...
+# Subtest: selection and rendering preserve BET_SCORE, ENTRY/NO_ENTRY and original decisions
+ok 39 - selection and rendering preserve BET_SCORE, ENTRY/NO_ENTRY and original decisions
+  ---
+  duration_ms: 12.0472
+  type: 'test'
+  ...
+# Subtest: renders one card with both markets, their actual decisions, scores and main blockers
+ok 40 - renders one card with both markets, their actual decisions, scores and main blockers
+  ---
+  duration_ms: 1.4441
+  type: 'test'
+  ...
+# Subtest: renders a counted empty state for missing SOT
+ok 41 - renders a counted empty state for missing SOT
+  ---
+  duration_ms: 0.3481
+  type: 'test'
+  ...
+# Subtest: presentation executes no HTTP, imports no provider/budget/processor and creates no hybrid candidates
+ok 42 - presentation executes no HTTP, imports no provider/budget/processor and creates no hybrid candidates
+  ---
+  duration_ms: 1.1786
+  type: 'test'
+  ...
+# Subtest: 17m 0-0, goal at 24 and confirmed HT 1-0 => forward label true
+ok 43 - 17m 0-0, goal at 24 and confirmed HT 1-0 => forward label true
+  ---
+  duration_ms: 1.602
+  type: 'test'
+  ...
+# Subtest: 35m 0-0 and confirmed HT 0-0 => false, not missing
+ok 44 - 35m 0-0 and confirmed HT 0-0 => false, not missing
+  ---
+  duration_ms: 6.4296
+  type: 'test'
+  ...
+# Subtest: labels are forward relative to each snapshot, not match-had-a-goal
+ok 45 - labels are forward relative to each snapshot, not match-had-a-goal
+  ---
+  duration_ms: 0.1628
+  type: 'test'
+  ...
+# Subtest: missing xG remains null; confirmed zero remains zero; one missing side makes total null
+ok 46 - missing xG remains null; confirmed zero remains zero; one missing side makes total null
+  ---
+  duration_ms: 11.8122
+  type: 'test'
+  ...
+# Subtest: strict raw mapping does not mistake shots on target for total shots
+ok 47 - strict raw mapping does not mistake shots on target for total shots
+  ---
+  duration_ms: 0.4735
+  type: 'test'
+  ...
+# Subtest: capture starts at minute 18: last15 at minute 22 is null, coverage is 4/15
+ok 48 - capture starts at minute 18: last15 at minute 22 is null, coverage is 4/15
+  ---
+  duration_ms: 0.3402
+  type: 'test'
+  ...
+# Subtest: real continuous coverage produces exact deltas without FT or other-fixture contamination
+ok 49 - real continuous coverage produces exact deltas without FT or other-fixture contamination
+  ---
+  duration_ms: 0.4439
+  type: 'test'
+  ...
+# Subtest: endpoint coverage alone cannot fill a 15-minute gap; resets invalidate the affected metric
+ok 50 - endpoint coverage alone cannot fill a 15-minute gap; resets invalidate the affected metric
+  ---
+  duration_ms: 0.2352
+  type: 'test'
+  ...
+# Subtest: goaled, HT, second-half, unknown score, invalid id and stale observations are not candidates
+ok 51 - goaled, HT, second-half, unknown score, invalid id and stale observations are not candidates
+  ---
+  duration_ms: 0.6883
+  type: 'test'
+  ...
+# Subtest: 45+2 is first-half added time played, not two announced minutes remaining
+ok 52 - 45+2 is first-half added time played, not two announced minutes remaining
+  ---
+  duration_ms: 0.4898
+  type: 'test'
+  ...
+# Subtest: FT score never substitutes for an unavailable HT result; abandonment is not FT
+ok 53 - FT score never substitutes for an unavailable HT result; abandonment is not FT
+  ---
+  duration_ms: 0.8559
+  type: 'test'
+  ...
+# Subtest: API-Football keeps 1H/HT/2H and unknown scores separate
+ok 54 - API-Football keeps 1H/HT/2H and unknown scores separate
+  ---
+  duration_ms: 0.316
+  type: 'test'
+  ...
+# Subtest: duplicates are stable; useful changes within the same minute are retained
+ok 55 - duplicates are stable; useful changes within the same minute are retained
+  ---
+  duration_ms: 0.3859
+  type: 'test'
+  ...
+# Subtest: a cached raw object keeps its original receipt time
+ok 56 - a cached raw object keeps its original receipt time
+  ---
+  duration_ms: 0.1485
+  type: 'test'
+  ...
+# Subtest: odds require explicit FIRST HALF OVER 0.5, fresh timestamp and match-wide goals
+ok 57 - odds require explicit FIRST HALF OVER 0.5, fresh timestamp and match-wide goals
+  ---
+  duration_ms: 1.0276
+  type: 'test'
+  ...
+# Subtest: validation filters reject malformed, reversed and excessive inputs
+ok 58 - validation filters reject malformed, reversed and excessive inputs
+  ---
+  duration_ms: 0.5608
+  type: 'test'
+  ...
+# Subtest: separately fetched stats are not backdated and stale clocks never acquire fresh metrics
+ok 59 - separately fetched stats are not backdated and stale clocks never acquire fresh metrics
+  ---
+  duration_ms: 0.2887
+  type: 'test'
+  ...
+# Subtest: numeric AllSports status alone is ambiguous, explicit API 1H permits capture
+ok 60 - numeric AllSports status alone is ambiguous, explicit API 1H permits capture
+  ---
+  duration_ms: 0.3043
+  type: 'test'
+  ...
+# Subtest: dataset skip reasons distinguish score, period, identity and stale observations
+ok 61 - dataset skip reasons distinguish score, period, identity and stale observations
+  ---
+  duration_ms: 0.1771
+  type: 'test'
+  ...
+# Subtest: dataset health is informational and distinguishes empty, incomplete and healthy data
+ok 62 - dataset health is informational and distinguishes empty, incomplete and healthy data
+  ---
+  duration_ms: 0.3963
+  type: 'test'
+  ...
+# Subtest: identical dataset skips are suppressed until the fixture state changes
+ok 63 - identical dataset skips are suppressed until the fixture state changes
+  ---
+  duration_ms: 0.4044
+  type: 'test'
+  ...
+# Subtest: explicit FIRST_HALF status confirms period without inventing a clock
+ok 64 - explicit FIRST_HALF status confirms period without inventing a clock
+  ---
+  duration_ms: 0.1114
+  type: 'test'
+  ...
+# Subtest: explicit SECOND_HALF status confirms the second half
+ok 65 - explicit SECOND_HALF status confirms the second half
+  ---
+  duration_ms: 0.0963
+  type: 'test'
+  ...
+# Subtest: actual AllSports Half Time status confirms HT independently of live flag
+ok 66 - actual AllSports Half Time status confirms HT independently of live flag
+  ---
+  duration_ms: 0.0973
+  type: 'test'
+  ...
+# Subtest: 17 alone cannot establish first-half period
+ok 67 - 17 alone cannot establish first-half period
+  ---
+  duration_ms: 0.0952
+  type: 'test'
+  ...
+# Subtest: live flag, fresh 0-0 and missing HT do not positively prove FIRST_HALF
+ok 68 - live flag, fresh 0-0 and missing HT do not positively prove FIRST_HALF
+  ---
+  duration_ms: 0.1059
+  type: 'test'
+  ...
+# Subtest: ambiguous 45 and added-time values never imply FIRST_HALF
+ok 69 - ambiguous 45 and added-time values never imply FIRST_HALF
+  ---
+  duration_ms: 0.1249
+  type: 'test'
+  ...
+# Subtest: confirmed period with unknown score does not capture; explicit 0-0 does
+ok 70 - confirmed period with unknown score does not capture; explicit 0-0 does
+  ---
+  duration_ms: 0.1473
+  type: 'test'
+  ...
+# Subtest: API-Football 1H remains explicit and independent of AllSports evidence
+ok 71 - API-Football 1H remains explicit and independent of AllSports evidence
+  ---
+  duration_ms: 0.1846
+  type: 'test'
+  ...
+# Subtest: real post-HT signals support SECOND_HALF derivation; missing or stale evidence does not
+ok 72 - real post-HT signals support SECOND_HALF derivation; missing or stale evidence does not
+  ---
+  duration_ms: 0.201
+  type: 'test'
+  ...
+# Subtest: period contradictions are rejected and skip telemetry carries sanitized evidence without spam
+ok 73 - period contradictions are rejected and skip telemetry carries sanitized evidence without spam
+  ---
+  duration_ms: 0.2959
+  type: 'test'
+  ...
+# Subtest: capture requires confirmed period evidence, not a manually assigned period
+ok 74 - capture requires confirmed period evidence, not a manually assigned period
+  ---
+  duration_ms: 0.1341
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71no450004c73knp74q8db"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71no450004c73knp74q8db","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:29.745Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv71no450004c73knp74q8db"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv71no450004c73knp74q8db"}
+# {"event":"HYBRID_PERIOD_CACHE_HIT","matchId":"cmv71no450004c73knp74q8db"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71no450004c73knp74q8db","count":1,"at":"2026-10-13T18:58:29.848Z"}
+# Subtest: real DB hook: unknown AllSports stays pending; 1H cert produces linked hybrid snapshot
+ok 75 - real DB hook: unknown AllSports stays pending; 1H cert produces linked hybrid snapshot
+  ---
+  duration_ms: 2258.6425
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71no8v000cc73kbe6w1zcs"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71no8v000cc73kbe6w1zcs","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:29.904Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv71no8v000cc73kbe6w1zcs"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv71no8v000cc73kbe6w1zcs"}
+# {"event":"HYBRID_PERIOD_CACHE_HIT","matchId":"cmv71no8v000cc73kbe6w1zcs"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71no8v000cc73kbe6w1zcs","count":1,"at":"2026-10-13T18:58:29.973Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71no8v000cc73kbe6w1zcs","reason":"DUPLICATE","count":1,"at":"2026-10-13T18:58:30.006Z"}
+# Subtest: next AllSports snapshot within TTL and restarted batch use durable cache with zero requests
+ok 76 - next AllSports snapshot within TTL and restarted batch use durable cache with zero requests
+  ---
+  duration_ms: 146.3532
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71nocq000lc73kul2d803w"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nocq000lc73kul2d803w","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.038Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv71nocq000lc73kul2d803w"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv71nocq000lc73kul2d803w"}
+# {"event":"HYBRID_PERIOD_CACHE_HIT","matchId":"cmv71nocq000lc73kul2d803w"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nocq000lc73kul2d803w","count":1,"at":"2026-10-13T18:58:30.091Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nocq000lc73kul2d803w","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.106Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":2}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":2,"automaticUsed":2}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":78,"reserve":20}
+# Subtest: expired TTL cannot capture; elapsed cooldown permits exactly one new validation
+ok 77 - expired TTL cannot capture; elapsed cooldown permits exactly one new validation
+  ---
+  duration_ms: 133.3527
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71nogf000tc73k0l7r0uz2"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nogf000tc73k0l7r0uz2","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.169Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv71nogf000tc73k0l7r0uz2"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv71nogf000tc73k0l7r0uz2"}
+# {"event":"HYBRID_PERIOD_CACHE_HIT","matchId":"cmv71nogf000tc73k0l7r0uz2"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nogf000tc73k0l7r0uz2","count":1,"at":"2026-10-13T18:58:30.220Z"}
+# {"event":"DATASET_HT_RESOLVED","fixtureId":"cmv71nogf000tc73k0l7r0uz2","count":1,"at":"2026-10-13T18:58:30.239Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nogf000tc73k0l7r0uz2","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.260Z"}
+# Subtest: HT from existing listing invalidates persisted certificate and resolves without API
+ok 78 - HT from existing listing invalidates persisted certificate and resolves without API
+  ---
+  duration_ms: 114.1216
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71nojl0011c73kn3kb0i12"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nojl0011c73kn3kb0i12","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.283Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv71nojl0011c73kn3kb0i12"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv71nojl0011c73kn3kb0i12"}
+# {"event":"HYBRID_PERIOD_CACHE_HIT","matchId":"cmv71nojl0011c73kn3kb0i12"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nojl0011c73kn3kb0i12","count":1,"at":"2026-10-13T18:58:30.333Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"OUTCOME","sessionRequests":2}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"OUTCOME","used":2,"automaticUsed":2}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":78,"reserve":20}
+# {"event":"DATASET_HT_RESOLVED","fixtureId":"cmv71nojl0011c73kn3kb0i12","count":1,"at":"2026-10-13T18:58:30.363Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"OUTCOME","sessionRequests":3}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"OUTCOME","used":3,"automaticUsed":3}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":77,"reserve":20}
+# {"event":"DATASET_FT_RESOLVED","fixtureId":"cmv71nojl0011c73kn3kb0i12","count":1,"at":"2026-10-13T18:58:30.402Z"}
+# Subtest: missing HT and FT use one minimal request each; FT never supplies an absent HT score
+ok 79 - missing HT and FT use one minimal request each; FT never supplies an absent HT score
+  ---
+  duration_ms: 154.4246
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71nonv0019c73kmfgp71zg"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nonv0019c73kmfgp71zg","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.439Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_AMBIGUOUS","matchId":"cmv71nonv0019c73kmfgp71zg"}
+# Subtest: ambiguous API fixtures never create mapping or snapshot
+ok 80 - ambiguous API fixtures never create mapping or snapshot
+  ---
+  duration_ms: 51.3554
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71nopc001gc73k0sdnlxbq"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nopc001gc73k0sdnlxbq","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.491Z"}
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71nopt001nc73kfdqos9jk"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nopt001nc73kfdqos9jk","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.509Z"}
+# {"event":"HYBRID_MATCH_AMBIGUOUS","matchId":"cmv71nopc001gc73k0sdnlxbq"}
+# {"event":"HYBRID_MATCH_AMBIGUOUS","matchId":"cmv71nopt001nc73kfdqos9jk"}
+# Subtest: ambiguous local scouts spend zero requests
+ok 81 - ambiguous local scouts spend zero requests
+  ---
+  duration_ms: 51.8962
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71noqq001uc73knwu8fg7o"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71noqq001uc73knwu8fg7o","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.540Z"}
+# Subtest: maximum validations is persistent; an expired certificate cannot exceed four attempts
+ok 82 - maximum validations is persistent; an expired certificate cannot exceed four attempts
+  ---
+  duration_ms: 31.1844
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71norm0021c73kq0zcbfob"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71norm0021c73kq0zcbfob","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.571Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv71norm0021c73kq0zcbfob"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv71norm0021c73kq0zcbfob"}
+# {"event":"HYBRID_PERIOD_CACHE_HIT","matchId":"cmv71norm0021c73kq0zcbfob"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71norm0021c73kq0zcbfob","count":1,"at":"2026-10-13T18:58:30.616Z"}
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"2026-10-13:OUTCOME"}
+# {"event":"API_HYBRID_REQUEST_FAILED","purpose":"HT","matchId":"cmv71norm0021c73kq0zcbfob"}
+# Subtest: outcome budget denial preserves its one future attempt
+ok 83 - outcome budget denial preserves its one future attempt
+  ---
+  duration_ms: 92.9884
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71nou60029c73ka0xezasf"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nou60029c73ka0xezasf","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.663Z"}
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71nouk002gc73kryqosu0o"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nouk002gc73kryqosu0o","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.677Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv71nouk002gc73kryqosu0o"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv71nouk002gc73kryqosu0o"}
+# Subtest: ten durable admissions limit new fixtures and higher coverage wins the last slot
+ok 84 - ten durable admissions limit new fixtures and higher coverage wins the last slot
+  ---
+  duration_ms: 66.7031
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71now1002nc73kk3ws5v2l"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71now1002nc73kk3ws5v2l","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.730Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv71now1002nc73kk3ws5v2l"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv71now1002nc73kk3ws5v2l"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71now1002nc73kk3ws5v2l","reason":"HYBRID_EVIDENCE_INVALIDATED","count":1,"at":"2026-10-13T18:58:30.761Z"}
+# Subtest: stale in-memory hybrid evidence is rejected after persisted invalidation
+ok 85 - stale in-memory hybrid evidence is rejected after persisted invalidation
+  ---
+  duration_ms: 50.0834
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71noxf002uc73kjphq5h8u"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71noxf002uc73kjphq5h8u","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.779Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv71noxf002uc73kjphq5h8u"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv71noxf002uc73kjphq5h8u"}
+# {"event":"HYBRID_PERIOD_CACHE_HIT","matchId":"cmv71noxf002uc73kjphq5h8u"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71noxf002uc73kjphq5h8u","count":1,"at":"2026-10-13T18:58:30.822Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"OUTCOME","sessionRequests":2}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"OUTCOME","used":2,"automaticUsed":2}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":78,"reserve":20}
+# {"event":"DATASET_FT_RESOLVED","fixtureId":"cmv71noxf002uc73kjphq5h8u","count":1,"at":"2026-10-13T18:58:30.846Z"}
+# Subtest: API FT with no explicit halftime score resolves only FT, never fabricates HT
+ok 86 - API FT with no explicit halftime score resolves only FT, never fabricates HT
+  ---
+  duration_ms: 90.5619
+  type: 'test'
+  ...
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"2026-10-13:VALIDATION"}
+# {"event":"HYBRID_API_REQUEST","purpose":"OUTCOME","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"OUTCOME","used":61,"automaticUsed":61}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":19,"reserve":20}
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"2026-10-13:OUTCOME"}
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71np0h0032c73kj4df77u7"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71np0h0032c73kj4df77u7","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.890Z"}
+# {"event":"API_HYBRID_REQUEST_FAILED","purpose":"VALIDATION","matchId":"cmv71np0h0032c73kj4df77u7"}
+# Subtest: budget exhaustion and protected reserve persist in PostgreSQL and block before HTTP
+ok 87 - budget exhaustion and protected reserve persist in PostgreSQL and block before HTTP
+  ---
+  duration_ms: 56.1777
+  type: 'test'
+  ...
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"2026-10-13:VALIDATION"}
+# Subtest: remote quota can only tighten usage; missing headers never become zero
+ok 88 - remote quota can only tighten usage; missing headers never become zero
+  ---
+  duration_ms: 48.5811
+  type: 'test'
+  ...
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71np2v0039c73kfqbq8y36"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71np2v0039c73kfqbq8y36","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.977Z"}
+# {"event":"HYBRID_CANDIDATE_QUEUED","matchId":"cmv71np3a003gc73kug540lq9"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71np3a003gc73kug540lq9","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"17","normalizedMinute":17,"resolvedPeriod":"UNKNOWN","periodConfidence":"UNKNOWN","reason":"INSUFFICIENT_FIRST_HALF_EVIDENCE","source":"event_status"},"count":1,"at":"2026-10-13T18:58:30.991Z"}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_MATCH_CONFIRMED","matchId":"cmv71np2v0039c73kfqbq8y36"}
+# {"event":"HYBRID_PERIOD_CONFIRMED","matchId":"cmv71np2v0039c73kfqbq8y36"}
+# {"event":"HYBRID_MATCH_NOT_FOUND","matchId":"cmv71np3a003gc73kug540lq9"}
+# {"event":"HYBRID_PERIOD_CACHE_HIT","matchId":"cmv71np2v0039c73kfqbq8y36"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71np2v0039c73kfqbq8y36","count":1,"at":"2026-10-13T18:58:31.046Z"}
+# Subtest: fixture B does not borrow fixture A certificate or outcomes
+ok 89 - fixture B does not borrow fixture A certificate or outcomes
+  ---
+  duration_ms: 104.1535
+  type: 'test'
+  ...
+# Subtest: hybrid client uses only /fixtures, counts cache misses and never retries failed HTTP
+ok 90 - hybrid client uses only /fixtures, counts cache misses and never retries failed HTTP
+  ---
+  duration_ms: 5.0908
+  type: 'test'
+  ...
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2091-01-02","purpose":"VALIDATION","used":60,"automaticUsed":60}
+# {"event":"API_BUDGET_REMAINING","day":"2091-01-02","remaining":20,"reserve":20}
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"2091-01-02:VALIDATION"}
+# Subtest: concurrent workers and a new Prisma client cannot reset the persisted reservation
+ok 91 - concurrent workers and a new Prisma client cannot reset the persisted reservation
+  ---
+  duration_ms: 2106.0498
+  type: 'test'
+  ...
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":1}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":79,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":2}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":2,"automaticUsed":2}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":78,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":3}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":3,"automaticUsed":3}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":77,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":4}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":4,"automaticUsed":4}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":76,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":5}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":5,"automaticUsed":5}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":75,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":6}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":6,"automaticUsed":6}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":74,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":7}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":7,"automaticUsed":7}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":73,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":8}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":8,"automaticUsed":8}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":72,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":9}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"VALIDATION","used":9,"automaticUsed":9}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":71,"reserve":20}
+# {"event":"HYBRID_API_REQUEST","purpose":"OUTCOME","sessionRequests":10}
+# {"event":"API_BUDGET_USED","day":"2026-10-13","purpose":"OUTCOME","used":10,"automaticUsed":10}
+# {"event":"API_BUDGET_REMAINING","day":"2026-10-13","remaining":70,"reserve":20}
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"activation-session:test-19ba7609-1843-4708-9bc6-fdffac48c128"}
+# Subtest: session cap includes outcomes, survives another day, and denial consumes no daily budget
+ok 92 - session cap includes outcomes, survives another day, and denial consumes no daily budget
+  ---
+  duration_ms: 144.2121
+  type: 'test'
+  ...
+# {"event":"HYBRID_API_REQUEST","purpose":"VALIDATION","sessionRequests":10}
+# {"event":"API_BUDGET_USED","day":"2093-01-01","purpose":"VALIDATION","used":1,"automaticUsed":1}
+# {"event":"API_BUDGET_REMAINING","day":"2093-01-01","remaining":79,"reserve":20}
+# {"event":"HYBRID_API_SKIPPED_BUDGET","matchId":"activation-session:test-814c01a2-473e-485d-953f-1b4ddb1a0234"}
+# Subtest: concurrent workers share last session slot and reconnection cannot reset it
+ok 93 - concurrent workers share last session slot and reconnection cannot reset it
+  ---
+  duration_ms: 4125.4423
+  type: 'test'
+  ...
+# {"event":"HYBRID_PROCESSOR_FAILED"}
+# {"event":"HYBRID_PROCESSOR_SCHEDULE_FAILED"}
+# Subtest: AllSports numeric 17 is only a scout, never a confirmed candidate
+ok 94 - AllSports numeric 17 is only a scout, never a confirmed candidate
+  ---
+  duration_ms: 3.3012
+  type: 'test'
+  ...
+# Subtest: API 1H certifies period while preserving AllSports stats and provenance
+ok 95 - API 1H certifies period while preserving AllSports stats and provenance
+  ---
+  duration_ms: 18.1875
+  type: 'test'
+  ...
+# Subtest: subsequent observation within TTL reuses confirmation without changing its receipt
+ok 96 - subsequent observation within TTL reuses confirmation without changing its receipt
+  ---
+  duration_ms: 0.4611
+  type: 'test'
+  ...
+# Subtest: expired confirmation never captures; validation also observes persistent cooldown and cap
+ok 97 - expired confirmation never captures; validation also observes persistent cooldown and cap
+  ---
+  duration_ms: 0.2621
+  type: 'test'
+  ...
+# Subtest: HT, 2H, FT, score changes and non-live states cannot reuse FIRST_HALF
+ok 98 - HT, 2H, FT, score changes and non-live states cannot reuse FIRST_HALF
+  ---
+  duration_ms: 0.3175
+  type: 'test'
+  ...
+# Subtest: matching requires unique exact teams, orientation, league and nearby kickoff
+ok 99 - matching requires unique exact teams, orientation, league and nearby kickoff
+  ---
+  duration_ms: 0.4314
+  type: 'test'
+  ...
+# Subtest: persisted mapping takes precedence but contradictory identities are rejected
+ok 100 - persisted mapping takes precedence but contradictory identities are rejected
+  ---
+  duration_ms: 0.2874
+  type: 'test'
+  ...
+# Subtest: different fixture cannot consume another fixture certificate
+ok 101 - different fixture cannot consume another fixture certificate
+  ---
+  duration_ms: 0.4604
+  type: 'test'
+  ...
+# Subtest: N/D stays NULL, zero is retained, no FT odds substitute
+ok 102 - N/D stays NULL, zero is retained, no FT odds substitute
+  ---
+  duration_ms: 0.8318
+  type: 'test'
+  ...
+# Subtest: unknown score, stale observation, clock regression/jump and expired identities fail closed
+ok 103 - unknown score, stale observation, clock regression/jump and expired identities fail closed
+  ---
+  duration_ms: 0.5633
+  type: 'test'
+  ...
+# Subtest: better AllSports coverage is prioritized independently from betting scores
+ok 104 - better AllSports coverage is prioritized independently from betting scores
+  ---
+  duration_ms: 0.3092
+  type: 'test'
+  ...
+# Subtest: automatic ceiling and outcome reserve cannot be bypassed with configuration
+ok 105 - automatic ceiling and outcome reserve cannot be bypassed with configuration
+  ---
+  duration_ms: 0.2839
+  type: 'test'
+  ...
+# Subtest: disabled worker performs zero database access and zero requests even with authorization argument
+ok 106 - disabled worker performs zero database access and zero requests even with authorization argument
+  ---
+  duration_ms: 1.212
+  type: 'test'
+  ...
+# Subtest: radar schedules after response, does not await provider, and contains processor failures
+ok 107 - radar schedules after response, does not await provider, and contains processor failures
+  ---
+  duration_ms: 3.7925
+  type: 'test'
+  ...
+# Subtest: simulation never activates and flags demand above 80 independently from budget truncation
+ok 108 - simulation never activates and flags demand above 80 independently from budget truncation
+  ---
+  duration_ms: 11.6791
+  type: 'test'
+  ...
+# Subtest: 10-minute TTL matches revalidation; late evidence ends before minute 43
+ok 109 - 10-minute TTL matches revalidation; late evidence ends before minute 43
+  ---
+  duration_ms: 0.2973
+  type: 'test'
+  ...
+# Subtest: PostgreSQL key ordering cannot change a hybrid snapshot hash
+ok 110 - PostgreSQL key ordering cannot change a hybrid snapshot hash
+  ---
+  duration_ms: 0.4409
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nwnl0004c7ik7ryoz612","count":1,"at":"2026-10-13T18:58:40.826Z"}
+# {"event":"DATASET_HT_RESOLVED","fixtureId":"cmv71nwnl0004c7ik7ryoz612","count":1,"at":"2026-10-13T18:58:40.842Z"}
+# {"event":"DATASET_FT_RESOLVED","fixtureId":"cmv71nwnl0004c7ik7ryoz612","count":1,"at":"2026-10-13T18:58:40.855Z"}
+# Subtest: PIT features survive later HT and FT resolution byte-for-byte in PostgreSQL
+ok 111 - PIT features survive later HT and FT resolution byte-for-byte in PostgreSQL
+  ---
+  duration_ms: 2151.3191
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nwpt000cc7ik6o82jzg1","count":1,"at":"2026-10-13T18:58:40.878Z"}
+# Subtest: outcomes with future receipt or before the logical market end cannot resolve labels
+ok 112 - outcomes with future receipt or before the logical market end cannot resolve labels
+  ---
+  duration_ms: 22.4216
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nwqg000kc7ikloe7pkzv","count":1,"at":"2026-10-13T18:58:40.901Z"}
+# Subtest: out-of-band historical feature updates are excluded by the persisted integrity seal
+ok 113 - out-of-band historical feature updates are excluded by the persisted integrity seal
+  ---
+  duration_ms: 28.4763
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nwr8000sc7ikqkcc3tgk","count":1,"at":"2026-10-13T18:58:40.929Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nwr8000sc7ikqkcc3tgk","reason":"DUPLICATE","count":1,"at":"2026-10-13T18:58:40.943Z"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nwr8000sc7ikqkcc3tgk","count":1,"at":"2026-10-13T18:58:40.960Z"}
+# Subtest: PostgreSQL persists NULL/zero, deduplicates and retains a changed same-minute sample
+ok 114 - PostgreSQL persists NULL/zero, deduplicates and retains a changed same-minute sample
+  ---
+  duration_ms: 58.8327
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nwsv0012c7ik1f3tqef6","count":1,"at":"2026-10-13T18:58:40.987Z"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nwsv0012c7ik1f3tqef6","count":1,"at":"2026-10-13T18:58:41.000Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nwsv0012c7ik1f3tqef6","reason":"ALREADY_SCORED","count":1,"at":"2026-10-13T18:58:41.004Z"}
+# {"event":"DATASET_HT_RESOLVED","fixtureId":"cmv71nwsv0012c7ik1f3tqef6","count":2,"at":"2026-10-13T18:58:41.015Z"}
+# {"event":"DATASET_FT_RESOLVED","fixtureId":"cmv71nwsv0012c7ik1f3tqef6","count":2,"at":"2026-10-13T18:58:41.032Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nwsv0012c7ik1f3tqef6","reason":"MARKET_RESOLVED","count":1,"at":"2026-10-13T18:58:41.041Z"}
+# Subtest: 17m/20m 0-0 -> goal 24 -> HT resolves BOTH forward labels, FT finalizes
+ok 115 - 17m/20m 0-0 -> goal 24 -> HT resolves BOTH forward labels, FT finalizes
+  ---
+  duration_ms: 73.4063
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nwux001bc7ikf2qqzd4l","count":1,"at":"2026-10-13T18:58:41.070Z"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nwv5001ic7ikr9steqd2","count":1,"at":"2026-10-13T18:58:41.084Z"}
+# {"event":"DATASET_HT_RESOLVED","fixtureId":"cmv71nwux001bc7ikf2qqzd4l","count":1,"at":"2026-10-13T18:58:41.101Z"}
+# {"event":"DATASET_FT_RESOLVED","fixtureId":"cmv71nwux001bc7ikf2qqzd4l","count":1,"at":"2026-10-13T18:58:41.108Z"}
+# Subtest: 35m 0-0 -> HT 0-0 -> FT 1-0 gives HT=false, FT=true; other fixtures untouched
+ok 116 - 35m 0-0 -> HT 0-0 -> FT 1-0 gives HT=false, FT=true; other fixtures untouched
+  ---
+  duration_ms: 74.4372
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nwwz001rc7ik72nm5650","count":1,"at":"2026-10-13T18:58:41.137Z"}
+# {"event":"DATASET_FT_RESOLVED","fixtureId":"cmv71nwwz001rc7ik72nm5650","count":1,"at":"2026-10-13T18:58:41.148Z"}
+# {"event":"DATASET_HT_RESOLVED","fixtureId":"cmv71nwwz001rc7ik72nm5650","count":1,"at":"2026-10-13T18:58:41.158Z"}
+# Subtest: FT without confirmed HT resolves only FT; later HT fills missing label without guessing
+ok 117 - FT without confirmed HT resolves only FT; later HT fills missing label without guessing
+  ---
+  duration_ms: 44.8149
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nwy7001zc7ikddofnb5p","count":1,"at":"2026-10-13T18:58:41.179Z"}
+# Subtest: stale outcome predating capture cannot label the snapshot; summary ignores null averages
+ok 118 - stale outcome predating capture cannot label the snapshot; summary ignores null averages
+  ---
+  duration_ms: 60.0981
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nwzx0027c7ikfuz5s2su","count":1,"at":"2026-10-13T18:58:41.241Z"}
+# prisma:error 
+# Invalid `assert.rejects(()=>tx.liveMarketSnapshot.update()` invocation in
+# C:\\Users\\jlabc\\Documents\\PP\\FUT\\tests\\training\\persistence.test.cjs:129:50
+#   126 test('database enforces FIRST_HALF-only market candidates', async()=>rolledBack(async tx=>{
+#   127   const {fixture,live,observation}=await setup(tx);
+#   128   const row=await persistLiveMarketSnapshot(fixture.id,live.id,observation,tx);
+# → 129   await assert.rejects(()=>tx.liveMarketSnapshot.update(
+# Error occurred during query execution:
+# ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "23514", message: "new row for relation \\"LiveMarketSnapshot\\" violates check constraint \\"LiveMarketSnapshot_candidate_check\\"", severity: "ERROR", detail: Some("Failing row contains (cmv71nx07002ac7ikx5mgclix, cmv71nwzx0027c7ikfuz5s2su, 111, cmv71nwzy0029c7ikl9glk1zw, 2026-10-13 18:57:41.231, 45b7bcbbe2a383e21c642da928389c0bab79e83503d9209c2f0cdc7285d3c521, 17, null, null, OVER_0_5, FULL_TIME, 0, 0, 1, 28, null, null, null, 0, 1, 1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 6, 0, {\\"history\\": \\"FIRST_HALF_HISTORY_UNAVAILABLE\\", \\"missing\\": [\\"home...., null, null, null, null, null, null, null, ALLSPORTS, ALLSPORTS, null)."), column: None, hint: None }), transient: false })
+# Subtest: database enforces FIRST_HALF-only market candidates
+ok 119 - database enforces FIRST_HALF-only market candidates
+  ---
+  duration_ms: 29.8667
+  type: 'test'
+  ...
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nx0r002fc7ikkpla9761","reason":"DEMO","count":1,"at":"2026-10-13T18:58:41.261Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nx0r002fc7ikkpla9761","reason":"UNKNOWN_SCORE","count":1,"at":"2026-10-13T18:58:41.263Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nx0r002fc7ikkpla9761","reason":"ALREADY_SCORED","count":1,"at":"2026-10-13T18:58:41.265Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nx0r002fc7ikkpla9761","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"1H 17","normalizedMinute":17,"resolvedPeriod":"FIRST_HALF","periodConfidence":"CONFIRMED","reason":"EXPLICIT_PERIOD_STATUS","source":"event_status"},"count":1,"at":"2026-10-13T18:58:41.267Z"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nx0r002fc7ikkpla9761","count":1,"at":"2026-10-13T18:58:41.280Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv71nx0r002fc7ikkpla9761","reason":"DUPLICATE","count":1,"at":"2026-10-13T18:58:41.291Z"}
+# Subtest: existing observation hook captures confirmed LIVE and skips demo/unknown/goaled/second half
+ok 120 - existing observation hook captures confirmed LIVE and skips demo/unknown/goaled/second half
+  ---
+  duration_ms: 45.2289
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nx20002oc7ikk3grph2s","count":1,"at":"2026-10-13T18:58:41.315Z"}
+# {"event":"DATASET_FT_RESOLVED","fixtureId":"cmv71nx20002oc7ikk3grph2s","count":1,"at":"2026-10-13T18:58:41.329Z"}
+# {"event":"DATASET_HT_RESOLVED","fixtureId":"cmv71nx20002oc7ikk3grph2s","count":1,"at":"2026-10-13T18:58:41.340Z"}
+# Subtest: existing listings retry missing HT after FT, and cannot overwrite resolved outcomes
+ok 121 - existing listings retry missing HT after FT, and cannot overwrite resolved outcomes
+  ---
+  duration_ms: 72.1437
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv71nx8a002wc7ik7sgskb1c","count":1,"at":"2026-10-13T18:58:41.558Z"}
+# Subtest: full persistMatchDetail -> saveLiveSnapshot -> dataset hook persists linked confirmed API fixture
+ok 122 - full persistMatchDetail -> saveLiveSnapshot -> dataset hook persists linked confirmed API fixture
+  ---
+  duration_ms: 198.77
+  type: 'test'
+  ...
+# Subtest: every Prisma snapshot field has exactly one explicit classification
+ok 123 - every Prisma snapshot field has exactly one explicit classification
+  ---
+  duration_ms: 2.3178
+  type: 'test'
+  ...
+# Subtest: certificate received before or exactly at capture is usable
+ok 124 - certificate received before or exactly at capture is usable
+  ---
+  duration_ms: 14.2857
+  type: 'test'
+  ...
+# Subtest: certificate one millisecond after capture cannot authorize historic features
+ok 125 - certificate one millisecond after capture cannot authorize historic features
+  ---
+  duration_ms: 1.0597
+  type: 'test'
+  ...
+# Subtest: late evidence is usable only with a later observation, without rewriting the old payload
+ok 126 - late evidence is usable only with a later observation, without rewriting the old payload
+  ---
+  duration_ms: 1.0141
+  type: 'test'
+  ...
+# Subtest: labels, resolution times, joined fixtures and unknown columns never enter features
+ok 127 - labels, resolution times, joined fixtures and unknown columns never enter features
+  ---
+  duration_ms: 1.2487
+  type: 'test'
+  ...
+# Subtest: legacy snapshots are retained for audit but excluded from verified projection
+ok 128 - legacy snapshots are retained for audit but excluded from verified projection
+  ---
+  duration_ms: 0.6775
+  type: 'test'
+  ...
+# Subtest: retroactive feature mutation is detected; labels can change without invalidating the seal
+ok 129 - retroactive feature mutation is detected; labels can change without invalidating the seal
+  ---
+  duration_ms: 1.0626
+  type: 'test'
+  ...
+# Subtest: changing capturedAt or evidence clocks invalidates the temporal seal
+ok 130 - changing capturedAt or evidence clocks invalidates the temporal seal
+  ---
+  duration_ms: 0.5698
+  type: 'test'
+  ...
+# Subtest: a sealed payload cannot be transferred to another fixture or stats provider
+ok 131 - a sealed payload cannot be transferred to another fixture or stats provider
+  ---
+  duration_ms: 1.3003
+  type: 'test'
+  ...
+# Subtest: N/D remains NULL and confirmed zero remains zero through projection
+ok 132 - N/D remains NULL and confirmed zero remains zero through projection
+  ---
+  duration_ms: 1.0498
+  type: 'test'
+  ...
+# Subtest: separately fetched statistics retain both local receipt clocks
+ok 133 - separately fetched statistics retain both local receipt clocks
+  ---
+  duration_ms: 1.0919
+  type: 'test'
+  ...
+# Subtest: future observations and malformed certificate timestamps fail closed
+ok 134 - future observations and malformed certificate timestamps fail closed
+  ---
+  duration_ms: 0.4093
+  type: 'test'
+  ...
+# Subtest: provider timestamp later than receipt is detected with zero skew tolerance
+ok 135 - provider timestamp later than receipt is detected with zero skew tolerance
+  ---
+  duration_ms: 0.1466
+  type: 'test'
+  ...
+# Subtest: quote timestamp alone cannot establish receipt before capture
+ok 136 - quote timestamp alone cannot establish receipt before capture
+  ---
+  duration_ms: 0.943
+  type: 'test'
+  ...
+# Subtest: late odds are NULL and cannot mutate the input observation or its stored features
+ok 137 - late odds are NULL and cannot mutate the input observation or its stored features
+  ---
+  duration_ms: 0.7478
+  type: 'test'
+  ...
+# Subtest: available odds preserve their provider and receipt timestamps
+ok 138 - available odds preserve their provider and receipt timestamps
+  ---
+  duration_ms: 0.7188
+  type: 'test'
+  ...
+# Subtest: Over 0.5: selection line never comes from the price or 1H ordinal
+ok 139 - Over 0.5: selection line never comes from the price or 1H ordinal
+  ---
+  duration_ms: 0.1211
+  type: 'test'
+  ...
+# Subtest: Over 1.5: selection line never comes from the price or 1H ordinal
+ok 140 - Over 1.5: selection line never comes from the price or 1H ordinal
+  ---
+  duration_ms: 0.0836
+  type: 'test'
+  ...
+# Subtest: Over 2.5: selection line never comes from the price or 1H ordinal
+ok 141 - Over 2.5: selection line never comes from the price or 1H ordinal
+  ---
+  duration_ms: 0.0876
+  type: 'test'
+  ...
+# Subtest: HT/FT markets stay distinct and ambiguous period is rejected
+ok 142 - HT/FT markets stay distinct and ambiguous period is rejected
+  ---
+  duration_ms: 0.1199
+  type: 'test'
+  ...
+# Subtest: integer push and Asian quarter/split lines are identified without settling bets
+ok 143 - integer push and Asian quarter/split lines are identified without settling bets
+  ---
+  duration_ms: 0.1411
+  type: 'test'
+  ...
+# Subtest: non-goal markets, unsupported selections and ordinal numbers never become a total line
+ok 144 - non-goal markets, unsupported selections and ordinal numbers never become a total line
+  ---
+  duration_ms: 0.2506
+  type: 'test'
+  ...
+# Subtest: pure integrity functions have no HTTP, budget or decision side effects
+ok 145 - pure integrity functions have no HTTP, budget or decision side effects
+  ---
+  duration_ms: 0.7226
+  type: 'test'
+  ...
+# Subtest: AllSports keeps display odds and the same existing requests while excluding later dataset odds
+ok 146 - AllSports keeps display odds and the same existing requests while excluding later dataset odds
+  ---
+  duration_ms: 290.9632
+  type: 'test'
+  ...
+1..146
+# tests 146
+# suites 0
+# pass 146
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 17045.4004

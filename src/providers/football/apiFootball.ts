@@ -12,6 +12,10 @@ import type {
 } from "@/types/domain";
 import type { FootballProvider } from "./types";
 import { cachedRequest, CACHE_TTL, fetchJsonWithResilience } from "@/lib/performance";
+import { alignedApiFootballObservation, apiFootballObservation, rememberTrainingReceipt, selectFirstHalfOdds, trainingReceipt } from "@/services/training/observation";
+import { resolveObservedMarketResults } from "@/services/training/liveMarketSnapshots";
+import { persistMatchDetail } from "@/services/persistence/footballPersistence";
+import type { PeriodFixture } from "@/services/training/hybrid/policy";
 
 const API_BASE_URL = "https://v3.football.api-sports.io";
 const PRIORITY_LEAGUES = [2, 3, 848, 39, 140, 135, 78, 61, 13, 11, 242];
@@ -31,6 +35,7 @@ type ApiFixture = {
       long?: string;
       short?: string;
       elapsed?: number | null;
+      extra?: number | null;
     };
   };
   league: {
@@ -45,6 +50,7 @@ type ApiFixture = {
     home: number | null;
     away: number | null;
   };
+  score?: { halftime?: { home: number | null; away: number | null }; fulltime?: { home: number | null; away: number | null } };
 };
 
 type ApiStatistic = {
@@ -127,7 +133,12 @@ export class ApiFootballProvider implements FootballProvider {
           this.request<ApiFixture[]>("/fixtures", { live: PRIORITY_LEAGUES.join("-"), timezone: "America/Bogota" })
         ]);
 
-        return dedupeFixtures([...(daily ?? []), ...(live ?? [])])
+        const raw = dedupeFixtures([...(daily ?? []), ...(live ?? [])]);
+        await resolveObservedMarketResults("API-Football", raw.flatMap(item => {
+          const at = trainingReceipt(item);
+          return at ? [apiFootballObservation(item, at)] : [];
+        }));
+        return raw
           .filter((fixture) => PRIORITY_LEAGUES.includes(fixture.league.id))
           .map(mapFixtureSummary);
       },
@@ -163,9 +174,15 @@ export class ApiFootballProvider implements FootballProvider {
     const summary = mapFixtureSummary(fixture);
     const homeStats = mapTeamStats(statistics ?? [], fixture.teams.home.id);
     const awayStats = mapTeamStats(statistics ?? [], fixture.teams.away.id);
+    const trainingObservation = alignedApiFootballObservation(fixture, statistics);
+    if (trainingObservation) {
+      const confirmed = (liveOdds ?? []).filter(row => Boolean(row.update) && /(?:Z|[+-]\d{2}:?\d{2})$/.test(row.update!));
+      trainingObservation.odds = selectFirstHalfOdds(mapLiveOdds(confirmed, fixture.fixture.status.elapsed ?? null), trainingObservation.observedAt, trainingReceipt(liveOdds));
+    }
 
-    return {
+    const detail: MatchDetail = {
       ...summary,
+      trainingObservation,
       demo: false,
       providerStatus: this.status,
       stats: { home: homeStats, away: awayStats },
@@ -181,6 +198,11 @@ export class ApiFootballProvider implements FootballProvider {
       analysis: [],
       alerts: []
     };
+    // Same persistence path used by AllSportsApi; no additional HTTP requests.
+    // Keep collector failures from changing the existing provider response.
+    try { await persistMatchDetail(detail); }
+    catch { console.error("[training.over05-first-half] API-Football persistence failed"); }
+    return detail;
   }
 
   async getPreviousSnapshot(_matchId: string) {
@@ -251,6 +273,15 @@ export class ApiFootballProvider implements FootballProvider {
     }
   }
 
+  // Minimal dataset request. No detail fan-out or automatic retries.
+  async getPeriodFixtures(params: { id: string } | { date: string }, budget: {
+    reserve: () => Promise<boolean>; reconcile: (headers: Headers) => Promise<void>;
+  }): Promise<PeriodFixture[]> {
+    this.ensureConfigured();
+    const result = await this.rawRequest<PeriodFixture[]>("/fixtures", { ...params, timezone: "UTC" }, budget);
+    return result.payload.response ?? [];
+  }
+
   private ensureConfigured() {
     if (!this.apiKey) {
       throw new Error("API-Football no configurada");
@@ -262,16 +293,24 @@ export class ApiFootballProvider implements FootballProvider {
     return (result.payload.response ?? ([] as T)) as T;
   }
 
-  private async rawRequest<T>(path: string, params: Record<string, string>) {
+  private async rawRequest<T>(path: string, params: Record<string, string>, budget?: {
+    reserve: () => Promise<boolean>; reconcile: (headers: Headers) => Promise<void>;
+  }) {
     const url = new URL(`${API_BASE_URL}${path}`);
     Object.entries(params).forEach(([key, value]) => url.searchParams.set(key, value));
 
     const key = `api-football:${path}:${[...Object.entries(params)].sort(([a], [b]) => a.localeCompare(b)).map(([key, value]) => `${key}=${value}`).join("&")}`;
     const result = await cachedRequest(
-      key,
+      budget ? `${key}:hybrid` : key,
       `api-football:${path}`,
-      () => fetchJsonWithResilience<ApiEnvelope<T>>(url, { headers: { "x-apisports-key": this.apiKey ?? "" } }, `api-football:${path}`, "API-Football"),
-      path.includes("odds") ? CACHE_TTL.live : path.includes("statistics") || path.includes("events") ? CACHE_TTL.stats : CACHE_TTL.fixtures,
+      async () => {
+        if (budget && !await budget.reserve()) throw new Error("API_REQUEST_SKIPPED_BUDGET");
+        const response = await fetchJsonWithResilience<ApiEnvelope<T>>(url, { headers: { "x-apisports-key": this.apiKey ?? "" } }, `api-football:${path}`, "API-Football", budget ? 1 : 2);
+        if (budget) await budget.reconcile(response.response.headers);
+        if (path === "/fixtures" || path === "/fixtures/statistics" || path === "/odds/live") rememberTrainingReceipt(response.payload.response);
+        return response;
+      },
+      budget ? 180_000 : path.includes("odds") ? CACHE_TTL.live : path.includes("statistics") || path.includes("events") ? CACHE_TTL.stats : CACHE_TTL.fixtures,
       "API-Football"
     );
     const response = result.response;
@@ -309,6 +348,9 @@ function mapFixtureSummary(item: ApiFixture): MatchSummary {
   return {
     id: `api-football-${item.fixture.id}`,
     source: "api-football",
+    leagueExternalId: String(item.league.id),
+    homeTeamExternalId: String(item.teams.home.id),
+    awayTeamExternalId: String(item.teams.away.id),
     homeTeam: item.teams.home.name,
     awayTeam: item.teams.away.name,
     competition: item.league.name,
@@ -326,7 +368,7 @@ function mapStatus(short?: string): MatchStatus {
   if (["1H", "HT", "2H", "ET", "BT", "P", "SUSP", "INT", "LIVE"].includes(short ?? "")) {
     return "LIVE";
   }
-  if (["FT", "AET", "PEN"].includes(short ?? "")) {
+  if (["FT", "AET", "PEN", "CANC", "PST", "ABD", "AWD", "WO"].includes(short ?? "")) {
     return "FINISHED";
   }
   return "UPCOMING";

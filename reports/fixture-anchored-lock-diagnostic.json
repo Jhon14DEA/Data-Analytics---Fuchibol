@@ -1,0 +1,106 @@
+{
+  "at": "2026-10-16T13:44:38.697Z",
+  "mode": "--write",
+  "providerMappedFixtures": 4,
+  "validAnchors": 0,
+  "conflicts": 4,
+  "results": [
+    {
+      "matchId": "cmv5mg37d8b2nc7ogoo740vb1",
+      "status": "CONFLICT",
+      "error": {
+        "name": "PrismaClientKnownRequestError",
+        "code": "P2010",
+        "message": "\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `N/A`. Message: `Failed to deserialize column of type 'void'. If you're using $queryRaw and this column is explicitly marked as `Unsupported` in your Prisma schema, try casting this column to any supported Prisma type such as `String`.`",
+        "stack": "PrismaClientKnownRequestError: \nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `N/A`. Message: `Failed to deserialize column of type 'void'. If you're using $queryRaw and this column is explicitly marked as `Unsupported` in your Prisma schema, try casting this column to any supported Prisma type such as `String`.`\n    at ei.handleRequestError (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:121:7268)\n    at ei.handleAndLogRequestError (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:121:6593)\n    at ei.request (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:121:6300)\n    at async a (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:130:9551)\n    at async db.$transaction.timeout (C:\\Users\\jlabc\\Documents\\PP\\FUT\\.historical-build\\services\\historical\\fixtureAnchoredTeams.js:43:9)\n    at async Proxy._transactionWithCallback (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:130:8120)\n    at async main (C:\\Users\\jlabc\\Documents\\PP\\FUT\\scripts\\fixture-anchored-team-mapping.cjs:17:37)",
+        "cause": null
+      }
+    },
+    {
+      "matchId": "cmv5mg3978b3nc7oghawpbiil",
+      "status": "CONFLICT",
+      "error": {
+        "name": "PrismaClientKnownRequestError",
+        "code": "P2010",
+        "message": "\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `N/A`. Message: `Failed to deserialize column of type 'void'. If you're using $queryRaw and this column is explicitly marked as `Unsupported` in your Prisma schema, try casting this column to any supported Prisma type such as `String`.`",
+        "stack": "PrismaClientKnownRequestError: \nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `N/A`. Message: `Failed to deserialize column of type 'void'. If you're using $queryRaw and this column is explicitly marked as `Unsupported` in your Prisma schema, try casting this column to any supported Prisma type such as `String`.`\n    at ei.handleRequestError (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:121:7268)\n    at ei.handleAndLogRequestError (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:121:6593)\n    at ei.request (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:121:6300)\n    at async a (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:130:9551)\n    at async db.$transaction.timeout (C:\\Users\\jlabc\\Documents\\PP\\FUT\\.historical-build\\services\\historical\\fixtureAnchoredTeams.js:43:9)\n    at async Proxy._transactionWithCallback (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:130:8120)\n    at async main (C:\\Users\\jlabc\\Documents\\PP\\FUT\\scripts\\fixture-anchored-team-mapping.cjs:17:37)",
+        "cause": null
+      }
+    },
+    {
+      "matchId": "cmv08ezk36kn4c7og2j86c38l",
+      "status": "CONFLICT",
+      "error": {
+        "name": "PrismaClientKnownRequestError",
+        "code": "P2010",
+        "message": "\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `N/A`. Message: `Failed to deserialize column of type 'void'. If you're using $queryRaw and this column is explicitly marked as `Unsupported` in your Prisma schema, try casting this column to any supported Prisma type such as `String`.`",
+        "stack": "PrismaClientKnownRequestError: \nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `N/A`. Message: `Failed to deserialize column of type 'void'. If you're using $queryRaw and this column is explicitly marked as `Unsupported` in your Prisma schema, try casting this column to any supported Prisma type such as `String`.`\n    at ei.handleRequestError (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:121:7268)\n    at ei.handleAndLogRequestError (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:121:6593)\n    at ei.request (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:121:6300)\n    at async a (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:130:9551)\n    at async db.$transaction.timeout (C:\\Users\\jlabc\\Documents\\PP\\FUT\\.historical-build\\services\\historical\\fixtureAnchoredTeams.js:43:9)\n    at async Proxy._transactionWithCallback (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:130:8120)\n    at async main (C:\\Users\\jlabc\\Documents\\PP\\FUT\\scripts\\fixture-anchored-team-mapping.cjs:17:37)",
+        "cause": null
+      }
+    },
+    {
+      "matchId": "cmv04usvq00ghc7ogvi3ao1do",
+      "status": "CONFLICT",
+      "error": {
+        "name": "PrismaClientKnownRequestError",
+        "code": "P2010",
+        "message": "\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `N/A`. Message: `Failed to deserialize column of type 'void'. If you're using $queryRaw and this column is explicitly marked as `Unsupported` in your Prisma schema, try casting this column to any supported Prisma type such as `String`.`",
+        "stack": "PrismaClientKnownRequestError: \nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `N/A`. Message: `Failed to deserialize column of type 'void'. If you're using $queryRaw and this column is explicitly marked as `Unsupported` in your Prisma schema, try casting this column to any supported Prisma type such as `String`.`\n    at ei.handleRequestError (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:121:7268)\n    at ei.handleAndLogRequestError (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:121:6593)\n    at ei.request (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:121:6300)\n    at async a (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:130:9551)\n    at async db.$transaction.timeout (C:\\Users\\jlabc\\Documents\\PP\\FUT\\.historical-build\\services\\historical\\fixtureAnchoredTeams.js:43:9)\n    at async Proxy._transactionWithCallback (C:\\Users\\jlabc\\Documents\\PP\\FUT\\node_modules\\@prisma\\client\\runtime\\library.js:130:8120)\n    at async main (C:\\Users\\jlabc\\Documents\\PP\\FUT\\scripts\\fixture-anchored-team-mapping.cjs:17:37)",
+        "cause": null
+      }
+    }
+  ],
+  "protectedBefore": {
+    "Fixture": {
+      "count": 43298,
+      "hash": "6de00eb15e33b6d2706df8d6dd90312cad52890e4cd0228a15dcedea70ff2cdf"
+    },
+    "LiveSnapshot": {
+      "count": 4353,
+      "hash": "06a5c559b85b9d7721c842bb150a4b72246ae4ba20f0bb06e2e336394bc3b64f"
+    },
+    "LiveMarketSnapshot": {
+      "count": 17,
+      "hash": "fe4b3f672e7d09e70e7d6e4b50713833f861d1d35e4a3d808f4998e40ab00fc4"
+    },
+    "HybridScout": {
+      "count": 47,
+      "hash": "e38a59d99f84204495aec5e28d8820e67dc793fc29ad546b74095b0226697572"
+    },
+    "ApiFootballBudget": {
+      "count": 3,
+      "hash": "0564933215bd99bff683dcfa5564884f99f30a3d2a3255407a0f1daa2f9156ab"
+    },
+    "HybridApiCache": {
+      "count": 79,
+      "hash": "3349893a9b214740b4bef5b419f25519bb936303edb3551e04316337da46d8d0"
+    }
+  },
+  "protectedAfter": {
+    "Fixture": {
+      "count": 43298,
+      "hash": "6de00eb15e33b6d2706df8d6dd90312cad52890e4cd0228a15dcedea70ff2cdf"
+    },
+    "LiveSnapshot": {
+      "count": 4353,
+      "hash": "06a5c559b85b9d7721c842bb150a4b72246ae4ba20f0bb06e2e336394bc3b64f"
+    },
+    "LiveMarketSnapshot": {
+      "count": 17,
+      "hash": "fe4b3f672e7d09e70e7d6e4b50713833f861d1d35e4a3d808f4998e40ab00fc4"
+    },
+    "HybridScout": {
+      "count": 47,
+      "hash": "e38a59d99f84204495aec5e28d8820e67dc793fc29ad546b74095b0226697572"
+    },
+    "ApiFootballBudget": {
+      "count": 3,
+      "hash": "0564933215bd99bff683dcfa5564884f99f30a3d2a3255407a0f1daa2f9156ab"
+    },
+    "HybridApiCache": {
+      "count": 79,
+      "hash": "3349893a9b214740b4bef5b419f25519bb936303edb3551e04316337da46d8d0"
+    }
+  },
+  "protectedUnchanged": true
+}

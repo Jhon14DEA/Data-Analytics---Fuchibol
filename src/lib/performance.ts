@@ -9,6 +9,7 @@ type MetricRecord = {
 
 type CacheEntry<T> = {
   value: T;
+  cachedAt: number;
   expiresAt: number;
 };
 
@@ -41,7 +42,8 @@ export async function cachedRequest<T>(
   const startedAt = performance.now();
   const request = loader()
     .then((value) => {
-      cache.set(key, { value, expiresAt: Date.now() + ttlMs });
+      const cachedAt = Date.now();
+      cache.set(key, { value, cachedAt, expiresAt: cachedAt + ttlMs });
       recordMetric({ process, durationMs: performance.now() - startedAt, cache: "miss", provider });
       return value;
     })
@@ -113,7 +115,7 @@ export function recordMetric(metric: Omit<MetricRecord, "recordedAt">) {
   if (metrics.length > MAX_METRICS) metrics.shift();
 }
 
-export async function measureProcess<T>(process: string, loader: () => Promise<T>, provider?: string) {
+export async function measureProcess<T>(process: string, loader: () => T | Promise<T>, provider?: string) {
   const startedAt = performance.now();
   try {
     const value = await loader();
@@ -151,8 +153,40 @@ export function getPerformanceMetrics() {
   }));
 }
 
+export function getPerformanceMetricRecords() {
+  return [...metrics];
+}
+
 export function clearPerformanceCache() {
   cache.clear();
+}
+
+export function invalidatePerformanceCache(predicate: (key: string) => boolean) {
+  let deleted = 0;
+  for (const key of cache.keys()) {
+    if (predicate(key)) {
+      cache.delete(key);
+      deleted += 1;
+    }
+  }
+  return deleted;
+}
+
+export function getPerformanceCacheAge(keyPrefix: string) {
+  const now = Date.now();
+  const entries = [...cache.entries()]
+    .filter(([key]) => key.startsWith(keyPrefix))
+    .map(([, entry]) => {
+      const ageMs = Math.max(0, now - entry.cachedAt);
+      const ttlRemaining = Math.max(0, entry.expiresAt - now);
+      return { ageMs, ttlRemaining };
+    });
+  if (!entries.length) return null;
+  return {
+    entries: entries.length,
+    ageMs: Math.max(...entries.map((entry) => entry.ageMs)),
+    ttlRemainingMs: Math.min(...entries.map((entry) => entry.ttlRemaining))
+  };
 }
 
 export const CACHE_TTL = {

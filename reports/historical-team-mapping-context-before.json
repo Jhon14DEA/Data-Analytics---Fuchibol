@@ -1,0 +1,1747 @@
+{
+  "at": "2026-10-15T20:50:18.628Z",
+  "scannedPersistedLive": 100,
+  "liveCount": 315,
+  "withContext": 0,
+  "withoutMapping": 100,
+  "mappings": 0,
+  "results": [
+    {
+      "fixtureId": "cmv72efrq2ztzc7agebnz5pnz",
+      "kickoff": "2026-10-13T19:15:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 6,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72592500dlc7ag363qcojv",
+      "kickoff": "2026-10-13T19:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259dq00hyc7agufugbavg",
+      "kickoff": "2026-10-13T19:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 3,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259dz00i4c7agtcpx26fu",
+      "kickoff": "2026-10-13T19:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 3,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259cz00hic7agigufnef2",
+      "kickoff": "2026-10-13T19:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259dw00i2c7agsly81d3u",
+      "kickoff": "2026-10-13T19:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259dt00i0c7agexg0y5n0",
+      "kickoff": "2026-10-13T19:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259cv00hgc7ag3g0t7ehk",
+      "kickoff": "2026-10-13T19:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259d200hkc7ag7y30auf3",
+      "kickoff": "2026-10-13T19:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258g9005qc7agfrtfze99",
+      "kickoff": "2026-10-13T19:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259ev00iic7ag0pgvtw87",
+      "kickoff": "2026-10-13T19:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72598v00g5c7agtufkhrnb",
+      "kickoff": "2026-10-13T19:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258xk00bzc7ag4vhgc8i5",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258zd00crc7agp9vt26nz",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258ye00cdc7agy1oe3f3y",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258x800btc7agscpbw1y5",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258vm00b4c7agflifgqqg",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258gc005sc7agfsnmor68",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258wz00boc7agflg9jf62",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258ya00cbc7agxfmmbrf9",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259t30134c7ag5ia2rhni",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258wc00bgc7agd94zx64y",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259at00gsc7ag1jj1e3nj",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72592k00drc7aggcsl73ui",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72595500etc7agy0v12xts",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259ax00guc7ag3iy9lhgl",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 3,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258du004xc7ag4ds02d7u",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72592h00dpc7agcqprywlz",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258vt00b8c7agyv7l0xoz",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72598y00g7c7ag2p42q8gy",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72594o00ejc7ag1gg5obxh",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72592x00dzc7ag15799k7x",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258ww00bmc7agdybx5tce",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72593100e1c7agch9ncp9b",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258y700c9c7ago6240u2c",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258zi00ctc7agjt9e3tfl",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258z100clc7ag79cbdvsy",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258wj00bkc7agzumq094v",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259bx00h3c7agfp1dfejh",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72592100djc7agyuzbmeua",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258w500bec7ag3kcqtu2f",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258xn00c1c7aglvzjo9xt",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259u8013tc7agj16bz4zz",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258xq00c3c7agcy80ptwr",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258y400c7c7ag0og45k27",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258xd00bvc7ag6inzq6bl",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258z800cpc7agu7qbdzw4",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258zm00cvc7aglnw5lpyu",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 3,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258yy00cjc7ag1iwxdt8z",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258yk00chc7agxu5t0eqb",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258vj00b2c7ag79kl8up1",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 3,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72598r00g3c7agi6yqkve7",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258gu0061c7agxr30wbyn",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259ap00gqc7agea1vs8i6",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258z400cnc7ag2kxlw5ad",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72592r00dvc7agztg6a3mn",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259uw014ac7aglwjyye9c",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258xg00bxc7agarpozrfn",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258na0087c7agcqy1sdwi",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259w30152c7agj7kvn6iv",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259b100gwc7ags0eve7q2",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258nh008bc7aggbg0c8ft",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259v7014cc7agk37g0it2",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258yh00cfc7agruifsk2x",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258g5005oc7agx43s4og8",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259so012nc7agq3e00r11",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72592e00dnc7agpp9l7lwg",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258x500brc7agzuy73l9n",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72592o00dtc7aghr6mloir",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258gx0063c7agcjk1tm8k",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72594r00elc7ags13930e1",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72592u00dxc7agedf6q83m",
+      "kickoff": "2026-10-13T18:45:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 3,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72595l00evc7agp9w1g0vx",
+      "kickoff": "2026-10-13T18:30:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72595100erc7agnah10hq9",
+      "kickoff": "2026-10-13T18:30:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 3,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258wg00bic7agefz1p6qc",
+      "kickoff": "2026-10-13T18:30:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258960035c7agkwa2bhr2",
+      "kickoff": "2026-10-13T18:15:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258y000c5c7ag88jtfmeg",
+      "kickoff": "2026-10-13T18:15:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72599200g9c7agnoe2bxvm",
+      "kickoff": "2026-10-13T18:15:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 3,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72597700fhc7aggzvltfcz",
+      "kickoff": "2026-10-13T18:15:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259xz016cc7agekjlxamo",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7259yn017yc7agypempfig",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258vp00b6c7ag86997a2e",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258n30083c7agz802yhq8",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258so00a0c7agdk5d287g",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72595o00exc7agmhrsyqkv",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258n70085c7ago9b8vreo",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72596b00f5c7agbij10bf5",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72596800f3c7agfbjdn57m",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72596j00f9c7agtgaimxaa",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258ve00ayc7agz4j8ezzo",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72596n00fbc7ags18vmnki",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 3,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258mm007vc7ag06of4tg5",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72596q00fdc7ago964g1jl",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258sc009uc7agykagk11r",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258nm008dc7agpzzhhb6x",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 3,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72594v00enc7ag8bjmorpr",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258s9009sc7aggqgwdf53",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 3,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258s6009qc7agw5d4yxdl",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv72596u00ffc7ag8z2sew0v",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 1,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    },
+    {
+      "fixtureId": "cmv7258sg009wc7agp8jqltmg",
+      "kickoff": "2026-10-13T18:00:00.000Z",
+      "recentKickoff": false,
+      "context": {
+        "status": "N/D",
+        "reason": "NO_UNAMBIGUOUS_MAPPING",
+        "before": null,
+        "latencyMs": 2,
+        "home": [],
+        "away": [],
+        "comparison": {
+          "OVER05_1H": null,
+          "OVER05_FT": null
+        }
+      }
+    }
+  ],
+  "protectedBefore": {
+    "LiveSnapshot": {
+      "count": 4353,
+      "hash": "06a5c559b85b9d7721c842bb150a4b72246ae4ba20f0bb06e2e336394bc3b64f"
+    },
+    "LiveMarketSnapshot": {
+      "count": 17,
+      "hash": "fe4b3f672e7d09e70e7d6e4b50713833f861d1d35e4a3d808f4998e40ab00fc4"
+    },
+    "HybridScout": {
+      "count": 47,
+      "hash": "e38a59d99f84204495aec5e28d8820e67dc793fc29ad546b74095b0226697572"
+    },
+    "ApiFootballBudget": {
+      "count": 3,
+      "hash": "0564933215bd99bff683dcfa5564884f99f30a3d2a3255407a0f1daa2f9156ab"
+    }
+  },
+  "protectedAfter": {
+    "LiveSnapshot": {
+      "count": 4353,
+      "hash": "06a5c559b85b9d7721c842bb150a4b72246ae4ba20f0bb06e2e336394bc3b64f"
+    },
+    "LiveMarketSnapshot": {
+      "count": 17,
+      "hash": "fe4b3f672e7d09e70e7d6e4b50713833f861d1d35e4a3d808f4998e40ab00fc4"
+    },
+    "HybridScout": {
+      "count": 47,
+      "hash": "e38a59d99f84204495aec5e28d8820e67dc793fc29ad546b74095b0226697572"
+    },
+    "ApiFootballBudget": {
+      "count": 3,
+      "hash": "0564933215bd99bff683dcfa5564884f99f30a3d2a3255407a0f1daa2f9156ab"
+    }
+  },
+  "protectedUnchanged": true
+}

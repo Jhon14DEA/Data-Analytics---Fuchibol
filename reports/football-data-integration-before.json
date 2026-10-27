@@ -1,0 +1,36 @@
+{
+  "protectedData": {
+    "Fixture": {
+      "count": 503,
+      "hash": "26f0b2aa6757713fa72ebf3ab28274307464c8445c051740ff71646eb81b3bc2"
+    },
+    "LiveSnapshot": {
+      "count": 4353,
+      "hash": "06a5c559b85b9d7721c842bb150a4b72246ae4ba20f0bb06e2e336394bc3b64f"
+    },
+    "LiveMarketSnapshot": {
+      "count": 17,
+      "hash": "fe4b3f672e7d09e70e7d6e4b50713833f861d1d35e4a3d808f4998e40ab00fc4"
+    },
+    "HybridScout": {
+      "count": 47,
+      "hash": "e38a59d99f84204495aec5e28d8820e67dc793fc29ad546b74095b0226697572"
+    },
+    "ApiFootballBudget": {
+      "count": 3,
+      "hash": "0564933215bd99bff683dcfa5564884f99f30a3d2a3255407a0f1daa2f9156ab"
+    }
+  },
+  "counts": {
+    "league": 98,
+    "season": 0,
+    "team": 665,
+    "fixture": 503,
+    "teamMatchStats": 1006,
+    "teamPeriodStats": 0,
+    "historicalMarketOutcome": 0,
+    "providerEntityMapping": 0,
+    "historicalIngestionState": 0,
+    "oddsSnapshot": 785057
+  }
+}

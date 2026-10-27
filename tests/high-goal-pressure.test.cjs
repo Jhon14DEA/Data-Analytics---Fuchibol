@@ -1,0 +1,31 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');
+const {detectHighGoalPressure:detect}=require('../src/services/analysis/highGoalPressure.ts');
+const {evaluateLiveGoalRadar}=require('../src/services/analysis/liveGoalRadar.ts');
+const {analyzeMatchContext}=require('../src/services/analysis/matchAnalyzer.ts');
+function ctx(){const stats={shots:8,shotsOnTarget:5,xg:1.1,bigChances:2,shotsInsideBox:6,corners:2,dangerousAttacks:20,redCards:0};return {match:{id:'fixture',source:'allsports',status:'LIVE',minute:25,score:{home:0,away:0},kickoffAt:'2026-10-16T18:30:00Z',stats:{home:stats,away:{...stats,shotsOnTarget:4,xg:.85,bigChances:1,shotsInsideBox:5}},events:[],lineups:{home:[],away:[]},playerStats:[],odds:[]},recentHome:[],recentAway:[],h2h:[]};}
+function window(sot=3,shots=5){return {minutes:10,coveragePercentage:100,isComplete:true,dataState:'VALID_DATA',shotsOnTarget:sot,shots,xg:.6,home:{shotsOnTarget:1,shots:2},away:{shotsOnTarget:3,shots:5}};}
+function recent(c,w){c.liveMomentum={recent:{ten:w},notes:[],substitutions:[],matchTrendState:'RISING'};return c;}
+function history(){const p=(venue,window)=>({venue,window,sampleSize:window,newestFixtureDate:'2026-10-10T12:00:00Z',coverage:{},features:{scoredRate:.8,avgGoalsFor:2,avgShotsOnTarget:5}});return {status:'AVAILABLE',home:[5,10,20].map(n=>p('HOME',n)),away:[5,10,20].map(n=>p('AWAY',n))};}
+test('A: 0-0 min25 nine SOT quality and strong history => HIGH without goals',()=>{const p=detect(ctx(),history());assert.equal(p.level,'PRESSURE_HIGH');assert.equal(p.derivedState,null);assert.ok(p.reasons.includes('BOTH_TEAMS_OFFENSIVELY_STRONG'));});
+test('four SOT with observed low recent activity => LOW',()=>{const c=recent(ctx(),window(0,1));c.match.stats.home.shotsOnTarget=2;c.match.stats.away.shotsOnTarget=2;assert.equal(detect(c).level,'PRESSURE_LOW');});
+test('3-1 min30 strong continuing pressure => explosion',()=>{const c=recent(ctx(),window());c.match.score={home:3,away:1};c.match.minute=30;const p=detect(c);assert.equal(p.derivedState,'MATCH_EXPLOSION');assert.ok(!p.markets.includes('O2.5 FT'));assert.ok(p.markets.includes('O4.5 FT'));});
+test('3-1 low shots/xG and recent activity does not force HIGH',()=>{const c=recent(ctx(),window(0,1));c.match.score={home:3,away:1};for(const s of Object.values(c.match.stats)){s.shotsOnTarget=1;s.xg=.1;s.bigChances=0;s.shotsInsideBox=1;}assert.notEqual(detect(c).level,'PRESSURE_HIGH');assert.equal(detect(c).derivedState,null);});
+test('1-0 min60 losing away team pressing => HIGH',()=>{const c=recent(ctx(),window());c.match.minute=60;c.match.score={home:1,away:0};const p=detect(c);assert.equal(p.level,'PRESSURE_HIGH');assert.ok(p.reasons.includes('LOSING_TEAM_PRESSING'));assert.equal(p.derivedState,null);assert.ok(!p.markets.some(m=>m.includes('1T')));});
+test('strong historical profile cannot overcome weak LIVE',()=>{const c=recent(ctx(),window(0,0));assert.equal(detect(c,history()).level,'PRESSURE_LOW');});
+test('strong LIVE without mapping permits HIGH with lower confidence',()=>{const c=ctx();assert.equal(detect(c).level,'PRESSURE_HIGH');assert.equal(detect(c).historicalStrength,null);assert.ok(detect(c).confidence<detect(c,history()).confidence);});
+test('red card reduces confidence and VAR suppresses explosion',()=>{const c=recent(ctx(),window());const baseline=detect(c).confidence;c.match.stats.home.redCards=1;assert.ok(detect(c).blockers.includes('RED_CARD_DISTORTION'));assert.ok(detect(c).confidence<baseline);c.match.score={home:2,away:1};c.match.events=[{type:'var',minute:24}];assert.equal(detect(c).derivedState,null);});
+test('missing and partial side metrics remain NULL; no data => insufficient',()=>{const c=ctx();c.match.stats.home={};c.match.stats.away={};const p=detect(c);assert.equal(p.level,'INSUFFICIENT_DATA');assert.ok(Object.values(p.live).every(x=>x===null));assert.equal(p.confidence,null);});
+test('stale historical profiles cannot support offensive strength',()=>{const h=history();for(const p of [...h.home,...h.away])p.newestFixtureDate='2024-01-01';assert.equal(detect(ctx(),h).historicalStrength.support,'NOT_CONFIRMED');});
+test('stale LIVE, invalid windows and completed fixtures cannot invent current pressure',()=>{const c=ctx();c.dataFreshness={liveDataStale:true};assert.equal(detect(c).level,'INSUFFICIENT_DATA');delete c.dataFreshness;c.match.status='FINISHED';assert.equal(detect(c).level,'INSUFFICIENT_DATA');});
+test('pure deterministic sidecar preserves complete betting and radar outputs',()=>{
+ const c=ctx(),before=structuredClone(c);const radar=evaluateLiveGoalRadar(c),bets=analyzeMatchContext(c).allMarkets;
+ const p=detect(c,history());assert.deepEqual(detect(c,history()),p);assert.deepEqual(c,before);assert.deepEqual(evaluateLiveGoalRadar(c),radar);assert.deepEqual(analyzeMatchContext(c).allMarkets,bets);
+ const source=fs.readFileSync('src/services/analysis/highGoalPressure.ts','utf8');assert.ok(!/\bfetch\s*\(|setInterval\s*\(|setTimeout\s*\(|prisma\.|ApiFootballBudget|scheduleHybrid/.test(source));assert.ok(source.split('\n').filter(l=>l.startsWith('import ')).every(l=>l.startsWith('import type ')));
+});
+test('UI renders non-zero score fixtures once, informational label and missing confidence',()=>{
+ const ts=require('typescript');require.extensions['.tsx']=(mod,file)=>mod._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{target:ts.ScriptTarget.ES2020,module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX}}).outputText,file);
+ const React=require('react'),{renderToStaticMarkup}=require('react-dom/server');const {GoalPressureSection}=require('../src/components/GoalPressureSection.tsx');
+ const c=recent(ctx(),window());c.match.score={home:3,away:1};const match={fixtureId:'one',match:'Home vs Away',status:'LIVE',score:c.match.score,minute:30,goalPressure:detect(c)};
+ const html=renderToStaticMarkup(React.createElement(GoalPressureSection,{matches:[match,match]}));
+ assert.equal((html.match(/Home vs Away/g)||[]).length,1);assert.ok(html.includes('PARTIDO ABIERTO'));assert.ok(html.includes('3-1'));assert.ok(html.includes('No es una recomendación de entrada'));assert.ok(html.includes('Histórico: '));
+});

@@ -16,5 +16,5 @@ export async function GET(_request: Request, { params }: Params) {
     return NextResponse.json({ error: "Partido no encontrado" }, { status: 404 });
   }
 
-  return NextResponse.json(analyzeMatchContext(context));
+  return NextResponse.json(analyzeMatchContext(context), { headers: { "Cache-Control": "no-store" } });
 }

@@ -1,0 +1,305 @@
+{
+  "startedAt": "2026-10-14T00:52:05.586Z",
+  "maximum": 2,
+  "requests": [
+    {
+      "attempt": 1,
+      "endpoint": "/fixtures?league=39&season=2024",
+      "cost": 1,
+      "maximum": 2
+    },
+    {
+      "attempt": 2,
+      "endpoint": "/fixtures/statistics?fixture=1208021",
+      "cost": 1,
+      "maximum": 2
+    }
+  ],
+  "decision": "GO_FOR_20_FIXTURE_PILOT",
+  "lastPreviouslyObservedRemaining": 98,
+  "fixtures": {
+    "http": 200,
+    "errors": [],
+    "received": 380,
+    "matchingFinished": 380,
+    "leagueId": 39,
+    "season": 2024,
+    "status": "AVAILABLE",
+    "headers": {
+      "x-ratelimit-limit": "10",
+      "x-ratelimit-remaining": "9",
+      "x-ratelimit-requests-limit": "100",
+      "x-ratelimit-requests-remaining": "98"
+    },
+    "quota": {
+      "dailyLimit": 100,
+      "current": null,
+      "remaining": 98,
+      "minuteLimit": 10,
+      "minuteRemaining": 9,
+      "reset": null
+    },
+    "paging": {
+      "current": 1,
+      "total": 1
+    }
+  },
+  "selected": {
+    "id": 1208021,
+    "date": "2024-08-16T19:00:00+00:00",
+    "status": "FT",
+    "leagueId": 39,
+    "season": 2024,
+    "home": {
+      "id": 33,
+      "name": "Manchester United"
+    },
+    "away": {
+      "id": 36,
+      "name": "Fulham"
+    },
+    "score": {
+      "halftime": {
+        "home": 0,
+        "away": 0
+      },
+      "fulltime": {
+        "home": 1,
+        "away": 0
+      },
+      "extratime": {
+        "home": null,
+        "away": null
+      },
+      "penalty": {
+        "home": null,
+        "away": null
+      }
+    }
+  },
+  "statistics": {
+    "http": 200,
+    "errors": [],
+    "status": "AVAILABLE",
+    "headers": {
+      "x-ratelimit-limit": "10",
+      "x-ratelimit-remaining": "8",
+      "x-ratelimit-requests-limit": "100",
+      "x-ratelimit-requests-remaining": "97"
+    },
+    "quota": {
+      "dailyLimit": 100,
+      "current": null,
+      "remaining": 97,
+      "minuteLimit": 10,
+      "minuteRemaining": 8,
+      "reset": null
+    },
+    "teams": [
+      {
+        "id": 33,
+        "name": "Manchester United",
+        "fields": [
+          {
+            "type": "Shots on Goal",
+            "value": 5,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Shots off Goal",
+            "value": 7,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Total Shots",
+            "value": 14,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Blocked Shots",
+            "value": 2,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Shots insidebox",
+            "value": 7,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Shots outsidebox",
+            "value": 7,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Fouls",
+            "value": 12,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Corner Kicks",
+            "value": 7,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Offsides",
+            "value": 3,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Ball Possession",
+            "value": "55%",
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Yellow Cards",
+            "value": 2,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Red Cards",
+            "value": null,
+            "status": "NULL/MISSING"
+          },
+          {
+            "type": "Goalkeeper Saves",
+            "value": 2,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Total passes",
+            "value": 482,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Passes accurate",
+            "value": 408,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Passes %",
+            "value": "85%",
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "expected_goals",
+            "value": "2.43",
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "goals_prevented",
+            "value": "1.07",
+            "status": "AVAILABLE"
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "name": "Fulham",
+        "fields": [
+          {
+            "type": "Shots on Goal",
+            "value": 2,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Shots off Goal",
+            "value": 4,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Total Shots",
+            "value": 10,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Blocked Shots",
+            "value": 4,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Shots insidebox",
+            "value": 6,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Shots outsidebox",
+            "value": 4,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Fouls",
+            "value": 10,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Corner Kicks",
+            "value": 8,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Offsides",
+            "value": 1,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Ball Possession",
+            "value": "45%",
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Yellow Cards",
+            "value": 3,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Red Cards",
+            "value": null,
+            "status": "NULL/MISSING"
+          },
+          {
+            "type": "Goalkeeper Saves",
+            "value": 4,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Total passes",
+            "value": 384,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Passes accurate",
+            "value": 306,
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "Passes %",
+            "value": "80%",
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "expected_goals",
+            "value": "0.44",
+            "status": "AVAILABLE"
+          },
+          {
+            "type": "goals_prevented",
+            "value": "1.07",
+            "status": "AVAILABLE"
+          }
+        ]
+      }
+    ]
+  },
+  "decisionScope": "ACCESS_CHECK_ONLY_MINIMAL_FIXTURES_AND_STATS; no ingestion performed",
+  "accounting": {
+    "firstBefore": 98,
+    "firstBeforeSource": "PREVIOUS_PHASE_NOT_FRESH",
+    "firstAfter": 98,
+    "secondBefore": 98,
+    "secondAfter": 97,
+    "localChargedAttempts": 2,
+    "exactBillingTiming": "UNKNOWN",
+    "futureMinimalPilotHardCap": 21,
+    "conservativeAccounting": "Reserve one request per attempt including failures; no retries or pages; observed zero delta is not free access"
+  }
+}

@@ -18,6 +18,9 @@ export function AnalysisSummary({ analysis }: { analysis: MatchAnalysisResult })
               <h1 className="mt-1 text-2xl font-black text-white sm:text-4xl">
                 {match.homeTeam} vs {match.awayTeam}
               </h1>
+              <p className="mt-2 text-xs font-bold uppercase text-zinc-400">
+                DATA UPDATED: {formatDateTime(analysis.dataUpdatedAt)} · {analysis.statusIndicator}
+              </p>
             </div>
             <StatusPill status={match.status} />
           </div>
@@ -60,20 +63,42 @@ export function AnalysisSummary({ analysis }: { analysis: MatchAnalysisResult })
       </div>
 
       <aside className="space-y-5">
+        {analysis.markets[0] ? (
+          <section className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.055] p-4">
+            <SectionTitle icon={<AlertTriangle className="h-4 w-4" />} title="MEJOR APUESTA AHORA" />
+            <div className="mt-3">
+              <AnalysisMarketCard market={analysis.markets[0]} />
+            </div>
+            {analysis.noOpportunityMessage ? (
+              <p className="mt-3 text-xs font-bold uppercase text-yellow-100">
+                Ningun mercado supera el umbral principal; se muestran las opciones mas cercanas con valoracion real.
+              </p>
+            ) : null}
+          </section>
+        ) : null}
+
         {match.status === "LIVE" ? (
-          <CurrentRecommendationPanel matchId={match.id} initialRecommendation={analysis.currentRecommendation} />
+          <CurrentRecommendationPanel matchId={match.id} initialRecommendation={analysis.currentRecommendation} live={match.status === "LIVE"} />
         ) : null}
 
         <section className="rounded-lg border border-white/10 bg-white/[0.045] p-4">
-          <SectionTitle icon={<AlertTriangle className="h-4 w-4" />} title="Estado en vivo" />
-          <p className="mt-3 text-2xl font-black text-white">{liveLabel(analysis.liveState)}</p>
-          <p className="mt-2 text-sm text-zinc-400">Comparacion con los datos reales disponibles. Si falta historial fino de 5-15 minutos, se muestra N/D o una lectura conservadora.</p>
+          <SectionTitle icon={<AlertTriangle className="h-4 w-4" />} title={match.status === "LIVE" ? "Estado en vivo" : "Estado prepartido"} />
+          <p className="mt-3 text-2xl font-black text-white">{match.status === "LIVE" ? liveLabel(analysis.liveState) : "PRE-MATCH"}</p>
+          <p className="mt-2 text-sm text-zinc-400">
+            {match.status === "LIVE"
+              ? "Comparacion con los datos reales disponibles. Si falta historial fino de 5-15 minutos, se muestra N/D o una lectura conservadora."
+              : "Lectura basada en forma reciente, H2H, local/visitante y cuotas reales disponibles. Las estadisticas live permanecen N/D hasta el inicio."}
+          </p>
         </section>
 
         <section className="space-y-3">
-          {analysis.markets.map((market) => (
-            <AnalysisMarketCard key={`${market.market}-${market.selection}`} market={market} />
-          ))}
+          {analysis.markets.length ? (
+            analysis.markets.map((market) => <AnalysisMarketCard key={`${market.market}-${market.selection}`} market={market} />)
+          ) : (
+            <p className="rounded-lg border border-white/10 bg-white/[0.045] p-4 text-sm font-black uppercase text-zinc-200">
+              Partido finalizado o sin mercado vigente. No hay recomendaciones disponibles.
+            </p>
+          )}
         </section>
 
         <section className="rounded-lg border border-white/10 bg-white/[0.045] p-4">
@@ -139,4 +164,8 @@ function liveLabel(state: MatchAnalysisResult["liveState"]) {
     "N/D": "N/D"
   };
   return labels[state];
+}
+
+function formatDateTime(value: string) {
+  return new Intl.DateTimeFormat("es-EC", { dateStyle: "short", timeStyle: "medium" }).format(new Date(value));
 }

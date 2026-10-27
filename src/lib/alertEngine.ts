@@ -1,7 +1,8 @@
 import type { MatchAlert, MatchDetail, TeamStats } from "@/types/domain";
 
-function diff(current: number | undefined, previous: number | undefined) {
-  return (current ?? 0) - (previous ?? 0);
+function diff(current: number | null | undefined, previous: number | null | undefined) {
+  if (current === null || current === undefined || previous === null || previous === undefined) return null;
+  return current - previous;
 }
 
 export const LIVE_ACTIVITY_THRESHOLD = 7;
@@ -21,48 +22,122 @@ export function detectAlerts(
     return alerts;
   }
 
-  const homeShotsSpike = diff(match.stats.home.shots ?? undefined, previous.home.shots ?? undefined);
-  const awayShotsSpike = diff(match.stats.away.shots ?? undefined, previous.away.shots ?? undefined);
-  const homeXgSpike = diff(match.stats.home.xg ?? undefined, previous.home.xg ?? undefined);
-  const awayXgSpike = diff(match.stats.away.xg ?? undefined, previous.away.xg ?? undefined);
-  const dangerousSwing =
-    diff(match.stats.home.dangerousAttacks ?? undefined, previous.home.dangerousAttacks ?? undefined) -
-    diff(match.stats.away.dangerousAttacks ?? undefined, previous.away.dangerousAttacks ?? undefined);
+  const homeShotsSpike = diff(match.stats.home.shots, previous.home.shots);
+  const awayShotsSpike = diff(match.stats.away.shots, previous.away.shots);
+  const homeSotSpike = diff(match.stats.home.shotsOnTarget, previous.home.shotsOnTarget);
+  const awaySotSpike = diff(match.stats.away.shotsOnTarget, previous.away.shotsOnTarget);
+  const homeXgSpike = diff(match.stats.home.xg, previous.home.xg);
+  const awayXgSpike = diff(match.stats.away.xg, previous.away.xg);
+  const homeCornersSpike = diff(match.stats.home.corners, previous.home.corners);
+  const awayCornersSpike = diff(match.stats.away.corners, previous.away.corners);
+  const homeCardsSpike = sumNullableDiffs(diff(match.stats.home.yellowCards, previous.home.yellowCards), diff(match.stats.home.redCards, previous.home.redCards));
+  const awayCardsSpike = sumNullableDiffs(diff(match.stats.away.yellowCards, previous.away.yellowCards), diff(match.stats.away.redCards, previous.away.redCards));
+  const redSpike = sumNullableDiffs(diff(match.stats.home.redCards, previous.home.redCards), diff(match.stats.away.redCards, previous.away.redCards));
+  const dangerousSwing = nullableSubtract(diff(match.stats.home.dangerousAttacks, previous.home.dangerousAttacks), diff(match.stats.away.dangerousAttacks, previous.away.dangerousAttacks));
 
-  if (homeShotsSpike >= 4 || awayShotsSpike >= 4) {
-    alerts.push({
+  if ((homeShotsSpike ?? 0) >= 4 || (awayShotsSpike ?? 0) >= 4) {
+    alerts.push(withFingerprint(match.id, {
       type: "SHOTS_SPIKE",
       severity: 7,
       activityScore,
       title: "Incremento fuerte de remates",
-      message: `Cambio detectado: ${match.homeTeam} +${homeShotsSpike}, ${match.awayTeam} +${awayShotsSpike} remates desde la medicion anterior.`,
+      message: `Cambio detectado: ${match.homeTeam} +${formatDelta(homeShotsSpike)}, ${match.awayTeam} +${formatDelta(awayShotsSpike)} remates desde la medicion anterior.`,
       minute: match.minute
-    });
+    }));
   }
 
-  if (homeXgSpike >= 0.35 || awayXgSpike >= 0.35) {
-    alerts.push({
+  if ((homeSotSpike ?? 0) >= 2 || (awaySotSpike ?? 0) >= 2) {
+    alerts.push(withFingerprint(match.id, {
+      type: "SHOTS_ON_TARGET",
+      severity: 8,
+      activityScore,
+      title: "Incremento de remates al arco",
+      message: `Cambio detectado: ${match.homeTeam} +${formatDelta(homeSotSpike)}, ${match.awayTeam} +${formatDelta(awaySotSpike)} al arco desde la medicion anterior.`,
+      minute: match.minute
+    }));
+  }
+
+  if ((homeXgSpike ?? 0) >= 0.35 || (awayXgSpike ?? 0) >= 0.35) {
+    alerts.push(withFingerprint(match.id, {
       type: "XG_SPIKE",
       severity: 8,
       activityScore,
       title: "Incremento fuerte de xG",
-      message: `xG reciente: ${match.homeTeam} +${homeXgSpike.toFixed(2)}, ${match.awayTeam} +${awayXgSpike.toFixed(2)}.`,
+      message: `xG reciente: ${match.homeTeam} +${formatDecimalDelta(homeXgSpike)}, ${match.awayTeam} +${formatDecimalDelta(awayXgSpike)}.`,
       minute: match.minute
-    });
+    }));
   }
 
-  if (dangerousSwing >= 10) {
-    alerts.push({
+  if ((homeCornersSpike ?? 0) >= 2 || (awayCornersSpike ?? 0) >= 2) {
+    alerts.push(withFingerprint(match.id, {
+      type: "CORNERS",
+      severity: 7,
+      activityScore,
+      title: "Incremento de corners",
+      message: `Corners recientes: ${match.homeTeam} +${formatDelta(homeCornersSpike)}, ${match.awayTeam} +${formatDelta(awayCornersSpike)}.`,
+      minute: match.minute
+    }));
+  }
+
+  if ((homeCardsSpike ?? 0) >= 1 || (awayCardsSpike ?? 0) >= 1) {
+    alerts.push(withFingerprint(match.id, {
+      type: (redSpike ?? 0) >= 1 ? "RED_CARD" : "CARDS",
+      severity: (redSpike ?? 0) >= 1 ? 10 : 7,
+      activityScore,
+      title: (redSpike ?? 0) >= 1 ? "Tarjeta roja" : "Nueva tarjeta",
+      message: `Tarjetas recientes: ${match.homeTeam} +${formatDelta(homeCardsSpike)}, ${match.awayTeam} +${formatDelta(awayCardsSpike)}.`,
+      minute: match.minute
+    }));
+  }
+
+  if ((dangerousSwing ?? 0) >= 10) {
+    alerts.push(withFingerprint(match.id, {
       type: "DOMINANCE",
       severity: 7,
       activityScore,
       title: "Dominio repentino",
       message: `${match.homeTeam} aumento claramente sus ataques peligrosos frente al tramo anterior.`,
       minute: match.minute
-    });
+    }));
+  }
+
+  if (((homeSotSpike ?? 0) >= 2 || (awaySotSpike ?? 0) >= 2) && match.minute !== null && match.minute >= 70) {
+    alerts.push(withFingerprint(match.id, {
+      type: "LATE_GOAL_NEED_PRESSURE",
+      severity: 8,
+      activityScore,
+      title: "75'+ con necesidad y SOT recientes",
+      message: "El tramo final trae remates al arco recientes. Revisar mercado de gol con cuota fresca, sin asumir entrada automatica.",
+      minute: match.minute
+    }));
   }
 
   return alerts;
+}
+
+function withFingerprint(matchId: string, alert: MatchAlert): MatchAlert {
+  return {
+    ...alert,
+    fingerprint: `${matchId}:${alert.type}:${alert.minute ?? "na"}:${alert.message}`
+  };
+}
+
+function formatDelta(value: number | null) {
+  return value === null ? "N/D" : String(value);
+}
+
+function formatDecimalDelta(value: number | null) {
+  return value === null ? "N/D" : value.toFixed(2);
+}
+
+function sumNullableDiffs(...values: Array<number | null>) {
+  const clean = values.filter((value): value is number => value !== null);
+  return clean.length ? clean.reduce((total, value) => total + value, 0) : null;
+}
+
+function nullableSubtract(a: number | null, b: number | null) {
+  if (a === null || b === null) return null;
+  return a - b;
 }
 
 export function calculateLiveActivityScore(match: MatchDetail) {

@@ -6,7 +6,7 @@ import { measureProcess } from "@/lib/performance";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(request: Request) {
   if (!allSportsApiProvider.isConfigured() && !apiFootballProvider.isConfigured()) {
     const matches = await demoFootballProvider.listMatches();
     return NextResponse.json({
@@ -15,12 +15,15 @@ export async function GET() {
       providerStatus: "DEMO",
       message: "AllSportsApi y API-Football no configuradas. Se muestran datos DEMO.",
       lastUpdatedAt: new Date().toISOString(),
-      liveRefreshSeconds: Number(process.env.LIVE_REFRESH_SECONDS) || 60,
+      liveRefreshSeconds: Number(process.env.LIVE_REFRESH_SECONDS) || 120,
       matches
     });
   }
 
   try {
+    if (new URL(request.url).searchParams.has("refresh")) {
+      footballProvider.invalidateListCache();
+    }
     const matches = await measureProcess("fixtures+livescore", () => footballProvider.listMatches(), providerStatus);
 
     return NextResponse.json({
@@ -31,7 +34,7 @@ export async function GET() {
         ? "🟢 API REAL conectada: AllSportsApi."
         : "🟢 API REAL conectada: API-Football.",
       lastUpdatedAt: new Date().toISOString(),
-      liveRefreshSeconds: Number(process.env.LIVE_REFRESH_SECONDS) || 60,
+      liveRefreshSeconds: Number(process.env.LIVE_REFRESH_SECONDS) || 120,
       matches
     }, { headers: { "Cache-Control": "private, max-age=15, stale-while-revalidate=30" } });
   } catch (error) {
@@ -52,7 +55,7 @@ export async function GET() {
       message: `ERROR FOOTBALL API: ${message}`,
       statusCode,
       lastUpdatedAt: new Date().toISOString(),
-      liveRefreshSeconds: Number(process.env.LIVE_REFRESH_SECONDS) || 60,
+      liveRefreshSeconds: Number(process.env.LIVE_REFRESH_SECONDS) || 120,
       matches: []
     });
   }

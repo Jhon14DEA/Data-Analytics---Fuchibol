@@ -30,9 +30,9 @@ export async function GET(request: Request) {
       });
 
       for (const alert of alerts) {
-        const fingerprint = `${match.id}:${alert.type}:${alert.minute ?? "na"}:${alert.message}`;
+        const fingerprint = alert.fingerprint ?? `${match.id}:${alert.type}:${alert.minute ?? "na"}:${alert.message}`;
         const created = await prisma.alert.create({
-          data: { matchId: databaseMatch.id, fingerprint, type: alert.type as never, severity: alert.severity, title: alert.title, message: alert.message, minute: alert.minute }
+          data: { matchId: databaseMatch.id, fingerprint, type: mapAlertType(alert.type) as never, severity: alert.severity, title: alert.title, message: alert.message, minute: alert.minute }
         }).catch(() => null);
         if (created) createdAlerts.push(alert);
       }
@@ -51,4 +51,10 @@ function authorized(request: Request) {
   const secret = process.env.CRON_SECRET;
   if (!secret) return process.env.NODE_ENV !== "production";
   return request.headers.get("authorization") === `Bearer ${secret}` || request.headers.get("x-cron-secret") === secret;
+}
+
+function mapAlertType(type: string) {
+  if (type === "SHOTS_ON_TARGET") return "SHOTS_SPIKE";
+  if (type === "CORNERS" || type === "CARDS" || type === "RECOMMENDATION_CHANGE") return "DOMINANCE";
+  return type;
 }

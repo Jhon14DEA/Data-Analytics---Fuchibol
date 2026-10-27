@@ -1,0 +1,444 @@
+{
+  "auditedAt": "2026-10-06T02:24:30.127Z",
+  "transactionReadOnly": [
+    {
+      "transaction_read_only": "on"
+    }
+  ],
+  "scope": "Legacy-only dataset; counts are persisted availability, not verified provider semantics.",
+  "counts": {
+    "Fixture": 15,
+    "LiveSnapshot": 18,
+    "OddsSnapshot": 7964,
+    "LiveMarketSnapshot": 0,
+    "Match": 0,
+    "MatchSnapshot": 0,
+    "MatchEvent": 148
+  },
+  "snapshotRange": {
+    "min": "2026-10-05T20:15:27.631Z",
+    "max": "2026-10-05T20:52:50.022Z"
+  },
+  "distinctFixtures": 15,
+  "fixtureStatuses": {
+    "LIVE": 15
+  },
+  "eligibility": {
+    "confirmedFirstHalf": 0,
+    "minute1to44Proxy": 4,
+    "storedNumericScore": 18,
+    "storedZeroZero": 5,
+    "confirmedZeroZero": 0,
+    "minute1to45": 5,
+    "confirmedJointConditions": 0
+  },
+  "simulation": {
+    "potentialCandidates": 2,
+    "validCandidates": 0,
+    "rejectedCandidates": 2,
+    "exclusivePrimaryRejections": {
+      "unknownScore": 2,
+      "invalidPeriod": 0,
+      "invalidMinute": 0,
+      "alreadyHadGoal": 0,
+      "missingHtOutcome": 0,
+      "insufficientFixtureIdentity": 0,
+      "duplicatedObservation": 0,
+      "other": 0
+    },
+    "overlappingFailures": {
+      "unknownScore": 2,
+      "invalidPeriod": 2,
+      "missingHtOutcome": 2
+    },
+    "wholePoolPrimaryRejections": {
+      "unknownScore": 2,
+      "invalidPeriod": 0,
+      "invalidMinute": 13,
+      "alreadyHadGoal": 3,
+      "missingHtOutcome": 0,
+      "insufficientFixtureIdentity": 0,
+      "duplicatedObservation": 0,
+      "other": 0
+    }
+  },
+  "outcomes": {
+    "confirmedHtFixtures": 0,
+    "confirmedFtFixtures": 0,
+    "goalBeforeHtResolvable": 0,
+    "goalBeforeFtResolvable": 0,
+    "potentialFixtureEvents": [
+      {
+        "fixtureId": "cmuvp8qxn00glc7c47twrspf8",
+        "eventType": "substitution",
+        "minute": 8
+      },
+      {
+        "fixtureId": "cmuvp8qxn00glc7c47twrspf8",
+        "eventType": "substitution",
+        "minute": 29
+      },
+      {
+        "fixtureId": "cmuvp8qxn00glc7c47twrspf8",
+        "eventType": "card",
+        "minute": 30
+      },
+      {
+        "fixtureId": "cmuvp8qxn00glc7c47twrspf8",
+        "eventType": "card",
+        "minute": 42
+      }
+    ]
+  },
+  "coverageAll": {
+    "totalShots": {
+      "availableCount": 14,
+      "missingCount": 4,
+      "coveragePercent": 77.78
+    },
+    "SOT": {
+      "availableCount": 17,
+      "missingCount": 1,
+      "coveragePercent": 94.44
+    },
+    "xG": {
+      "availableCount": 0,
+      "missingCount": 18,
+      "coveragePercent": 0
+    },
+    "bigChances": {
+      "availableCount": 0,
+      "missingCount": 18,
+      "coveragePercent": 0
+    },
+    "shotsInsideBox": {
+      "availableCount": 0,
+      "missingCount": 18,
+      "coveragePercent": 0
+    },
+    "corners": {
+      "availableCount": 17,
+      "missingCount": 1,
+      "coveragePercent": 94.44
+    },
+    "dangerousAttacks": {
+      "availableCount": 17,
+      "missingCount": 1,
+      "coveragePercent": 94.44
+    },
+    "redCards": {
+      "availableCount": 0,
+      "missingCount": 18,
+      "coveragePercent": 0
+    },
+    "odds": {
+      "availableCount": 0,
+      "missingCount": 18,
+      "coveragePercent": 0
+    },
+    "timestampStored": {
+      "availableCount": 18,
+      "missingCount": 0,
+      "coveragePercent": 100
+    },
+    "providerObservationTimeConfirmed": {
+      "availableCount": 0,
+      "missingCount": 18,
+      "coveragePercent": 0
+    }
+  },
+  "coveragePotential": {
+    "totalShots": {
+      "availableCount": 0,
+      "missingCount": 2,
+      "coveragePercent": 0
+    },
+    "SOT": {
+      "availableCount": 2,
+      "missingCount": 0,
+      "coveragePercent": 100
+    },
+    "xG": {
+      "availableCount": 0,
+      "missingCount": 2,
+      "coveragePercent": 0
+    },
+    "bigChances": {
+      "availableCount": 0,
+      "missingCount": 2,
+      "coveragePercent": 0
+    },
+    "shotsInsideBox": {
+      "availableCount": 0,
+      "missingCount": 2,
+      "coveragePercent": 0
+    },
+    "corners": {
+      "availableCount": 2,
+      "missingCount": 0,
+      "coveragePercent": 100
+    },
+    "dangerousAttacks": {
+      "availableCount": 2,
+      "missingCount": 0,
+      "coveragePercent": 100
+    },
+    "redCards": {
+      "availableCount": 0,
+      "missingCount": 2,
+      "coveragePercent": 0
+    },
+    "odds": {
+      "availableCount": 0,
+      "missingCount": 2,
+      "coveragePercent": 0
+    },
+    "timestampStored": {
+      "availableCount": 2,
+      "missingCount": 0,
+      "coveragePercent": 100
+    },
+    "providerObservationTimeConfirmed": {
+      "availableCount": 0,
+      "missingCount": 2,
+      "coveragePercent": 0
+    }
+  },
+  "temporal": {
+    "intervalCount": 3,
+    "intervalsSeconds": [
+      32.394,
+      570.657,
+      1639.776
+    ],
+    "medianSeconds": 570.657,
+    "averageSeconds": 747.609,
+    "p90Seconds": 1425.9522000000002,
+    "gapsAbove300Seconds": 2,
+    "gapsAbove900Seconds": 1,
+    "singleObservationFixtures": 13,
+    "repeatedAdjacentFootballState": 1,
+    "tolerance": "Not estimable reliably from three intervals; do not bridge sparse observations.",
+    "last5": 0,
+    "last10": 0,
+    "last15": 0
+  },
+  "odds": {
+    "textMatchingFirstHalfOver05": 37,
+    "lineValues": [
+      "1"
+    ],
+    "quotedAfterInsertion": 37,
+    "minimumQuoteMinusInsertionSeconds": 19250.689,
+    "maximumQuoteMinusInsertionSeconds": 25133.673,
+    "potentialWithPriorQuoteWithin180sIgnoringLine": 0
+  },
+  "potentialSamples": [
+    {
+      "snapshotId": "cmuvp8qyu00k0c7c4bmdl0u08",
+      "fixtureId": "cmuvp8qxn00glc7c47twrspf8",
+      "provider": "AllSportsApi",
+      "externalId": "1732023",
+      "teams": "Nueva Chicago - Deportivo Maipu",
+      "date": "2026-10-05T20:00:00.000Z",
+      "capturedAt": "2026-10-05T20:25:30.246Z",
+      "minute": 19,
+      "storedScore": "0-0",
+      "scoreClassification": "UNKNOWN_SCORE",
+      "period": null,
+      "totalShots": null,
+      "SOT": 1,
+      "xG": null,
+      "bigChances": null,
+      "shotsInsideBox": null,
+      "corners": 1,
+      "dangerousAttacks": 19,
+      "redCards": null,
+      "odds": null,
+      "confirmedHtScore": null,
+      "confirmedFtScore": null,
+      "goalBeforeHt": null,
+      "goalBeforeFt": null,
+      "valid": false,
+      "rejection": "unknownScore",
+      "reason": "0-0 sin procedencia verificable; periodo y resultado HT no persistidos."
+    },
+    {
+      "snapshotId": "cmuvq7w86000hc77o7odk31mu",
+      "fixtureId": "cmuvp8qxn00glc7c47twrspf8",
+      "provider": "AllSportsApi",
+      "externalId": "1732023",
+      "teams": "Nueva Chicago - Deportivo Maipu",
+      "date": "2026-10-05T20:00:00.000Z",
+      "capturedAt": "2026-10-05T20:52:50.022Z",
+      "minute": 45,
+      "storedScore": "0-0",
+      "scoreClassification": "UNKNOWN_SCORE",
+      "period": null,
+      "totalShots": null,
+      "SOT": 3,
+      "xG": null,
+      "bigChances": null,
+      "shotsInsideBox": null,
+      "corners": 2,
+      "dangerousAttacks": 55,
+      "redCards": null,
+      "odds": null,
+      "confirmedHtScore": null,
+      "confirmedFtScore": null,
+      "goalBeforeHt": null,
+      "goalBeforeFt": null,
+      "valid": false,
+      "rejection": "unknownScore",
+      "reason": "0-0 sin procedencia verificable; periodo y resultado HT no persistidos."
+    }
+  ],
+  "rejectedSamples": [
+    {
+      "snapshotId": "cmuvp8qyu00k0c7c4bmdl0u08",
+      "fixtureId": "cmuvp8qxn00glc7c47twrspf8",
+      "provider": "AllSportsApi",
+      "externalId": "1732023",
+      "teams": "Nueva Chicago - Deportivo Maipu",
+      "date": "2026-10-05T20:00:00.000Z",
+      "capturedAt": "2026-10-05T20:25:30.246Z",
+      "minute": 19,
+      "storedScore": "0-0",
+      "scoreClassification": "UNKNOWN_SCORE",
+      "period": null,
+      "totalShots": null,
+      "SOT": 1,
+      "xG": null,
+      "bigChances": null,
+      "shotsInsideBox": null,
+      "corners": 1,
+      "dangerousAttacks": 19,
+      "redCards": null,
+      "odds": null,
+      "confirmedHtScore": null,
+      "confirmedFtScore": null,
+      "goalBeforeHt": null,
+      "goalBeforeFt": null,
+      "valid": false,
+      "rejection": "unknownScore",
+      "reason": "0-0 sin procedencia verificable; periodo y resultado HT no persistidos."
+    },
+    {
+      "snapshotId": "cmuvq7w86000hc77o7odk31mu",
+      "fixtureId": "cmuvp8qxn00glc7c47twrspf8",
+      "provider": "AllSportsApi",
+      "externalId": "1732023",
+      "teams": "Nueva Chicago - Deportivo Maipu",
+      "date": "2026-10-05T20:00:00.000Z",
+      "capturedAt": "2026-10-05T20:52:50.022Z",
+      "minute": 45,
+      "storedScore": "0-0",
+      "scoreClassification": "UNKNOWN_SCORE",
+      "period": null,
+      "totalShots": null,
+      "SOT": 3,
+      "xG": null,
+      "bigChances": null,
+      "shotsInsideBox": null,
+      "corners": 2,
+      "dangerousAttacks": 55,
+      "redCards": null,
+      "odds": null,
+      "confirmedHtScore": null,
+      "confirmedFtScore": null,
+      "goalBeforeHt": null,
+      "goalBeforeFt": null,
+      "valid": false,
+      "rejection": "unknownScore",
+      "reason": "0-0 sin procedencia verificable; periodo y resultado HT no persistidos."
+    },
+    {
+      "snapshotId": "cmuvovtzi003vc7804xv1u4os",
+      "fixtureId": "cmuvovtr10004c78092jtxrgh",
+      "provider": "AllSportsApi",
+      "externalId": "1812865",
+      "teams": "Cordoba - Tenerife",
+      "date": "2026-10-05T18:30:00.000Z",
+      "capturedAt": "2026-10-05T20:15:27.631Z",
+      "minute": 78,
+      "storedScore": "3-2",
+      "scoreClassification": "STORED_NONZERO",
+      "period": null,
+      "totalShots": 19,
+      "SOT": 8,
+      "xG": null,
+      "bigChances": null,
+      "shotsInsideBox": null,
+      "corners": 1,
+      "dangerousAttacks": 86,
+      "redCards": null,
+      "odds": null,
+      "confirmedHtScore": null,
+      "confirmedFtScore": null,
+      "goalBeforeHt": null,
+      "goalBeforeFt": null,
+      "valid": false,
+      "rejection": "invalidMinute",
+      "reason": "Minuto fuera de 1..45; no se confirma FIRST_HALF."
+    },
+    {
+      "snapshotId": "cmuvowizd03igc780zqvqo7dk",
+      "fixtureId": "cmuvovtr10004c78092jtxrgh",
+      "provider": "AllSportsApi",
+      "externalId": "1812865",
+      "teams": "Cordoba - Tenerife",
+      "date": "2026-10-05T18:30:00.000Z",
+      "capturedAt": "2026-10-05T20:16:00.025Z",
+      "minute": 78,
+      "storedScore": "3-2",
+      "scoreClassification": "STORED_NONZERO",
+      "period": null,
+      "totalShots": 19,
+      "SOT": 8,
+      "xG": null,
+      "bigChances": null,
+      "shotsInsideBox": null,
+      "corners": 1,
+      "dangerousAttacks": 86,
+      "redCards": null,
+      "odds": null,
+      "confirmedHtScore": null,
+      "confirmedFtScore": null,
+      "goalBeforeHt": null,
+      "goalBeforeFt": null,
+      "valid": false,
+      "rejection": "invalidMinute",
+      "reason": "Minuto fuera de 1..45; no se confirma FIRST_HALF."
+    },
+    {
+      "snapshotId": "cmuvp8pip003xc7c43mpqi1nq",
+      "fixtureId": "cmuvp8pca0004c7c45n241sri",
+      "provider": "AllSportsApi",
+      "externalId": "1838260",
+      "teams": "Liechtenstein - Gibraltar",
+      "date": "2026-10-05T18:45:00.000Z",
+      "capturedAt": "2026-10-05T20:25:28.370Z",
+      "minute": 81,
+      "storedScore": "0-2",
+      "scoreClassification": "STORED_NONZERO",
+      "period": null,
+      "totalShots": 8,
+      "SOT": 6,
+      "xG": null,
+      "bigChances": null,
+      "shotsInsideBox": null,
+      "corners": 1,
+      "dangerousAttacks": 99,
+      "redCards": null,
+      "odds": null,
+      "confirmedHtScore": null,
+      "confirmedFtScore": null,
+      "goalBeforeHt": null,
+      "goalBeforeFt": null,
+      "valid": false,
+      "rejection": "invalidMinute",
+      "reason": "Minuto fuera de 1..45; no se confirma FIRST_HALF."
+    }
+  ],
+  "recommendation": "C"
+}

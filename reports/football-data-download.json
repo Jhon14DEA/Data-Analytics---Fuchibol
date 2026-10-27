@@ -1,0 +1,20 @@
+{
+  "url": "https://football-data.co.uk/mmz4281/2425/E0.csv",
+  "http": 200,
+  "bytes": 197110,
+  "contentType": "text/csv",
+  "sha256": "d0c8ce4a96d886cf60cf101f570f4a3893844226f91c7bd769eb568c49edbfa4",
+  "authentication": false,
+  "hops": [
+    {
+      "url": "https://www.football-data.co.uk/mmz4281/2425/E0.csv",
+      "http": 302,
+      "location": "https://football-data.co.uk/mmz4281/2425/E0.csv"
+    },
+    {
+      "url": "https://football-data.co.uk/mmz4281/2425/E0.csv",
+      "http": 200,
+      "location": null
+    }
+  ]
+}

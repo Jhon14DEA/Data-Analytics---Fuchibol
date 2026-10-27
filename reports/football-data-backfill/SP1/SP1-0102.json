@@ -1,0 +1,56 @@
+{
+  "status": "FAILED",
+  "season": "0102",
+  "error": "CSV_WIDTH_MISMATCH",
+  "safeToContinue": true,
+  "checksum": "6b578dbca42fae59bdea8d78dff430c976c609eb31bbb6fed14d483c8fcc6629",
+  "csvRows": null,
+  "elapsedMs": 1005,
+  "fixtures": 0,
+  "teams": 0,
+  "teamMatchStats": 0,
+  "referee": 0,
+  "dateOnly": 0,
+  "periodStats": 0,
+  "outcomes": 0,
+  "odds": 0,
+  "nullCoverage": {
+    "goals": {
+      "available": 0,
+      "missing": 0
+    },
+    "shots": {
+      "available": 0,
+      "missing": 0
+    },
+    "shotsOnTarget": {
+      "available": 0,
+      "missing": 0
+    },
+    "corners": {
+      "available": 0,
+      "missing": 0
+    },
+    "fouls": {
+      "available": 0,
+      "missing": 0
+    },
+    "yellowCards": {
+      "available": 0,
+      "missing": 0
+    },
+    "redCards": {
+      "available": 0,
+      "missing": 0
+    },
+    "xg": {
+      "available": 0,
+      "missing": 0
+    },
+    "possession": {
+      "available": 0,
+      "missing": 0
+    }
+  },
+  "csvInspection": "FAILED"
+}

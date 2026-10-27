@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: imports all 380 fixtures with provenance without LIVE side effects
+ok 1 - imports all 380 fixtures with provenance without LIVE side effects
+  ---
+  duration_ms: 34215.066
+  type: 'test'
+  ...
+# Subtest: referee, NULL metrics and real receipt preserve source semantics
+ok 2 - referee, NULL metrics and real receipt preserve source semantics
+  ---
+  duration_ms: 5.7679
+  type: 'test'
+  ...
+# Subtest: documented odds use isolated archive and NULL quotedAt
+ok 3 - documented odds use isolated archive and NULL quotedAt
+  ---
+  duration_ms: 21.8059
+  type: 'test'
+  ...
+# Subtest: new process/client replay is idempotent including odds/checkpoint
+ok 4 - new process/client replay is idempotent including odds/checkpoint
+  ---
+  duration_ms: 2324.0476
+  type: 'test'
+  ...
+# Subtest: changed completed source is not silently called already done
+ok 5 - changed completed source is not silently called already done
+  ---
+  duration_ms: 228.0388
+  type: 'test'
+  ...
+# Subtest: later API-Football ingestion reuses the three canonical fixtures and persists mappings
+ok 6 - later API-Football ingestion reuses the three canonical fixtures and persists mappings
+  ---
+  duration_ms: 274.8295
+  type: 'test'
+  ...
+# Subtest: ambiguous cross-provider identities fail closed without fusion
+ok 7 - ambiguous cross-provider identities fail closed without fusion
+  ---
+  duration_ms: 21.1029
+  type: 'test'
+  ...
+# Subtest: completed checkpoint records exactly 380 processed rows
+ok 8 - completed checkpoint records exactly 380 processed rows
+  ---
+  duration_ms: 3.171
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 37937.2656

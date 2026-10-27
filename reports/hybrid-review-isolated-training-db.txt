@@ -1,0 +1,101 @@
+TAP version 13
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt1o20004c744i15yyoe4","count":1,"at":"2026-10-13T13:54:44.838Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt1o20004c744i15yyoe4","reason":"DUPLICATE","count":1,"at":"2026-10-13T13:54:44.860Z"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt1o20004c744i15yyoe4","count":1,"at":"2026-10-13T13:54:44.877Z"}
+# Subtest: PostgreSQL persists NULL/zero, deduplicates and retains a changed same-minute sample
+ok 1 - PostgreSQL persists NULL/zero, deduplicates and retains a changed same-minute sample
+  ---
+  duration_ms: 2203.0323
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt1r8000ec744n8co84bq","count":1,"at":"2026-10-13T13:54:44.917Z"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt1r8000ec744n8co84bq","count":1,"at":"2026-10-13T13:54:44.936Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt1r8000ec744n8co84bq","reason":"ALREADY_SCORED","count":1,"at":"2026-10-13T13:54:44.940Z"}
+# {"event":"DATASET_HT_RESOLVED","fixtureId":"cmv6qt1r8000ec744n8co84bq","count":2,"at":"2026-10-13T13:54:44.959Z"}
+# {"event":"DATASET_FT_RESOLVED","fixtureId":"cmv6qt1r8000ec744n8co84bq","count":2,"at":"2026-10-13T13:54:44.985Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt1r8000ec744n8co84bq","reason":"MARKET_RESOLVED","count":1,"at":"2026-10-13T13:54:44.998Z"}
+# Subtest: 17m/20m 0-0 -> goal 24 -> HT resolves BOTH forward labels, FT finalizes
+ok 2 - 17m/20m 0-0 -> goal 24 -> HT resolves BOTH forward labels, FT finalizes
+  ---
+  duration_ms: 110.0344
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt1u9000nc744b9saqy7l","count":1,"at":"2026-10-13T13:54:45.039Z"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt1um000uc744smuww78c","count":1,"at":"2026-10-13T13:54:45.057Z"}
+# {"event":"DATASET_HT_RESOLVED","fixtureId":"cmv6qt1u9000nc744b9saqy7l","count":1,"at":"2026-10-13T13:54:45.075Z"}
+# {"event":"DATASET_FT_RESOLVED","fixtureId":"cmv6qt1u9000nc744b9saqy7l","count":1,"at":"2026-10-13T13:54:45.084Z"}
+# Subtest: 35m 0-0 -> HT 0-0 -> FT 1-0 gives HT=false, FT=true; other fixtures untouched
+ok 3 - 35m 0-0 -> HT 0-0 -> FT 1-0 gives HT=false, FT=true; other fixtures untouched
+  ---
+  duration_ms: 99.0798
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt1wz0013c744a2hz2x1g","count":1,"at":"2026-10-13T13:54:45.127Z"}
+# {"event":"DATASET_FT_RESOLVED","fixtureId":"cmv6qt1wz0013c744a2hz2x1g","count":1,"at":"2026-10-13T13:54:45.140Z"}
+# {"event":"DATASET_HT_RESOLVED","fixtureId":"cmv6qt1wz0013c744a2hz2x1g","count":1,"at":"2026-10-13T13:54:45.156Z"}
+# Subtest: FT without confirmed HT resolves only FT; later HT fills missing label without guessing
+ok 4 - FT without confirmed HT resolves only FT; later HT fills missing label without guessing
+  ---
+  duration_ms: 63.1266
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt1yr001bc744e1c3k866","count":1,"at":"2026-10-13T13:54:45.188Z"}
+# Subtest: stale outcome predating capture cannot label the snapshot; summary ignores null averages
+ok 5 - stale outcome predating capture cannot label the snapshot; summary ignores null averages
+  ---
+  duration_ms: 93.334
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt21c001jc7446p3o8fvs","count":1,"at":"2026-10-13T13:54:45.281Z"}
+# prisma:error 
+# Invalid `assert.rejects(()=>tx.liveMarketSnapshot.update()` invocation in
+# C:\\Users\\jlabc\\Documents\\PP\\FUT\\tests\\training\\persistence.test.cjs:99:50
+#   96 test('database enforces FIRST_HALF-only market candidates', async()=>rolledBack(async tx=>{
+#   97   const {fixture,live,observation}=await setup(tx);
+#   98   const row=await persistLiveMarketSnapshot(fixture.id,live.id,observation,tx);
+# → 99   await assert.rejects(()=>tx.liveMarketSnapshot.update(
+# Error occurred during query execution:
+# ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "23514", message: "new row for relation \\"LiveMarketSnapshot\\" violates check constraint \\"LiveMarketSnapshot_candidate_check\\"", severity: "ERROR", detail: Some("Failing row contains (cmv6qt21r001mc744me7r3aoy, cmv6qt21c001jc7446p3o8fvs, 111, cmv6qt21f001lc744bsutbmev, 2026-10-13 13:53:45.268, 9d320e6de577ae7d43cd85a5bab22b621dccbef92e6e1769482b5f0aadedc349, 17, null, null, OVER_0_5, FULL_TIME, 0, 0, 1, 28, null, null, null, 0, 1, 1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 6, 0, {\\"history\\": \\"FIRST_HALF_HISTORY_UNAVAILABLE\\", \\"missing\\": [\\"home...., null, null, null, null, null, null, null, ALLSPORTS, ALLSPORTS, null)."), column: None, hint: None }), transient: false })
+# Subtest: database enforces FIRST_HALF-only market candidates
+ok 6 - database enforces FIRST_HALF-only market candidates
+  ---
+  duration_ms: 52.5863
+  type: 'test'
+  ...
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt22x001rc7442kjoe4kl","reason":"DEMO","count":1,"at":"2026-10-13T13:54:45.328Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt22x001rc7442kjoe4kl","reason":"UNKNOWN_SCORE","count":1,"at":"2026-10-13T13:54:45.331Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt22x001rc7442kjoe4kl","reason":"ALREADY_SCORED","count":1,"at":"2026-10-13T13:54:45.334Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt22x001rc7442kjoe4kl","reason":"INVALID_PERIOD","periodEvidence":{"provider":"AllSportsApi","rawEventStatus":"1H 17","normalizedMinute":17,"resolvedPeriod":"FIRST_HALF","periodConfidence":"CONFIRMED","reason":"EXPLICIT_PERIOD_STATUS","source":"event_status"},"count":1,"at":"2026-10-13T13:54:45.337Z"}
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt22x001rc7442kjoe4kl","count":1,"at":"2026-10-13T13:54:45.357Z"}
+# {"event":"DATASET_SKIPPED","fixtureId":"cmv6qt22x001rc7442kjoe4kl","reason":"DUPLICATE","count":1,"at":"2026-10-13T13:54:45.374Z"}
+# Subtest: existing observation hook captures confirmed LIVE and skips demo/unknown/goaled/second half
+ok 7 - existing observation hook captures confirmed LIVE and skips demo/unknown/goaled/second half
+  ---
+  duration_ms: 75.4264
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt24x0020c744graj8a8t","count":1,"at":"2026-10-13T13:54:45.413Z"}
+# {"event":"DATASET_FT_RESOLVED","fixtureId":"cmv6qt24x0020c744graj8a8t","count":1,"at":"2026-10-13T13:54:45.433Z"}
+# {"event":"DATASET_HT_RESOLVED","fixtureId":"cmv6qt24x0020c744graj8a8t","count":1,"at":"2026-10-13T13:54:45.447Z"}
+# Subtest: existing listings retry missing HT after FT, and cannot overwrite resolved outcomes
+ok 8 - existing listings retry missing HT after FT, and cannot overwrite resolved outcomes
+  ---
+  duration_ms: 107.4826
+  type: 'test'
+  ...
+# {"event":"DATASET_CAPTURED","fixtureId":"cmv6qt2dc0028c744wtg4hp76","count":1,"at":"2026-10-13T13:54:45.736Z"}
+# Subtest: full persistMatchDetail -> saveLiveSnapshot -> dataset hook persists linked confirmed API fixture
+ok 9 - full persistMatchDetail -> saveLiveSnapshot -> dataset hook persists linked confirmed API fixture
+  ---
+  duration_ms: 257.0065
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3693.3559

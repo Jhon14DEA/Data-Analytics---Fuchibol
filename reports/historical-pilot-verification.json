@@ -1,0 +1,39 @@
+{
+  "before": {
+    "counts": {
+      "fixture": 503,
+      "liveSnapshot": 4353,
+      "liveMarketSnapshot": 17,
+      "hybridScout": 47,
+      "oddsSnapshot": 785057,
+      "season": 0,
+      "teamPeriodStats": 0,
+      "historicalMarketOutcome": 0,
+      "providerEntityMapping": 0,
+      "historicalIngestionState": 0
+    },
+    "pitHash": "54b085e1ade5c99bb663a242015985307132b94845fe5b3baaa340242d0f10e5",
+    "budgetHash": "dc4372b6bdc127fc75ff902b7eb62a5789b1e085e4c37b290389e34dbc4ae885",
+    "keyConfigured": true
+  },
+  "after": {
+    "counts": {
+      "fixture": 503,
+      "liveSnapshot": 4353,
+      "liveMarketSnapshot": 17,
+      "hybridScout": 47,
+      "oddsSnapshot": 785057,
+      "season": 0,
+      "teamPeriodStats": 0,
+      "historicalMarketOutcome": 0,
+      "providerEntityMapping": 0,
+      "historicalIngestionState": 0
+    },
+    "pitHash": "54b085e1ade5c99bb663a242015985307132b94845fe5b3baaa340242d0f10e5",
+    "budgetHash": "dc4372b6bdc127fc75ff902b7eb62a5789b1e085e4c37b290389e34dbc4ae885",
+    "keyConfigured": true
+  },
+  "unchanged": true,
+  "protectedFiles": 92,
+  "changed": []
+}

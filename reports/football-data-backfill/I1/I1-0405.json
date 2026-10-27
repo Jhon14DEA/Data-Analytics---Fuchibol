@@ -1,0 +1,238 @@
+{
+  "status": "COMPLETE",
+  "season": "0405",
+  "skipped": false,
+  "csvRows": 380,
+  "checksum": "6b0dacc8ad92703f73eafa37fb07c89b427acbef866c0044f02594cead3e191d",
+  "insertedThisRun": 380,
+  "updatedThisRun": 0,
+  "teamsInserted": 4,
+  "teamsReused": 16,
+  "fixtures": 380,
+  "teams": 20,
+  "teamMatchStats": 760,
+  "referee": 0,
+  "dateOnly": 380,
+  "periodStats": 1520,
+  "outcomes": 3040,
+  "odds": 8427,
+  "nullCoverage": {
+    "goals": {
+      "available": 760,
+      "missing": 0
+    },
+    "shots": {
+      "available": 0,
+      "missing": 760
+    },
+    "shotsOnTarget": {
+      "available": 0,
+      "missing": 760
+    },
+    "corners": {
+      "available": 0,
+      "missing": 760
+    },
+    "fouls": {
+      "available": 0,
+      "missing": 760
+    },
+    "yellowCards": {
+      "available": 0,
+      "missing": 760
+    },
+    "redCards": {
+      "available": 0,
+      "missing": 760
+    },
+    "xg": {
+      "available": 0,
+      "missing": 760
+    },
+    "possession": {
+      "available": 0,
+      "missing": 760
+    }
+  },
+  "duplicates": 0,
+  "anomalies": {},
+  "csvCoverage": {
+    "Div": {
+      "present": 380,
+      "missing": 0
+    },
+    "Date": {
+      "present": 380,
+      "missing": 0
+    },
+    "HomeTeam": {
+      "present": 380,
+      "missing": 0
+    },
+    "AwayTeam": {
+      "present": 380,
+      "missing": 0
+    },
+    "FTHG": {
+      "present": 380,
+      "missing": 0
+    },
+    "FTAG": {
+      "present": 380,
+      "missing": 0
+    },
+    "FTR": {
+      "present": 380,
+      "missing": 0
+    },
+    "HTHG": {
+      "present": 380,
+      "missing": 0
+    },
+    "HTAG": {
+      "present": 380,
+      "missing": 0
+    },
+    "HTR": {
+      "present": 380,
+      "missing": 0
+    },
+    "B365H": {
+      "present": 371,
+      "missing": 9
+    },
+    "B365D": {
+      "present": 371,
+      "missing": 9
+    },
+    "B365A": {
+      "present": 371,
+      "missing": 9
+    },
+    "BWH": {
+      "present": 379,
+      "missing": 1
+    },
+    "BWD": {
+      "present": 379,
+      "missing": 1
+    },
+    "BWA": {
+      "present": 379,
+      "missing": 1
+    },
+    "GBH": {
+      "present": 379,
+      "missing": 1
+    },
+    "GBD": {
+      "present": 379,
+      "missing": 1
+    },
+    "GBA": {
+      "present": 379,
+      "missing": 1
+    },
+    "IWH": {
+      "present": 364,
+      "missing": 16
+    },
+    "IWD": {
+      "present": 364,
+      "missing": 16
+    },
+    "IWA": {
+      "present": 364,
+      "missing": 16
+    },
+    "LBH": {
+      "present": 367,
+      "missing": 13
+    },
+    "LBD": {
+      "present": 367,
+      "missing": 13
+    },
+    "LBA": {
+      "present": 367,
+      "missing": 13
+    },
+    "SBH": {
+      "present": 367,
+      "missing": 13
+    },
+    "SBD": {
+      "present": 367,
+      "missing": 13
+    },
+    "SBA": {
+      "present": 367,
+      "missing": 13
+    },
+    "WHH": {
+      "present": 364,
+      "missing": 16
+    },
+    "WHD": {
+      "present": 364,
+      "missing": 16
+    },
+    "WHA": {
+      "present": 364,
+      "missing": 16
+    },
+    "GB>2.5": {
+      "present": 338,
+      "missing": 42
+    },
+    "GB<2.5": {
+      "present": 338,
+      "missing": 42
+    },
+    "B365>2.5": {
+      "present": 327,
+      "missing": 53
+    },
+    "B365<2.5": {
+      "present": 327,
+      "missing": 53
+    },
+    "GBAHH": {
+      "present": 340,
+      "missing": 40
+    },
+    "GBAHA": {
+      "present": 340,
+      "missing": 40
+    },
+    "GBAH": {
+      "present": 340,
+      "missing": 40
+    },
+    "LBAHH": {
+      "present": 341,
+      "missing": 39
+    },
+    "LBAHA": {
+      "present": 341,
+      "missing": 39
+    },
+    "LBAH": {
+      "present": 341,
+      "missing": 39
+    },
+    "B365AHH": {
+      "present": 374,
+      "missing": 6
+    },
+    "B365AHA": {
+      "present": 374,
+      "missing": 6
+    },
+    "B365AH": {
+      "present": 374,
+      "missing": 6
+    }
+  },
+  "elapsedMs": 48306
+}

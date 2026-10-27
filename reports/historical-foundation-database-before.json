@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-13T19:47:41.990Z",
+  "liveMarketSnapshots": 17,
+  "pitHash": "54b085e1ade5c99bb663a242015985307132b94845fe5b3baaa340242d0f10e5",
+  "liveSnapshots": 4353,
+  "fixtures": 503,
+  "odds": 785057,
+  "budget": [
+    {
+      "day": "2026-10-08",
+      "used": 3,
+      "automaticUsed": 3,
+      "validationUsed": 3,
+      "remoteLimit": 100
+    },
+    {
+      "day": "2026-10-09",
+      "used": 2,
+      "automaticUsed": 2,
+      "validationUsed": 2,
+      "remoteLimit": 100
+    },
+    {
+      "day": "2026-10-12",
+      "used": 5,
+      "automaticUsed": 5,
+      "validationUsed": 5,
+      "remoteLimit": 100
+    }
+  ]
+}

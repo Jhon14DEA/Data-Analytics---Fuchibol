@@ -1,0 +1,167 @@
+{
+  "at": "2026-10-14T01:18:29.279Z",
+  "requests": [
+    {
+      "attempt": 1,
+      "endpoint": "/fixtures?league=39&season=2024",
+      "cost": 1,
+      "maximum": 1
+    }
+  ],
+  "decision": "GO_FOR_FOOTBALL_DATA_PROVIDER",
+  "http": 200,
+  "errors": [],
+  "headers": {
+    "x-ratelimit-limit": "10",
+    "x-ratelimit-remaining": "9",
+    "x-ratelimit-requests-limit": "100",
+    "x-ratelimit-requests-remaining": "96"
+  },
+  "received": 380,
+  "aliases": {
+    "man united": "manchester united"
+  },
+  "comparisons": [
+    {
+      "csv": {
+        "date": "16/08/2024",
+        "home": "Man United",
+        "away": "Fulham",
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      },
+      "api": {
+        "id": 1208021,
+        "date": "2024-08-16T19:00:00+00:00",
+        "home": {
+          "id": 33,
+          "name": "Manchester United",
+          "logo": "https://media.api-sports.io/football/teams/33.png",
+          "winner": true
+        },
+        "away": {
+          "id": 36,
+          "name": "Fulham",
+          "logo": "https://media.api-sports.io/football/teams/36.png",
+          "winner": false
+        },
+        "ht": {
+          "home": 0,
+          "away": 0
+        },
+        "ft": {
+          "home": 1,
+          "away": 0
+        }
+      },
+      "checks": {
+        "date": true,
+        "home": true,
+        "away": true,
+        "ht": true,
+        "ft": true
+      },
+      "match": true
+    },
+    {
+      "csv": {
+        "date": "17/08/2024",
+        "home": "Ipswich",
+        "away": "Liverpool",
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      },
+      "api": {
+        "id": 1208022,
+        "date": "2024-08-17T11:30:00+00:00",
+        "home": {
+          "id": 57,
+          "name": "Ipswich",
+          "logo": "https://media.api-sports.io/football/teams/57.png",
+          "winner": false
+        },
+        "away": {
+          "id": 40,
+          "name": "Liverpool",
+          "logo": "https://media.api-sports.io/football/teams/40.png",
+          "winner": true
+        },
+        "ht": {
+          "home": 0,
+          "away": 0
+        },
+        "ft": {
+          "home": 0,
+          "away": 2
+        }
+      },
+      "checks": {
+        "date": true,
+        "home": true,
+        "away": true,
+        "ht": true,
+        "ft": true
+      },
+      "match": true
+    },
+    {
+      "csv": {
+        "date": "17/08/2024",
+        "home": "Arsenal",
+        "away": "Wolves",
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      },
+      "api": {
+        "id": 1208023,
+        "date": "2024-08-17T14:00:00+00:00",
+        "home": {
+          "id": 42,
+          "name": "Arsenal",
+          "logo": "https://media.api-sports.io/football/teams/42.png",
+          "winner": true
+        },
+        "away": {
+          "id": 39,
+          "name": "Wolves",
+          "logo": "https://media.api-sports.io/football/teams/39.png",
+          "winner": false
+        },
+        "ht": {
+          "home": 1,
+          "away": 0
+        },
+        "ft": {
+          "home": 2,
+          "away": 0
+        }
+      },
+      "checks": {
+        "date": true,
+        "home": true,
+        "away": true,
+        "ht": true,
+        "ft": true
+      },
+      "match": true
+    }
+  ]
+}

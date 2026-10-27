@@ -1,0 +1,56 @@
+{
+  "status": "FAILED",
+  "season": "0203",
+  "error": "CSV_WIDTH_MISMATCH",
+  "safeToContinue": true,
+  "checksum": "1fc6637e302d0f1dde769ed09750b0ba1057619fe25948cbc1a2d93ba8eac4b8",
+  "csvRows": null,
+  "elapsedMs": 820,
+  "fixtures": 0,
+  "teams": 0,
+  "teamMatchStats": 0,
+  "referee": 0,
+  "dateOnly": 0,
+  "periodStats": 0,
+  "outcomes": 0,
+  "odds": 0,
+  "nullCoverage": {
+    "goals": {
+      "available": 0,
+      "missing": 0
+    },
+    "shots": {
+      "available": 0,
+      "missing": 0
+    },
+    "shotsOnTarget": {
+      "available": 0,
+      "missing": 0
+    },
+    "corners": {
+      "available": 0,
+      "missing": 0
+    },
+    "fouls": {
+      "available": 0,
+      "missing": 0
+    },
+    "yellowCards": {
+      "available": 0,
+      "missing": 0
+    },
+    "redCards": {
+      "available": 0,
+      "missing": 0
+    },
+    "xg": {
+      "available": 0,
+      "missing": 0
+    },
+    "possession": {
+      "available": 0,
+      "missing": 0
+    }
+  },
+  "csvInspection": "FAILED"
+}

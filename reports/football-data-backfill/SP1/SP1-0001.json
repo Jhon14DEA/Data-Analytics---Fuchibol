@@ -1,0 +1,162 @@
+{
+  "status": "COMPLETE",
+  "season": "0001",
+  "skipped": false,
+  "csvRows": 380,
+  "checksum": "b295efaa68d5ca4700961c4974a37e9c0af1eba1b5a3b3eff2610881d502adbe",
+  "insertedThisRun": 380,
+  "updatedThisRun": 0,
+  "teamsInserted": 2,
+  "teamsReused": 18,
+  "fixtures": 380,
+  "teams": 20,
+  "teamMatchStats": 760,
+  "referee": 0,
+  "dateOnly": 380,
+  "periodStats": 1520,
+  "outcomes": 3040,
+  "odds": 5409,
+  "nullCoverage": {
+    "goals": {
+      "available": 760,
+      "missing": 0
+    },
+    "shots": {
+      "available": 0,
+      "missing": 760
+    },
+    "shotsOnTarget": {
+      "available": 0,
+      "missing": 760
+    },
+    "corners": {
+      "available": 0,
+      "missing": 760
+    },
+    "fouls": {
+      "available": 0,
+      "missing": 760
+    },
+    "yellowCards": {
+      "available": 0,
+      "missing": 760
+    },
+    "redCards": {
+      "available": 0,
+      "missing": 760
+    },
+    "xg": {
+      "available": 0,
+      "missing": 760
+    },
+    "possession": {
+      "available": 0,
+      "missing": 760
+    }
+  },
+  "duplicates": 0,
+  "anomalies": {},
+  "csvCoverage": {
+    "Div": {
+      "present": 380,
+      "missing": 0
+    },
+    "Date": {
+      "present": 380,
+      "missing": 0
+    },
+    "HomeTeam": {
+      "present": 380,
+      "missing": 0
+    },
+    "AwayTeam": {
+      "present": 380,
+      "missing": 0
+    },
+    "FTHG": {
+      "present": 380,
+      "missing": 0
+    },
+    "FTAG": {
+      "present": 380,
+      "missing": 0
+    },
+    "FTR": {
+      "present": 380,
+      "missing": 0
+    },
+    "HTHG": {
+      "present": 380,
+      "missing": 0
+    },
+    "HTAG": {
+      "present": 380,
+      "missing": 0
+    },
+    "HTR": {
+      "present": 380,
+      "missing": 0
+    },
+    "GBH": {
+      "present": 376,
+      "missing": 4
+    },
+    "GBD": {
+      "present": 376,
+      "missing": 4
+    },
+    "GBA": {
+      "present": 376,
+      "missing": 4
+    },
+    "IWH": {
+      "present": 375,
+      "missing": 5
+    },
+    "IWD": {
+      "present": 375,
+      "missing": 5
+    },
+    "IWA": {
+      "present": 375,
+      "missing": 5
+    },
+    "LBH": {
+      "present": 332,
+      "missing": 48
+    },
+    "LBD": {
+      "present": 332,
+      "missing": 48
+    },
+    "LBA": {
+      "present": 332,
+      "missing": 48
+    },
+    "SBH": {
+      "present": 379,
+      "missing": 1
+    },
+    "SBD": {
+      "present": 379,
+      "missing": 1
+    },
+    "SBA": {
+      "present": 379,
+      "missing": 1
+    },
+    "WHH": {
+      "present": 341,
+      "missing": 39
+    },
+    "WHD": {
+      "present": 341,
+      "missing": 39
+    },
+    "WHA": {
+      "present": 341,
+      "missing": 39
+    }
+  },
+  "elapsedMs": 33006
+}

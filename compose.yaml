@@ -1,0 +1,24 @@
+name: fut-analytics
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: fut-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:?Configure POSTGRES_DB in .env}
+      POSTGRES_USER: ${POSTGRES_USER:?Configure POSTGRES_USER in .env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Configure POSTGRES_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5444}:5432"
+    volumes:
+      - fut_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+
+volumes:
+  fut_postgres_data:

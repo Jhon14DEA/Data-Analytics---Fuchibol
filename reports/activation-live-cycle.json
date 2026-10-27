@@ -1,0 +1,37 @@
+{
+  "http": 200,
+  "durationMs": 13972,
+  "generatedAt": "2026-10-08T22:53:45.211Z",
+  "scannedLiveMatches": 4,
+  "radarCandidates": 2,
+  "matches": [
+    {
+      "fixtureId": "allsports-1727047",
+      "error": true
+    },
+    {
+      "fixtureId": "allsports-1847904",
+      "minute": 45,
+      "status": "LIVE",
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "error": false
+    },
+    {
+      "fixtureId": "allsports-1752104",
+      "error": true
+    },
+    {
+      "fixtureId": "allsports-1752107",
+      "minute": 19,
+      "status": "LIVE",
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "error": false
+    }
+  ]
+}

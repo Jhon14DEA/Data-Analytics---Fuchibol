@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Activity, Bell, Database, RefreshCw, ShieldCheck } from "lucide-react";
 import { MainNav } from "@/components/MainNav";
 import { MatchCard } from "@/components/MatchCard";
@@ -27,17 +27,21 @@ const sections: { status: MatchStatus; title: string }[] = [
 export function DashboardClient({ initialData }: { initialData: MatchesResponse }) {
   const [data, setData] = useState(initialData);
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const inFlight = useRef(false);
 
   const hasLiveMatches = useMemo(() => data.matches.some((match) => match.status === "LIVE"), [data.matches]);
 
   const refresh = useCallback(async () => {
+    if (inFlight.current) return;
+    inFlight.current = true;
     setIsRefreshing(true);
     try {
-      const response = await fetch("/api/matches", { cache: "no-store" });
+      const response = await fetch(`/api/matches?refresh=${Date.now()}`, { cache: "no-store" });
       const payload = (await response.json()) as MatchesResponse;
       setData(payload);
     } finally {
       setIsRefreshing(false);
+      inFlight.current = false;
     }
   }, []);
 
@@ -82,7 +86,7 @@ export function DashboardClient({ initialData }: { initialData: MatchesResponse 
         </div>
       </header>
 
-      <MatchSearch />
+      <MatchSearch label="Analizar partido especifico" target="deep-analysis" showDate />
 
       <div className="mb-5 grid grid-cols-3 gap-2 text-xs text-zinc-300">
         <span className="rounded border border-white/10 bg-white/[0.045] px-3 py-2"><Activity className="mb-1 h-4 w-4 text-emerald-300" />Stats</span>

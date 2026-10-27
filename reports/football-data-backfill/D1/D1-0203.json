@@ -1,0 +1,63 @@
+{
+  "status": "FAILED",
+  "season": "0203",
+  "error": "CSV_WIDTH_MISMATCH",
+  "diagnostic": {
+    "name": "Error",
+    "code": null,
+    "message": "CSV_WIDTH_MISMATCH",
+    "stack": "Error: CSV_WIDTH_MISMATCH\n    at C:\\Users\\jlabc\\Documents\\PP\\FUT\\.historical-build\\services\\historical\\footballDataCsv.js:112:15\n    at Array.map (<anonymous>)\n    at parseFootballCsv (C:\\Users\\jlabc\\Documents\\PP\\FUT\\.historical-build\\services\\historical\\footballDataCsv.js:110:20)\n    at new FootballDataCsvProvider (C:\\Users\\jlabc\\Documents\\PP\\FUT\\.historical-build\\services\\historical\\footballDataCsv.js:168:22)\n    at C:\\Users\\jlabc\\Documents\\PP\\FUT\\scripts\\football-data-backfill.cjs:42:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async runEplSeason (C:\\Users\\jlabc\\Documents\\PP\\FUT\\.historical-build\\services\\historical\\eplBackfill.js:50:18)\n    at async main (C:\\Users\\jlabc\\Documents\\PP\\FUT\\scripts\\football-data-backfill.cjs:33:17)",
+    "cause": null
+  },
+  "safeToContinue": true,
+  "checksum": "31a4df9dfc87f8f982b257eb4a4f35f6556af0aaf570f2c0a9c527df9e2ea6c3",
+  "csvRows": null,
+  "elapsedMs": 888,
+  "fixtures": 0,
+  "teams": 0,
+  "teamMatchStats": 0,
+  "referee": 0,
+  "dateOnly": 0,
+  "periodStats": 0,
+  "outcomes": 0,
+  "odds": 0,
+  "nullCoverage": {
+    "goals": {
+      "available": 0,
+      "missing": 0
+    },
+    "shots": {
+      "available": 0,
+      "missing": 0
+    },
+    "shotsOnTarget": {
+      "available": 0,
+      "missing": 0
+    },
+    "corners": {
+      "available": 0,
+      "missing": 0
+    },
+    "fouls": {
+      "available": 0,
+      "missing": 0
+    },
+    "yellowCards": {
+      "available": 0,
+      "missing": 0
+    },
+    "redCards": {
+      "available": 0,
+      "missing": 0
+    },
+    "xg": {
+      "available": 0,
+      "missing": 0
+    },
+    "possession": {
+      "available": 0,
+      "missing": 0
+    }
+  },
+  "csvInspection": "FAILED"
+}

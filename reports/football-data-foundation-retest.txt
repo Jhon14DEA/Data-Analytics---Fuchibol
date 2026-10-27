@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: historical persistence reuses entities, stores period stats, events, players and generic outcomes
+ok 1 - historical persistence reuses entities, stores period stats, events, players and generic outcomes
+  ---
+  duration_ms: 2504.514
+  type: 'test'
+  ...
+# Subtest: repeated fixtures and completed page replay never duplicate facts or counters
+ok 2 - repeated fixtures and completed page replay never duplicate facts or counters
+  ---
+  duration_ms: 109.89
+  type: 'test'
+  ...
+# Subtest: failed page rolls back fixtures; retry and a new Prisma client preserve checkpoint and counters
+ok 3 - failed page rolls back fixtures; retry and a new Prisma client preserve checkpoint and counters
+  ---
+  duration_ms: 2297.309
+  type: 'test'
+  ...
+# Subtest: a mid-page failure does not leave partial fixtures or advance progress
+ok 4 - a mid-page failure does not leave partial fixtures or advance progress
+  ---
+  duration_ms: 235.4924
+  type: 'test'
+  ...
+# Subtest: concurrent independent clients do not consume the same page twice
+ok 5 - concurrent independent clients do not consume the same page twice
+  ---
+  duration_ms: 2091.3428
+  type: 'test'
+  ...
+# Subtest: live fixture identities are never closed or rewritten by historical ingestion
+ok 6 - live fixture identities are never closed or rewritten by historical ingestion
+  ---
+  duration_ms: 115.8399
+  type: 'test'
+  ...
+# Subtest: historical final facts cannot change an existing sealed LiveMarketSnapshot or its labels
+ok 7 - historical final facts cannot change an existing sealed LiveMarketSnapshot or its labels
+  ---
+  duration_ms: 179.0718
+  type: 'test'
+  ...
+# Subtest: odds require safe clocks, explicit period and correct line; replay stays idempotent
+ok 8 - odds require safe clocks, explicit period and correct line; replay stays idempotent
+  ---
+  duration_ms: 184.2698
+  type: 'test'
+  ...
+# Subtest: unknown final scores and non-men batches cannot enter the historical fixtures
+ok 9 - unknown final scores and non-men batches cannot enter the historical fixtures
+  ---
+  duration_ms: 32.1386
+  type: 'test'
+  ...
+# Subtest: persisted competition/team/fixture mappings are unique and do not accept a second target
+ok 10 - persisted competition/team/fixture mappings are unique and do not accept a second target
+  ---
+  duration_ms: 84.864
+  type: 'test'
+  ...
+# Subtest: expired leases resume after restart while an active lease stays exclusive
+ok 11 - expired leases resume after restart while an active lease stays exclusive
+  ---
+  duration_ms: 208.9769
+  type: 'test'
+  ...
+# Subtest: stale cursors and overlapping range advances fail without resetting progress
+ok 12 - stale cursors and overlapping range advances fail without resetting progress
+  ---
+  duration_ms: 115.6012
+  type: 'test'
+  ...
+# Subtest: a completed range advances incrementally and retains cumulative counters
+ok 13 - a completed range advances incrementally and retains cumulative counters
+  ---
+  duration_ms: 176.2731
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8937.6658

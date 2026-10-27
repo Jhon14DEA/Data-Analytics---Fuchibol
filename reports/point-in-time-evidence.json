@@ -1,0 +1,188 @@
+{
+  "queriedAt": "2026-10-13T18:57:19.098Z",
+  "total": 17,
+  "legacyWithoutTemporalProof": 17,
+  "late": [
+    {
+      "id": "cmv057meh06c5c7og464r5teh",
+      "fixture": {
+        "externalId": "1752104",
+        "homeTeam": {
+          "name": "Ceara"
+        },
+        "awayTeam": {
+          "name": "Criciuma"
+        }
+      },
+      "liveSnapshotId": "cmv057dru026cc7ogkt1ks2zg",
+      "capturedAt": "2026-10-08T23:03:24.668Z",
+      "certificate": {
+        "expiresAt": "2026-10-08T23:13:36.075Z",
+        "observedAt": "2026-10-08T23:03:36.075Z",
+        "identityKey": "[\"1752104\",\"ceara\",\"criciuma\",\"serie b\",\"2026-10-08T17:30:00\"]",
+        "apiFixtureId": "1520912"
+      },
+      "deltaMs": 11407,
+      "minute": 32,
+      "totalSot": 1,
+      "periodProvider": "API_FOOTBALL",
+      "statsProvider": "ALLSPORTS",
+      "htResolvedAt": "2026-10-08T23:24:14.864Z",
+      "ftResolvedAt": "2026-10-09T00:30:15.253Z",
+      "source": {
+        "timestamp": "2026-10-08T23:03:25.050Z",
+        "createdAt": "2026-10-08T23:03:25.050Z"
+      }
+    },
+    {
+      "id": "cmv08mwyc71wwc7og9t7rlmk9",
+      "fixture": {
+        "externalId": "1727043",
+        "homeTeam": {
+          "name": "Fluminense"
+        },
+        "awayTeam": {
+          "name": "Coritiba"
+        }
+      },
+      "liveSnapshotId": "cmv08mpcs6wzpc7og0y39ex7o",
+      "capturedAt": "2026-10-09T00:39:18.286Z",
+      "certificate": {
+        "expiresAt": "2026-10-09T00:49:28.271Z",
+        "observedAt": "2026-10-09T00:39:28.271Z",
+        "identityKey": "[\"1727043\",\"fluminense\",\"coritiba\",\"serie a\",\"2026-10-08T19:30:00\"]",
+        "apiFixtureId": "1492394"
+      },
+      "deltaMs": 9985,
+      "minute": 9,
+      "totalSot": null,
+      "periodProvider": "API_FOOTBALL",
+      "statsProvider": "ALLSPORTS",
+      "htResolvedAt": "2026-10-12T20:36:25.543Z",
+      "ftResolvedAt": "2026-10-12T20:36:25.543Z",
+      "source": {
+        "timestamp": "2026-10-09T00:39:18.749Z",
+        "createdAt": "2026-10-09T00:39:18.749Z"
+      }
+    },
+    {
+      "id": "cmv0911ib810bc7og39g56o7w",
+      "fixture": {
+        "externalId": "1727043",
+        "homeTeam": {
+          "name": "Fluminense"
+        },
+        "awayTeam": {
+          "name": "Coritiba"
+        }
+      },
+      "liveSnapshotId": "cmv090sxg7vvyc7ogjal9udw3",
+      "capturedAt": "2026-10-09T00:50:16.172Z",
+      "certificate": {
+        "expiresAt": "2026-10-09T01:00:27.654Z",
+        "observedAt": "2026-10-09T00:50:27.654Z",
+        "identityKey": "[\"1727043\",\"fluminense\",\"coritiba\",\"serie a\",\"2026-10-08T19:30:00\"]",
+        "apiFixtureId": "1492394"
+      },
+      "deltaMs": 11482,
+      "minute": 20,
+      "totalSot": 1,
+      "periodProvider": "API_FOOTBALL",
+      "statsProvider": "ALLSPORTS",
+      "htResolvedAt": "2026-10-12T20:36:25.543Z",
+      "ftResolvedAt": "2026-10-12T20:36:25.543Z",
+      "source": {
+        "timestamp": "2026-10-09T00:50:16.564Z",
+        "createdAt": "2026-10-09T00:50:16.564Z"
+      }
+    }
+  ],
+  "historicHash": "08343fc7a128acd339c692c6d50093efb138871707e6c0020bd1f4abc7b79364",
+  "odds": [
+    {
+      "total": 646321,
+      "after_receipt_upper_bound": 640704,
+      "after_receipt_5min": 640704,
+      "max_delta_seconds": 25199.719
+    }
+  ],
+  "samples": [
+    {
+      "id": "cmuvovv1800asc780zfy2q42b",
+      "market": "1x2 (1st Half)",
+      "selection": "1",
+      "line": "1",
+      "odds": "1.05",
+      "timestamp": "2026-10-06T02:22:21.000Z",
+      "createdAt": "2026-10-05T20:15:28.989Z"
+    },
+    {
+      "id": "cmuvovv1o00avc7809d6z9qfy",
+      "market": "1x2 (1st Half)",
+      "selection": "X",
+      "line": "1",
+      "odds": "11",
+      "timestamp": "2026-10-06T02:22:21.000Z",
+      "createdAt": "2026-10-05T20:15:29.004Z"
+    },
+    {
+      "id": "cmuvovv2200ayc780kyld10fc",
+      "market": "1x2 (1st Half)",
+      "selection": "2",
+      "line": "1",
+      "odds": "126",
+      "timestamp": "2026-10-06T02:22:21.000Z",
+      "createdAt": "2026-10-05T20:15:29.019Z"
+    },
+    {
+      "id": "cmuvovwpu00myc780rxkqppvb",
+      "market": "3-Way Handicap",
+      "selection": "Home",
+      "line": "3",
+      "odds": "51",
+      "timestamp": "2026-10-06T03:15:21.000Z",
+      "createdAt": "2026-10-05T20:15:31.170Z"
+    },
+    {
+      "id": "cmuvovwq700n1c780fv9nz1nw",
+      "market": "3-Way Handicap",
+      "selection": "Draw",
+      "line": "3",
+      "odds": "5.5",
+      "timestamp": "2026-10-06T03:15:21.000Z",
+      "createdAt": "2026-10-05T20:15:31.184Z"
+    },
+    {
+      "id": "cmuvovwql00n4c780z04nv6ny",
+      "market": "3-Way Handicap",
+      "selection": "Away",
+      "line": "3",
+      "odds": "1.166",
+      "timestamp": "2026-10-06T03:15:21.000Z",
+      "createdAt": "2026-10-05T20:15:31.197Z"
+    }
+  ],
+  "budget": [
+    {
+      "day": "2026-10-08",
+      "used": 3,
+      "automaticUsed": 3,
+      "validationUsed": 3,
+      "remoteLimit": 100
+    },
+    {
+      "day": "2026-10-09",
+      "used": 2,
+      "automaticUsed": 2,
+      "validationUsed": 2,
+      "remoteLimit": 100
+    },
+    {
+      "day": "2026-10-12",
+      "used": 5,
+      "automaticUsed": 5,
+      "validationUsed": 5,
+      "remoteLimit": 100
+    }
+  ]
+}

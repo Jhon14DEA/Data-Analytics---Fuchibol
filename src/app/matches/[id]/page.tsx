@@ -1,18 +1,22 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, BellRing, CalendarClock, TrendingUp, Users } from "lucide-react";
-import { ConfidenceBadge } from "@/components/ConfidenceBadge";
+import { AnalysisMarketCard } from "@/components/AnalysisMarketCard";
 import { CurrentRecommendationPanel } from "@/components/CurrentRecommendationPanel";
 import { LiveStatsPanel } from "@/components/LiveStatsPanel";
-import { StatusPill } from "@/components/StatusPill";
-import { analyzeMatch } from "@/lib/analysisEngine";
+import { LiveMomentumPanel } from "@/components/LiveMomentumPanel";
+import { LiveStatePanel } from "@/components/LiveStatePanel";
+import { MatchLiveHeader } from "@/components/MatchLiveHeader";
+import { MatchAlertConfigPanel } from "@/components/MatchAlertConfigPanel";
 import { detectAlerts } from "@/lib/alertEngine";
-import { footballProvider, getMatchAnalysisContext, oddsProvider } from "@/providers";
+import { footballProvider, getMatchAnalysisContext } from "@/providers";
 import { analyzeMatchContext } from "@/services/analysis/matchAnalyzer";
 
 type PageProps = {
   params: Promise<{ id: string }>;
 };
+
+export const dynamic = "force-dynamic";
 
 export default async function MatchPage({ params }: PageProps) {
   const { id } = await params;
@@ -23,15 +27,12 @@ export default async function MatchPage({ params }: PageProps) {
   }
 
   const previous = await footballProvider.getPreviousSnapshot(id);
-  const odds = await oddsProvider.getCurrentOdds(id);
-  const oddsHistory = await oddsProvider.getOddsHistory(id);
-  const analysis = analyzeMatch(match);
+  const analysisContext = await getMatchAnalysisContext(id).catch(() => null);
+  const finalAnalysis = analysisContext ? analyzeMatchContext(analysisContext) : null;
   const alerts = detectAlerts(match, previous);
   const currentRecommendation =
     match.status === "LIVE"
-      ? await getMatchAnalysisContext(id)
-          .then((context) => (context ? analyzeMatchContext(context).currentRecommendation : null))
-          .catch(() => null)
+      ? finalAnalysis?.currentRecommendation ?? null
       : null;
 
   return (
@@ -46,27 +47,11 @@ export default async function MatchPage({ params }: PageProps) {
         </span>
       </div>
 
-      <header className="mb-6 rounded-lg border border-white/10 bg-black/20 p-4 sm:p-5">
-        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-          <div>
-            <p className="text-xs uppercase tracking-normal text-zinc-400">{match.competition}</p>
-            <h1 className="mt-1 text-2xl font-black text-white sm:text-4xl">
-              {match.homeTeam} vs {match.awayTeam}
-            </h1>
-          </div>
-          <StatusPill status={match.status} />
-        </div>
-        <div className="grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
-          <TeamName name={match.homeTeam} align="left" />
-          <div className="rounded bg-white/[0.06] px-5 py-3 text-center ring-1 ring-white/10">
-            <p className="text-4xl font-black tabular-nums text-white">{match.score.home} - {match.score.away}</p>
-            <p className="mt-1 text-xs font-bold uppercase text-emerald-200">
-              {match.minute !== null ? `${match.minute}'` : match.kickoffAt ? "Prepartido" : "Sin minuto"}
-            </p>
-          </div>
-          <TeamName name={match.awayTeam} align="right" />
-        </div>
-      </header>
+      <MatchLiveHeader match={match} dataUpdatedAt={finalAnalysis?.dataUpdatedAt ?? null} statusIndicator={finalAnalysis?.statusIndicator ?? null} />
+
+      {match.status === "LIVE" ? (
+        <LiveStatePanel match={match} momentum={finalAnalysis?.liveMomentum ?? null} recommendation={currentRecommendation} />
+      ) : null}
 
       <div className="grid gap-5 xl:grid-cols-[1.25fr_0.75fr]">
         <div className="space-y-5">
@@ -76,6 +61,13 @@ export default async function MatchPage({ params }: PageProps) {
               <LiveStatsPanel matchId={match.id} initialStats={match.stats} live={match.status === "LIVE"} />
             </div>
           </section>
+
+          {match.status === "LIVE" ? (
+            <section className="rounded-lg border border-white/10 bg-white/[0.045] p-4">
+              <SectionTitle icon={<TrendingUp className="h-4 w-4" />} title="MOMENTUM LIVE" />
+              <LiveMomentumPanel momentum={finalAnalysis?.liveMomentum} homeTeam={match.homeTeam} awayTeam={match.awayTeam} />
+            </section>
+          ) : null}
 
           <section className="rounded-lg border border-white/10 bg-white/[0.045] p-4">
             <SectionTitle icon={<Users className="h-4 w-4" />} title="Alineaciones y jugadores" />
@@ -111,7 +103,7 @@ export default async function MatchPage({ params }: PageProps) {
                     ))
                   ) : (
                     <tr>
-                      <td colSpan={7} className="py-4 text-zinc-400">Estadisticas de jugador pendientes en modo prepartido DEMO.</td>
+                      <td colSpan={7} className="py-4 text-zinc-400">Estadisticas individuales no disponibles todavia para este partido.</td>
                     </tr>
                   )}
                 </tbody>
@@ -126,8 +118,10 @@ export default async function MatchPage({ params }: PageProps) {
         </div>
 
         <aside className="space-y-5">
+          <MatchAlertConfigPanel matchId={id} />
+
           {currentRecommendation ? (
-            <CurrentRecommendationPanel matchId={id} initialRecommendation={currentRecommendation} />
+            <CurrentRecommendationPanel matchId={id} initialRecommendation={currentRecommendation} live={match.status === "LIVE"} />
           ) : null}
 
           <section className="rounded-lg border border-white/10 bg-white/[0.045] p-4">
@@ -150,58 +144,19 @@ export default async function MatchPage({ params }: PageProps) {
           </section>
 
           <section className="rounded-lg border border-white/10 bg-white/[0.045] p-4">
-            <SectionTitle icon={<TrendingUp className="h-4 w-4" />} title="Cuotas" />
-            <div className="mt-4 space-y-2">
-              {odds.map((quote) => (
-                <div key={`${quote.bookmaker}-${quote.market}-${quote.selection}`} className="grid grid-cols-[1fr_auto] gap-3 rounded border border-white/10 bg-black/20 p-3">
-                  <div className="min-w-0">
-                    <p className="text-xs font-bold uppercase text-zinc-400">{quote.bookmaker}</p>
-                    <p className="truncate text-sm font-semibold text-white">{quote.market}</p>
-                    <p className="truncate text-sm text-zinc-300">{quote.selection}</p>
-                  </div>
-                  <p className="rounded bg-emerald-400 px-2.5 py-2 text-center text-lg font-black text-black">{quote.price.toFixed(2)}</p>
-                </div>
-              ))}
-            </div>
-            <h3 className="mt-5 text-xs font-extrabold uppercase text-zinc-400">Historial de movimiento</h3>
-            <div className="mt-2 space-y-2">
-              {oddsHistory.map((quote, index) => (
-                <div key={`${quote.bookmaker}-${index}`} className="flex items-center justify-between gap-3 text-sm text-zinc-300">
-                  <span className="truncate">{quote.bookmaker} - {quote.selection}</span>
-                  <span className="font-bold tabular-nums text-white">{quote.price.toFixed(2)}</span>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="rounded-lg border border-white/10 bg-white/[0.045] p-4">
             <SectionTitle icon={<TrendingUp className="h-4 w-4" />} title="Motor de analisis" />
             <div className="mt-4 space-y-3">
-              {analysis.map((pick) => (
-                <div key={`${pick.market}-${pick.selection}`} className="rounded border border-white/10 bg-black/20 p-3">
-                  <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-                    <div>
-                      <p className="text-sm font-black text-white">{pick.market}</p>
-                      <p className="text-sm text-zinc-300">{pick.selection}</p>
-                    </div>
-                    <ConfidenceBadge classification={pick.classification} />
-                  </div>
-                  <p className="mb-3 text-sm font-bold text-emerald-200">Confianza {pick.confidence}/10</p>
-                  <ReasonList title="Razones" items={pick.reasons} />
-                  <ReasonList title="Riesgos" items={pick.risks} />
-                  <ReasonList title="Invalida si" items={pick.invalidators} />
-                </div>
-              ))}
+              {finalAnalysis?.markets.length ? (
+                finalAnalysis.markets.map((market) => <AnalysisMarketCard key={`${market.market}-${market.selection}`} market={market} />)
+              ) : (
+                <p className="rounded border border-white/10 bg-black/20 p-3 text-sm text-zinc-400">Analisis avanzado no disponible para este partido.</p>
+              )}
             </div>
           </section>
         </aside>
       </div>
     </main>
   );
-}
-
-function TeamName({ name, align }: { name: string; align: "left" | "right" }) {
-  return <p className={`text-xl font-black text-white sm:text-2xl ${align === "right" ? "sm:text-right" : ""}`}>{name}</p>;
 }
 
 function SectionTitle({ icon, title }: { icon: React.ReactNode; title: string }) {

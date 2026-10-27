@@ -1,0 +1,119 @@
+{
+  "provider": "API-Football",
+  "competition": {
+    "id": "39",
+    "name": "Premier League",
+    "country": "England",
+    "gender": "male",
+    "ageCategory": "senior",
+    "reserve": false
+  },
+  "season": {
+    "key": "test-a1a42dc1-f5e8-4148-ba8b-ef53743cfa94",
+    "label": "2026/27"
+  },
+  "rangeFrom": "2026-10-12T00:00:00.000Z",
+  "rangeTo": "2026-10-12T23:59:59.999Z",
+  "receivedAt": "2026-10-13T19:46:54.705Z",
+  "cursor": null,
+  "nextCursor": null,
+  "fixtures": [
+    {
+      "id": "a1a42dc1-f5e8-4148-ba8b-ef53743cfa94",
+      "competitionId": "39",
+      "seasonKey": "test-a1a42dc1-f5e8-4148-ba8b-ef53743cfa94",
+      "kickoff": "2026-10-12T12:00:00.000Z",
+      "status": "FINISHED",
+      "home": {
+        "id": "a1a42dc1-f5e8-4148-ba8b-ef53743cfa94h",
+        "name": "Home"
+      },
+      "away": {
+        "id": "a1a42dc1-f5e8-4148-ba8b-ef53743cfa94a",
+        "name": "Away"
+      },
+      "periods": [
+        {
+          "period": "FIRST_HALF",
+          "source": "EXPLICIT_HT",
+          "home": {
+            "goals": 0,
+            "shots": null,
+            "shotsOnTarget": null,
+            "xg": null,
+            "corners": null,
+            "yellowCards": null,
+            "redCards": null,
+            "fouls": null,
+            "possession": null,
+            "dangerousAttacks": null
+          },
+          "away": {
+            "goals": 0,
+            "shots": null,
+            "shotsOnTarget": null,
+            "xg": null,
+            "corners": null,
+            "yellowCards": null,
+            "redCards": null,
+            "fouls": null,
+            "possession": null,
+            "dangerousAttacks": null
+          }
+        },
+        {
+          "period": "FULL_TIME",
+          "source": "EXPLICIT_FT",
+          "home": {
+            "goals": 1,
+            "shots": null,
+            "shotsOnTarget": 4,
+            "xg": null,
+            "corners": 3,
+            "yellowCards": 1,
+            "redCards": 0,
+            "fouls": null,
+            "possession": null,
+            "dangerousAttacks": null
+          },
+          "away": {
+            "goals": 1,
+            "shots": null,
+            "shotsOnTarget": 3,
+            "xg": null,
+            "corners": 2,
+            "yellowCards": 2,
+            "redCards": 0,
+            "fouls": null,
+            "possession": null,
+            "dangerousAttacks": null
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "a1a42dc1-f5e8-4148-ba8b-ef53743cfa94event",
+          "side": "HOME",
+          "type": "Goal",
+          "minute": 60,
+          "playerName": "Player",
+          "detail": "Normal Goal"
+        }
+      ],
+      "players": [
+        {
+          "id": "a1a42dc1-f5e8-4148-ba8b-ef53743cfa94player",
+          "name": "Player",
+          "side": "HOME",
+          "starter": true,
+          "stats": {
+            "goals": 1,
+            "xg": null
+          }
+        }
+      ],
+      "odds": []
+    }
+  ],
+  "synthetic": true
+}

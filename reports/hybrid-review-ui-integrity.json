@@ -1,0 +1,13 @@
+{
+  "fetchCallSites": [
+    1,
+    1
+  ],
+  "intervalCallSites": [
+    1,
+    1
+  ],
+  "refreshUnchanged": true,
+  "existingAlertsUnchanged": true,
+  "originalRadarCardUnchanged": true
+}

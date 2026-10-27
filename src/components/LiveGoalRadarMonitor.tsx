@@ -1,0 +1,584 @@
+"use client";
+
+import { GoalPressureSection } from "@/components/GoalPressureSection";
+import type { HighGoalPressure } from "@/services/analysis/highGoalPressure";
+import { Bell, BellRing, Clock, RefreshCw, ShieldAlert, Target, Volume2 } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { reviewActivityLabel, selectReviewNow } from "@/lib/radarReviewNow";
+import { HistoricalContextPanel } from "@/components/HistoricalContextPanel";
+import type { LiveHistoricalContext } from "@/services/historical/liveContext";
+import { classifyHybridEligibility, filterRadarMatches, hybridReviewLabels, listRadarCompetitions, radarCompetition } from "@/lib/radarHybridReview";
+import { browserReviewNotificationPort, notifyHybridEligible, requestReviewNotificationPermission, reviewFixtureAnchor, reviewNotificationPermission } from "@/lib/radarReviewNotifications";
+
+const REFRESH_SECONDS = 120;
+
+type RadarDecision = "NO_ALERT" | "WATCH" | "STRONG_ALERT" | "PRIORITY_ALERT";
+
+type RadarWindow = {
+  shotsNew: number | null;
+  shotsOnTargetNew: number | null;
+  xgDelta: number | null;
+  bigChancesNew: number | null;
+  shotsInsideBoxNew: number | null;
+  cornersNew: number | null;
+  dangerousAttacksNew: number | null;
+  attacksNew: number | null;
+  dataState: string | null;
+  coveragePercentage: number;
+};
+
+type RadarCandidate = {
+  fixtureId: string;
+  match: string;
+  competition: string;
+  minute: number | null;
+  score: { home: number; away: number };
+  market: "OVER05_1H" | "OVER05_FT";
+  totalScore: number;
+  components: {
+    recentLiveScore: number;
+    accumulatedLiveScore: number;
+    historicalScore: number;
+    contextPlayersScore: number;
+    h2hScore: number;
+  };
+  windows: {
+    five: RadarWindow;
+    ten: RadarWindow;
+    fifteen: RadarWindow;
+  };
+  accumulated: {
+    shots: number | null;
+    shotsOnTarget: number | null;
+    xg: number | null;
+    bigChances: number | null;
+    shotsInsideBox: number | null;
+    woodwork: number | null;
+    corners: number | null;
+    dangerousAttacks: number | null;
+  };
+  historical: {
+    currentPeriod: string;
+    periodGoalFrequency: number | null;
+    homeAwayFrequency: number | null;
+    scoringConcedingBlend: number | null;
+    h2hFrequency: number | null;
+    samples: {
+      period: number;
+      homeAway: number;
+      scoringConceding: number;
+      h2h: number;
+    };
+    summary: string[];
+  };
+  dataQuality: number;
+  recentDataStatus?: "INSUFFICIENT_RECENT_DATA" | "RECENT_DEAD" | "VALID_RECENT_DATA";
+  dataWarnings: string[];
+  ndFields: string[];
+  decision: RadarDecision;
+  decisionReason: string;
+  reasons: string[];
+  blockers: string[];
+};
+
+type RadarMatch = {
+  goalPressure?: HighGoalPressure;
+  historicalContext?: LiveHistoricalContext;
+  fixtureId: string;
+  match?: string;
+  competition?: string;
+  status?: string;
+  minute?: number | null;
+  score?: { home: number; away: number };
+  provider?: string;
+  error?: string;
+  candidates: RadarCandidate[];
+};
+
+type RadarPayload = {
+  generatedAt: string;
+  providerStatus: string;
+  scannedLiveMatches: number;
+  candidatesCount: number;
+  summary: {
+    noAlert: number;
+    watch: number;
+    strongAlert: number;
+    priorityAlert: number;
+  };
+  matches: RadarMatch[];
+};
+
+type AlertMemory = {
+  levelRank: number;
+  score: number;
+  markets: Set<string>;
+};
+
+type VisualAlert = {
+  id: string;
+  title: string;
+  message: string;
+  decision: RadarDecision;
+  score: number;
+  createdAt: string;
+};
+
+const decisionRank: Record<RadarDecision, number> = {
+  PRIORITY_ALERT: 4,
+  STRONG_ALERT: 3,
+  WATCH: 2,
+  NO_ALERT: 1
+};
+
+export function LiveGoalRadarMonitor() {
+  const [payload, setPayload] = useState<RadarPayload | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [lastUpdatedAt, setLastUpdatedAt] = useState<string | null>(null);
+  const [nextScanAt, setNextScanAt] = useState<number>(() => Date.now());
+  const [now, setNow] = useState<number>(() => Date.now());
+  const [visualAlerts, setVisualAlerts] = useState<VisualAlert[]>([]);
+  const [notificationPermission, setNotificationPermission] = useState<NotificationPermission | "unsupported">("unsupported");
+  const [competition, setCompetition] = useState("");
+  const [eligibleOnly, setEligibleOnly] = useState(false);
+  const inFlight = useRef(false);
+  const alertMemory = useRef(new Map<string, AlertMemory>());
+  const hybridNotificationMemory = useRef(new Set<string>());
+  const competitions = useMemo(() => listRadarCompetitions(payload?.matches ?? []), [payload]);
+  const visibleMatches = useMemo(() => filterRadarMatches(payload?.matches ?? [], competition, eligibleOnly), [payload, competition, eligibleOnly]);
+
+  const candidates = useMemo(() => {
+    const list = visibleMatches
+      .filter((match) => match.status === "LIVE" || match.candidates.some((candidate) => candidate.minute !== null))
+      .flatMap((match) => match.candidates.map((candidate) => ({ ...candidate, competition: radarCompetition(match) })));
+    return list.sort((a, b) => {
+      const decisionDiff = decisionRank[b.decision] - decisionRank[a.decision];
+      if (decisionDiff) return decisionDiff;
+      return b.totalScore - a.totalScore;
+    });
+  }, [visibleMatches]);
+
+  const refresh = useCallback(async () => {
+    if (inFlight.current) return;
+    inFlight.current = true;
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(`/api/debug/live-goal-radar?refresh=1&t=${Date.now()}`, { cache: "no-store" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = (await response.json()) as RadarPayload;
+      setPayload(data);
+      setLastUpdatedAt(new Date().toISOString());
+      handleAlertNotifications(data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Error desconocido");
+    } finally {
+      setNextScanAt(Date.now() + REFRESH_SECONDS * 1000);
+      setLoading(false);
+      inFlight.current = false;
+    }
+  }, []);
+
+  useEffect(() => {
+    setNotificationPermission(reviewNotificationPermission());
+    void refresh();
+  }, [refresh]);
+
+  useEffect(() => {
+    const port = browserReviewNotificationPort();
+    setNotificationPermission(port.permission);
+    notifyHybridEligible(payload?.matches ?? [], hybridNotificationMemory.current, port);
+  }, [payload, notificationPermission]);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      const current = Date.now();
+      setNow(current);
+      if (current >= nextScanAt && !inFlight.current) {
+        void refresh();
+      }
+    }, 1000);
+    return () => window.clearInterval(timer);
+  }, [nextScanAt, refresh]);
+
+  async function requestNotificationPermission() {
+    setNotificationPermission(await requestReviewNotificationPermission());
+  }
+
+  function handleAlertNotifications(data: RadarPayload) {
+    const strongCandidates = data.matches.flatMap((match) =>
+      match.candidates.filter((candidate) => candidate.decision === "STRONG_ALERT" || candidate.decision === "PRIORITY_ALERT")
+    );
+
+    for (const candidate of strongCandidates) {
+      const baseKey = `${candidate.fixtureId}:${candidate.market}`;
+      const previous = alertMemory.current.get(baseKey);
+      const currentRank = decisionRank[candidate.decision];
+      const marketIsNew = previous ? !previous.markets.has(candidate.market) : true;
+      const levelUp = previous ? currentRank > previous.levelRank : true;
+      const scoreJump = previous ? candidate.totalScore - previous.score >= 0.7 : true;
+      const shouldNotify = !previous || marketIsNew || levelUp || scoreJump;
+
+      alertMemory.current.set(baseKey, {
+        levelRank: Math.max(previous?.levelRank ?? 0, currentRank),
+        score: Math.max(previous?.score ?? 0, candidate.totalScore),
+        markets: new Set([...(previous?.markets ?? []), candidate.market])
+      });
+
+      if (!shouldNotify) continue;
+
+      const visual = {
+        id: `${baseKey}:${candidate.decision}:${Date.now()}`,
+        title: `${labelDecision(candidate.decision)} · ${candidate.market}`,
+        message: `${candidate.match} · ${formatMinute(candidate.minute)} · ${candidate.score.home}-${candidate.score.away} · Score ${candidate.totalScore}/10`,
+        decision: candidate.decision,
+        score: candidate.totalScore,
+        createdAt: new Date().toISOString()
+      };
+      setVisualAlerts((items) => [visual, ...items].slice(0, 4));
+      playAlertSound();
+      if (typeof Notification !== "undefined" && Notification.permission === "granted") {
+        new Notification(visual.title, { body: visual.message, tag: baseKey });
+      }
+    }
+  }
+
+  const secondsLeft = Math.max(0, Math.ceil((nextScanAt - now) / 1000));
+
+  return (
+    <div className="space-y-5">
+      <section className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.055] p-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded bg-emerald-400/10 px-2.5 py-1 text-xs font-black uppercase text-emerald-200 ring-1 ring-emerald-300/25">
+              <ShieldAlert className="h-3.5 w-3.5" />
+              RADAR ACTIVO
+            </div>
+            <h1 className="mt-3 text-3xl font-black text-white">Live Goal Radar Over 0.5</h1>
+            <p className="mt-2 text-sm text-zinc-300">Monitoreo automático de partidos LIVE 0-0 usando el endpoint debug existente.</p>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {notificationPermission === "default" ? (
+              <button
+                type="button"
+                onClick={requestNotificationPermission}
+                className="inline-flex items-center gap-2 rounded border border-yellow-300/30 bg-yellow-300/10 px-3 py-2 text-xs font-black uppercase text-yellow-100 transition hover:bg-yellow-300/15"
+              >
+                <Bell className="h-4 w-4" />
+                Activar notificaciones
+              </button>
+            ) : null}
+            <button
+              type="button"
+              onClick={() => void refresh()}
+              disabled={loading}
+              className="inline-flex items-center gap-2 rounded bg-emerald-400 px-3 py-2 text-xs font-black uppercase text-black transition hover:bg-emerald-300 disabled:cursor-wait disabled:opacity-70"
+            >
+              <RefreshCw className={`h-4 w-4 ${loading ? "animate-spin" : ""}`} />
+              Actualizar ahora
+            </button>
+          </div>
+        </div>
+
+        <p className="mt-3 text-xs text-zinc-400" role="status">
+          {notificationPermission === "denied" ? "Notificaciones bloqueadas por el navegador. Puedes habilitarlas en los permisos del sitio."
+            : notificationPermission === "granted" ? "Notificaciones activadas: un aviso de revisión por partido y mercado durante esta visita."
+            : notificationPermission === "unsupported" ? "Notificaciones del sistema no disponibles en este navegador."
+            : "Notificaciones de revisión pendientes de permiso; actívalas con el botón."}
+        </p>
+
+        <RadarCompetitionFilters competitions={competitions} competition={competition} eligibleOnly={eligibleOnly}
+          onCompetitionChange={setCompetition} onEligibleOnlyChange={setEligibleOnly} />
+
+        <div className="mt-4 grid gap-3 md:grid-cols-4">
+          <StatusTile icon={<Clock className="h-4 w-4" />} label="Próximo escaneo" value={formatCountdown(secondsLeft)} />
+          <StatusTile label="Última actualización" value={lastUpdatedAt ? new Date(lastUpdatedAt).toLocaleTimeString("es-EC") : "Pendiente"} />
+          <StatusTile label="Partidos LIVE" value={String(payload?.scannedLiveMatches ?? 0)} />
+          <StatusTile label="Candidatos" value={String(payload?.candidatesCount ?? 0)} />
+        </div>
+
+        {error ? <p className="mt-3 rounded border border-red-300/25 bg-red-400/10 p-3 text-sm font-bold text-red-100">Error: {error}. El siguiente ciclo continuará automáticamente.</p> : null}
+      </section>
+
+      <GoalPressureSection matches={(payload?.matches ?? []).filter(m => !competition || radarCompetition(m) === competition)} />
+      <ReviewNowSection matches={visibleMatches} />
+      <section aria-label="Contexto histórico" className="space-y-2">
+        {(payload?.matches??[]).filter(match=>match.status==='LIVE'&&visibleMatches.some(visible=>visible.fixtureId===match.fixtureId)).map(match=><HistoricalContextPanel key={match.fixtureId} name={match.match??match.fixtureId} context={match.historicalContext} liveSot={match.candidates[0]?.accumulated.shotsOnTarget??null} />)}
+      </section>
+
+      {visualAlerts.length ? (
+        <section className="space-y-2">
+          {visualAlerts.map((alert) => (
+            <div key={alert.id} className={`rounded-lg border p-4 ${alert.decision === "PRIORITY_ALERT" ? "border-red-300/40 bg-red-400/15" : "border-yellow-300/40 bg-yellow-300/12"}`}>
+              <div className="flex flex-wrap items-center gap-2">
+                <BellRing className="h-5 w-5 text-yellow-200" />
+                <p className="font-black text-white">{alert.title}</p>
+                <span className="rounded bg-black/25 px-2 py-1 text-xs font-black text-yellow-100">{alert.score}/10</span>
+              </div>
+              <p className="mt-1 text-sm text-zinc-200">{alert.message}</p>
+            </div>
+          ))}
+        </section>
+      ) : null}
+
+      {!payload || payload.scannedLiveMatches === 0 ? (
+        <section className="rounded-lg border border-white/10 bg-white/[0.045] p-6 text-zinc-300">
+          Sin partidos LIVE para analizar
+          <p className="mt-2 text-sm text-zinc-500">El radar seguirá consultando automáticamente cada 120 segundos.</p>
+        </section>
+      ) : (
+        <section className="grid gap-4 xl:grid-cols-2">
+          {candidates.length ? (
+            candidates.map((candidate) => <RadarCard key={`${candidate.fixtureId}-${candidate.market}`} candidate={candidate} />)
+          ) : (
+            <div className="rounded-lg border border-white/10 bg-white/[0.045] p-6 text-zinc-300">{competition || eligibleOnly ? "Sin candidatos para los filtros seleccionados." : "Sin candidatos 0-0 en los partidos LIVE actuales."}</div>
+          )}
+        </section>
+      )}
+    </div>
+  );
+}
+
+export function RadarCompetitionFilters({ competitions, competition, eligibleOnly, onCompetitionChange, onEligibleOnlyChange }: {
+  competitions: string[]; competition: string; eligibleOnly: boolean;
+  onCompetitionChange: (value: string) => void; onEligibleOnlyChange: (value: boolean) => void;
+}) {
+  return (
+    <div className="mt-4 flex flex-wrap items-end gap-4 rounded border border-white/10 bg-black/15 p-3">
+      <label className="flex min-w-0 flex-col gap-1 text-sm font-bold text-zinc-200" htmlFor="radar-competition">
+        Competición
+        <select id="radar-competition" value={competition} onChange={event => onCompetitionChange(event.target.value)}
+          className="max-w-full rounded border border-white/20 bg-zinc-900 px-3 py-2 text-sm text-white">
+          <option value="">Todas las competiciones</option>
+          {competition && !competitions.includes(competition) ? <option value={competition} disabled>{competition} (sin partidos LIVE)</option> : null}
+          {competitions.map(name => <option key={name} value={name}>{name}</option>)}
+        </select>
+      </label>
+      <label className="flex items-center gap-2 py-2 text-sm font-bold text-zinc-200">
+        <input type="checkbox" checked={eligibleOnly} onChange={event => onEligibleOnlyChange(event.target.checked)} className="accent-violet-400" />
+        Solo HYBRID_ELIGIBLE
+      </label>
+      <p className="basis-full text-xs text-zinc-400">Filtros de pantalla. Los avisos de revisión consideran todos los partidos LIVE recibidos.</p>
+    </div>
+  );
+}
+
+export function ReviewNowSection({ matches }: { matches: RadarMatch[] }) {
+  const fixtures = useMemo(() => selectReviewNow(matches), [matches]);
+  return (
+    <section aria-labelledby="review-now-title" className="rounded-lg border border-sky-300/25 bg-sky-300/[0.04] p-4">
+      <h2 id="review-now-title" tabIndex={-1} className="text-lg font-black text-sky-100">REVISAR AHORA ({fixtures.length})</h2>
+      <p className="mt-1 text-sm text-zinc-400">Priorización visual para revisión manual: LIVE 0-0 con SOT acumulado combinado ≥ 4. Las etiquetas no cambian las alertas del radar.</p>
+      <p className="mt-1 text-xs text-violet-200/80">HÍBRIDO ELEGIBLE indica datos que merecen revisión: no activa consultas, alertas ni entradas.</p>
+      {!fixtures.length ? <p className="mt-4 text-sm text-zinc-300">Sin partidos con SOT acumulado combinado ≥ 4 disponible.</p> : (
+        <div className="mt-4 grid gap-4 xl:grid-cols-2">
+          {fixtures.map(({ fixtureId, combinedSot, candidate, markets }) => (
+            <article key={fixtureId} id={reviewFixtureAnchor(fixtureId)} tabIndex={-1} className="rounded-lg border border-sky-300/20 bg-zinc-950/40 p-4">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <p className="text-xs font-bold uppercase text-zinc-400">{radarCompetition(matches.find(match => match.fixtureId === fixtureId) ?? { candidates: [candidate] })}</p>
+                  <h3 className="mt-1 text-lg font-black text-white">{candidate.match}</h3>
+                  <p className="mt-1 text-sm text-zinc-300">{formatMinute(candidate.minute)} · {candidate.score.home}-{candidate.score.away}</p>
+                </div>
+                <span className={`rounded px-2 py-1 text-xs font-black ${combinedSot >= 8 ? "bg-violet-300/15 text-violet-200" : combinedSot >= 6 ? "bg-cyan-300/15 text-cyan-200" : "bg-sky-300/15 text-sky-200"}`}>
+                  {reviewActivityLabel(combinedSot)}
+                </span>
+              </div>
+              <div className="mt-4"><Metric label="SOT acum. combinado" value={combinedSot} /></div>
+              <div className="mt-3 space-y-3">
+                {markets.map(market => {
+                  const isAlert = market.decision === "STRONG_ALERT" || market.decision === "PRIORITY_ALERT";
+                  const hybrid = classifyHybridEligibility(market);
+                  return (
+                    <div key={market.market} className="rounded border border-white/10 p-3">
+                      <p className="text-sm font-bold text-zinc-200">{market.market} · {isAlert ? "ALERT" : "NO ALERT"} <span className="text-xs text-zinc-400">({labelDecision(market.decision)})</span></p>
+                      <span className={`mt-2 inline-block rounded px-2 py-1 text-xs font-black ${hybrid.state === "HYBRID_ELIGIBLE" ? "bg-violet-300/20 text-violet-100 ring-1 ring-violet-300/50" : "bg-white/5 text-zinc-400"}`}>
+                        {hybridReviewLabels[hybrid.state]}
+                      </span>
+                      {hybrid.missingCritical.length ? <p className="mt-1 text-xs text-zinc-400">Datos sin cobertura útil: {hybrid.missingCritical.join(", ")}</p> : null}
+                      <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
+                        <Metric label="Recent Live score" value={market.components.recentLiveScore} />
+                        <Metric label="Acumulado score" value={market.components.accumulatedLiveScore} />
+                        <Metric label="Data Quality" value={market.dataQuality} />
+                      </div>
+                      <p className="mt-2 text-sm text-zinc-300">{isAlert ? "Razón actual: " : "Bloqueo / razón: "}{(isAlert ? market.decisionReason : market.blockers[0] || market.decisionReason) || "N/D"}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function RadarCard({ candidate }: { candidate: RadarCandidate }) {
+  const tone = decisionTone(candidate.decision);
+  return (
+    <article className={`rounded-lg border bg-white/[0.045] p-4 ${tone.border}`}>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-xs font-black uppercase text-zinc-500">{candidate.competition}</p>
+          <h2 className="mt-1 text-lg font-black text-white">{candidate.match}</h2>
+          <p className="mt-1 text-sm font-bold text-zinc-300">
+            {formatMinute(candidate.minute)} · {candidate.score.home}-{candidate.score.away} · {candidate.market}
+          </p>
+        </div>
+        <div className={`rounded px-3 py-2 text-right ${tone.bg}`}>
+          <p className="text-2xl font-black text-white">{candidate.totalScore}/10</p>
+          <p className={`text-xs font-black uppercase ${tone.text}`}>{labelDecision(candidate.decision)}</p>
+        </div>
+      </div>
+
+      <div className="mt-4 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
+        <Metric label="SOT acum." value={candidate.accumulated.shotsOnTarget} />
+        <Metric label="xG" value={candidate.accumulated.xg} />
+        <Metric label="Grandes ocas." value={candidate.accumulated.bigChances} />
+        <Metric label="Tiros área" value={candidate.accumulated.shotsInsideBox} />
+      </div>
+
+      <div className="mt-4 overflow-x-auto">
+        <table className="w-full min-w-[640px] text-left text-xs">
+          <thead className="uppercase text-zinc-500">
+            <tr className="border-b border-white/10">
+              <th className="py-2">Ventana</th>
+              <th>Tiros</th>
+              <th>SOT</th>
+              <th>xG</th>
+              <th>Grandes</th>
+              <th>Área</th>
+              <th>Corners</th>
+              <th>DA</th>
+              <th>Cobertura</th>
+            </tr>
+          </thead>
+          <tbody className="text-zinc-300">
+            <WindowRow label="5 min" window={candidate.windows.five} />
+            <WindowRow label="10 min" window={candidate.windows.ten} />
+            <WindowRow label="15 min" window={candidate.windows.fifteen} />
+          </tbody>
+        </table>
+      </div>
+
+      <div className="mt-4 grid gap-2 text-sm md:grid-cols-4">
+        <Metric label="Recent live" value={`${candidate.components.recentLiveScore}/10`} />
+        <Metric label="Acumulado" value={`${candidate.components.accumulatedLiveScore}/10`} />
+        <Metric label="Histórico" value={`${candidate.components.historicalScore}/10`} />
+        <Metric label="Data quality" value={`${candidate.dataQuality}%`} />
+      </div>
+
+      <div className="mt-4 rounded border border-white/10 bg-black/20 p-3">
+        <p className="text-xs font-black uppercase text-zinc-500">Razón</p>
+        <p className="mt-1 text-sm font-bold text-zinc-100">{candidate.decisionReason}</p>
+        {candidate.blockers.length ? <List title="Bloqueos" items={candidate.blockers} tone="yellow" /> : null}
+        {candidate.dataWarnings.length ? <List title="Data warnings" items={candidate.dataWarnings} tone="red" /> : null}
+        <List title="Histórico relevante" items={candidate.historical.summary} />
+        {candidate.ndFields.length ? <p className="mt-3 text-xs text-zinc-500">N/D: {candidate.ndFields.join(", ")}</p> : null}
+      </div>
+    </article>
+  );
+}
+
+function WindowRow({ label, window }: { label: string; window: RadarWindow }) {
+  return (
+    <tr className="border-b border-white/5">
+      <td className="py-2 font-bold text-white">{label}</td>
+      <td>{value(window.shotsNew)}</td>
+      <td>{value(window.shotsOnTargetNew)}</td>
+      <td>{value(window.xgDelta)}</td>
+      <td>{value(window.bigChancesNew)}</td>
+      <td>{value(window.shotsInsideBoxNew)}</td>
+      <td>{value(window.cornersNew)}</td>
+      <td>{value(window.dangerousAttacksNew)}</td>
+      <td>{window.coveragePercentage}% · {window.dataState ?? "N/D"}</td>
+    </tr>
+  );
+}
+
+function Metric({ label, value: metricValue }: { label: string; value: string | number | null | undefined }) {
+  return (
+    <div className="rounded border border-white/10 bg-black/20 p-2">
+      <p className="text-[11px] font-black uppercase text-zinc-500">{label}</p>
+      <p className="mt-1 text-base font-black text-white">{value(metricValue)}</p>
+    </div>
+  );
+}
+
+function StatusTile({ label, value: tileValue, icon }: { label: string; value: string; icon?: React.ReactNode }) {
+  return (
+    <div className="rounded border border-white/10 bg-black/20 p-3">
+      <p className="flex items-center gap-2 text-[11px] font-black uppercase text-zinc-500">{icon}{label}</p>
+      <p className="mt-1 text-lg font-black text-white">{tileValue}</p>
+    </div>
+  );
+}
+
+function List({ title, items, tone = "zinc" }: { title: string; items: string[]; tone?: "zinc" | "yellow" | "red" }) {
+  const color = tone === "red" ? "text-red-200" : tone === "yellow" ? "text-yellow-200" : "text-zinc-300";
+  return (
+    <div className="mt-3">
+      <p className="text-xs font-black uppercase text-zinc-500">{title}</p>
+      <ul className={`mt-1 space-y-1 text-sm ${color}`}>
+        {items.map((item) => <li key={item}>- {item}</li>)}
+      </ul>
+    </div>
+  );
+}
+
+function playAlertSound() {
+  try {
+    const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+    if (!AudioContextClass) return;
+    const context = new AudioContextClass();
+    const oscillator = context.createOscillator();
+    const gain = context.createGain();
+    oscillator.type = "sine";
+    oscillator.frequency.setValueAtTime(880, context.currentTime);
+    oscillator.frequency.setValueAtTime(1175, context.currentTime + 0.08);
+    gain.gain.setValueAtTime(0.001, context.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.12, context.currentTime + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 0.22);
+    oscillator.connect(gain);
+    gain.connect(context.destination);
+    oscillator.start();
+    oscillator.stop(context.currentTime + 0.24);
+  } catch {
+    // Audio can be blocked until user interaction; visual/browser notifications still work.
+  }
+}
+
+function decisionTone(decision: RadarDecision) {
+  if (decision === "PRIORITY_ALERT") return { border: "border-red-300/45", bg: "bg-red-400/15", text: "text-red-100" };
+  if (decision === "STRONG_ALERT") return { border: "border-yellow-300/45", bg: "bg-yellow-300/15", text: "text-yellow-100" };
+  if (decision === "WATCH") return { border: "border-sky-300/30", bg: "bg-sky-300/10", text: "text-sky-100" };
+  return { border: "border-white/10", bg: "bg-zinc-500/10", text: "text-zinc-300" };
+}
+
+function labelDecision(decision: RadarDecision) {
+  const labels: Record<RadarDecision, string> = {
+    NO_ALERT: "NO ALERT",
+    WATCH: "WATCH",
+    STRONG_ALERT: "STRONG ALERT",
+    PRIORITY_ALERT: "PRIORITY ALERT"
+  };
+  return labels[decision];
+}
+
+function formatMinute(minute: number | null) {
+  return minute === null ? "Min N/D" : `${minute}'`;
+}
+
+function formatCountdown(seconds: number) {
+  const minutes = Math.floor(seconds / 60);
+  const rest = seconds % 60;
+  return `${String(minutes).padStart(2, "0")}:${String(rest).padStart(2, "0")}`;
+}
+
+function value(metricValue: string | number | null | undefined) {
+  if (metricValue === null || metricValue === undefined || metricValue === "") return "N/D";
+  if (typeof metricValue === "number") return Number.isInteger(metricValue) ? String(metricValue) : metricValue.toFixed(2);
+  return metricValue;
+}

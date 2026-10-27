@@ -1,0 +1,105 @@
+{
+  "before": {
+    "protectedData": {
+      "Fixture": {
+        "count": 503,
+        "hash": "26f0b2aa6757713fa72ebf3ab28274307464c8445c051740ff71646eb81b3bc2"
+      },
+      "LiveSnapshot": {
+        "count": 4353,
+        "hash": "06a5c559b85b9d7721c842bb150a4b72246ae4ba20f0bb06e2e336394bc3b64f"
+      },
+      "LiveMarketSnapshot": {
+        "count": 17,
+        "hash": "fe4b3f672e7d09e70e7d6e4b50713833f861d1d35e4a3d808f4998e40ab00fc4"
+      },
+      "HybridScout": {
+        "count": 47,
+        "hash": "e38a59d99f84204495aec5e28d8820e67dc793fc29ad546b74095b0226697572"
+      },
+      "ApiFootballBudget": {
+        "count": 3,
+        "hash": "0564933215bd99bff683dcfa5564884f99f30a3d2a3255407a0f1daa2f9156ab"
+      }
+    },
+    "counts": {
+      "league": 98,
+      "season": 0,
+      "team": 665,
+      "fixture": 503,
+      "teamMatchStats": 1006,
+      "teamPeriodStats": 0,
+      "historicalMarketOutcome": 0,
+      "providerEntityMapping": 0,
+      "historicalIngestionState": 0,
+      "oddsSnapshot": 785057
+    }
+  },
+  "after": {
+    "protectedData": {
+      "Fixture": {
+        "count": 503,
+        "hash": "26f0b2aa6757713fa72ebf3ab28274307464c8445c051740ff71646eb81b3bc2"
+      },
+      "LiveSnapshot": {
+        "count": 4353,
+        "hash": "06a5c559b85b9d7721c842bb150a4b72246ae4ba20f0bb06e2e336394bc3b64f"
+      },
+      "LiveMarketSnapshot": {
+        "count": 17,
+        "hash": "fe4b3f672e7d09e70e7d6e4b50713833f861d1d35e4a3d808f4998e40ab00fc4"
+      },
+      "HybridScout": {
+        "count": 47,
+        "hash": "e38a59d99f84204495aec5e28d8820e67dc793fc29ad546b74095b0226697572"
+      },
+      "ApiFootballBudget": {
+        "count": 3,
+        "hash": "0564933215bd99bff683dcfa5564884f99f30a3d2a3255407a0f1daa2f9156ab"
+      }
+    },
+    "counts": {
+      "league": 99,
+      "season": 1,
+      "team": 685,
+      "fixture": 883,
+      "teamMatchStats": 1766,
+      "teamPeriodStats": 1520,
+      "historicalMarketOutcome": 3040,
+      "providerEntityMapping": 0,
+      "historicalIngestionState": 1,
+      "oddsSnapshot": 785057,
+      "historicalOddsQuote": 20606
+    }
+  },
+  "protectedDataUnchanged": true,
+  "replayUnchanged": true,
+  "protectedFiles": 92,
+  "changed": [],
+  "referee": 380,
+  "unknownQuoteTime": 20606,
+  "checkpoint": [
+    {
+      "id": "cmv84vv5w0004c76ww5zm1pg7",
+      "provider": "FOOTBALL_DATA",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "seasonId": "cmv84vv5l0002c76wtz9qjuvs",
+      "rangeFrom": "2024-08-16T19:00:00.000Z",
+      "rangeTo": "2025-05-25T15:00:00.000Z",
+      "cursor": null,
+      "lastBatchKey": "6e664094177ffc9e6d500e5b122e05146845909ed3ca0990b5704758d141fffe",
+      "lastRunAt": "2026-10-14T13:17:05.349Z",
+      "lastSuccessAt": "2026-10-14T13:17:07.524Z",
+      "lastError": null,
+      "fixturesFound": 380,
+      "fixturesInserted": 380,
+      "fixturesUpdated": 0,
+      "fixturesRejected": 0,
+      "status": "SUCCEEDED",
+      "retryCount": 0,
+      "leaseToken": null,
+      "leaseUntil": null,
+      "updatedAt": "2026-10-14T13:17:07.525Z"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "startedAt": "2026-10-14T00:16:20.069Z",
+  "configured": true,
+  "requests": [
+    {
+      "attempt": 1,
+      "endpoint": "/status",
+      "cost": 1,
+      "maximum": 3
+    },
+    {
+      "attempt": 2,
+      "endpoint": "/leagues?id=39&season=2025",
+      "cost": 1,
+      "maximum": 3
+    },
+    {
+      "attempt": 3,
+      "endpoint": "/leagues?id=39&season=2024",
+      "cost": 1,
+      "maximum": 3
+    }
+  ],
+  "results": [
+    {
+      "endpoint": "/status",
+      "http": 200,
+      "errors": [],
+      "headers": {
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "9",
+        "x-ratelimit-requests-limit": "100",
+        "x-ratelimit-requests-remaining": "100"
+      }
+    },
+    {
+      "endpoint": "/leagues",
+      "http": 200,
+      "errors": {
+        "plan": "Free plans do not have access to this season, try from 2022 to 2024."
+      },
+      "headers": {}
+    },
+    {
+      "endpoint": "/leagues?id=39&season=2024",
+      "http": 200,
+      "errors": [],
+      "headers": {
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "8",
+        "x-ratelimit-requests-limit": "100",
+        "x-ratelimit-requests-remaining": "98"
+      }
+    }
+  ],
+  "decision": "NO-GO",
+  "account": {
+    "plan": "Free",
+    "active": true,
+    "quota": {
+      "dailyLimit": 100,
+      "current": 0,
+      "remaining": 100,
+      "minuteLimit": 10,
+      "minuteRemaining": 9,
+      "reset": null
+    }
+  },
+  "league": {
+    "id": 39,
+    "season": 2025,
+    "catalogue": "NOT_AVAILABLE",
+    "metadata": null
+  },
+  "alternative": {
+    "competition": 39,
+    "season": 2024,
+    "catalogue": "AVAILABLE",
+    "metadata": {
+      "year": 2024,
+      "start": "2024-08-16",
+      "end": "2025-05-25",
+      "coverage": {
+        "fixtures": {
+          "events": true,
+          "lineups": true,
+          "statistics_fixtures": true,
+          "statistics_players": true
+        },
+        "standings": true,
+        "players": true,
+        "top_scorers": true,
+        "top_assists": true,
+        "top_cards": true,
+        "injuries": true,
+        "predictions": true,
+        "odds": false
+      }
+    }
+  }
+}
