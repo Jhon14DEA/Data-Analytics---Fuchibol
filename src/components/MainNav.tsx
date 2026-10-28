@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Activity, Bell, Search, ScanSearch, ShieldAlert, Target } from "lucide-react";
+import { Activity, Bell, Search, ScanSearch, ShieldAlert, Target, MessageSquare } from "lucide-react";
 
 const links = [
+  { href: "/ai-chat", label: "Chat IA", Icon: MessageSquare },
   { href: "/", label: "Partidos", Icon: Activity },
   { href: "/opportunities", label: "Oportunidades", Icon: Target },
   { href: "/live-goal-radar", label: "Radar live", Icon: ShieldAlert },
@@ -12,7 +13,7 @@ const links = [
 
 export function MainNav() {
   return (
-    <nav className="mb-5 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+    <nav className="mb-5 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-7">
       {links.map(({ href, label, Icon }) => (
         <Link
           key={href}
