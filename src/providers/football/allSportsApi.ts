@@ -19,6 +19,8 @@ import { cachedRequest, CACHE_TTL, fetchJsonWithResilience, getPerformanceCacheA
 import { getFixtureLifecycleDebug, getLiveMomentumBreakdown, getLiveSnapshotTrend, getLocalAnalysisHistory, getMatchDataFreshness, getPreviousLiveStats, persistMatchDetail, reconcileMissingProviderFixture } from "@/services/persistence/footballPersistence";
 import { allSportsObservation, rememberTrainingReceipt, selectFirstHalfOdds, trainingReceipt } from "@/services/training/observation";
 import { resolveObservedMarketResults } from "@/services/training/liveMarketSnapshots";
+import { persistAllSportsLiveList } from "@/services/persistence/liveListPersistence";
+import { prisma } from "@/lib/prisma";
 
 const API_BASE_URL = "https://apiv2.allsportsapi.com/football/";
 const PRIORITY_LEAGUE_TERMS = [
@@ -198,6 +200,7 @@ export class AllSportsApiProvider implements FootballProvider {
           return at ? [allSportsObservation(item, at)] : [];
         }));
         const matches = raw.map(mapMatchSummary);
+        await persistAllSportsLiveList(raw.map((item, index) => ({ raw: item, summary: matches[index] })), prisma);
         const ordered = orderMatchesForDashboard(matches);
         this.rememberMatches(ordered);
         return ordered;
@@ -229,6 +232,7 @@ export class AllSportsApiProvider implements FootballProvider {
           return at ? [allSportsObservation(item, at)] : [];
         }));
         const matches = raw.map(mapMatchSummary);
+        await persistAllSportsLiveList(raw.map((item, index) => ({ raw: item, summary: matches[index] })), prisma);
         this.rememberMatches(matches);
         return matches;
       },

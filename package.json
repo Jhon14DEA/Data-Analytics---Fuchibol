@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "test:ai-live-pipeline": "node --require ./tests/no-provider-http.cjs --require ./tests/register-typescript.cjs --test tests/ai-live-pipeline.test.cjs",
     "test:ai-chat": "node --require ./tests/no-provider-http.cjs --require ./tests/register-typescript.cjs --test tests/ai-chat.test.cjs",
     "test:ai": "node --require ./tests/no-provider-http.cjs --require ./tests/register-typescript.cjs --test tests/ai-api.test.cjs",
     "historical:backfill": "npm run historical:build && node scripts/football-data-backfill.cjs",
