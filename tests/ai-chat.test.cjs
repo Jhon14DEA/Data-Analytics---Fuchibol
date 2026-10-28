@@ -38,3 +38,46 @@ test('panorama paginates within bounded reads and states truncation',async()=>{l
 test('answers carry sources, truncation and sanitized text',async()=>{const {handler}=setup({}, {fetcher:async url=>url.includes('api.openai.com')?Response.json({status:'incomplete',output:[{type:'message',content:[{type:'output_text',text:'private-fut-key private-openai-key'}]}]}):Response.json(fixture())});const cookie=await login(handler);const r=await handler(request('message','POST',undefined,cookie),'message');const data=await r.json();assert.deepEqual(data.sources,['/api/ai/fixture/fixture1']);assert.equal(data.incomplete,true);assert.equal(data.answer,'[REDACTADO] [REDACTADO]');});
 test('prompt preserves N/D, 1T/FT and forbids automatic bets',()=>{assert.match(instructions,/NULL.*N\/D/);assert.match(instructions,/1T de FT/);assert.match(instructions,/nunca recomendar entrar\/apostar/);assert.match(instructions,/no confiable/);});
 test('HTTP mode omits Secure only when configured, keys remain server-side',async()=>{const {handler}=setup({secure:false});const r=await handler(request('session','POST',{password:config.password}),'session');assert.doesNotMatch(r.headers.get('set-cookie'),/Secure/);assert.match(r.headers.get('set-cookie'),/HttpOnly/);});
+
+const geminiConfig={provider:'gemini',geminiKey:'private-gemini-key',geminiModel:'gemini-test-model',openaiKey:undefined};
+const geminiAnswer={candidates:[{finishReason:'STOP',content:{parts:[{text:'Razonamiento interno',thought:true},{text:'xG: N/D. Córners observados: 0.'}]}}]};
+function geminiSetup(response=()=>Response.json(geminiAnswer),overrides={}){
+ return setup({...geminiConfig,...overrides},{fetcher:async(url,init)=>url.startsWith('https://generativelanguage.googleapis.com/')?response(url,init):Response.json(fixture())});
+}
+test('Gemini works without OpenAI key, uses private FUT endpoint and preserves context/history',async()=>{
+ const {handler,calls}=geminiSetup();const cookie=await login(handler);
+ const messages=[{role:'user',content:'Analiza'},{role:'assistant',content:'Respuesta anterior'},{role:'user',content:'¿Y córners?'}];
+ const r=await handler(request('message','POST',{fixtureId:'fixture1',messages},cookie),'message');assert.equal(r.status,200);
+ const data=await r.json();assert.equal(data.provider,'gemini');assert.equal(data.incomplete,false);assert.doesNotMatch(data.answer,/Razonamiento/);
+ assert.equal(calls.length,2);assert.equal(calls[0].url,'http://127.0.0.1:3000/api/ai/fixture/fixture1');
+ assert.equal(calls[1].url,'https://generativelanguage.googleapis.com/v1beta/models/gemini-test-model:generateContent');
+ assert.equal(calls[1].init.headers['x-goog-api-key'],'private-gemini-key');assert.equal(calls[1].init.headers.Authorization,undefined);
+ const p=JSON.parse(calls[1].init.body);assert.equal(p.systemInstruction.parts[0].text,instructions);assert.deepEqual(p.contents.map(c=>c.role),['user','model','user']);
+ assert.match(p.contents[0].parts[0].text,/"xg":null/);assert.match(p.contents[0].parts[0].text,/"corners":0/);assert.equal(p.generationConfig.maxOutputTokens,1400);assert.equal(p.tools,undefined);
+ assert.doesNotMatch(calls[1].init.body,/private-.*key/);assert.doesNotMatch(calls[1].url,/private-gemini-key/);
+});
+test('Gemini missing key or invalid model fails before data access',async()=>{
+ for(const override of [{geminiKey:''},{geminiModel:''},{geminiModel:'models/a'},{geminiModel:'../../other?key=x'}]){
+  const {handler,calls}=geminiSetup(undefined,override);const cookie=await login(handler);assert.equal((await handler(request('message','POST',undefined,cookie),'message')).status,503);assert.equal(calls.length,0);
+ }
+});
+test('unknown provider is rejected rather than silently selecting OpenAI',async()=>{const {handler,calls}=setup({provider:'unknown'});const cookie=await login(handler);assert.equal((await handler(request('message','POST',undefined,cookie),'message')).status,503);assert.equal(calls.length,0);});
+test('Gemini quota errors are clear, sanitized and never retried/fallback',async()=>{
+ for(const status of [402,429]){const {handler,calls}=geminiSetup(()=>Response.json({error:{message:'private-gemini-key'}},{status}),{openaiKey:'also-configured'});const cookie=await login(handler);const r=await handler(request('message','POST',undefined,cookie),'message');assert.equal(r.status,429);const body=await r.text();assert.match(body,/Gemini.*cuota/);assert.doesNotMatch(body,/private-gemini-key/);assert.equal(calls.length,2);}
+});
+test('Gemini configuration and service errors have safe messages',async()=>{
+ for(const status of [400,401,403,404,500,503]){const {handler}=geminiSetup(()=>Response.json({error:{message:'secret'}},{status}));const cookie=await login(handler);const r=await handler(request('message','POST',undefined,cookie),'message');assert.equal(r.status,status<500?502:503);const body=await r.text();assert.match(body,/Gemini/);assert.doesNotMatch(body,/secret/);}
+});
+test('Gemini timeouts and malformed responses do not expose transport errors',async()=>{
+ for(const fail of [()=>{throw new Error('private-gemini-key timeout');},()=>new Response('bad json')]){const {handler}=geminiSetup(fail);const cookie=await login(handler);const r=await handler(request('message','POST',undefined,cookie),'message');assert.equal(r.status,503);assert.match((await r.json()).error,/Gemini/);}
+});
+test('Gemini empty/blocked responses are not presented as analysis',async()=>{
+ for(const [payload,status] of [[{},502],[{promptFeedback:{blockReason:'SAFETY'}},422],[{candidates:[{finishReason:'SAFETY',content:{parts:[{text:'blocked'}]}}]},422]]){
+ const {handler}=geminiSetup(()=>Response.json(payload));const cookie=await login(handler);const r=await handler(request('message','POST',undefined,cookie),'message');assert.equal(r.status,status);assert.equal((await r.json()).answer,undefined);}
+});
+test('Gemini partial answer marked incomplete and all configured keys redacted',async()=>{
+ const {handler}=geminiSetup(()=>Response.json({candidates:[{finishReason:'MAX_TOKENS',content:{parts:[{text:'private-gemini-key private-fut-key'}]}}]}));const cookie=await login(handler);const r=await handler(request('message','POST',undefined,cookie),'message');const data=await r.json();assert.equal(data.incomplete,true);assert.equal(data.answer,'[REDACTADO] [REDACTADO]');
+});
+test('explicit OpenAI selection ignores Gemini credentials',async()=>{
+ const {handler,calls}=setup({provider:'openai',geminiKey:'unused'});const cookie=await login(handler);const r=await handler(request('message','POST',undefined,cookie),'message');assert.equal(r.status,200);assert.equal((await r.json()).provider,'openai');assert.equal(calls[1].url,'https://api.openai.com/v1/responses');assert.doesNotMatch(calls[1].init.body,/unused/);
+});
