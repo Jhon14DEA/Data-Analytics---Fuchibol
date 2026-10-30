@@ -169,6 +169,7 @@ model Player {
 }
 
 model Fixture {
+  mlShadowSnapshots MlShadowSnapshot[]
   kickoffPrecision  String @default("EXACT")
   historicalKickoffAt DateTime?
   referee           String?
@@ -216,6 +217,41 @@ model Fixture {
   @@index([homeTeamId])
   @@index([awayTeamId])
   @@index([provider, kickoff])
+}
+
+// Additive shadow store. Immutable operational observations, never reconstructed history.
+model MlShadowSnapshot {
+  id String @id @default(cuid())
+  fixtureId String
+  provider String
+  providerFixtureId String
+  capturedAt DateTime
+  receivedAt DateTime
+  persistedAt DateTime @default(now())
+  minute Int?
+  period String
+  homeScore Int
+  awayScore Int
+  stats Json
+  recent Json
+  dataQuality Json
+  sourceHash String
+  fixture Fixture @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
+  outcomes MlShadowOutcome[]
+  @@unique([fixtureId, provider, receivedAt])
+  @@index([fixtureId, capturedAt])
+}
+
+// Future labels live separately from the immutable feature payload.
+model MlShadowOutcome {
+  id String @id @default(cuid())
+  snapshotId String
+  label String
+  value Float?
+  resolvedAt DateTime
+  evidence Json
+  snapshot MlShadowSnapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+  @@unique([snapshotId, label])
 }
 
 model TeamMatchStats {

@@ -9,3 +9,5 @@ dist
 prisma/dev.db
 *.dump
 *.backup
+data/ml/
+data/ml-replay/

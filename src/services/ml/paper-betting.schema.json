@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FUT PaperBet design v1 — not an operational ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "fixtureId", "capturedAt", "minute", "market", "selection", "line", "modelVersion", "datasetVersion", "probability", "bookmaker", "bookmakerOdds", "oddsQuotedAt", "oddsReceivedAt", "impliedProbability", "estimatedEdge", "result", "profitLoss", "stakeUnits", "settledAt"],
+  "properties": {
+    "id": {"type": "string"},
+    "fixtureId": {"type": "string"},
+    "capturedAt": {"type": "string", "format": "date-time"},
+    "minute": {"type": ["integer", "null"], "minimum": 0},
+    "market": {"enum": ["GOAL_NEXT_10", "GOAL_NEXT_15", "GOALS_2H", "CORNERS_NEXT_10", "CARDS_NEXT_15", "SOT_NEXT_10"]},
+    "selection": {"type": ["string", "null"]},
+    "line": {"type": ["number", "null"]},
+    "modelVersion": {"type": "string"},
+    "datasetVersion": {"type": "string"},
+    "probability": {"type": "number", "minimum": 0, "maximum": 1},
+    "bookmaker": {"type": ["string", "null"]},
+    "bookmakerOdds": {"type": ["number", "null"], "exclusiveMinimum": 1},
+    "oddsQuotedAt": {"type": ["string", "null"], "format": "date-time"},
+    "oddsReceivedAt": {"type": ["string", "null"], "format": "date-time"},
+    "impliedProbability": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "estimatedEdge": {"type": ["number", "null"], "minimum": -1, "maximum": 1},
+    "stakeUnits": {"type": "number", "exclusiveMinimum": 0},
+    "result": {"enum": [null, "WIN", "LOSS", "PUSH", "VOID"]},
+    "profitLoss": {"type": ["number", "null"]},
+    "settledAt": {"type": ["string", "null"], "format": "date-time"}
+  }
+}

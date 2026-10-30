@@ -1,0 +1,1981 @@
+{
+  "auditedAt": "2026-10-30T14:59:16.537Z",
+  "readOnly": "on",
+  "database": "fut_analytics_history",
+  "tables": {
+    "Fixture": {
+      "rows": 43397,
+      "fixtures": 43397,
+      "season": 602,
+      "minute": 412,
+      "providerUpdatedAt": 43397,
+      "historicalKickoffAt": 9947
+    },
+    "LiveSnapshot": {
+      "rows": 5378,
+      "fixtures": 417,
+      "minute": 5364,
+      "homeXg": 0,
+      "awayXg": 0,
+      "homeShots": 1259,
+      "awayShots": 1259,
+      "homeShotsOnTarget": 4193,
+      "awayShotsOnTarget": 4193,
+      "homeBigChances": 0,
+      "awayBigChances": 0,
+      "homeShotsInsideBox": 142,
+      "awayShotsInsideBox": 142,
+      "homeCorners": 4153,
+      "awayCorners": 4153,
+      "homeYellowCards": 1454,
+      "awayYellowCards": 1521,
+      "homeRedCards": 219,
+      "awayRedCards": 198
+    },
+    "LiveMarketSnapshot": {
+      "rows": 17,
+      "fixtures": 3,
+      "minute": 17,
+      "homeXg": 0,
+      "awayXg": 0,
+      "homeShots": 12,
+      "awayShots": 12,
+      "homeSot": 8,
+      "awaySot": 8,
+      "homeBigChances": 0,
+      "awayBigChances": 0,
+      "homeShotsInsideBox": 12,
+      "awayShotsInsideBox": 12,
+      "homeCorners": 9,
+      "awayCorners": 9,
+      "homeRedCards": 0,
+      "awayRedCards": 0,
+      "marketOdds": 0,
+      "goalBeforeHt": 17,
+      "goalBeforeFt": 17,
+      "finalHomeScore": 17,
+      "finalAwayScore": 17
+    },
+    "TeamMatchStats": {
+      "rows": 86794,
+      "fixtures": 43397,
+      "goals": 86794,
+      "shots": 77494,
+      "shotsOnTarget": 76258,
+      "xg": 0,
+      "corners": 77352,
+      "yellowCards": 77638,
+      "redCards": 77308
+    },
+    "TeamPeriodStats": {
+      "rows": 171180,
+      "fixtures": 42795,
+      "goals": 171172,
+      "shots": 77174,
+      "shotsOnTarget": 75338,
+      "xg": 0,
+      "corners": 76424,
+      "yellowCards": 77203,
+      "redCards": 77204
+    },
+    "HistoricalMarketOutcome": {
+      "rows": 342360,
+      "fixtures": 42795,
+      "observedValue": 342352,
+      "resolvedAt": 342352
+    },
+    "HistoricalOddsQuote": {
+      "rows": 1140986,
+      "fixtures": 42783,
+      "price": 1140986,
+      "quotedAt": 0,
+      "receivedAt": 1140986
+    },
+    "Lineup": {
+      "rows": 3718,
+      "fixtures": 169,
+      "position": 3718,
+      "starter": 3718,
+      "number": 3718
+    },
+    "MatchEvent": {
+      "rows": 4421,
+      "fixtures": 510,
+      "minute": 4421,
+      "playerName": 4421
+    },
+    "Player": {
+      "rows": 2600,
+      "position": 2600,
+      "teamId": 2600
+    },
+    "PlayerMatchStats": {
+      "rows": 52,
+      "fixtures": 1,
+      "minutes": 0,
+      "starter": 52,
+      "goals": 0,
+      "shots": 52,
+      "shotsOnTarget": 52,
+      "xg": 0
+    },
+    "OddsSnapshot": {
+      "rows": 988539,
+      "fixtures": 376,
+      "odds": 988539,
+      "timestamp": 988539,
+      "receivedAt": 0,
+      "marketPeriod": 0
+    }
+  },
+  "periods": [
+    {
+      "period": "FIRST_HALF",
+      "rows": 85590,
+      "goals": 85582,
+      "shots": 0,
+      "sot": 0,
+      "xg": 0,
+      "corners": 0,
+      "yellow": 0,
+      "red": 0
+    },
+    {
+      "period": "FULL_TIME",
+      "rows": 85590,
+      "goals": 85590,
+      "shots": 77174,
+      "sot": 75338,
+      "xg": 0,
+      "corners": 76424,
+      "yellow": 77203,
+      "red": 77204
+    }
+  ],
+  "minutes": [
+    {
+      "minute": 1,
+      "snapshots": 25,
+      "fixtures": 25
+    },
+    {
+      "minute": 2,
+      "snapshots": 16,
+      "fixtures": 16
+    },
+    {
+      "minute": 3,
+      "snapshots": 23,
+      "fixtures": 23
+    },
+    {
+      "minute": 4,
+      "snapshots": 18,
+      "fixtures": 18
+    },
+    {
+      "minute": 5,
+      "snapshots": 22,
+      "fixtures": 22
+    },
+    {
+      "minute": 6,
+      "snapshots": 19,
+      "fixtures": 19
+    },
+    {
+      "minute": 7,
+      "snapshots": 20,
+      "fixtures": 20
+    },
+    {
+      "minute": 8,
+      "snapshots": 22,
+      "fixtures": 22
+    },
+    {
+      "minute": 9,
+      "snapshots": 19,
+      "fixtures": 19
+    },
+    {
+      "minute": 10,
+      "snapshots": 22,
+      "fixtures": 22
+    },
+    {
+      "minute": 11,
+      "snapshots": 29,
+      "fixtures": 28
+    },
+    {
+      "minute": 12,
+      "snapshots": 22,
+      "fixtures": 21
+    },
+    {
+      "minute": 13,
+      "snapshots": 21,
+      "fixtures": 21
+    },
+    {
+      "minute": 14,
+      "snapshots": 26,
+      "fixtures": 26
+    },
+    {
+      "minute": 15,
+      "snapshots": 18,
+      "fixtures": 18
+    },
+    {
+      "minute": 16,
+      "snapshots": 24,
+      "fixtures": 24
+    },
+    {
+      "minute": 17,
+      "snapshots": 21,
+      "fixtures": 21
+    },
+    {
+      "minute": 18,
+      "snapshots": 19,
+      "fixtures": 19
+    },
+    {
+      "minute": 19,
+      "snapshots": 34,
+      "fixtures": 34
+    },
+    {
+      "minute": 20,
+      "snapshots": 21,
+      "fixtures": 20
+    },
+    {
+      "minute": 21,
+      "snapshots": 21,
+      "fixtures": 21
+    },
+    {
+      "minute": 22,
+      "snapshots": 42,
+      "fixtures": 42
+    },
+    {
+      "minute": 23,
+      "snapshots": 28,
+      "fixtures": 28
+    },
+    {
+      "minute": 24,
+      "snapshots": 23,
+      "fixtures": 22
+    },
+    {
+      "minute": 25,
+      "snapshots": 44,
+      "fixtures": 44
+    },
+    {
+      "minute": 26,
+      "snapshots": 45,
+      "fixtures": 45
+    },
+    {
+      "minute": 27,
+      "snapshots": 41,
+      "fixtures": 41
+    },
+    {
+      "minute": 28,
+      "snapshots": 45,
+      "fixtures": 45
+    },
+    {
+      "minute": 29,
+      "snapshots": 46,
+      "fixtures": 46
+    },
+    {
+      "minute": 30,
+      "snapshots": 41,
+      "fixtures": 41
+    },
+    {
+      "minute": 31,
+      "snapshots": 51,
+      "fixtures": 51
+    },
+    {
+      "minute": 32,
+      "snapshots": 31,
+      "fixtures": 31
+    },
+    {
+      "minute": 33,
+      "snapshots": 48,
+      "fixtures": 48
+    },
+    {
+      "minute": 34,
+      "snapshots": 57,
+      "fixtures": 56
+    },
+    {
+      "minute": 35,
+      "snapshots": 32,
+      "fixtures": 32
+    },
+    {
+      "minute": 36,
+      "snapshots": 35,
+      "fixtures": 35
+    },
+    {
+      "minute": 37,
+      "snapshots": 51,
+      "fixtures": 51
+    },
+    {
+      "minute": 38,
+      "snapshots": 50,
+      "fixtures": 50
+    },
+    {
+      "minute": 39,
+      "snapshots": 42,
+      "fixtures": 42
+    },
+    {
+      "minute": 40,
+      "snapshots": 33,
+      "fixtures": 33
+    },
+    {
+      "minute": 41,
+      "snapshots": 38,
+      "fixtures": 38
+    },
+    {
+      "minute": 42,
+      "snapshots": 100,
+      "fixtures": 58
+    },
+    {
+      "minute": 43,
+      "snapshots": 32,
+      "fixtures": 32
+    },
+    {
+      "minute": 44,
+      "snapshots": 31,
+      "fixtures": 31
+    },
+    {
+      "minute": 45,
+      "snapshots": 972,
+      "fixtures": 218
+    },
+    {
+      "minute": 46,
+      "snapshots": 60,
+      "fixtures": 43
+    },
+    {
+      "minute": 47,
+      "snapshots": 59,
+      "fixtures": 58
+    },
+    {
+      "minute": 48,
+      "snapshots": 43,
+      "fixtures": 43
+    },
+    {
+      "minute": 49,
+      "snapshots": 41,
+      "fixtures": 41
+    },
+    {
+      "minute": 50,
+      "snapshots": 60,
+      "fixtures": 60
+    },
+    {
+      "minute": 51,
+      "snapshots": 45,
+      "fixtures": 45
+    },
+    {
+      "minute": 52,
+      "snapshots": 44,
+      "fixtures": 44
+    },
+    {
+      "minute": 53,
+      "snapshots": 43,
+      "fixtures": 43
+    },
+    {
+      "minute": 54,
+      "snapshots": 54,
+      "fixtures": 54
+    },
+    {
+      "minute": 55,
+      "snapshots": 54,
+      "fixtures": 53
+    },
+    {
+      "minute": 56,
+      "snapshots": 42,
+      "fixtures": 42
+    },
+    {
+      "minute": 57,
+      "snapshots": 57,
+      "fixtures": 56
+    },
+    {
+      "minute": 58,
+      "snapshots": 41,
+      "fixtures": 41
+    },
+    {
+      "minute": 59,
+      "snapshots": 44,
+      "fixtures": 42
+    },
+    {
+      "minute": 60,
+      "snapshots": 48,
+      "fixtures": 48
+    },
+    {
+      "minute": 61,
+      "snapshots": 43,
+      "fixtures": 42
+    },
+    {
+      "minute": 62,
+      "snapshots": 47,
+      "fixtures": 47
+    },
+    {
+      "minute": 63,
+      "snapshots": 50,
+      "fixtures": 50
+    },
+    {
+      "minute": 64,
+      "snapshots": 37,
+      "fixtures": 36
+    },
+    {
+      "minute": 65,
+      "snapshots": 45,
+      "fixtures": 44
+    },
+    {
+      "minute": 66,
+      "snapshots": 68,
+      "fixtures": 67
+    },
+    {
+      "minute": 67,
+      "snapshots": 32,
+      "fixtures": 32
+    },
+    {
+      "minute": 68,
+      "snapshots": 50,
+      "fixtures": 50
+    },
+    {
+      "minute": 69,
+      "snapshots": 56,
+      "fixtures": 56
+    },
+    {
+      "minute": 70,
+      "snapshots": 57,
+      "fixtures": 57
+    },
+    {
+      "minute": 71,
+      "snapshots": 45,
+      "fixtures": 45
+    },
+    {
+      "minute": 72,
+      "snapshots": 40,
+      "fixtures": 40
+    },
+    {
+      "minute": 73,
+      "snapshots": 47,
+      "fixtures": 47
+    },
+    {
+      "minute": 74,
+      "snapshots": 64,
+      "fixtures": 64
+    },
+    {
+      "minute": 75,
+      "snapshots": 36,
+      "fixtures": 36
+    },
+    {
+      "minute": 76,
+      "snapshots": 48,
+      "fixtures": 48
+    },
+    {
+      "minute": 77,
+      "snapshots": 59,
+      "fixtures": 59
+    },
+    {
+      "minute": 78,
+      "snapshots": 57,
+      "fixtures": 55
+    },
+    {
+      "minute": 79,
+      "snapshots": 56,
+      "fixtures": 55
+    },
+    {
+      "minute": 80,
+      "snapshots": 58,
+      "fixtures": 58
+    },
+    {
+      "minute": 81,
+      "snapshots": 54,
+      "fixtures": 54
+    },
+    {
+      "minute": 82,
+      "snapshots": 54,
+      "fixtures": 53
+    },
+    {
+      "minute": 83,
+      "snapshots": 62,
+      "fixtures": 61
+    },
+    {
+      "minute": 84,
+      "snapshots": 49,
+      "fixtures": 48
+    },
+    {
+      "minute": 85,
+      "snapshots": 53,
+      "fixtures": 53
+    },
+    {
+      "minute": 86,
+      "snapshots": 54,
+      "fixtures": 54
+    },
+    {
+      "minute": 87,
+      "snapshots": 43,
+      "fixtures": 43
+    },
+    {
+      "minute": 88,
+      "snapshots": 58,
+      "fixtures": 56
+    },
+    {
+      "minute": 89,
+      "snapshots": 54,
+      "fixtures": 53
+    },
+    {
+      "minute": 90,
+      "snapshots": 733,
+      "fixtures": 185
+    },
+    {
+      "minute": null,
+      "snapshots": 14,
+      "fixtures": 1
+    }
+  ],
+  "events": [
+    {
+      "eventType": "card",
+      "rows": 1084,
+      "with_minute": 1084
+    },
+    {
+      "eventType": "goal",
+      "rows": 1466,
+      "with_minute": 1466
+    },
+    {
+      "eventType": "substitution",
+      "rows": 1871,
+      "with_minute": 1871
+    }
+  ],
+  "playerPositions": [
+    {
+      "position": "1",
+      "rows": 224
+    },
+    {
+      "position": "10",
+      "rows": 232
+    },
+    {
+      "position": "11",
+      "rows": 236
+    },
+    {
+      "position": "2",
+      "rows": 233
+    },
+    {
+      "position": "3",
+      "rows": 229
+    },
+    {
+      "position": "4",
+      "rows": 223
+    },
+    {
+      "position": "5",
+      "rows": 224
+    },
+    {
+      "position": "6",
+      "rows": 228
+    },
+    {
+      "position": "7",
+      "rows": 227
+    },
+    {
+      "position": "8",
+      "rows": 231
+    },
+    {
+      "position": "9",
+      "rows": 228
+    },
+    {
+      "position": "D",
+      "rows": 18
+    },
+    {
+      "position": "F",
+      "rows": 12
+    },
+    {
+      "position": "G",
+      "rows": 6
+    },
+    {
+      "position": "M",
+      "rows": 16
+    },
+    {
+      "position": "N/D",
+      "rows": 33
+    }
+  ],
+  "playerRateDenominators": {
+    "goals_per90": 0,
+    "sot_per90": 0,
+    "xg_per90": 0,
+    "conversion": 0
+  },
+  "oddsPhases": [
+    {
+      "phase": "CLOSING",
+      "rows": 280060,
+      "quoted": 0
+    },
+    {
+      "phase": "PRE_CLOSING",
+      "rows": 860926,
+      "quoted": 0
+    }
+  ],
+  "sourceStatistics": {
+    "fixturesByProvider": {
+      "AllSportsApi": 601,
+      "FOOTBALL_DATA": 42795,
+      "API-Football": 1
+    },
+    "fixturesByStatus": {
+      "LIVE": 413,
+      "FINISHED": 42981,
+      "STALE_PROVIDER_DATA": 2,
+      "UPCOMING": 1
+    },
+    "kickoffPrecision": {
+      "EXACT": 10929,
+      "DATE": 32468
+    },
+    "leagues": 141,
+    "seasonRecords": 125,
+    "distinctSeasons": [
+      "2000/01",
+      "2001/02",
+      "2002/03",
+      "2003/04",
+      "2004/05",
+      "2005/06",
+      "2006/07",
+      "2007/08",
+      "2008/09",
+      "2009/10",
+      "2010/11",
+      "2011/12",
+      "2012/13",
+      "2013/14",
+      "2014/15",
+      "2015/16",
+      "2016/17",
+      "2017/18",
+      "2018/19",
+      "2019/20",
+      "2020/21",
+      "2021/22",
+      "2022/23",
+      "2023/24",
+      "2024/25"
+    ],
+    "kickoffMin": "2000-07-28T00:00:00.000Z",
+    "kickoffMax": "2026-10-27T17:30:00.000Z",
+    "snapshotMin": "2026-10-05T20:15:27.631Z",
+    "snapshotMax": "2026-10-27T18:02:44.520Z",
+    "minuteMin": 1,
+    "minuteMax": 90,
+    "distinctObservedMinutes": 90
+  },
+  "boundaries": {
+    "validationStart": "2023-07-01T00:00:00.000Z",
+    "testStart": "2024-07-01T00:00:00.000Z"
+  },
+  "counts": {
+    "live_minute_dataset": {
+      "train": {
+        "rows": 0,
+        "fixtures": 0,
+        "eligibleRows": 0,
+        "labels": {
+          "goalNext5": {
+            "known": 0,
+            "usable": 0
+          },
+          "goalNext10": {
+            "known": 0,
+            "usable": 0
+          },
+          "goalNext15": {
+            "known": 0,
+            "usable": 0
+          },
+          "goalsRemaining1H": {
+            "known": 0,
+            "usable": 0
+          },
+          "goalsRemainingFT": {
+            "known": 0,
+            "usable": 0
+          },
+          "twoPlusGoalsRemainingFT": {
+            "known": 0,
+            "usable": 0
+          },
+          "cornersNext5": {
+            "known": 0,
+            "usable": 0
+          },
+          "cornersNext10": {
+            "known": 0,
+            "usable": 0
+          },
+          "cornersNext15": {
+            "known": 0,
+            "usable": 0
+          },
+          "cardsNext10": {
+            "known": 0,
+            "usable": 0
+          },
+          "cardsNext15": {
+            "known": 0,
+            "usable": 0
+          },
+          "shotsOnTargetNext10": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      },
+      "validation": {
+        "rows": 0,
+        "fixtures": 0,
+        "eligibleRows": 0,
+        "labels": {
+          "goalNext5": {
+            "known": 0,
+            "usable": 0
+          },
+          "goalNext10": {
+            "known": 0,
+            "usable": 0
+          },
+          "goalNext15": {
+            "known": 0,
+            "usable": 0
+          },
+          "goalsRemaining1H": {
+            "known": 0,
+            "usable": 0
+          },
+          "goalsRemainingFT": {
+            "known": 0,
+            "usable": 0
+          },
+          "twoPlusGoalsRemainingFT": {
+            "known": 0,
+            "usable": 0
+          },
+          "cornersNext5": {
+            "known": 0,
+            "usable": 0
+          },
+          "cornersNext10": {
+            "known": 0,
+            "usable": 0
+          },
+          "cornersNext15": {
+            "known": 0,
+            "usable": 0
+          },
+          "cardsNext10": {
+            "known": 0,
+            "usable": 0
+          },
+          "cardsNext15": {
+            "known": 0,
+            "usable": 0
+          },
+          "shotsOnTargetNext10": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      },
+      "test": {
+        "rows": 0,
+        "fixtures": 0,
+        "eligibleRows": 0,
+        "labels": {
+          "goalNext5": {
+            "known": 0,
+            "usable": 0
+          },
+          "goalNext10": {
+            "known": 0,
+            "usable": 0
+          },
+          "goalNext15": {
+            "known": 0,
+            "usable": 0
+          },
+          "goalsRemaining1H": {
+            "known": 0,
+            "usable": 0
+          },
+          "goalsRemainingFT": {
+            "known": 0,
+            "usable": 0
+          },
+          "twoPlusGoalsRemainingFT": {
+            "known": 0,
+            "usable": 0
+          },
+          "cornersNext5": {
+            "known": 0,
+            "usable": 0
+          },
+          "cornersNext10": {
+            "known": 0,
+            "usable": 0
+          },
+          "cornersNext15": {
+            "known": 0,
+            "usable": 0
+          },
+          "cardsNext10": {
+            "known": 0,
+            "usable": 0
+          },
+          "cardsNext15": {
+            "known": 0,
+            "usable": 0
+          },
+          "shotsOnTargetNext10": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      }
+    },
+    "prematch_goal_dataset": {
+      "train": {
+        "rows": 0,
+        "fixtures": 0,
+        "eligibleRows": 0,
+        "labels": {
+          "goalsFT": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      },
+      "validation": {
+        "rows": 0,
+        "fixtures": 0,
+        "eligibleRows": 0,
+        "labels": {
+          "goalsFT": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      },
+      "test": {
+        "rows": 1,
+        "fixtures": 1,
+        "eligibleRows": 0,
+        "labels": {
+          "goalsFT": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      }
+    },
+    "halftime_second_half_goal_dataset": {
+      "train": {
+        "rows": 0,
+        "fixtures": 0,
+        "eligibleRows": 0,
+        "labels": {
+          "onePlusGoals2H": {
+            "known": 0,
+            "usable": 0
+          },
+          "twoPlusGoals2H": {
+            "known": 0,
+            "usable": 0
+          },
+          "threePlusGoals2H": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      },
+      "validation": {
+        "rows": 0,
+        "fixtures": 0,
+        "eligibleRows": 0,
+        "labels": {
+          "onePlusGoals2H": {
+            "known": 0,
+            "usable": 0
+          },
+          "twoPlusGoals2H": {
+            "known": 0,
+            "usable": 0
+          },
+          "threePlusGoals2H": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      },
+      "test": {
+        "rows": 0,
+        "fixtures": 0,
+        "eligibleRows": 0,
+        "labels": {
+          "onePlusGoals2H": {
+            "known": 0,
+            "usable": 0
+          },
+          "twoPlusGoals2H": {
+            "known": 0,
+            "usable": 0
+          },
+          "threePlusGoals2H": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      }
+    },
+    "prematch_corner_dataset": {
+      "train": {
+        "rows": 0,
+        "fixtures": 0,
+        "eligibleRows": 0,
+        "labels": {
+          "cornersFT": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      },
+      "validation": {
+        "rows": 0,
+        "fixtures": 0,
+        "eligibleRows": 0,
+        "labels": {
+          "cornersFT": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      },
+      "test": {
+        "rows": 1,
+        "fixtures": 1,
+        "eligibleRows": 0,
+        "labels": {
+          "cornersFT": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      }
+    },
+    "prematch_card_dataset": {
+      "train": {
+        "rows": 0,
+        "fixtures": 0,
+        "eligibleRows": 0,
+        "labels": {
+          "cardsFT": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      },
+      "validation": {
+        "rows": 0,
+        "fixtures": 0,
+        "eligibleRows": 0,
+        "labels": {
+          "cardsFT": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      },
+      "test": {
+        "rows": 1,
+        "fixtures": 1,
+        "eligibleRows": 0,
+        "labels": {
+          "cardsFT": {
+            "known": 0,
+            "usable": 0
+          }
+        }
+      }
+    }
+  },
+  "markets": {
+    "GOAL_NEXT_10": {
+      "train": {
+        "rows": 0,
+        "fixtures": 0
+      },
+      "validation": {
+        "rows": 0,
+        "fixtures": 0
+      },
+      "test": {
+        "rows": 0,
+        "fixtures": 0
+      }
+    },
+    "GOAL_NEXT_15": {
+      "train": {
+        "rows": 0,
+        "fixtures": 0
+      },
+      "validation": {
+        "rows": 0,
+        "fixtures": 0
+      },
+      "test": {
+        "rows": 0,
+        "fixtures": 0
+      }
+    },
+    "GOALS_2H": {
+      "train": {
+        "rows": 0,
+        "fixtures": 0
+      },
+      "validation": {
+        "rows": 0,
+        "fixtures": 0
+      },
+      "test": {
+        "rows": 0,
+        "fixtures": 0
+      }
+    },
+    "CORNERS_NEXT_10": {
+      "train": {
+        "rows": 0,
+        "fixtures": 0
+      },
+      "validation": {
+        "rows": 0,
+        "fixtures": 0
+      },
+      "test": {
+        "rows": 0,
+        "fixtures": 0
+      }
+    },
+    "CARDS_NEXT_15": {
+      "train": {
+        "rows": 0,
+        "fixtures": 0
+      },
+      "validation": {
+        "rows": 0,
+        "fixtures": 0
+      },
+      "test": {
+        "rows": 0,
+        "fixtures": 0
+      }
+    },
+    "SOT_NEXT_10": {
+      "train": {
+        "rows": 0,
+        "fixtures": 0
+      },
+      "validation": {
+        "rows": 0,
+        "fixtures": 0
+      },
+      "test": {
+        "rows": 0,
+        "fixtures": 0
+      }
+    }
+  },
+  "candidateCounts": {
+    "prematch_goal_dataset": {
+      "train": 39291,
+      "validation": 1752,
+      "test": 1752
+    },
+    "halftime_second_half_goal_dataset": {
+      "train": 39288,
+      "validation": 1752,
+      "test": 1751
+    },
+    "prematch_corner_dataset": {
+      "train": 34709,
+      "validation": 1752,
+      "test": 1751
+    },
+    "prematch_card_dataset": {
+      "train": 35098,
+      "validation": 1752,
+      "test": 1751
+    }
+  },
+  "leagueCoverage": [
+    {
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "name": "Ligue 1",
+      "provider": "FOOTBALL_DATA",
+      "fixtures": 9103,
+      "prematch_goal_dataset": 9103,
+      "halftime_second_half_goal_dataset": 9102,
+      "prematch_corner_dataset": 6970,
+      "prematch_card_dataset": 7350
+    },
+    {
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "name": "Serie A",
+      "provider": "FOOTBALL_DATA",
+      "fixtures": 8898,
+      "prematch_goal_dataset": 8898,
+      "halftime_second_half_goal_dataset": 8896,
+      "prematch_corner_dataset": 7589,
+      "prematch_card_dataset": 7598
+    },
+    {
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "name": "Primera Division",
+      "provider": "FOOTBALL_DATA",
+      "fixtures": 8740,
+      "prematch_goal_dataset": 8740,
+      "halftime_second_half_goal_dataset": 8740,
+      "prematch_corner_dataset": 7600,
+      "prematch_card_dataset": 7600
+    },
+    {
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "name": "Premier League",
+      "provider": "FOOTBALL_DATA",
+      "fixtures": 8710,
+      "prematch_goal_dataset": 8710,
+      "halftime_second_half_goal_dataset": 8710,
+      "prematch_corner_dataset": 8710,
+      "prematch_card_dataset": 8710
+    },
+    {
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "name": "Bundesliga",
+      "provider": "FOOTBALL_DATA",
+      "fixtures": 7344,
+      "prematch_goal_dataset": 7344,
+      "halftime_second_half_goal_dataset": 7343,
+      "prematch_corner_dataset": 7343,
+      "prematch_card_dataset": 7343
+    },
+    {
+      "leagueId": "cmv5mg2r58awsc7ogj1ix8t58",
+      "name": "Primera C Metro",
+      "provider": "AllSportsApi",
+      "fixtures": 82,
+      "prematch_goal_dataset": 0,
+      "halftime_second_half_goal_dataset": 0,
+      "prematch_corner_dataset": 0,
+      "prematch_card_dataset": 0
+    },
+    {
+      "leagueId": "cmv04uqz20000c7ogyf2yvdsl",
+      "name": "Serie A",
+      "provider": "AllSportsApi",
+      "fixtures": 70,
+      "prematch_goal_dataset": 0,
+      "halftime_second_half_goal_dataset": 0,
+      "prematch_corner_dataset": 0,
+      "prematch_card_dataset": 0
+    },
+    {
+      "leagueId": "cmv08tf457bggc7ogh5yo0h51",
+      "name": "Copa Sudamericana - Semi-finals",
+      "provider": "AllSportsApi",
+      "fixtures": 12,
+      "prematch_goal_dataset": 0,
+      "halftime_second_half_goal_dataset": 0,
+      "prematch_corner_dataset": 0,
+      "prematch_card_dataset": 0
+    },
+    {
+      "leagueId": "cmv08tin57g1sc7ogbg814mri",
+      "name": "Club Friendlies - Group Stage",
+      "provider": "AllSportsApi",
+      "fixtures": 8,
+      "prematch_goal_dataset": 0,
+      "halftime_second_half_goal_dataset": 0,
+      "prematch_corner_dataset": 0,
+      "prematch_card_dataset": 0
+    },
+    {
+      "leagueId": "cmv08tg207cndc7ogudpzs9qr",
+      "name": "Cup - 1/16-finals",
+      "provider": "AllSportsApi",
+      "fixtures": 6,
+      "prematch_goal_dataset": 0,
+      "halftime_second_half_goal_dataset": 0,
+      "prematch_corner_dataset": 0,
+      "prematch_card_dataset": 0
+    },
+    {
+      "leagueId": "cmv08tk3i7hryc7og8md4r70k",
+      "name": "Libertadores - Group Stage",
+      "provider": "AllSportsApi",
+      "fixtures": 6,
+      "prematch_goal_dataset": 0,
+      "halftime_second_half_goal_dataset": 0,
+      "prematch_corner_dataset": 0,
+      "prematch_card_dataset": 0
+    },
+    {
+      "leagueId": "cmv04ur9y003kc7ogfpoi5ehr",
+      "name": "Serie B",
+      "provider": "AllSportsApi",
+      "fixtures": 2,
+      "prematch_goal_dataset": 0,
+      "halftime_second_half_goal_dataset": 0,
+      "prematch_corner_dataset": 0,
+      "prematch_card_dataset": 0
+    }
+  ],
+  "seasonCoverage": [
+    {
+      "key": "2024/25",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2000/01",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 0
+    },
+    {
+      "key": "2001/02",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2002/03",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2003/04",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2004/05",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2005/06",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2006/07",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2007/08",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2008/09",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2009/10",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2010/11",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 350
+    },
+    {
+      "key": "2011/12",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2012/13",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2013/14",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2014/15",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2015/16",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2016/17",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2017/18",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2018/19",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2019/20",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2020/21",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2021/22",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 0
+    },
+    {
+      "key": "2022/23",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2023/24",
+      "leagueId": "cmv84vv550000c76wmxi3434f",
+      "fixtures": 380
+    },
+    {
+      "key": "2000/01",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2001/02",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 0
+    },
+    {
+      "key": "2002/03",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 0
+    },
+    {
+      "key": "2003/04",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2004/05",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2005/06",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2006/07",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2007/08",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2008/09",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2009/10",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2010/11",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2011/12",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2012/13",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2013/14",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2014/15",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2015/16",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2016/17",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2017/18",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2018/19",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2019/20",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2020/21",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2021/22",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2022/23",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2023/24",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2024/25",
+      "leagueId": "cmv8gx96e0000c7ycksuys06o",
+      "fixtures": 380
+    },
+    {
+      "key": "2000/01",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 306
+    },
+    {
+      "key": "2001/02",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 306
+    },
+    {
+      "key": "2002/03",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 0
+    },
+    {
+      "key": "2003/04",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 306
+    },
+    {
+      "key": "2004/05",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2005/06",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2006/07",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2007/08",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2008/09",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2009/10",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2010/11",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2011/12",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2012/13",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2013/14",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2014/15",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2015/16",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2016/17",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2017/18",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2018/19",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2019/20",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2020/21",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2021/22",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2022/23",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2023/24",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2024/25",
+      "leagueId": "cmv8h8xih0000c78sb914r2fd",
+      "fixtures": 380
+    },
+    {
+      "key": "2000/01",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 306
+    },
+    {
+      "key": "2001/02",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 306
+    },
+    {
+      "key": "2002/03",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2003/04",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2004/05",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2005/06",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2006/07",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2007/08",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2008/09",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2009/10",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2010/11",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2011/12",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2012/13",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2013/14",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2014/15",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2015/16",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2016/17",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2017/18",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2018/19",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2019/20",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 279
+    },
+    {
+      "key": "2020/21",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2021/22",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2022/23",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 380
+    },
+    {
+      "key": "2023/24",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 306
+    },
+    {
+      "key": "2024/25",
+      "leagueId": "cmv8hgq8s0000c7ws6k416mug",
+      "fixtures": 306
+    },
+    {
+      "key": "2000/01",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2001/02",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2002/03",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 0
+    },
+    {
+      "key": "2003/04",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2004/05",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2005/06",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2006/07",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2007/08",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2008/09",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2009/10",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2010/11",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2011/12",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2012/13",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2013/14",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2014/15",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2015/16",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2016/17",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2017/18",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2018/19",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2019/20",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2020/21",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2021/22",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2022/23",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2023/24",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    },
+    {
+      "key": "2024/25",
+      "leagueId": "cmv9yin240000c7p0rnezlj5p",
+      "fixtures": 306
+    }
+  ],
+  "exclusions": {
+    "UNVERIFIED_LEGACY_SNAPSHOT": 17,
+    "NO_VERIFIABLE_RECEIPT_AND_SCORE_PROVENANCE": 5378,
+    "PREMATCH_IDENTITY_NOT_OBSERVED_BEFORE_KICKOFF": 43396
+  },
+  "historicalBuilder": {
+    "file": "src/services/historical/teamProfile.ts",
+    "policy": "OBSERVED_BEFORE_CUTOFF",
+    "windows": [
+      5,
+      10,
+      20
+    ],
+    "venues": [
+      "HOME",
+      "AWAY"
+    ],
+    "retroactiveBackfillFeatures": false
+  },
+  "missingHalftimeProvenance": true,
+  "cardDefinition": "YELLOW_PLUS_RED_COUNTS; no deduplication of second-yellow without source evidence"
+}

@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "ml:historical": "node scripts/historical-ml-reconstruction.cjs",
+    "test:ml-historical": "node --require ./tests/no-provider-http.cjs --require ./tests/register-typescript.cjs --test tests/ml-historical.test.cjs tests/ml-shadow.test.cjs",
+    "ml:export": "node --env-file=.env scripts/ml-dataset.cjs",
+    "test:ml": "node --require ./tests/no-provider-http.cjs --require ./tests/register-typescript.cjs --test tests/ml-foundation.test.cjs",
     "test:ai-live-pipeline": "node --require ./tests/no-provider-http.cjs --require ./tests/register-typescript.cjs --test tests/ai-live-pipeline.test.cjs",
     "test:ai-chat": "node --require ./tests/no-provider-http.cjs --require ./tests/register-typescript.cjs --test tests/ai-chat.test.cjs",
     "test:ai": "node --require ./tests/no-provider-http.cjs --require ./tests/register-typescript.cjs --test tests/ai-api.test.cjs",

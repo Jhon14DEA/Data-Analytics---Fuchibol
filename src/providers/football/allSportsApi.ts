@@ -21,6 +21,7 @@ import { allSportsObservation, rememberTrainingReceipt, selectFirstHalfOdds, tra
 import { resolveObservedMarketResults } from "@/services/training/liveMarketSnapshots";
 import { persistAllSportsLiveList } from "@/services/persistence/liveListPersistence";
 import { prisma } from "@/lib/prisma";
+import { collectAllSportsShadow } from "@/services/ml/shadowCollector";
 
 const API_BASE_URL = "https://apiv2.allsportsapi.com/football/";
 const PRIORITY_LEAGUE_TERMS = [
@@ -201,6 +202,7 @@ export class AllSportsApiProvider implements FootballProvider {
         }));
         const matches = raw.map(mapMatchSummary);
         await persistAllSportsLiveList(raw.map((item, index) => ({ raw: item, summary: matches[index] })), prisma);
+        await collectAllSportsShadow(raw, prisma);
         const ordered = orderMatchesForDashboard(matches);
         this.rememberMatches(ordered);
         return ordered;
@@ -233,6 +235,7 @@ export class AllSportsApiProvider implements FootballProvider {
         }));
         const matches = raw.map(mapMatchSummary);
         await persistAllSportsLiveList(raw.map((item, index) => ({ raw: item, summary: matches[index] })), prisma);
+        await collectAllSportsShadow(raw, prisma);
         this.rememberMatches(matches);
         return matches;
       },
